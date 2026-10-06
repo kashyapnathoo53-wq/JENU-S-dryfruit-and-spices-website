@@ -75,6 +75,7 @@ class JenusApp {
     this.initWholesale();
     this.initCheckoutModal();
     this.initScrollReveal();
+    this.preventRecurringBanners();
     this.bindGlobalEvents();
 
     cartStore.subscribe(() => {
@@ -2326,6 +2327,23 @@ class JenusApp {
 
     observeAll();
     this.refreshScrollReveal = observeAll;
+  }
+
+  preventRecurringBanners() {
+    const purgeBanners = () => {
+      document.querySelectorAll('#live-sales-toast, .live-sales-toast, [class*="live-sales"], .recent-sales-toast, .purchase-toast').forEach(el => {
+        el.remove();
+      });
+    };
+
+    purgeBanners();
+
+    if (typeof MutationObserver !== 'undefined' && document.body) {
+      const bannerObserver = new MutationObserver(() => {
+        purgeBanners();
+      });
+      bannerObserver.observe(document.body, { childList: true, subtree: true });
+    }
   }
 
   bindGlobalEvents() {

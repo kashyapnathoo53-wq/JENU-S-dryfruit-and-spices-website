@@ -5009,7 +5009,13 @@ button:active {
 .dock-btn,
 .dock-tooltip,
 .dock-pulse-badge,
-.concierge-chat-popover {
+.concierge-chat-popover,
+.live-sales-toast,
+#live-sales-toast,
+.recent-sales-toast,
+.recent-order-toast,
+.purchase-toast,
+[class*="live-sales"] {
   display: none !important;
   opacity: 0 !important;
   visibility: hidden !important;
@@ -5019,6 +5025,7 @@ button:active {
   height: 0 !important;
   overflow: hidden !important;
   clip: rect(0 0 0 0) !important;
+  z-index: -9999 !important;
 }
 
 /* 3D Card Tilt Specular Glare Layer */
