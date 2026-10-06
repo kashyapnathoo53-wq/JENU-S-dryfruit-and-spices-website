@@ -6,6 +6,18 @@ class KashmirAudio {
     this.isAmbiencePlaying = false;
     this.ambienceGain = null;
     this.oscillators = [];
+    this.isScrolling = false;
+    this.scrollTimeout = null;
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', () => {
+        this.isScrolling = true;
+        clearTimeout(this.scrollTimeout);
+        this.scrollTimeout = setTimeout(() => {
+          this.isScrolling = false;
+        }, 350);
+      }, { passive: true });
+    }
   }
 
   init() {
@@ -22,6 +34,8 @@ class KashmirAudio {
 
   // Play a soft bell/santoor pluck note when an item is added to cart
   playSantoorNote(freq = 523.25) { // C5 note by default
+    // STRICT GUARD: Zero sound allowed during scrolling
+    if (this.isScrolling) return;
     try {
       this.init();
       if (!this.ctx) return;

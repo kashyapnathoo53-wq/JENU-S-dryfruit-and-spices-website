@@ -224,8 +224,6 @@ class JenusApp {
     } else {
       this.renderProducts();
     }
-
-    kashmirAudio.playSantoorNote(440);
   }
 
   // --- PRODUCTS RENDERING ---
@@ -239,11 +237,17 @@ class JenusApp {
       list = list.filter(p => {
         if (p.category === this.currentCategory) return true;
         if (p.subCategory === this.currentCategory) return true;
-        if (this.currentCategory === 'spices' && (p.category === 'spices' || p.subCategory === 'powdered-spices' || p.subCategory === 'raw-spices')) return true;
+        if (this.currentCategory === 'teas' && (p.category === 'teas' || p.subCategory === 'teas' || p.category === 'kahwa-spices' || p.id === 'jnu-kahwa-06')) return true;
+        if (this.currentCategory === 'powdered-spices' && (p.category === 'powdered-spices' || p.subCategory === 'powdered-spices')) return true;
+        if (this.currentCategory === 'raw-spices' && (p.category === 'raw-spices' || p.subCategory === 'raw-spices')) return true;
+        if (this.currentCategory === 'spices' && (p.category === 'spices' || p.subCategory === 'spices' || p.subCategory === 'powdered-spices' || p.subCategory === 'raw-spices')) return true;
+        if (this.currentCategory === 'dates' && (p.category === 'dates' || p.subCategory === 'dates' || p.id.includes('dates'))) return true;
+        if (this.currentCategory === 'seeds' && (p.category === 'seeds' || p.subCategory === 'seeds')) return true;
+        if (this.currentCategory === 'breakfast' && (p.category === 'breakfast' || p.subCategory === 'breakfast')) return true;
+        if (this.currentCategory === 'dried-fruits' && (p.category === 'dried-fruits' || p.subCategory === 'dried-fruits')) return true;
         if (this.currentCategory === 'cashews' && (p.subCategory === 'cashews' || p.category === 'cashews')) return true;
         if (this.currentCategory === 'pistachios' && (p.subCategory === 'pistachios' || p.category === 'pistachios')) return true;
         if (this.currentCategory === 'raisins' && (p.subCategory === 'raisins' || p.category === 'raisins')) return true;
-        if (this.currentCategory === 'dates' && (p.subCategory === 'dates' || p.category === 'dates')) return true;
         if (this.currentCategory === 'berries-seeds' && (p.category === 'berries-seeds' || p.subCategory === 'nuts' || p.category === 'dryfruits')) return true;
         return false;
       });
@@ -1994,8 +1998,25 @@ class JenusApp {
     });
   }
 
-  // --- ORDER TRACKING ---
+  // --- ORDER TRACKING & AUTH ---
   initOrderTracking() {
+    const updateHeaderTrackBtn = () => {
+      const phone = orderTrackingManager.currentPhone || localStorage.getItem('jenus_user_phone');
+      const trackBtn = document.getElementById('btn-header-track');
+      if (trackBtn) {
+        if (phone) {
+          trackBtn.innerHTML = `<span>👤 +91 ${phone.slice(0, 5)}...</span>`;
+          trackBtn.title = `Verified Patron +91 ${phone} • Click to view orders`;
+        } else {
+          trackBtn.innerHTML = `<span>📦 Track Orders / Login</span>`;
+          trackBtn.title = `Track Consignment / Sign In`;
+        }
+      }
+    };
+
+    updateHeaderTrackBtn();
+    window.addEventListener('jenus_auth_change', updateHeaderTrackBtn);
+
     document.querySelectorAll('.btn-open-track-orders, #btn-header-track, #sub-nav-track-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -2387,4 +2408,8 @@ class JenusApp {
 
 document.addEventListener('DOMContentLoaded', () => {
   window.jenusApp = new JenusApp();
+  window.orderTrackingManager = orderTrackingManager;
+  window.razorpayManager = razorpayManager;
+  window.kashmirAudio = kashmirAudio;
+  window.dbStore = dbStore;
 });

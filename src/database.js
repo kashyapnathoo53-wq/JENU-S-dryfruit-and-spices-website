@@ -18,7 +18,7 @@ export class KashmirDatabase {
   // --- 1. DATABASE INITIALIZATION & LOCALSTORAGE SYNC ---
   initDatabase() {
     // 1. Initialize Products in DB if not present or on version update
-    const DB_VERSION = 'v6_all_spices_and_dryfruits';
+    const DB_VERSION = 'v7_shehar_chai_masalas_dates_seeds_muesli_sun_dried';
     if (localStorage.getItem('jenus_db_version') !== DB_VERSION || !localStorage.getItem('jenus_db_products')) {
       const initialProducts = SEED_PRODUCTS.map(p => ({
         ...p,
@@ -60,6 +60,20 @@ export class KashmirDatabase {
     try {
       const data = localStorage.getItem('jenus_db_products');
       let products = data ? JSON.parse(data) : SEED_PRODUCTS;
+      
+      // Ensure all seed products are included even if stored DB had fewer items
+      const existingIds = new Set(products.map(p => p.id));
+      SEED_PRODUCTS.forEach(sp => {
+        if (!existingIds.has(sp.id)) {
+          products.push({
+            ...sp,
+            inStock: true,
+            isBestseller: sp.badge === 'Bestseller' || sp.badgeType === 'bestseller',
+            stockCount: 80
+          });
+        }
+      });
+
       return products.map(p => {
         const seed = SEED_PRODUCTS.find(s => s.id === p.id);
         if (seed) {

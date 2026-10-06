@@ -460,6 +460,57 @@ export class RazorpayManager {
 
   openPayment(checkoutData) {
     this.currentCheckout = checkoutData;
+
+    // Check if official Razorpay checkout script is available
+    if (typeof window.Razorpay === 'function') {
+      try {
+        const totalAmount = checkoutData.total || cartStore.getTotal();
+        const totalPaise = Math.round(Number(totalAmount) * 100);
+        const options = {
+          key: RAZORPAY_CONFIG.keyId,
+          amount: totalPaise,
+          currency: "INR",
+          name: RAZORPAY_CONFIG.merchantName,
+          description: `Kashmir Valley Direct Harvest (${(checkoutData.items || []).length} items)`,
+          image: "/favicon.svg",
+          prefill: {
+            name: checkoutData.customer?.name || "",
+            contact: checkoutData.customer?.phone || "",
+            email: checkoutData.customer?.email || "SriRadheEnterpriseswork@gmail.com"
+          },
+          notes: {
+            address: `${checkoutData.customer?.address || ''}, ${checkoutData.customer?.city || ''} - ${checkoutData.customer?.pincode || ''}`,
+            fssai_central_license: RAZORPAY_CONFIG.fssaiLicense
+          },
+          theme: {
+            color: RAZORPAY_CONFIG.themeColor
+          },
+          handler: (response) => {
+            // Payment success callback from Razorpay official checkout
+            this.showOrderSuccess({
+              paymentId: response.razorpay_payment_id || `pay_${Math.random().toString(36).substring(2, 10).toUpperCase()}`,
+              orderId: response.razorpay_order_id || `JNU-KSH-${Math.floor(100000 + Math.random() * 900000)}`,
+              method: 'Razorpay Gateway (UPI / Card / Netbanking)'
+            });
+          },
+          modal: {
+            ondismiss: () => {
+              console.log("Razorpay checkout modal closed by user");
+            }
+          }
+        };
+
+        const rzp = new window.Razorpay(options);
+        rzp.on('payment.failed', (response) => {
+          alert(`Payment Failed: ${response.error?.description || 'Transaction declined by bank'}`);
+        });
+        rzp.open();
+        return;
+      } catch (err) {
+        console.warn("Could not launch Razorpay official popup, switching to embedded modal:", err);
+      }
+    }
+
     this.openEmbeddedModal(checkoutData);
   }
 
