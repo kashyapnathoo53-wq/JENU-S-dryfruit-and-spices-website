@@ -1352,15 +1352,6 @@ class JenusApp {
                 <button class="qv-gallery-arrow qv-gallery-prev" id="btn-qv-prev" aria-label="Previous Photo" title="Previous Photo">‹</button>
                 <button class="qv-gallery-arrow qv-gallery-next" id="btn-qv-next" aria-label="Next Photo" title="Next Photo">›</button>
               ` : ''}
-
-              <div class="qv-img-badge-overlay">
-                <span class="qv-img-counter-badge" id="qv-counter-badge">${isCombo ? `Photo 1 of ${images.length} (Combo Item 1)` : `Photo 1 of ${images.length}`}</span>
-                <span class="qv-real-camera-tag ${(images[0].includes('real-') || images[0].includes('-close') || images[0].includes('kargil') || images[0].includes('brewed') || images[0].includes('blend') || images[0].includes('slice') || images[0].includes('powder') || images[0].includes('shell')) ? '' : 'hidden'}" id="qv-real-camera-tag">
-                  ${(images[0].includes('macro') || images[0].includes('close') || images[0].includes('slice') || images[0].includes('powder')) ? '📷 Real Macro Photography' : '📸 Real Camera Photo'}
-                </span>
-                ${isSpice ? `<span class="qv-pack-badge spice-pack">🏷️ JENU'S Packaging Included</span>` : ''}
-                ${isCombo ? `<span class="qv-pack-badge combo-pack">🎁 ${images.length} Items Multi-Pack</span>` : ''}
-              </div>
             </div>
 
             <!-- Dynamic Image Caption Bar -->
@@ -1610,7 +1601,6 @@ class JenusApp {
       activeImgIndex = (newIdx + images.length) % images.length;
       const imgEl = document.getElementById('qv-main-active-img');
       const capEl = document.getElementById('qv-img-caption');
-      const countEl = document.getElementById('qv-counter-badge');
 
       if (imgEl) {
         imgEl.style.opacity = '0.35';
@@ -1622,27 +1612,6 @@ class JenusApp {
         }, 120);
       }
       if (capEl) capEl.textContent = getCaption(activeImgIndex);
-      if (countEl) {
-        if (isCombo && product.comboItems?.[activeImgIndex]) {
-          const item = product.comboItems[activeImgIndex];
-          const itemName = typeof item === 'object' ? item.name : item;
-          countEl.textContent = `Photo ${activeImgIndex + 1} of ${images.length} (${itemName.split('(')[0]})`;
-        } else {
-          countEl.textContent = `Photo ${activeImgIndex + 1} of ${images.length}`;
-        }
-      }
-
-      const realTag = document.getElementById('qv-real-camera-tag');
-      if (realTag) {
-        const curImg = images[activeImgIndex] || '';
-        const isReal = curImg.includes('real-') || curImg.includes('-close') || curImg.includes('kargil') || curImg.includes('brewed') || curImg.includes('blend') || curImg.includes('slice') || curImg.includes('powder') || curImg.includes('shell');
-        realTag.classList.toggle('hidden', !isReal);
-        if (isReal) {
-          realTag.textContent = (curImg.includes('macro') || curImg.includes('close') || curImg.includes('slice') || curImg.includes('powder'))
-            ? '📷 Real Macro Photography' 
-            : '📸 Real Camera Photo';
-        }
-      }
       modal.querySelectorAll('.qv-thumb-btn').forEach((b, i) => {
         b.classList.toggle('active', i === activeImgIndex);
       });

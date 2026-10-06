@@ -3622,68 +3622,6 @@ img {
   right: 12px;
 }
 
-.qv-img-badge-overlay {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  right: 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  pointer-events: none;
-  z-index: 4;
-}
-
-.qv-img-counter-badge {
-  background: rgba(26, 16, 10, 0.92);
-  backdrop-filter: blur(6px);
-  color: #FCD34D;
-  font-size: 11.5px;
-  font-weight: 700;
-  padding: 4px 12px;
-  border-radius: 20px;
-  border: 1px solid rgba(252, 211, 77, 0.4);
-  letter-spacing: 0.3px;
-}
-
-.qv-pack-badge {
-  background: linear-gradient(135deg, #184436, #0F2E24);
-  color: #D1FAE5;
-  font-size: 11px;
-  font-weight: 600;
-  padding: 4px 12px;
-  border-radius: 20px;
-  border: 1px solid rgba(16, 185, 129, 0.4);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-}
-
-.qv-pack-badge.combo-pack {
-  background: linear-gradient(135deg, #78350F, #B45309);
-  color: #FEF3C7;
-  border-color: #FCD34D;
-}
-
-.qv-real-camera-tag {
-  background: linear-gradient(135deg, rgba(20, 68, 50, 0.95), rgba(12, 42, 30, 0.95));
-  backdrop-filter: blur(8px);
-  color: #6EE7B7;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 4px 12px;
-  border-radius: 20px;
-  border: 1px solid rgba(110, 231, 183, 0.5);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-  letter-spacing: 0.3px;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  transition: all 0.25s ease;
-}
-
-.qv-real-camera-tag.hidden {
-  display: none !important;
-}
-
 .qv-img-caption-bar {
   font-size: 12px;
   color: #E8D7C7;
