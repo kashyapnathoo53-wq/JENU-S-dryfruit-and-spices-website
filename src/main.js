@@ -73,7 +73,6 @@ class JenusApp {
     this.initAdminPortal();
     this.initWholesale();
     this.initCheckoutModal();
-    this.initLiveSalesTicker();
     this.initScrollReveal();
     this.bindGlobalEvents();
 
@@ -2004,67 +2003,6 @@ class JenusApp {
     } catch (err) {
       console.warn("Animation error:", err);
     }
-  }
-
-  initLiveSalesTicker() {
-    const recentOrders = [
-      { city: "Mumbai", item: "Valley Vitality Duo (1kg)", time: "2 mins ago", img: "/images/combos-pack.jpg" },
-      { city: "New Delhi", item: "Kashmiri Kagzi Snow Walnuts (500g)", time: "Just now", img: "/images/walnuts-akhrot.jpg" },
-      { city: "Bengaluru", item: "Pure Pampore Mongra Saffron (2g)", time: "5 mins ago", img: "/images/saffron-pampore.jpg" },
-      { city: "Srinagar", item: "The Kashmir Royal Valley Trio", time: "1 min ago", img: "/images/combos-pack.jpg" },
-      { city: "Pune", item: "Authentic Kashmiri Mirch (250g)", time: "3 mins ago", img: "/images/kashmiri-mirch.jpg" },
-      { city: "Hyderabad", item: "Royal Khatamband Carved Hamper", time: "Just now", img: "/images/royal-hamper.jpg" },
-      { city: "Chennai", item: "Wild Kashmiri Shahi Jeera (100g)", time: "7 mins ago", img: "/images/shahi-jeera.jpg" },
-      { city: "Kolkata", item: "Royal Shahi Kashmiri Kahwa (500g)", time: "4 mins ago", img: "/images/kahwa-tea.jpg" }
-    ];
-
-    let orderIdx = 0;
-    let toast = document.getElementById('live-sales-toast');
-    if (!toast) {
-      toast = document.createElement('div');
-      toast.className = 'live-sales-toast';
-      toast.id = 'live-sales-toast';
-      document.body.appendChild(toast);
-    }
-
-    const showNextSalesToast = () => {
-      const sale = recentOrders[orderIdx];
-      orderIdx = (orderIdx + 1) % recentOrders.length;
-
-      toast.innerHTML = `
-        <img src="${sale.img}" alt="${sale.item}" class="live-sales-thumb" />
-        <div class="live-sales-content">
-          <div class="live-sales-user">
-            <span>Verified Order • ${sale.city}</span>
-            <span class="live-pulse-dot"></span>
-          </div>
-          <strong class="live-sales-product">${sale.item}</strong>
-          <span class="live-sales-meta">${sale.time}</span>
-        </div>
-        <button class="live-sales-close" id="btn-close-sales-toast" aria-label="Dismiss">&times;</button>
-        <div class="live-sales-progress"></div>
-      `;
-
-      toast.classList.add('show');
-
-      document.getElementById('btn-close-sales-toast')?.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toast.classList.remove('show');
-      });
-
-      toast.onclick = () => {
-        document.getElementById('products-section')?.scrollIntoView({ behavior: 'smooth' });
-      };
-
-      setTimeout(() => {
-        toast.classList.remove('show');
-      }, 5800);
-    };
-
-    setTimeout(() => {
-      showNextSalesToast();
-      setInterval(showNextSalesToast, 12000);
-    }, 3500);
   }
 
   initScrollReveal() {
