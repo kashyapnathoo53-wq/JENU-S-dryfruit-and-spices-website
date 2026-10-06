@@ -18,7 +18,7 @@ export class KashmirDatabase {
   // --- 1. DATABASE INITIALIZATION & LOCALSTORAGE SYNC ---
   initDatabase() {
     // 1. Initialize Products in DB if not present or on version update
-    const DB_VERSION = 'v5_dedicated_product_closeups';
+    const DB_VERSION = 'v6_all_spices_and_dryfruits';
     if (localStorage.getItem('jenus_db_version') !== DB_VERSION || !localStorage.getItem('jenus_db_products')) {
       const initialProducts = SEED_PRODUCTS.map(p => ({
         ...p,

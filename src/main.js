@@ -235,7 +235,17 @@ class JenusApp {
     let list = [...dbStore.getProducts()];
 
     if (this.currentCategory !== 'all') {
-      list = list.filter(p => p.category === this.currentCategory);
+      list = list.filter(p => {
+        if (p.category === this.currentCategory) return true;
+        if (p.subCategory === this.currentCategory) return true;
+        if (this.currentCategory === 'spices' && (p.category === 'spices' || p.subCategory === 'powdered-spices' || p.subCategory === 'raw-spices')) return true;
+        if (this.currentCategory === 'cashews' && (p.subCategory === 'cashews' || p.category === 'cashews')) return true;
+        if (this.currentCategory === 'pistachios' && (p.subCategory === 'pistachios' || p.category === 'pistachios')) return true;
+        if (this.currentCategory === 'raisins' && (p.subCategory === 'raisins' || p.category === 'raisins')) return true;
+        if (this.currentCategory === 'dates' && (p.subCategory === 'dates' || p.category === 'dates')) return true;
+        if (this.currentCategory === 'berries-seeds' && (p.category === 'berries-seeds' || p.subCategory === 'nuts' || p.category === 'dryfruits')) return true;
+        return false;
+      });
     }
 
     if (this.searchQuery.trim()) {
@@ -1194,6 +1204,100 @@ class JenusApp {
     const getCaption = (idx) => {
       const curImg = images[idx] || '';
       
+            // --- NEW EXPANDED PRODUCE & SPICE CLOSEUPS ---
+      // Powdered Spices
+      if (curImg.includes('mirch-powder-macro')) return `🌶️ Photo ${idx + 1} of ${images.length}: Extreme Real Macro Photography — Kashmiri Degi Mirch Powder (Vibrant Natural Ruby Sheen, Cold-Milled Below 40°C)`;
+      if (curImg.includes('mirch-powder-bowl')) return `🌶️ Photo ${idx + 1} of ${images.length}: Real Close-up Photography — Pure Degi Mirch Powder in Artisan Brass Bowl (Smoky Paprika Notes)`;
+      if (curImg.includes('mirch-powder-spices') || curImg.includes('mirch-powder-chakki')) return `🌶️ Photo ${idx + 1} of ${images.length}: Real Harvest Documentation — Hand-Sorted Stemless Kashmiri Chillies & Traditional Stone Chakki Milling`;
+      if (curImg.includes('mirch-powder-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Nitrogen-Flushed Aroma-Lock Packaging — Safeguarding Natural Capsaicin & Color`;
+
+      if (curImg.includes('saunf-powder-macro')) return `🌿 Photo ${idx + 1} of ${images.length}: Extreme Real Macro Photography — Stone-Ground Kashmiri Fennel (Badiyan) Powder (Anethole Oil Rich Green Tone)`;
+      if (curImg.includes('saunf-seeds-macro')) return `🌿 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — High-Altitude Mountain Fennel Seeds with Distinct Ridges`;
+      if (curImg.includes('saunf-harvest') || curImg.includes('saunf-mortar')) return `🌿 Photo ${idx + 1} of ${images.length}: Valley Harvest & Stone Mortar Pulverizing — Handpicked Anantnag Umbel Seeds`;
+      if (curImg.includes('saunf-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Food-Grade Tin Canister Freshness Seal — Cornerstone Spice for Wazwan Rogan Josh`;
+
+      if (curImg.includes('sonth-powder-macro')) return `🍂 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Sun-Cured Mountain Sonth Powder (Golden Fibrous Ginger Zing)`;
+      if (curImg.includes('sonth-roots-macro') || curImg.includes('sonth-sliced-dry')) return `🍂 Photo ${idx + 1} of ${images.length}: Real Macro Photography — Whole Dried Himalayan Ginger Rhizomes (Zero Bleach, Pure Natural Root)`;
+      if (curImg.includes('sonth-stone-grind') || curImg.includes('sonth-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Traditional Valley Grinding & Hermetic Moisture-Barrier Pouch Packaging`;
+
+      if (curImg.includes('haldi-powder-macro')) return `✨ Photo ${idx + 1} of ${images.length}: Extreme Real Macro Photography — 5.5% High Curcumin Kashmiri Haldi Powder (Luminous Deep Golden Glow)`;
+      if (curImg.includes('haldi-rhizome-macro') || curImg.includes('haldi-cross-section')) return `✨ Photo ${idx + 1} of ${images.length}: Real Macro Rhizome Cross-Section — Dense Concentric Rings of Pure Golden Curcuminoids`;
+      if (curImg.includes('haldi-harvest-roots') || curImg.includes('haldi-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Organically Harvested Valley Roots & UV-Protected Air-Tight Gold Packaging`;
+
+      if (curImg.includes('garam-masala-powder-macro')) return `👑 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Royal Kashmiri Wazwan 16-Spice Garam Masala Blend`;
+      if (curImg.includes('garam-masala-whole-blend') || curImg.includes('garam-masala-roasting')) return `👑 Photo ${idx + 1} of ${images.length}: Whole Spice Master Blending — Ceylon Cinnamon, Green & Black Cardamom, Cloves, Mace and Star Anise`;
+      if (curImg.includes('garam-masala-bowl') || curImg.includes('garam-masala-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Brass Urn Display & Imperial Multi-Layer Aroma Caddy Packaging`;
+
+      if (curImg.includes('dhaniya-powder-macro')) return `🌱 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Pure Himalayan Coriander Seed Powder (Floral Citrus Essence)`;
+      if (curImg.includes('dhaniya-seeds-macro') || curImg.includes('dhaniya-seeds-harvest')) return `🌱 Photo ${idx + 1} of ${images.length}: High-Altitude Coriander Seed Spheres & Terrace Sun-Curing Documentation`;
+      if (curImg.includes('dhaniya-mortar') || curImg.includes('dhaniya-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Traditional Stone Pulverizing & Nitrogen-Purged Moisture-Proof Container`;
+
+      // Raw Whole Spices
+      if (curImg.includes('badi-elaichi-macro') || curImg.includes('badi-elaichi-seeds-close')) return `🖤 Photo ${idx + 1} of ${images.length}: Extreme Real Macro Photography — Smoky Kashmiri Badi Elaichi (Deep Ribbed Pods & Sticky Resinous Seeds)`;
+      if (curImg.includes('badi-elaichi-tray') || curImg.includes('badi-elaichi-harvest')) return `🖤 Photo ${idx + 1} of ${images.length}: Hand-Graded Jumbo 25mm+ Pods & Traditional Firewood Smoke Curing`;
+      if (curImg.includes('badi-elaichi-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Heavyweight Vacuum Pouch — Preserves Camphoric & Piney Essential Oils`;
+
+      if (curImg.includes('choti-elaichi-macro') || curImg.includes('choti-elaichi-seeds-close')) return `💚 Photo ${idx + 1} of ${images.length}: Extreme Real Macro Photography — Royal Kashmiri Green Cardamom (8mm+ Emerald Pods Packed with Black Seeds)`;
+      if (curImg.includes('choti-elaichi-handful') || curImg.includes('choti-elaichi-brass-bowl')) return `💚 Photo ${idx + 1} of ${images.length}: Hand-Sorted Extra Bold Pods in Royal Brass Tasting Bowl (Crown Jewel of Shahi Kahwa)`;
+      if (curImg.includes('choti-elaichi-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Hermetically Sealed Tin Caddy — Preserves Minty-Sweet Aroma`;
+
+      if (curImg.includes('cinnamon-quills-macro') || curImg.includes('cinnamon-layers-close')) return `📜 Photo ${idx + 1} of ${images.length}: Extreme Real Macro Photography — Pure Ceylon Cinnamon Quills (Wafer-Thin Scroll Layers, Delicate Sweetness)`;
+      if (curImg.includes('cinnamon-bundle') || curImg.includes('cinnamon-bark-harvest')) return `📜 Photo ${idx + 1} of ${images.length}: Hand-Tied Artisan Quills & Traditional Inner Bark Peeling Documentation`;
+      if (curImg.includes('cinnamon-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Glass Storage Tube with Airtight Wooden Seal`;
+
+      if (curImg.includes('cloves-macro') || curImg.includes('cloves-oil-sheen')) return `⭐ Photo ${idx + 1} of ${images.length}: Extreme Real Macro Photography — High-Oil Kashmiri Cloves (Intact Crown Heads with Natural Eugenol Oil Sheen)`;
+      if (curImg.includes('cloves-handful') || curImg.includes('cloves-harvest')) return `⭐ Photo ${idx + 1} of ${images.length}: Hand-Selected Deep Reddish Buds & Sun-Curing Inspection`;
+      if (curImg.includes('cloves-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Amber Glass Jar Packaging — Guards Essential Eugenol Oils from Light`;
+
+      if (curImg.includes('star-anise-macro') || curImg.includes('star-anise-single-close')) return `✨ Photo ${idx + 1} of ${images.length}: Extreme Real Macro Photography — Royal 8-Point Star Anise (Glossy Polished Carpels with Glinting Seeds)`;
+      if (curImg.includes('star-anise-walnut-wood') || curImg.includes('star-anise-harvest')) return `✨ Photo ${idx + 1} of ${images.length}: Whole Selected Stars on Kashmiri Walnut Wood & Orchard Harvest Inspection`;
+      if (curImg.includes('star-anise-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Rigid Presentation Box — Prevents Delicate 8-Point Stars from Snapping`;
+
+      if (curImg.includes('mace-javitri-macro') || curImg.includes('mace-aril-nutmeg-close')) return `🏵️ Photo ${idx + 1} of ${images.length}: Extreme Real Macro Photography — Golden Flame Javitri Mace Blades (Exotic Laced Filaments & Musky Fragrance)`;
+      if (curImg.includes('mace-tray') || curImg.includes('mace-handful')) return `🏵️ Photo ${idx + 1} of ${images.length}: Handful of Whole Unbroken Javitri Flowers on Brass Tray (Key Wazwan Aroma)`;
+      if (curImg.includes('mace-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Nitrogen-Flushed Protective Caddy`;
+
+      // Premium Dry Fruits
+      if (curImg.includes('cashews-jumbo-macro') || curImg.includes('cashews-w180-scale')) return `🥜 Photo ${idx + 1} of ${images.length}: Extreme Real Macro Photography — King W180 Jumbo Cashews (Colossal Ivory Kernels, World's Largest Grade)`;
+      if (curImg.includes('cashews-handful') || curImg.includes('cashews-raw-bowl')) return `🥜 Photo ${idx + 1} of ${images.length}: Handful of Unblemished Giant Cashews in Carved Walnut Bowl (Sweet Creamy Crunch)`;
+      if (curImg.includes('cashews-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Cold-Sealed Foil Pouch with Zip-Lock Freshness Barrier`;
+
+      if (curImg.includes('cashews-roasted-macro') || curImg.includes('cashews-roasted-split')) return `🔥 Photo ${idx + 1} of ${images.length}: Extreme Real Macro Photography — Slow-Roasted King Cashews Dusted with Pure Himalayan Pink Salt`;
+      if (curImg.includes('cashews-roasted-bowl') || curImg.includes('cashews-roasting-process')) return `🔥 Photo ${idx + 1} of ${images.length}: Artisan Dry-Roasting in Small Batches (Zero Palm Oil) & Ceramic Serving Dish`;
+      if (curImg.includes('cashews-roasted-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Vacuum Flushed Re-Sealable Pouch — Guaranteed Snapping Crunch`;
+
+      if (curImg.includes('pista-inshell-macro') || curImg.includes('pista-split-handful')) return `🌰 Photo ${idx + 1} of ${images.length}: Extreme Real Macro Photography — Royal In-Shell Pistachios (Naturally Sun-Opened Smile Shells & Emerald Meat)`;
+      if (curImg.includes('pista-wood-tray') || curImg.includes('pista-harvest-orchard')) return `🌰 Photo ${idx + 1} of ${images.length}: Chinar Wood Presentation Tray & High-Altitude Mountain Orchard Harvest`;
+      if (curImg.includes('pista-inshell-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Nitrogen-Flushed Protective Jar — Retains Crisp Shells`;
+
+      if (curImg.includes('pista-giri-macro') || curImg.includes('pista-slivers-close')) return `💚 Photo ${idx + 1} of ${images.length}: Extreme Real Macro Photography — Shelled Emerald Pistachio Kernels (Pista Giri) (Luminous Jade Chlorophyll Sheen)`;
+      if (curImg.includes('pista-giri-handful') || curImg.includes('pista-kahwa-garnish')) return `💚 Photo ${idx + 1} of ${images.length}: Handful of 100% Whole Green Kernels & Wazwan Shahi Kahwa Almond-Pistachio Garnish`;
+      if (curImg.includes('pista-giri-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: UV-Shielding Foil Packaging — Preserves Natural Bright Jade Color`;
+
+      if (curImg.includes('raisins-green-macro') || curImg.includes('raisins-green-handful')) return `🍇 Photo ${idx + 1} of ${images.length}: Extreme Real Macro Photography — Royal Long Green Seedless Raisins (25mm+ Extra Long Kishmish, Translucent Sweetness)`;
+      if (curImg.includes('raisins-drying-shade') || curImg.includes('raisins-green-bowl')) return `🍇 Photo ${idx + 1} of ${images.length}: Traditional Valley Shade-Drying Kiln (Kishmish Khana) & Brass Serving Bowl`;
+      if (curImg.includes('raisins-green-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Moisture-Barrier Zip Canister — Retains Plump Soft Chewiness`;
+
+      if (curImg.includes('raisins-black-macro') || curImg.includes('raisins-black-handful')) return `🍇 Photo ${idx + 1} of ${images.length}: Extreme Real Macro Photography — Mountain Black Seedless Raisins (Deep Obsidian Skin Rich in Natural Iron)`;
+      if (curImg.includes('raisins-black-hydrated') || curImg.includes('raisins-black-vine')) return `🍇 Photo ${idx + 1} of ${images.length}: High-Altitude Vine Sun-Curing & Plump Hydrated Berry Macro`;
+      if (curImg.includes('raisins-black-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Vacuum Freshness Canister — Protects Natural Fructose Balance`;
+
+      if (curImg.includes('dates-medjool-macro') || curImg.includes('dates-medjool-open-close')) return `👑 Photo ${idx + 1} of ${images.length}: Extreme Real Macro Photography — King Medjool Dates (Lustrous Amber Wrinkled Skin & Luscious Caramel Honey Pulp)`;
+      if (curImg.includes('dates-medjool-five') || curImg.includes('dates-palm-harvest')) return `👑 Photo ${idx + 1} of ${images.length}: Jumbo 35g+ Grade Selection & Tree-Ripened Palm Harvest Inspection`;
+      if (curImg.includes('dates-medjool-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Luxury Rigid Presentation Box with Inner Fluted Tray`;
+
+      if (curImg.includes('dates-chhuara-macro') || curImg.includes('dates-chhuara-handful')) return `☀️ Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Kashmiri Sun-Dried Chhuara (Dense Golden Brown Dry Dates, Pure Sun-Cured)`;
+      if (curImg.includes('dates-chhuara-split') || curImg.includes('dates-chhuara-brass-bowl')) return `☀️ Photo ${idx + 1} of ${images.length}: Split Chhuara Macro (Nutrient-Dense Calcium Core) & Valley Brass Display`;
+      if (curImg.includes('dates-chhuara-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Heavy Duty Food-Grade Air-Tight Pouch`;
+
+      if (curImg.includes('hazelnuts-macro') || curImg.includes('hazelnuts-inshell-cracked')) return `🌰 Photo ${idx + 1} of ${images.length}: Extreme Real Macro Photography — Wild Himalayan Hazelnut Kernels (Round Golden-Brown Kernels with Rich Hazelnut Oil)`;
+      if (curImg.includes('hazelnuts-roasted-skins') || curImg.includes('hazelnuts-forest-harvest')) return `🌰 Photo ${idx + 1} of ${images.length}: Gentle Roasted Kernels with Flaked Skins & High-Altitude Himalayan Forest Forage`;
+      if (curImg.includes('hazelnuts-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Foil Aroma-Lock Standup Pouch — Retains Fresh Roasted Crispness`;
+
+      if (curImg.includes('pecans-macro') || curImg.includes('macadamia-macro')) return `🍂 Photo ${idx + 1} of ${images.length}: Extreme Real Macro Photography — Jumbo Alpine Pecan Halves & Raw Creamy Macadamia Nuts`;
+      if (curImg.includes('pecans-bowl') || curImg.includes('pecans-shell-cracking')) return `🍂 Photo ${idx + 1} of ${images.length}: Luxury Carved Walnut Wood Medley & Hand-Graded Pecan Halves`;
+      if (curImg.includes('pecans-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Nitrogen-Sealed Imperial Nut Tin — Preserves Rich Omega Oils`;
+
       // Hamper Constituent Items Close-ups
       if (product.category === 'hampers' && idx > 0) {
         if (curImg.includes('real-mamra')) return `🎁 Photo ${idx + 1} of ${images.length}: Hamper Item 1 — Kashmiri Mamra Giri Almonds (High-Oil Macro Close-Up)`;
