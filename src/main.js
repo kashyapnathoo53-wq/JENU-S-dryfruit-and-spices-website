@@ -318,16 +318,57 @@ class JenusApp {
             </div>
           </div>
 
-          <div class="product-image-box" title="Click to view all photos & details">
-            <img src="${p.image}" alt="${p.name}" class="product-img" loading="lazy" />
-            ${prodImages.some(img => img.includes('real-')) ? `
-              <span class="card-real-tag">📷 Real Produce</span>
-            ` : ''}
+          <!-- KASHMIRI CARVED WALNUT WOOD FRAME FOR PRODUCT ICON / VISUAL -->
+          <div class="product-walnut-frame" title="Kashmiri Carved Walnut Frame — Click to view all photos & details">
+            <span class="frame-corner frame-corner-tl" aria-hidden="true"></span>
+            <span class="frame-corner frame-corner-tr" aria-hidden="true"></span>
+            <span class="frame-corner frame-corner-bl" aria-hidden="true"></span>
+            <span class="frame-corner frame-corner-br" aria-hidden="true"></span>
+            
+            <div class="product-frame-inner">
+              <div class="product-image-box">
+                <img src="${p.image}" alt="${p.name}" class="product-img" loading="lazy" />
+                ${prodImages.some(img => img.includes('real-')) ? `
+                  <span class="card-real-tag">📷 Real Produce</span>
+                ` : ''}
+                <span class="frame-wood-tag">🪵 Carved Walnut Frame</span>
+              </div>
+            </div>
           </div>
 
           <div class="product-info">
             <h3 class="product-title" data-pid="${p.id}">${p.name}</h3>
             <p class="product-subname">${p.subname}</p>
+
+            <!-- PRODUCT OVERVIEW (KEY TERROIR, PURITY & HARVEST SPECS) -->
+            <div class="product-card-overview" title="Product Overview & Connoisseur Specifications">
+              <div class="card-overview-header">
+                <span class="overview-header-tag">
+                  <span class="overview-dot"></span> Product Overview
+                </span>
+                <span class="overview-quick-link" title="Click to view comprehensive specifications & lab certificates">Specs ↗</span>
+              </div>
+              <div class="card-overview-specs">
+                <div class="card-overview-row">
+                  <span class="spec-k">Terroir:</span>
+                  <span class="spec-v" title="${p.overview?.terroir || p.origin}">${p.overview?.terroir || p.origin}</span>
+                </div>
+                <div class="card-overview-row">
+                  <span class="spec-k">Purity:</span>
+                  <span class="spec-v" title="${p.overview?.purityGrade || '100% Valley Pure'}">${p.overview?.purityGrade || '100% Valley Pure'}</span>
+                </div>
+                <div class="card-overview-row">
+                  <span class="spec-k">Harvest:</span>
+                  <span class="spec-v" title="${p.overview?.harvestMethod || p.harvestYear || 'Fresh Valley Harvest'}">${p.overview?.harvestMethod || p.harvestYear || 'Fresh Valley Harvest'}</span>
+                </div>
+                ${p.overview?.aromaFlavor ? `
+                <div class="card-overview-row aroma-row">
+                  <span class="spec-k">Profile:</span>
+                  <span class="spec-v" title="${p.overview.aromaFlavor}">${p.overview.aromaFlavor}</span>
+                </div>
+                ` : ''}
+              </div>
+            </div>
 
             <div class="product-weights-selector">
               <span class="weight-label">Select Package Size:</span>

@@ -772,17 +772,23 @@ img {
 }
 
 .circle-ring {
-  width: 66px;
-  height: 66px;
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
-  background: #180F0A;
-  border: 2px solid rgba(212, 175, 55, 0.35);
+  background-color: #180F0A;
+  background-image: 
+    radial-gradient(circle at 50% 30%, rgba(68, 38, 22, 0.25) 0%, rgba(18, 10, 6, 0.8) 100%),
+    url('/images/kashmir_walnut_carved.jpg');
+  background-size: cover;
+  background-position: center;
+  border: 2.5px solid #5C3A21;
+  padding: 3px;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.55), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.65), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -1214,13 +1220,27 @@ img {
   box-shadow: 0 4px 14px rgba(245, 158, 11, 0.3);
 }
 
-/* Products Grid - Clean, Spacious, Perfectly Aligned */
+/* Products Grid - 3 Frames in a Row with Kashmiri Carved Walnut Woodwork */
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-  gap: 26px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
   position: relative;
   z-index: 5;
+}
+
+@media (max-width: 1080px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+}
+
+@media (max-width: 640px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
 /* Single Product Card (Pure Product Focus & Kashmiri Walnut Woodwork) */
@@ -1324,16 +1344,102 @@ img {
   transform: scale(1.15);
 }
 
-/* Image Box - Large, Unobstructed, Crisp Product Photography */
-.product-image-box {
+/* ===================================================
+   KASHMIRI CARVED WALNUT WOOD FRAME FOR PRODUCT ICONS
+   =================================================== */
+.product-walnut-frame {
   position: relative;
+  margin: 12px 12px 6px 12px;
+  padding: 10px;
+  background-color: #1A0E08;
+  background-image: 
+    radial-gradient(circle at 50% 30%, rgba(68, 38, 22, 0.25) 0%, rgba(18, 10, 6, 0.8) 100%),
+    url('/images/kashmir_walnut_carved.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: 3px solid #5C3A21;
+  border-radius: 12px;
+  box-shadow: 
+    inset 2px 2px 5px rgba(255, 220, 150, 0.35),
+    inset -2px -2px 6px rgba(0, 0, 0, 0.92),
+    0 8px 24px rgba(0, 0, 0, 0.65);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover .product-walnut-frame {
+  border-color: #D4AF37;
+  box-shadow: 
+    inset 2px 2px 6px rgba(255, 220, 150, 0.5),
+    inset -2px -2px 6px rgba(0, 0, 0, 0.95),
+    0 14px 34px rgba(0, 0, 0, 0.85),
+    0 0 18px rgba(212, 175, 55, 0.35);
+}
+
+/* Ornate Khatamband Brass Corners */
+.frame-corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  z-index: 5;
+  pointer-events: none;
+  border-color: #F59E0B;
+  border-style: solid;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.9);
+}
+
+.frame-corner-tl {
+  top: 3px;
+  left: 3px;
+  border-width: 2.5px 0 0 2.5px;
+  border-top-left-radius: 4px;
+}
+
+.frame-corner-tr {
+  top: 3px;
+  right: 3px;
+  border-width: 2.5px 2.5px 0 0;
+  border-top-right-radius: 4px;
+}
+
+.frame-corner-bl {
+  bottom: 3px;
+  left: 3px;
+  border-width: 0 0 2.5px 2.5px;
+  border-bottom-left-radius: 4px;
+}
+
+.frame-corner-br {
+  bottom: 3px;
+  right: 3px;
+  border-width: 0 2.5px 2.5px 0;
+  border-bottom-right-radius: 4px;
+}
+
+/* Inner Gold Fillet Bezel */
+.product-frame-inner {
+  position: relative;
+  border-radius: 8px;
+  padding: 2.5px;
+  background: linear-gradient(135deg, #F59E0B 0%, #D4AF37 40%, #8A6828 75%, #5B4012 100%);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.85),
+    inset 0 1px 2px rgba(255, 255, 255, 0.45);
+}
+
+.product-frame-inner .product-image-box {
+  border-radius: 6px;
+  height: 245px;
   width: 100%;
-  height: 260px;
-  background: #140A06;
+  background: #0E0704;
+  position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.75);
 }
 
 .product-img {
@@ -1346,7 +1452,29 @@ img {
 }
 
 .product-card:hover .product-img {
-  transform: scale(1.05);
+  transform: scale(1.06);
+}
+
+.frame-wood-tag {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #FDE68A;
+  background: rgba(20, 11, 7, 0.9);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  border-radius: 4px;
+  padding: 2px 7px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  backdrop-filter: blur(4px);
+  z-index: 3;
+  pointer-events: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 .card-real-tag {
@@ -1363,12 +1491,12 @@ img {
   letter-spacing: 0.2px;
   pointer-events: none;
   backdrop-filter: blur(4px);
-  z-index: 2;
+  z-index: 3;
 }
 
 /* Product Info */
 .product-info {
-  padding: 16px 14px 14px 14px;
+  padding: 14px 14px 14px 14px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -1396,12 +1524,109 @@ img {
 .product-subname {
   font-size: 12px;
   color: #C5A059;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   line-height: 1.4;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   min-height: 17px;
+}
+
+/* Product Card Overview Specifications Panel */
+.product-card-overview {
+  background: linear-gradient(180deg, rgba(28, 16, 10, 0.95) 0%, rgba(16, 9, 5, 0.98) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin: 4px 0 10px 0;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.product-card:hover .product-card-overview {
+  border-color: rgba(212, 175, 55, 0.45);
+  background: linear-gradient(180deg, rgba(34, 19, 12, 0.96) 0%, rgba(18, 10, 6, 0.99) 100%);
+}
+
+.card-overview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 4px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.16);
+}
+
+.overview-header-tag {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: #FCD34D;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.overview-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 6px #10B981;
+  display: inline-block;
+}
+
+.overview-quick-link {
+  font-size: 9.5px;
+  font-weight: 600;
+  color: #C5A059;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 1px 5px;
+  border-radius: 3px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.overview-quick-link:hover {
+  color: #FDE68A;
+  background: rgba(212, 175, 55, 0.2);
+  border-color: #F59E0B;
+}
+
+.card-overview-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.card-overview-row {
+  display: flex;
+  align-items: baseline;
+  font-size: 11px;
+  line-height: 1.35;
+  gap: 6px;
+  overflow: hidden;
+}
+
+.card-overview-row .spec-k {
+  color: #A38A75;
+  font-weight: 600;
+  flex-shrink: 0;
+  font-size: 10.5px;
+}
+
+.card-overview-row .spec-v {
+  color: #E8D7C7;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-overview-row.aroma-row .spec-v {
+  color: #FDE68A;
+  font-style: italic;
 }
 
 /* Weights Selector */
@@ -3615,18 +3840,30 @@ img {
 .qv-widescreen-img-wrapper {
   position: relative;
   width: 100%;
-  height: 380px;
-  border-radius: 12px;
+  height: 390px;
+  border-radius: 14px;
   overflow: hidden;
-  background: #0B1E17;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-  border: 1.5px solid rgba(212, 175, 55, 0.35);
+  background-color: #1A0E08;
+  background-image: 
+    radial-gradient(circle at 50% 30%, rgba(68, 38, 22, 0.25) 0%, rgba(18, 10, 6, 0.8) 100%),
+    url('/images/kashmir_walnut_carved.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
+  border: 3px solid #5C3A21;
+  box-shadow: 
+    inset 2px 2px 5px rgba(255, 220, 150, 0.35),
+    inset -2px -2px 6px rgba(0, 0, 0, 0.9),
+    0 12px 32px rgba(0, 0, 0, 0.7);
 }
 
 .qv-main-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid rgba(212, 175, 55, 0.55);
+  box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.7);
   transition: opacity 0.25s ease, transform 0.25s ease;
   display: block;
 }
