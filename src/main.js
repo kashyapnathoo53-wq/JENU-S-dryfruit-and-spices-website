@@ -67,6 +67,7 @@ class JenusApp {
     this.initCountdownTimer();
     this.initSearch();
     this.initCartDrawer();
+    this.initWishlist();
     this.initPincodeChecker();
     this.initCertificateModal();
     this.initOrderTracking();
@@ -292,7 +293,14 @@ class JenusApp {
         <div class="product-card reveal-item ${isOutOfStock ? 'is-out-of-stock-card' : ''}" data-pid="${p.id}">
           <div class="product-card-top-bar">
             <span class="product-origin-chip">📍 ${p.origin.split(',')[0]}</span>
-            ${p.isBestseller ? '<span class="product-clean-badge bestseller">⭐ Bestseller</span>' : (p.badge ? `<span class="product-clean-badge">${p.badge}</span>` : '')}
+            <div class="product-card-top-actions">
+              ${p.isBestseller ? '<span class="product-clean-badge bestseller">⭐ Bestseller</span>' : (p.badge ? `<span class="product-clean-badge">${p.badge}</span>` : '')}
+              <button type="button" class="wishlist-btn ${isWish ? 'active' : ''}" data-pid="${p.id}" title="${isWish ? 'Remove from Wishlist' : 'Add to Wishlist'}" aria-label="Wishlist">
+                <svg class="wishlist-heart-icon" viewBox="0 0 24 24" width="15" height="15" fill="${isWish ? '#DC2626' : 'none'}" stroke="${isWish ? '#DC2626' : '#D1D5DB'}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </button>
+            </div>
           </div>
 
           <div class="product-image-box" title="Click to view all photos & details">
@@ -405,10 +413,15 @@ class JenusApp {
         const prod = dbStore.getProducts().find(p => p.id === pid);
         if (prod) {
           const added = cartStore.toggleWishlist(prod);
-          kashmirAudio.playSantoorNote(659.25);
-          btn.innerHTML = added ? '❤️' : '🤍';
+          kashmirAudio.playSantoorNote(added ? 659.25 : 440);
           btn.classList.toggle('active', added);
-          this.showToast(added ? `Saved to Wishlist` : `Removed from Wishlist`);
+          const icon = btn.querySelector('.wishlist-heart-icon');
+          if (icon) {
+            icon.setAttribute('fill', added ? '#DC2626' : 'none');
+            icon.setAttribute('stroke', added ? '#DC2626' : '#D1D5DB');
+          }
+          btn.title = added ? 'Remove from Wishlist' : 'Add to Wishlist';
+          this.showToast(added ? `❤️ Saved "${prod.name}" to Wishlist` : `Removed "${prod.name}" from Wishlist`);
           this.updateWishlistCount();
         }
       });
@@ -442,7 +455,7 @@ class JenusApp {
     // Clicking anywhere on the product card opens the wide-screen modal
     container.querySelectorAll('.product-card').forEach(card => {
       card.addEventListener('click', (e) => {
-        if (e.target.closest('.btn-add-to-cart, .btn-order-now, .qty-btn, .weight-chip, .qty-stepper-clean')) {
+        if (e.target.closest('.btn-add-to-cart, .btn-order-now, .qty-btn, .weight-chip, .qty-stepper-clean, .wishlist-btn')) {
           return;
         }
         const pid = card.dataset.pid;
@@ -852,6 +865,8 @@ class JenusApp {
     document.querySelectorAll('.header-cart-total').forEach(el => {
       el.textContent = `₹${state.total.toLocaleString('en-IN')}`;
     });
+
+    this.updateWishlistCount();
 
     const itemsContainer = document.getElementById('cart-items-list');
     const emptyState = document.getElementById('cart-empty-state');
@@ -1464,6 +1479,34 @@ class JenusApp {
               </div>
             </div>
 
+            <!-- BUYING ACTIONS & WISHLIST (IMMEDIATELY VISIBLE) -->
+            <div class="qv-actions-box">
+              ${product.inStock === false ? `
+                <button class="btn-qv-add-cart disabled" disabled style="background: #E5E7EB; color: #9CA3AF; cursor: not-allowed; border: 1px solid #D1D5DB;">
+                  <span>Out of Stock</span>
+                  <span id="qv-btn-price">🚫 Sold Out in Cold Storage</span>
+                </button>
+              ` : `
+                <button class="btn-qv-add-cart btn-qv-widescreen-add" id="btn-qv-add-cart">
+                  <span>Add to Cart (${curWeight.weight})</span>
+                  <span id="qv-btn-price">₹${curWeight.price.toLocaleString('en-IN')}</span>
+                </button>
+              `}
+              <button type="button" class="btn-qv-wishlist ${cartStore.isInWishlist(product.id) ? 'active' : ''}" id="btn-qv-wishlist" title="${cartStore.isInWishlist(product.id) ? 'Remove from Wishlist' : 'Add to Wishlist'}" aria-label="Wishlist">
+                <svg class="qv-wishlist-icon" viewBox="0 0 24 24" width="20" height="20" fill="${cartStore.isInWishlist(product.id) ? '#DC2626' : 'none'}" stroke="${cartStore.isInWishlist(product.id) ? '#DC2626' : 'currentColor'}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                <span class="qv-wishlist-label">${cartStore.isInWishlist(product.id) ? 'Saved in Wishlist' : 'Add to Wishlist'}</span>
+              </button>
+            </div>
+
+            <div class="qv-wholesale-action-box">
+              <button type="button" class="btn-qv-wholesale-blink" id="btn-qv-wholesale-blink" title="Request bulk discount price for ${product.name}">
+                <span class="w-blink-dot-small"></span>
+                <span>⚡ Blink Us for Bulk Wholesale Rate (10kg – 1Ton+)</span>
+              </button>
+            </div>
+
             <!-- COMPREHENSIVE PRODUCT OVERVIEW GRID -->
             <div class="qv-overview-section">
               <div class="qv-section-header">
@@ -1566,28 +1609,6 @@ class JenusApp {
               </div>
             </div>
 
-            <!-- BUYING ACTIONS -->
-            <div class="qv-actions-box">
-              ${product.inStock === false ? `
-                <button class="btn-qv-add-cart disabled" disabled style="background: #E5E7EB; color: #9CA3AF; cursor: not-allowed; border: 1px solid #D1D5DB;">
-                  <span>Out of Stock</span>
-                  <span id="qv-btn-price">🚫 Sold Out in Cold Storage</span>
-                </button>
-              ` : `
-                <button class="btn-qv-add-cart btn-qv-widescreen-add" id="btn-qv-add-cart">
-                  <span>Add to Cart (${curWeight.weight})</span>
-                  <span id="qv-btn-price">₹${curWeight.price.toLocaleString('en-IN')}</span>
-                </button>
-              `}
-            </div>
-
-            <div class="qv-wholesale-action-box">
-              <button type="button" class="btn-qv-wholesale-blink" id="btn-qv-wholesale-blink" title="Request bulk discount price for ${product.name}">
-                <span class="w-blink-dot-small"></span>
-                <span>⚡ Blink Us for Bulk Wholesale Rate (10kg – 1Ton+)</span>
-              </button>
-            </div>
-
           </div>
         </div>
       </div>
@@ -1688,6 +1709,27 @@ class JenusApp {
         this.openCartDrawer();
       });
     }
+
+    const qvWishBtn = modal.querySelector('#btn-qv-wishlist');
+    qvWishBtn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const added = cartStore.toggleWishlist(product);
+      kashmirAudio.playSantoorNote(added ? 659.25 : 440);
+      qvWishBtn.classList.toggle('active', added);
+      const icon = qvWishBtn.querySelector('.qv-wishlist-icon');
+      const label = qvWishBtn.querySelector('.qv-wishlist-label');
+      if (icon) {
+        icon.setAttribute('fill', added ? '#DC2626' : 'none');
+        icon.setAttribute('stroke', added ? '#DC2626' : 'currentColor');
+      }
+      if (label) {
+        label.textContent = added ? 'Saved in Wishlist' : 'Add to Wishlist';
+      }
+      qvWishBtn.title = added ? 'Remove from Wishlist' : 'Add to Wishlist';
+      this.showToast(added ? `❤️ Saved "${product.name}" to Wishlist` : `Removed "${product.name}" from Wishlist`);
+      this.updateWishlistCount();
+      this.renderProducts();
+    });
 
     modal.querySelector('#btn-qv-wholesale-blink')?.addEventListener('click', () => {
       modal.classList.add('hidden');
@@ -1881,12 +1923,198 @@ class JenusApp {
     });
   }
 
+  // --- WISHLIST MANAGEMENT ---
+  initWishlist() {
+    const toggleBtns = document.querySelectorAll('.btn-wishlist-toggle, #btn-wishlist-toggle');
+    toggleBtns.forEach(b => {
+      b.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.openWishlistModal();
+      });
+    });
+    this.updateWishlistCount();
+  }
+
   updateWishlistCount() {
     const count = cartStore.getState().wishlistCount;
     document.querySelectorAll('.wishlist-count-badge').forEach(b => {
       b.textContent = count;
       b.classList.toggle('has-items', count > 0);
     });
+  }
+
+  openWishlistModal() {
+    let modal = document.getElementById('kashmir-wishlist-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'kashmir-wishlist-modal';
+      modal.className = 'kashmir-modal-overlay hidden';
+      document.body.appendChild(modal);
+    }
+
+    const renderWishlistContent = () => {
+      const items = cartStore.getState().wishlist || [];
+      const count = items.length;
+
+      modal.innerHTML = `
+        <div class="wishlist-modal-container animate-scale-up">
+          <div class="wishlist-modal-header">
+            <div class="wishlist-header-title">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="#DC2626" stroke="#DC2626" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              <h3>My Saved Wishlist</h3>
+              <span class="wishlist-count-pill">${count} ${count === 1 ? 'item' : 'items'}</span>
+            </div>
+            <button type="button" class="modal-close-x" id="btn-close-wishlist" title="Close Wishlist">&times;</button>
+          </div>
+
+          <div class="wishlist-modal-body">
+            ${count === 0 ? `
+              <div class="wishlist-empty-state">
+                <div class="wishlist-empty-icon">🤍</div>
+                <h4>Your Wishlist is Empty</h4>
+                <p>You haven't saved any Kashmiri delicacies yet. Click the heart icon on any product or when viewing product details to save items for later.</p>
+                <button type="button" class="btn-wishlist-browse" id="btn-wishlist-browse">Explore Valley Harvest</button>
+              </div>
+            ` : `
+              <div class="wishlist-items-list">
+                ${items.map(item => `
+                  <div class="wishlist-item-row" data-pid="${item.id}">
+                    <div class="wishlist-item-thumb" title="Click to view full product details">
+                      <img src="${item.image}" alt="${item.name}" loading="lazy"/>
+                    </div>
+                    <div class="wishlist-item-details">
+                      <h4 class="wishlist-item-title" title="Click to view full product details">${item.name}</h4>
+                      <p class="wishlist-item-sub">${item.subname || item.origin || '100% Valley Harvest'}</p>
+                      <div class="wishlist-item-pricing">
+                        <span class="wishlist-price">₹${item.price.toLocaleString('en-IN')}</span>
+                        ${item.originalPrice ? `<span class="wishlist-orig-price">₹${item.originalPrice.toLocaleString('en-IN')}</span>` : ''}
+                        <span class="wishlist-pack-badge">${item.weight || '500g'}</span>
+                      </div>
+                    </div>
+                    <div class="wishlist-item-actions">
+                      <button type="button" class="btn-wishlist-move-cart" data-pid="${item.id}" title="Add to Cart">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                        <span>Add to Cart</span>
+                      </button>
+                      <button type="button" class="btn-wishlist-remove" data-pid="${item.id}" title="Remove from wishlist">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                      </button>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            `}
+          </div>
+
+          ${count > 0 ? `
+            <div class="wishlist-modal-footer">
+              <button type="button" class="btn-wishlist-add-all" id="btn-wishlist-add-all">
+                <span>Move All to Cart</span>
+              </button>
+              <button type="button" class="btn-wishlist-clear-all" id="btn-wishlist-clear-all">
+                <span>Clear All</span>
+              </button>
+            </div>
+          ` : ''}
+        </div>
+      `;
+
+      // Bind Close
+      modal.querySelector('#btn-close-wishlist')?.addEventListener('click', () => {
+        modal.classList.add('hidden');
+        document.body.classList.remove('modal-open');
+      });
+
+      // Bind Browse
+      modal.querySelector('#btn-wishlist-browse')?.addEventListener('click', () => {
+        modal.classList.add('hidden');
+        document.body.classList.remove('modal-open');
+        document.getElementById('products-section')?.scrollIntoView({ behavior: 'smooth' });
+      });
+
+      // Bind Thumb / Title click to open Quick View
+      modal.querySelectorAll('.wishlist-item-thumb, .wishlist-item-title').forEach(el => {
+        el.addEventListener('click', () => {
+          const row = el.closest('.wishlist-item-row');
+          const pid = row?.dataset.pid;
+          const prod = dbStore.getProducts().find(p => p.id === pid) || PRODUCTS.find(p => p.id === pid);
+          if (prod) {
+            modal.classList.add('hidden');
+            this.openQuickViewModal(prod);
+          }
+        });
+      });
+
+      // Bind Move to Cart
+      modal.querySelectorAll('.btn-wishlist-move-cart').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const pid = btn.dataset.pid;
+          const prod = dbStore.getProducts().find(p => p.id === pid) || PRODUCTS.find(p => p.id === pid);
+          if (prod) {
+            const weightObj = this.selectedProductWeights[pid] || prod.weights[0];
+            cartStore.addItem(prod, weightObj, 1);
+            kashmirAudio.playSantoorNote(523.25);
+            this.showToast(`Added ${prod.name} (${weightObj.weight}) to cart`);
+            modal.classList.add('hidden');
+            document.body.classList.remove('modal-open');
+            this.openCartDrawer();
+          }
+        });
+      });
+
+      // Bind Remove
+      modal.querySelectorAll('.btn-wishlist-remove').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const pid = btn.dataset.pid;
+          cartStore.removeFromWishlist(pid);
+          this.showToast("Item removed from wishlist");
+          this.updateWishlistCount();
+          this.renderProducts();
+          renderWishlistContent();
+        });
+      });
+
+      // Bind Add All to Cart
+      modal.querySelector('#btn-wishlist-add-all')?.addEventListener('click', () => {
+        items.forEach(item => {
+          const prod = dbStore.getProducts().find(p => p.id === item.id) || PRODUCTS.find(p => p.id === item.id);
+          if (prod) {
+            const weightObj = this.selectedProductWeights[prod.id] || prod.weights[0];
+            cartStore.addItem(prod, weightObj, 1);
+          }
+        });
+        kashmirAudio.playSantoorNote(659.25);
+        this.showToast(`Added ${items.length} wishlist items to cart`);
+        modal.classList.add('hidden');
+        document.body.classList.remove('modal-open');
+        this.openCartDrawer();
+      });
+
+      // Bind Clear All
+      modal.querySelector('#btn-wishlist-clear-all')?.addEventListener('click', () => {
+        if (confirm("Are you sure you want to clear your saved wishlist?")) {
+          cartStore.clearWishlist();
+          this.showToast("Wishlist cleared");
+          this.updateWishlistCount();
+          this.renderProducts();
+          renderWishlistContent();
+        }
+      });
+    };
+
+    renderWishlistContent();
+    modal.classList.remove('hidden');
+    document.body.classList.add('modal-open');
+
+    // Close on backdrop click
+    modal.onclick = (e) => {
+      if (e.target === modal) {
+        modal.classList.add('hidden');
+        document.body.classList.remove('modal-open');
+      }
+    };
   }
 
   showToast(msg) {

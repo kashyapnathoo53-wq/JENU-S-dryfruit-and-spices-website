@@ -138,16 +138,30 @@ class CartStore {
     if (exists) {
       this.wishlist = this.wishlist.filter(p => p.id !== product.id);
     } else {
+      const w0 = (product.weights && product.weights[0]) ? product.weights[0] : null;
       this.wishlist.push({
         id: product.id,
         name: product.name,
+        subname: product.subname || '',
         image: product.image,
-        price: product.weights[0].price,
-        origin: product.origin
+        price: w0 ? w0.price : (product.price || 0),
+        originalPrice: w0 ? w0.originalPrice : (product.originalPrice || 0),
+        weight: w0 ? w0.weight : '500g',
+        origin: product.origin || 'Kashmir Valley'
       });
     }
     this.saveWishlist();
     return !exists;
+  }
+
+  removeFromWishlist(productId) {
+    this.wishlist = this.wishlist.filter(p => p.id !== productId);
+    this.saveWishlist();
+  }
+
+  clearWishlist() {
+    this.wishlist = [];
+    this.saveWishlist();
   }
 
   isInWishlist(productId) {
