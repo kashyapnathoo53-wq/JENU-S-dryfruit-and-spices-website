@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <!-- Velvet Pine Gradient -->
+    <radialGradient id="pineBg" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#194838" />
+      <stop offset="70%" stop-color="#0E2D23" />
+      <stop offset="100%" stop-color="#071913" />
+    </radialGradient>
+
+    <!-- 24K Gold Foil Gradient -->
+    <linearGradient id="goldFoil" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF2B2" />
+      <stop offset="25%" stop-color="#F5D77F" />
+      <stop offset="50%" stop-color="#D4AF37" />
+      <stop offset="75%" stop-color="#AA7C11" />
+      <stop offset="100%" stop-color="#FCD34D" />
+    </linearGradient>
+
+    <!-- Subtle Drop Shadow -->
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background Disc -->
+  <circle cx="60" cy="60" r="58" fill="url(#pineBg)" />
+
+  <!-- Outer Filigree Ring -->
+  <circle cx="60" cy="60" r="54" fill="none" stroke="url(#goldFoil)" stroke-width="1.5" stroke-dasharray="2 3" opacity="0.6" />
+  <circle cx="60" cy="60" r="50" fill="none" stroke="url(#goldFoil)" stroke-width="1.2" opacity="0.8" />
+
+  <!-- Center Master Royal Chinar Leaf -->
+  <g filter="url(#softGlow)" fill="url(#goldFoil)">
+    <!-- Central leaf body -->
+    <path d="M 60,22 
+             C 62,30 67,34 71,32 
+             C 74,36 82,38 88,34 
+             C 86,41 93,46 97,45 
+             C 93,52 95,59 90,62 
+             C 85,65 83,72 78,74 
+             C 73,76 71,83 67,86 
+             L 63,88 L 63,98 L 57,98 L 57,88 L 53,86 
+             C 49,83 47,76 42,74 
+             C 37,72 35,65 30,62 
+             C 25,59 27,52 23,45 
+             C 27,46 34,41 32,34 
+             C 38,38 46,36 49,32 
+             C 53,34 58,30 60,22 Z" />
+    <!-- Leaf veins in negative space -->
+    <path d="M 60,30 L 60,86 M 60,50 L 76,42 M 60,50 L 44,42 M 60,62 L 78,56 M 60,62 L 42,56 M 60,74 L 72,70 M 60,74 L 48,70" 
+          fill="none" stroke="#0E2D23" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Crown Stars -->
+  <path d="M 60,14 L 61.5,18 L 65.5,18 L 62.5,20.5 L 63.5,24.5 L 60,22 L 56.5,24.5 L 57.5,20.5 L 54.5,18 L 58.5,18 Z" fill="url(#goldFoil)" />
+</svg>

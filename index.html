@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>JENU'S - Premium Kashmir Gourmet Dry Fruits, Mamra Almonds & Pure Saffron | FSSAI Certified</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Shop 100% authentic, FSSAI certified Kashmiri dry fruits directly from the orchards of Pampore and Shopian. Premium Mamra Almonds, Kagzi Snow Walnuts, Pure Mongra Saffron, and luxury gift hampers delivered across India." />
+  <meta name="keywords" content="Jenu's dry fruits, kashmiri dry fruits, fssai certified dry fruits, mamra almonds, pampore saffron, kashmiri walnuts, kagzi akhrot, chilgoza, dry fruit gift box, happilo alternative" />
+  <meta property="og:title" content="JENU'S - Premium Kashmir Gourmet Dry Fruits & Saffron | FSSAI Certified" />
+  <meta property="og:description" content="Direct from the Valleys of Kashmir. Premium Mamra Almonds, Snow Walnuts, Pampore Saffron & Handcrafted Hampers." />
+  <meta property="og:image" content="/images/hero-kashmir.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0F2E24" />
+
+  <!-- Kashmiri Chinar Leaf Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/src/style.css" />
+
+  <!-- Razorpay Official Checkout SDK -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+
+  <!-- ===================================================
+       1. TOP ANNOUNCEMENT & PINCODE BAR (CLEAN & FAST)
+       =================================================== -->
+  <div class="announcement-bar" id="announcement-bar">
+    <div class="announcement-content">
+      <div class="announcement-left-promise">
+        <span>🌸 Direct From Kashmir Orchards • 100% Authentic Valley Harvest</span>
+      </div>
+
+      <div class="ticker-wrapper">
+        <span id="ticker-text">✈️ Free Express Air Delivery on orders above ₹499 • Use Code <strong>KASHMIR10</strong> for 10% Off</span>
+      </div>
+
+      <div class="announcement-actions">
+        <button class="pincode-trigger-btn" id="btn-header-pincode" title="Check Express Delivery time for your pincode">
+          📍 Deliver to: <strong>110001 (New Delhi)</strong>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================
+       2. MAIN STICKY HEADER & LIVE SEARCH (CLEAN & PROFESSIONAL)
+       =================================================== -->
+  <header class="main-header" id="main-header">
+    <div class="header-container">
+      
+      <!-- Brand Identity -->
+      <a href="/" class="brand-logo-link" id="brand-logo">
+        <div class="brand-emblem">
+          <img src="/favicon.svg" alt="JENU'S Kashmir Chinar Emblem" class="brand-emblem-img" style="width: 34px; height: 34px; border-radius: 6px; display: block;" />
+        </div>
+        <div class="brand-titles">
+          <span class="brand-name">JENU'S</span>
+          <span class="brand-tagline">Kashmir Gourmet</span>
+        </div>
+      </a>
+
+      <!-- Live Search Input -->
+      <div class="header-search-bar">
+        <div class="search-input-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="header-search-input" placeholder="Search Mamra almonds, snow walnuts, saffron, gift hampers..." autocomplete="off" />
+        </div>
+        <div class="search-dropdown-menu hidden" id="search-autocomplete-dropdown"></div>
+      </div>
+
+      <!-- Utilities: Track Order, FSSAI Certified, Wishlist, Cart -->
+      <div class="header-actions">
+        <button type="button" class="btn-track-header-btn btn-open-track-orders" id="btn-header-track" title="Track Your Consignment via Mobile Number">
+          <svg class="header-action-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+          <span>Track Order</span>
+        </button>
+
+
+        <button class="btn-fssai-cert-badge btn-open-fssai-cert" title="View Official FSSAI Central License & Laboratory Test Report">
+          <span class="fssai-green-dot">●</span>
+          <span>FSSAI Certified</span>
+        </button>
+
+        <button class="action-icon-btn btn-wishlist-toggle" id="btn-wishlist-toggle" title="Saved Items">
+          <svg class="header-action-svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="badge-counter wishlist-count-badge">0</span>
+        </button>
+
+        <button class="btn-header-cart btn-cart-toggle" id="btn-header-cart" title="Shopping Cart">
+          <div class="cart-icon-wrapper">
+            <svg class="header-action-svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="badge-counter cart-count-badge">0</span>
+          </div>
+          <span class="header-cart-label">Cart</span>
+          <span class="header-cart-total">₹0</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Secondary Navigation Menu: Direct Shopping Categories -->
+    <nav class="sub-nav-bar" id="sub-nav-bar">
+      <ul class="nav-links-list">
+        <li><a href="#products-section" class="active" data-nav-cat="all">All Products</a></li>
+        <li><a href="#products-section" data-nav-cat="combos"><span class="nav-badge-hot">Value Combos</span></a></li>
+        <li><a href="#products-section" data-nav-cat="almonds">Mamra Almonds</a></li>
+        <li><a href="#products-section" data-nav-cat="walnuts">Snow Walnuts</a></li>
+        <li><a href="#products-section" data-nav-cat="saffron">Pampore Saffron</a></li>
+        <li><a href="#products-section" data-nav-cat="dried-fruits">Figs & Apricots</a></li>
+        <li><a href="#products-section" data-nav-cat="berries-seeds">Chilgoza & Berries</a></li>
+        <li><a href="#products-section" data-nav-cat="spices">Authentic Spices</a></li>
+        <li><a href="#products-section" data-nav-cat="kahwa-spices">Shahi Kahwa</a></li>
+        <li><a href="#hamper-builder-section">Custom Gift Hamper</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===================================================
+       3. HERO SLIDER SHOWCASE (MODERN & REFINED)
+       =================================================== -->
+  <section class="hero-slider-section" id="hero-slider">
+    
+    <!-- Slide 1: Kashmiri Pandit Living Heritage & Reverence -->
+    <div class="hero-slide active">
+      <img src="/images/kashmiri-pandit-woman.jpg" alt="Kashmiri Pandit Woman Presenting Valley Dry Fruits and Saffron" class="hero-slide-bg" />
+      <div class="hero-slide-overlay"></div>
+      <div class="hero-slide-content">
+        <span class="hero-kashmir-tag">Kashmiri Pandit Living Heritage • Direct Orchard Harvest</span>
+        <h1 class="hero-headline">Direct from the <span>Valleys of Kashmir</span></h1>
+        <p class="hero-description">Presented with centuries of reverence by Kashmiri families. High-oil Mamra almonds, paper-shell Kagzi snow walnuts, and pure Pampore Mongra saffron certified by Central FSSAI standards.</p>
+        <div class="hero-cta-group">
+          <a href="#products-section" class="btn-hero-primary" data-nav-cat="all">Explore Products</a>
+          <a href="#kashmir-resonance-section" class="btn-hero-secondary">Our Living Heritage</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2: Shikaras & The Tranquility of Dal Lake -->
+    <div class="hero-slide">
+      <img src="/images/kashmir-shikara-dal.jpg" alt="Traditional Shikaras on Dal Lake Srinagar" class="hero-slide-bg" />
+      <div class="hero-slide-overlay"></div>
+      <div class="hero-slide-content">
+        <span class="hero-kashmir-tag">Dal Lake Waters • Daily Srinagar Air Cargo</span>
+        <h2 class="hero-headline">From The Waters Of Dal Lake <span>To Your Door</span></h2>
+        <p class="hero-description">Traditional cedar Shikaras gliding past snow-covered Pir Panjal peaks and golden Chinar groves. JENU'S brings the centuries-old royal trade of Srinagar directly to your home within 24–48 hours.</p>
+        <div class="hero-cta-group">
+          <a href="#products-section" class="btn-hero-primary" data-nav-cat="combos">Shop Value Combos</a>
+          <a href="#deal-section" class="btn-hero-secondary">Daily Special Deal</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: Kashmir Monuments & Ancient Splendor -->
+    <div class="hero-slide">
+      <img src="/images/kashmir-monuments-heritage.jpg" alt="Historic Pari Mahal Arches & Martand Monument Heritage in Kashmir" class="hero-slide-bg" />
+      <div class="hero-slide-overlay"></div>
+      <div class="hero-slide-content">
+        <span class="hero-kashmir-tag">Ancient Valley Majesty • Pari Mahal & Martand</span>
+        <h2 class="hero-headline">Kashmir's Sacred Monuments & <span>Timeless Legacy</span></h2>
+        <p class="hero-description">Rooted in the eternal beauty of Pari Mahal terraced stone arches, Martand temple colonnades, and Himalayan terraced slopes. Discover the authentic flavors born of royal mountain terroir.</p>
+        <div class="hero-cta-group">
+          <a href="#products-section" class="btn-hero-primary" data-nav-cat="spices">Explore Spices</a>
+          <button class="btn-hero-secondary btn-open-fssai-cert">View Lab Purity Report</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4: Kashmiri Signature Symbols (Samavar, Kangri & Kahwa) -->
+    <div class="hero-slide">
+      <img src="/images/kashmir-signature-symbols.jpg" alt="Signature Kashmiri Treasures: Copper Samavar, Wicker Kangri & Kahwa" class="hero-slide-bg" />
+      <div class="hero-slide-overlay"></div>
+      <div class="hero-slide-content">
+        <span class="hero-kashmir-tag">Signature Valley Treasures • Samavar & Kangri</span>
+        <h2 class="hero-headline">The Warmth of Kashmir: <span>Kahwa, Samavar & Crafts</span></h2>
+        <p class="hero-description">A steaming hand-engraved copper Samavar pouring fragrant saffron Kahwa tea, an artisanal wicker Kangri keeping winter cold at bay, and hand-carved Khatamband walnut wood presentation chests.</p>
+        <div class="hero-cta-group">
+          <a href="#hamper-builder-section" class="btn-hero-primary">Build Custom Hamper</a>
+          <a href="#products-section" class="btn-hero-secondary" data-nav-cat="saffron">Pure Saffron</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 5: Authentic Mountain Spices (Naturally Grown) -->
+    <div class="hero-slide">
+      <img src="/images/spices-assortment.jpg" alt="Authentic Kashmiri Mountain Spices" class="hero-slide-bg" />
+      <div class="hero-slide-overlay"></div>
+      <div class="hero-slide-content">
+        <span class="hero-kashmir-tag">100% Naturally Grown in Kashmir</span>
+        <h2 class="hero-headline">Authentic <span>Kashmiri Spices</span> Naturally Cultivated</h2>
+        <p class="hero-description">Discover sun-dried Kashmiri Mirch with vibrant natural ruby pigment, wild-foraged Gurez Shahi Jeera, artisanal Wazwan Masala Ver, and whole mountain spices. Zero artificial dyes, cold stone-ground.</p>
+        <div class="hero-cta-group">
+          <a href="#products-section" class="btn-hero-primary" data-nav-cat="spices">Explore Spices</a>
+          <button class="btn-hero-secondary btn-open-fssai-cert">View Lab Purity Report</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 6: Super Saver Value Combos -->
+    <div class="hero-slide">
+      <img src="/images/combos-pack.jpg" alt="Kashmir Value Combos and Super Savers" class="hero-slide-bg" />
+      <div class="hero-slide-overlay"></div>
+      <div class="hero-slide-content">
+        <span class="hero-kashmir-tag">Save Up To 32% On Curated Combos</span>
+        <h2 class="hero-headline">Royal <span>Value Combos</span> Fresh From the Valley</h2>
+        <p class="hero-description">Our hand-curated super saver bundles pair cold-climate Mamra almonds, crisp Snow walnuts, pure Pampore saffron, and valley spices in nitrogen-vacuum sealed packs at unbeatable combo prices.</p>
+        <div class="hero-cta-group">
+          <a href="#products-section" class="btn-hero-primary" data-nav-cat="combos">Shop Value Combos</a>
+          <a href="#deal-section" class="btn-hero-secondary">View Daily Special</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 7: Pampore Saffron Fields & Harvesters -->
+    <div class="hero-slide">
+      <img src="/images/kashmiri-women-harvest.jpg" alt="Kashmiri Pandit Women in Pampore Saffron Fields" class="hero-slide-bg" />
+      <div class="hero-slide-overlay"></div>
+      <div class="hero-slide-content">
+        <span class="hero-kashmir-tag">Grade A1+ Pampore Mongra Saffron</span>
+        <h2 class="hero-headline">Hand-Harvested In <span>Pampore's Crocus Bloom</span></h2>
+        <p class="hero-description">Hand-gathered at dawn by Kashmiri women in the purple saffron fields of Pampore. Certified Grade A1+ with natural Crocin coloring strength exceeding 250, zero adulteration, lab verified.</p>
+        <div class="hero-cta-group">
+          <a href="#products-section" class="btn-hero-primary" data-nav-cat="saffron">Shop Saffron</a>
+          <a href="#about-section" class="btn-hero-secondary">Our 4 Branches</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 8: Handcrafted Royal Hampers -->
+    <div class="hero-slide">
+      <img src="/images/royal-hamper.jpg" alt="Royal Kashmiri Walnut Wood Hampers" class="hero-slide-bg" />
+      <div class="hero-slide-overlay"></div>
+      <div class="hero-slide-content">
+        <span class="hero-kashmir-tag">Solid Walnut Wood Presentation Suite</span>
+        <h2 class="hero-headline">Curated <span>Gourmet Hampers</span> for Celebrations</h2>
+        <p class="hero-description">Crafted in seasoned Kashmir walnut wood with velvet partitions filled with fresh harvest dry fruits and gold-sealed saffron. Includes complimentary personalized greeting card.</p>
+        <div class="hero-cta-group">
+          <a href="#hamper-builder-section" class="btn-hero-primary">Build Custom Hamper</a>
+          <a href="#products-section" class="btn-hero-secondary" data-nav-cat="hampers">View Gift Boxes</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slider Controls -->
+    <button class="hero-nav-arrow prev" id="hero-prev" aria-label="Previous Slide">‹</button>
+    <button class="hero-nav-arrow next" id="hero-next" aria-label="Next Slide">›</button>
+
+    <div class="hero-dots-indicator" id="hero-dots">
+      <span class="hero-dot active"></span>
+      <span class="hero-dot"></span>
+      <span class="hero-dot"></span>
+      <span class="hero-dot"></span>
+      <span class="hero-dot"></span>
+      <span class="hero-dot"></span>
+      <span class="hero-dot"></span>
+      <span class="hero-dot"></span>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       4. CATEGORY STORY BAR
+       =================================================== -->
+  <section class="category-story-section">
+    <div class="container">
+      <div class="category-story-strip" id="category-story-strip"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       5. DEAL OF THE DAY (CLEAN & PROFESSIONAL)
+       =================================================== -->
+  <section class="deal-section" id="deal-section">
+    <div class="container">
+      <div class="deal-banner-wrapper">
+        <div class="deal-header-strip">
+          <div class="deal-title-box">
+            <span class="deal-fire-icon">⚡</span>
+            <div>
+              <h3>Special Harvest Allocation</h3>
+              <p>Limited daily release directly from the fresh 2026 packaging batch</p>
+            </div>
+          </div>
+
+          <div class="countdown-box">
+            <span class="countdown-label">Window Closes In:</span>
+            <div class="timer-digits-row">
+              <div class="timer-block"><span class="timer-val" id="timer-hours">08</span><span class="timer-tag">Hours</span></div>
+              <span class="timer-sep">:</span>
+              <div class="timer-block"><span class="timer-val" id="timer-mins">42</span><span class="timer-tag">Mins</span></div>
+              <span class="timer-sep">:</span>
+              <div class="timer-block"><span class="timer-val" id="timer-secs">19</span><span class="timer-tag">Secs</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="deal-product-slot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       6. PRODUCTS CATALOG & FILTER TABS
+       =================================================== -->
+  <section class="products-section" id="products-section">
+    <div class="container">
+      
+      <div class="section-header-row">
+        <div class="section-title-group">
+          <h2>Kashmir Valley Gourmet Products</h2>
+          <p>FSSAI certified, laboratory tested for aflatoxins and heavy metals, vacuum sealed for freshness</p>
+        </div>
+
+        <div class="section-controls-group">
+          <select id="sort-products-select" class="custom-sort-select" aria-label="Sort Products">
+            <option value="recommended">Sort By: Recommended</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Customer Rating</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs-strip" id="filter-tabs"></div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="products-grid"></div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================
+       6.5 INTERACTIVE SAFFRON PURITY LAB & WATER TEST
+       =================================================== -->
+  <section class="saffron-purity-section" id="saffron-purity-lab-container"></section>
+
+  <!-- ===================================================
+       7. BUILD YOUR OWN KASHMIR HAMPER BUILDER
+       =================================================== -->
+  <section class="hamper-builder-section" id="hamper-builder-section">
+    <div class="hamper-bg-pattern"></div>
+    <div class="container">
+      
+      <div class="section-title-group" style="text-align: center; margin-bottom: 40px;">
+        <span class="hero-kashmir-tag" style="background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.2);">Curated Gifting</span>
+        <h2 style="color: #FFFDF9; font-size: 32px;">Build Your Custom Gift Hamper</h2>
+        <p style="color: #9CA3AF;">Choose your presentation box, select premium FSSAI certified dry fruits, and add a personalized note.</p>
+      </div>
+
+      <div class="hamper-builder-grid">
+        
+        <!-- Controls Column -->
+        <div class="hamper-builder-controls">
+          <div class="hamper-step-title"><span>1</span> Choose Presentation Box</div>
+          <div class="hamper-boxes-selector" id="hamper-boxes-selector"></div>
+
+          <div class="hamper-step-title"><span>2</span> Select 3 to 5 Gourmet Fillings</div>
+          <div class="hamper-items-selector" id="hamper-items-selector"></div>
+
+          <div class="hamper-step-title"><span>3</span> Personal Greeting Note</div>
+          <input type="text" id="hamper-greeting-input" class="hamper-msg-input" placeholder="Type your personal message for the greeting card..." />
+
+          <div class="hamper-checkout-strip">
+            <div class="hamper-price-box">
+              <span>Complete Hamper:</span>
+              <strong id="hamper-calculated-price">₹2,810</strong>
+            </div>
+            <button class="btn-add-custom-hamper" id="btn-add-custom-hamper">
+              <span>Add Custom Hamper to Cart</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Visual Preview Column -->
+        <div class="hamper-preview-column">
+          <div id="hamper-preview-visual" style="width: 100%; display: flex; flex-direction: column; align-items: center;"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================
+       8. FOOD SAFETY & QUALITY ASSURANCE (FSSAI)
+       =================================================== -->
+  <section class="why-jenus-section">
+    <div class="container">
+      <div class="why-grid">
+        
+        <div class="why-feature-card">
+          <div class="why-icon-seal">🌿</div>
+          <h4>FSSAI Central Certified</h4>
+          <p>Licensed under Central License No. 10026061000412. Audited annually against stringent food safety and hygiene protocols.</p>
+        </div>
+
+        <div class="why-feature-card">
+          <div class="why-icon-seal">🔬</div>
+          <h4>NABL Laboratory Tested</h4>
+          <p>Every harvest batch is screened for zero aflatoxins, zero pesticide residues, and verified moisture thresholds.</p>
+        </div>
+
+        <div class="why-feature-card">
+          <div class="why-icon-seal">🏔️</div>
+          <h4>Direct Kashmir Sourcing</h4>
+          <p>Sourced directly from verified grower networks in Shopian, Pampore, and Kupwara for traceable provenance.</p>
+        </div>
+
+        <div class="why-feature-card">
+          <div class="why-icon-seal">✈️</div>
+          <h4>Vacuum-Sealed Air Dispatch</h4>
+          <p>Packed under food-grade nitrogen atmosphere in Srinagar to prevent oxidation and ensure maximum crispness.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       8.2 WHOLESALE & BULK QUANTITY PROCUREMENT (BLINK US)
+       =================================================== -->
+  <section class="wholesale-section" id="wholesale-section">
+    <div class="container">
+      <div class="wholesale-banner-card">
+        <div class="wholesale-banner-grid">
+          
+          <div class="wholesale-content-col">
+            <div class="wholesale-badge-row">
+              <span class="w-blink-beacon"><span class="w-blink-dot"></span> COMMERCIAL DESK ACTIVE</span>
+              <span class="wholesale-chip">Save 25% – 40% on Bulk Lots</span>
+            </div>
+
+            <h2 class="wholesale-title">Wholesale & Bulk Quantity Procurement at Shorter Direct Rates</h2>
+            <p class="wholesale-desc">
+              Are you a confectionery brand, restaurant, corporate gifting buyer, dry fruit reseller, or bulk consumer? 
+              Bypass retail margins. Enter your requirements and <strong>Blink Us</strong>—our commercial trading desk will instantly ping you back with direct orchard & mandi pricing within 15 minutes.
+            </p>
+
+            <div class="wholesale-perks-grid">
+              <div class="w-perk-item">
+                <span class="w-perk-icon">📉</span>
+                <div>
+                  <strong>Shorter Direct Prices</strong>
+                  <p>Direct farmer lots without middleman commissions from 10 kg up to 5 Metric Tons.</p>
+                </div>
+              </div>
+              <div class="w-perk-item">
+                <span class="w-perk-icon">⚡</span>
+                <div>
+                  <strong>Instant Blink Notification</strong>
+                  <p>Our Srinagar, Delhi Khari Baoli, Jammu & Mumbai desks are alerted the second you submit.</p>
+                </div>
+              </div>
+              <div class="w-perk-item">
+                <span class="w-perk-icon">🏛️</span>
+                <div>
+                  <strong>4 Physical Branch Hubs</strong>
+                  <p>Pickup or direct freight from Delhi (Kashyap Nathoo), Srinagar, Jammu, or Mumbai.</p>
+                </div>
+              </div>
+              <div class="w-perk-item">
+                <span class="w-perk-icon">🔬</span>
+                <div>
+                  <strong>NABL Lab Certificate</strong>
+                  <p>FSSAI Central compliance + batch lab certificate for all bulk commercial dispatches.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="wholesale-action-row">
+              <button type="button" class="btn-wholesale-cta btn-open-wholesale" id="btn-hero-wholesale">
+                <span class="w-blink-dot"></span>
+                <span>⚡ Blink Us for Shorter Wholesale Price</span>
+              </button>
+              <a href="tel:85955119239" class="btn-wholesale-phone" title="Call Commercial Desk 1">
+                <span>📞 85955119239</span>
+              </a>
+              <a href="tel:9868983010" class="btn-wholesale-phone" title="Call Commercial Desk 2">
+                <span>📞 9868983010</span>
+              </a>
+              <a href="mailto:SriRadheEnterpriseswork@gmail.com" class="btn-wholesale-phone" title="Email Wholesale & Bulk Procurement Desk">
+                <span>✉️ SriRadheEnterpriseswork@gmail.com</span>
+              </a>
+              <a href="https://wa.me/919868983010?text=Hello%20JENUS%20Wholesale%20Desk%2C%20I%20am%20interested%20in%20bulk%20wholesale%20procurement%20at%20shorter%20rates." target="_blank" rel="noopener noreferrer" class="btn-wholesale-wa">
+                <span>💬 WhatsApp Desk (9868983010)</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="wholesale-visual-col">
+            <div class="wholesale-card-preview-box">
+              <div class="w-preview-header">
+                <span class="w-preview-tag">⚡ Live Bulk Order Desk</span>
+                <span class="w-preview-status">Online Now</span>
+              </div>
+              
+              <div class="w-quick-metrics">
+                <div class="w-metric-cell">
+                  <span class="w-m-val">10 kg+</span>
+                  <span class="w-m-lbl">Min Bulk Order</span>
+                </div>
+                <div class="w-metric-cell">
+                  <span class="w-m-val">15 Mins</span>
+                  <span class="w-m-lbl">Quote Blink Back</span>
+                </div>
+                <div class="w-metric-cell">
+                  <span class="w-m-val">4 Hubs</span>
+                  <span class="w-m-lbl">Delhi • J&K • Mumbai</span>
+                </div>
+              </div>
+
+              <div class="w-preview-categories">
+                <strong>Trending Wholesale Lines:</strong>
+                <div class="w-cats-tags">
+                  <span>Mamra Almonds (150kg lots)</span>
+                  <span>Snow Walnuts Halves</span>
+                  <span>Pure Mogra Saffron (100g-1kg)</span>
+                  <span>Kashmiri Mirch Powder</span>
+                  <span>Wazwan Masala Tikki</span>
+                  <span>Gourmet Corporate Hampers</span>
+                </div>
+              </div>
+
+              <div class="w-preview-bottom-cta">
+                <p>Have an exact target price in mind? Tell us what you'd like to pay!</p>
+                <button type="button" class="btn-quick-blink btn-open-wholesale">
+                  <span>Open Bulk Inquiry Form &rarr;</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       8.2 RESONATING KASHMIR: LIVING TRADITIONS, SHIKARAS, MONUMENTS & SIGNATURE TREASURES
+       =================================================== -->
+  <section class="kashmir-resonance-section" id="kashmir-resonance-section">
+    <div class="resonance-backdrop-ambient"></div>
+    <div class="container">
+      
+      <div class="section-title-group" style="text-align: center; margin-bottom: 48px;">
+        <span class="hero-kashmir-tag" style="background: rgba(245, 158, 11, 0.2); border-color: rgba(245, 158, 11, 0.45); color: #FCD34D;">
+          🌸 Living Valley Traditions & Cultural Heritage
+        </span>
+        <h2 style="font-size: 34px; color: #FFFDF9; margin-top: 10px; font-family: 'Cinzel', serif;">The Living Soul & Heritage of Kashmir</h2>
+        <p style="color: #E8D7C7; max-width: 820px; margin: 10px auto 0; font-size: 15.5px; line-height: 1.6;">
+          Behind every kernel of Mamra almond, every thread of Pampore saffron, and every snow walnut lies a sacred tapestry of Kashmiri living traditions, the mist of Dal Lake shikaras, ancient stone monuments, and time-honored hospitality.
+        </p>
+      </div>
+
+      <div class="resonance-tapestry-grid">
+        
+        <!-- Card 1: Kashmiri Pandit Women & Living Harvest Heritage -->
+        <article class="resonance-card card-pandit-tradition">
+          <div class="resonance-img-wrapper">
+            <img src="/images/kashmiri-pandit-woman.jpg" alt="Kashmiri Pandit Woman Presenting Valley Dry Fruits and Saffron" class="resonance-bg-img" loading="lazy" />
+            <div class="resonance-card-gradient"></div>
+            <span class="resonance-badge-chip">🌸 Living Tradition & Custodians</span>
+          </div>
+          <div class="resonance-card-body">
+            <div class="resonance-header-meta">
+              <span class="res-tagline">Kashmiri Pandit Heritage</span>
+              <h4>Custodians of Purity & Mountain Terroir</h4>
+            </div>
+            <p>
+              Wearing the regal velvet <em>Pheran</em> hand-embroidered with intricate golden Kashmiri <em>Tilla</em> needlework and sacred <em>Dejhoor</em> golden ear ornaments, Kashmiri Pandit women have for centuries preserved the sacred art of grading and curing valley harvests. From dawn hand-plucking of crimson saffron stigmas in Pampore to the meticulous sun-sorting of oil-rich Mamra almonds and paper-shell Kagzi walnuts, purity is revered as devotion.
+            </p>
+            <div class="resonance-pills-row">
+              <span class="res-pill">✨ Hand-Sorted Purity</span>
+              <span class="res-pill">📿 Sacred Dejhoor & Pheran</span>
+              <span class="res-pill">🌰 50% Natural Oil Mamra</span>
+            </div>
+            <div class="resonance-action-footer">
+              <a href="#products-section" class="btn-resonance-explore" data-nav-cat="almonds">
+                <span>View Mamra Almonds & Saffron</span>
+                <span class="res-arrow">➔</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: The Shikaras & Dal Lake Serenity -->
+        <article class="resonance-card card-shikara-serenity">
+          <div class="resonance-img-wrapper">
+            <img src="/images/kashmir-shikara-dal.jpg" alt="Traditional Shikaras on Dal Lake with Snow Mountain Backdrop" class="resonance-bg-img" loading="lazy" />
+            <div class="resonance-card-gradient"></div>
+            <span class="resonance-badge-chip">🛶 Dal Lake & Pir Panjal</span>
+          </div>
+          <div class="resonance-card-body">
+            <div class="resonance-header-meta">
+              <span class="res-tagline">Waters of Srinagar</span>
+              <h4>The Shikaras & Whispering Lake Waters</h4>
+            </div>
+            <p>
+              Gliding silently across the glassy, mirror-like waters of Dal Lake in Srinagar, ornate wooden <em>Shikaras</em> flanked by cedar houseboats, floating flower markets, and golden autumn Chinar trees form the beating heart of Kashmir. For over five hundred years, these waters carried royal consignments across Himalayan trade routes. Today, JENU'S packages these harvests at the water's edge and dispatches daily air consignments across India.
+            </p>
+            <div class="resonance-pills-row">
+              <span class="res-pill">🏔️ Pir Panjal Backdrop</span>
+              <span class="res-pill">🍁 Autumn Chinar Reflections</span>
+              <span class="res-pill">✈️ 24-48 Hr Metro Air Cargo</span>
+            </div>
+            <div class="resonance-action-footer">
+              <a href="#deal-section" class="btn-resonance-explore">
+                <span>Explore Srinagar Harvest Specials</span>
+                <span class="res-arrow">➔</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Kashmir Monuments & Ancient Splendor -->
+        <article class="resonance-card card-monuments-heritage">
+          <div class="resonance-img-wrapper">
+            <img src="/images/kashmir-monuments-heritage.jpg" alt="Pari Mahal Terraced Arches and Martand Monument Heritage in Kashmir" class="resonance-bg-img" loading="lazy" />
+            <div class="resonance-card-gradient"></div>
+            <span class="resonance-badge-chip">🏛️ Ancient Stone Architecture</span>
+          </div>
+          <div class="resonance-card-body">
+            <div class="resonance-header-meta">
+              <span class="res-tagline">Monumental Legacy</span>
+              <h4>Pari Mahal, Martand & Ancient Monuments</h4>
+            </div>
+            <p>
+              Perched high on the terraced slopes of the Zabarwan range overlooking Dal Lake, the ancient stone arches of <em>Pari Mahal</em> (Palace of Fairies) and the majestic 8th-century stone colonnades of the <em>Martand Sun Temple</em> stand as eternal monuments to Kashmir's royal history. The same high-altitude microclimates, glacial streams, and mineral-dense alluvial soils celebrated in these historic landscapes give JENU'S dry fruits their unmatched sweetness and oil concentration.
+            </p>
+            <div class="resonance-pills-row">
+              <span class="res-pill">🏛️ Pari Mahal Terraces</span>
+              <span class="res-pill">☀️ 8th-Century Martand</span>
+              <span class="res-pill">🌿 Pristine Alpine Microclimate</span>
+            </div>
+            <div class="resonance-action-footer">
+              <a href="#about-section" class="btn-resonance-explore">
+                <span>Discover Valley History & Terroir</span>
+                <span class="res-arrow">➔</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4: Signature Treasures: Samavar, Kangri & Khatamband -->
+        <article class="resonance-card card-signature-symbols">
+          <div class="resonance-img-wrapper">
+            <img src="/images/kashmir-signature-symbols.jpg" alt="Kashmiri Samavar, Kangri, Khatamband Box and Saffron Kahwa" class="resonance-bg-img" loading="lazy" />
+            <div class="resonance-card-gradient"></div>
+            <span class="resonance-badge-chip">☕ Signature Cultural Treasures</span>
+          </div>
+          <div class="resonance-card-body">
+            <div class="resonance-header-meta">
+              <span class="res-tagline">Valley Warmth & Craft</span>
+              <h4>The Samavar, Wicker Kangri & Khatamband</h4>
+            </div>
+            <p>
+              The sensory warmth of Kashmir is immortalized in its signature craft treasures: the hand-engraved copper <em>Samavar</em> emitting fragrant steam from freshly brewed saffron Kahwa tea; the hand-woven wicker <em>Kangri</em> cradling live embers through sub-zero Himalayan winters; and the geometric, nail-free <em>Khatamband</em> walnut wood ceiling craft. We handcraft each JENU'S presentation box in seasoned walnut wood to honor this living artisan legacy.
+            </p>
+            <div class="resonance-pills-row">
+              <span class="res-pill">🔥 Handcrafted Wicker Kangri</span>
+              <span class="res-pill">☕ Engraved Copper Samavar</span>
+              <span class="res-pill">🪵 Seasoned Walnut Khatamband</span>
+            </div>
+            <div class="resonance-action-footer">
+              <a href="#hamper-builder-section" class="btn-resonance-explore">
+                <span>Build Custom Carved Hamper</span>
+                <span class="res-arrow">➔</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Saffron Harvest Banner Strip with Women Harvesters -->
+      <div class="resonance-harvest-spotlight">
+        <div class="harvest-spotlight-visual">
+          <img src="/images/kashmiri-women-harvest.jpg" alt="Kashmiri Pandit Women in Pampore Saffron Fields" class="harvest-spotlight-img" loading="lazy" />
+        </div>
+        <div class="harvest-spotlight-content">
+          <span class="spotlight-tag">🌸 Pampore Purple Bloom 2026</span>
+          <h3>Grown by Generations, Certified for the Modern Connoisseur</h3>
+          <p>
+            In the purple crocus plateaus of Pampore, Kashmiri families begin harvesting at first light before the morning sun can diminish the volatile safranal aroma. Every wooden presentation chest, vacuum-sealed jar of Mongra saffron, and canister of hand-cracked Kagzi walnuts bridges centuries of pastoral Himalayan tradition with rigorous NABL-accredited laboratory purity standards.
+          </p>
+          <div class="harvest-meta-chips">
+            <div class="hm-chip">
+              <strong>GI-Tagged</strong>
+              <span>Kashmir Mongra</span>
+            </div>
+            <div class="hm-chip">
+              <strong>Crocin 254+</strong>
+              <span>Lab Certified</span>
+            </div>
+            <div class="hm-chip">
+              <strong>4 Branch Hubs</strong>
+              <span>Jammu • Kashmir • Delhi • Mumbai</span>
+            </div>
+            <div class="hm-chip">
+              <strong>FSSAI Central</strong>
+              <span>Lic: 10026061000412</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================
+       8.5 ABOUT JENU'S & PHYSICAL HERITAGE BRANCHES
+       =================================================== -->
+  <section class="about-heritage-section" id="about-section">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="section-title-group" style="text-align: center; margin-bottom: 44px;">
+        <span class="hero-kashmir-tag" style="background: rgba(245, 158, 11, 0.2); border-color: rgba(245, 158, 11, 0.45); color: #FCD34D;">🏔️ Valley Heritage & Physical Outlets</span>
+        <h2 style="font-size: 34px; color: #FFFDF9; margin-top: 8px; font-family: 'Cinzel', serif;">About JENU'S & Our Historic Branches</h2>
+        <p style="color: #E8D7C7; max-width: 760px; margin: 10px auto 0; font-size: 15px; line-height: 1.6;">
+          Born in the pristine Himalayan valleys of Kashmir and trusted by generations of patrons. Discover our heritage, our uncompromised FSSAI-certified harvest standards, and our physical retail & wholesale presence across Jammu, Kashmir, Delhi (Khari Baoli), and Mumbai.
+        </p>
+      </div>
+
+      <!-- About Story Banner -->
+      <div class="about-story-banner">
+        <div class="about-story-content">
+          <span class="story-pretitle">The JENU'S Mountain Heritage</span>
+          <h3>Preserving the Authentic Royal Flavors of Kashmir</h3>
+          <p>
+            At JENU'S, our mission is simple yet uncompromising: to bring the true, unadulterated bounty of Kashmir directly from high-altitude orchards to your dining table. Sourcing directly from verified grower networks across Pampore, Shopian, and Kupwara, we ensure that every kernel of Kagzi walnut, every grain of Mamra almond, and every thread of Mongra saffron is 100% natural, unbleached, and laboratory-tested.
+          </p>
+          <p>
+            To serve our patrons across India, JENU'S operates through physical centers of excellence—combining a central high-tech cold-storage & air-dispatch processing facility in Srinagar with physical trading hubs in Jammu, Delhi's historic Khari Baoli, and Mumbai's APMC market.
+          </p>
+          <div class="about-highlights-pills">
+            <span class="highlight-pill">✓ FSSAI Central License #10026061000412</span>
+            <span class="highlight-pill">✓ Direct Orchard Traceability</span>
+            <span class="highlight-pill">✓ Nitrogen Vacuum Sealing</span>
+            <span class="highlight-pill">✓ 24-48 Hr Express Air Cargo</span>
+          </div>
+        </div>
+        <div class="about-story-stats">
+          <div class="story-stat-card">
+            <span class="stat-number">100%</span>
+            <span class="stat-text">Authentic Kashmir Valley Origin</span>
+          </div>
+          <div class="story-stat-card">
+            <span class="stat-number">4</span>
+            <span class="stat-text">Physical Hubs (Jammu, Kashmir, Delhi, Mumbai)</span>
+          </div>
+          <div class="story-stat-card">
+            <span class="stat-number">0%</span>
+            <span class="stat-text">Chemical Bleach or Artificial Additives</span>
+          </div>
+          <div class="story-stat-card">
+            <span class="stat-number">25,000+</span>
+            <span class="stat-text">Satisfied Patrons Across India</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Four Official Branches Across India Section -->
+      <div class="branches-header-title">
+        <span class="story-pretitle">Nationwide Outlets & Heritage Network</span>
+        <h3>Our 4 Official Branches Across India</h3>
+        <p>Visit our physical branches in person or order online with direct fulfillment from our hubs in Jammu, Kashmir, Delhi, and Mumbai</p>
+      </div>
+
+      <div class="branches-showcase-grid">
+
+        <!-- Branch 1: Delhi Chandni Chowk / Khari Baoli -->
+        <div class="branch-card branch-delhi">
+          <div class="branch-card-badge-row">
+            <span class="branch-type-chip">🏛️ Delhi Historic Market Branch</span>
+            <span class="branch-status-open">Open for Walk-in & Wholesale</span>
+          </div>
+
+          <div class="branch-name-group">
+            <div class="branch-icon-box">🏛️</div>
+            <div>
+              <h4 class="branch-title">Kashyap Nathoo</h4>
+              <span class="branch-affiliation">Branch of JENU'S Kashmir Gourmet</span>
+            </div>
+          </div>
+
+          <div class="branch-address-box">
+            <div class="address-line">
+              <span class="addr-icon">📍</span>
+              <div>
+                <strong>Chandni Chowk, Khari Baoli Market</strong>
+                <p>Gali Hinga Bag, Old Delhi, Delhi – 110006, India</p>
+              </div>
+            </div>
+            <div class="address-landmark">
+              <span>🏛️ <strong>Key Landmark:</strong> Situated in historic Khari Baoli Market (Asia’s largest wholesale dry fruit & spice bazaar), Gali Hinga Bag, Chandni Chowk.</span>
+            </div>
+          </div>
+
+          <div class="branch-features-list">
+            <div class="branch-feature-item">
+              <span class="bf-icon">📦</span>
+              <span>Wholesale bulk allocations & retail consumer gourmet packs</span>
+            </div>
+            <div class="branch-feature-item">
+              <span class="bf-icon">🌰</span>
+              <span>Kashmiri Mamra almonds, Kagzi snow walnuts & Pampore saffron</span>
+            </div>
+            <div class="branch-feature-item">
+              <span class="bf-icon">🌶️</span>
+              <span>Authentic mountain spices, Kashmiri Mirch & Wazwan Ver Masala</span>
+            </div>
+            <div class="branch-feature-item">
+              <span class="bf-icon">🤝</span>
+              <span>Dedicated corporate gifting desk & bulk fulfillment consultations</span>
+            </div>
+          </div>
+
+          <div class="branch-card-actions">
+            <a href="https://maps.google.com/?q=Khari+Baoli+Chandni+Chowk+Delhi" target="_blank" rel="noopener noreferrer" class="btn-branch-map">
+              <span>📍 View on Google Maps</span>
+            </a>
+            <a href="tel:85955119239" class="btn-branch-call" title="Call Helpline: 85955119239">
+              <span>📞 85955119239</span>
+            </a>
+            <a href="tel:9868983010" class="btn-branch-call" title="Call Helpline: 9868983010">
+              <span>📞 9868983010</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Branch 2: Srinagar Cherry Garden (गोग्जी बाग) -->
+        <div class="branch-card branch-srinagar">
+          <div class="branch-card-badge-row">
+            <span class="branch-type-chip srinagar-chip">🌸 Srinagar Valley Flagship</span>
+            <span class="branch-status-open">Processing Hub & Retail Counter</span>
+          </div>
+
+          <div class="branch-name-group">
+            <div class="branch-icon-box srinagar-icon">🌸</div>
+            <div>
+              <h4 class="branch-title">JENU'S Srinagar Valley Center</h4>
+              <span class="branch-affiliation">Cherry Garden • Central Kashmir Processing Hub</span>
+            </div>
+          </div>
+
+          <div class="branch-address-box">
+            <div class="address-line">
+              <span class="addr-icon">📍</span>
+              <div>
+                <strong>Cherry Garden, गोग्जी बाग (Gogji Bagh)</strong>
+                <p>Srinagar, Jammu & Kashmir – 190008, India</p>
+              </div>
+            </div>
+            <div class="address-landmark">
+              <span>🌸 <strong>Key Landmark:</strong> Located at Cherry Garden, गोग्जी बाग (Gogji Bagh), Srinagar—minutes from Sheikh ul-Alam International Airport dispatch corridor.</span>
+            </div>
+          </div>
+
+          <div class="branch-features-list">
+            <div class="branch-feature-item">
+              <span class="bf-icon">🏔️</span>
+              <span>Direct farmer harvest intake from Shopian, Pulwama & Kupwara</span>
+            </div>
+            <div class="branch-feature-item">
+              <span class="bf-icon">🔬</span>
+              <span>Certified NABL quality grading & nitrogen-vacuum canning facility</span>
+            </div>
+            <div class="branch-feature-item">
+              <span class="bf-icon">✈️</span>
+              <span>Daily IndiGo express air cargo dispatch terminal</span>
+            </div>
+            <div class="branch-feature-item">
+              <span class="bf-icon">🎁</span>
+              <span>Bespoke Kashmir walnut wood hamper packaging atelier</span>
+            </div>
+          </div>
+
+          <div class="branch-card-actions">
+            <a href="https://maps.google.com/?q=Gogji+Bagh+Srinagar+Kashmir" target="_blank" rel="noopener noreferrer" class="btn-branch-map">
+              <span>📍 View on Google Maps</span>
+            </a>
+            <a href="tel:85955119239" class="btn-branch-call" title="Call Helpline: 85955119239">
+              <span>📞 85955119239</span>
+            </a>
+            <a href="tel:9868983010" class="btn-branch-call" title="Call Helpline: 9868983010">
+              <span>📞 9868983010</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Branch 3: Jammu Regional Hub -->
+        <div class="branch-card branch-jammu">
+          <div class="branch-card-badge-row">
+            <span class="branch-type-chip jammu-chip">🏔️ Jammu Regional Hub</span>
+            <span class="branch-status-open">Commercial & Transit Depot</span>
+          </div>
+
+          <div class="branch-name-group">
+            <div class="branch-icon-box jammu-icon">🏔️</div>
+            <div>
+              <h4 class="branch-title">JENU'S Jammu Center</h4>
+              <span class="branch-affiliation">Commercial & Regional Transit Depot</span>
+            </div>
+          </div>
+
+          <div class="branch-address-box">
+            <div class="address-line">
+              <span class="addr-icon">📍</span>
+              <div>
+                <strong>Residency Road / Raghunath Bazaar Corridor</strong>
+                <p>Jammu Tawi, Jammu & Kashmir – 180001, India</p>
+              </div>
+            </div>
+            <div class="address-landmark">
+              <span>🏔️ <strong>Key Landmark:</strong> Situated in Jammu's historic trading bazaar near Raghunath Temple corridor, connecting North India rail and road cargo networks.</span>
+            </div>
+          </div>
+
+          <div class="branch-features-list">
+            <div class="branch-feature-item">
+              <span class="bf-icon">🚆</span>
+              <span>Rapid surface & rail express routing across Northern India</span>
+            </div>
+            <div class="branch-feature-item">
+              <span class="bf-icon">🛍️</span>
+              <span>Walk-in retail counter for pilgrims, travelers & regional patrons</span>
+            </div>
+            <div class="branch-feature-item">
+              <span class="bf-icon">❄️</span>
+              <span>Winter procurement depot & climate-controlled holding facility</span>
+            </div>
+            <div class="branch-feature-item">
+              <span class="bf-icon">💼</span>
+              <span>Regional wholesale allocations & institutional gift supply desk</span>
+            </div>
+          </div>
+
+          <div class="branch-card-actions">
+            <a href="https://maps.google.com/?q=Raghunath+Bazaar+Jammu" target="_blank" rel="noopener noreferrer" class="btn-branch-map">
+              <span>📍 View on Google Maps</span>
+            </a>
+            <a href="tel:85955119239" class="btn-branch-call" title="Call Helpline: 85955119239">
+              <span>📞 85955119239</span>
+            </a>
+            <a href="tel:9868983010" class="btn-branch-call" title="Call Helpline: 9868983010">
+              <span>📞 9868983010</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Branch 4: Mumbai Western India Hub -->
+        <div class="branch-card branch-mumbai">
+          <div class="branch-card-badge-row">
+            <span class="branch-type-chip mumbai-chip">🌊 Mumbai Metropolitan Hub</span>
+            <span class="branch-status-open">Western India Fulfillment Center</span>
+          </div>
+
+          <div class="branch-name-group">
+            <div class="branch-icon-box mumbai-icon">🌊</div>
+            <div>
+              <h4 class="branch-title">JENU'S Mumbai Center</h4>
+              <span class="branch-affiliation">Western India Fulfillment & Tasting Suite</span>
+            </div>
+          </div>
+
+          <div class="branch-address-box">
+            <div class="address-line">
+              <span class="addr-icon">📍</span>
+              <div>
+                <strong>APMC Market Complex & Crawford Market Corridor</strong>
+                <p>Sector 19, Vashi & South Mumbai, Mumbai – 400703 / 400001, Maharashtra, India</p>
+              </div>
+            </div>
+            <div class="address-landmark">
+              <span>🌊 <strong>Key Landmark:</strong> Operating across Mumbai's APMC commercial hub and historic Crawford Market network, serving MMR, Thane, and Pune with same-day express routes.</span>
+            </div>
+          </div>
+
+          <div class="branch-features-list">
+            <div class="branch-feature-item">
+              <span class="bf-icon">⚡</span>
+              <span>Same-day & next-day delivery across Mumbai, Navi Mumbai, Thane & Pune</span>
+            </div>
+            <div class="branch-feature-item">
+              <span class="bf-icon">🏨</span>
+              <span>Direct supply partner to 5-star hotels, luxury dining & artisan patisseries</span>
+            </div>
+            <div class="branch-feature-item">
+              <span class="bf-icon">🎁</span>
+              <span>Corporate luxury gift hampers & wedding favor consulting suite</span>
+            </div>
+            <div class="branch-feature-item">
+              <span class="bf-icon">❄️</span>
+              <span>Ultra-low humidity cold storage preventing walnut & saffron oxidation</span>
+            </div>
+          </div>
+
+          <div class="branch-card-actions">
+            <a href="https://maps.google.com/?q=APMC+Market+Vashi+Navi+Mumbai" target="_blank" rel="noopener noreferrer" class="btn-branch-map">
+              <span>📍 View on Google Maps</span>
+            </a>
+            <a href="tel:85955119239" class="btn-branch-call" title="Call Helpline: 85955119239">
+              <span>📞 85955119239</span>
+            </a>
+            <a href="tel:9868983010" class="btn-branch-call" title="Call Helpline: 9868983010">
+              <span>📞 9868983010</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Official Contact & Patron Relations Desk (Bottom of About Section) -->
+      <div class="about-contact-desk-card" id="about-contact-desk">
+        <div class="about-contact-desk-inner">
+          <div class="about-contact-text">
+            <span class="about-contact-tag">Direct Inquiries & Assistance</span>
+            <h3 class="about-contact-title">Contact JENU'S Executive & Customer Desk</h3>
+            <p class="about-contact-desc">Reach out directly for retail orders, corporate hampers, authentic harvest inquiries, or bulk consignments across our Srinagar, Jammu, Delhi, and Mumbai hubs.</p>
+          </div>
+
+          <div class="about-contact-channels">
+            <!-- Email Channel -->
+            <a href="mailto:SriRadheEnterpriseswork@gmail.com" class="about-channel-item channel-email" title="Send Official Email to JENU'S">
+              <span class="channel-icon">✉️</span>
+              <div class="channel-meta">
+                <span class="channel-label">Official Contact Email ID</span>
+                <strong class="channel-value">SriRadheEnterpriseswork@gmail.com</strong>
+              </div>
+            </a>
+
+            <!-- Phone Helplines -->
+            <div class="about-channel-item channel-phones">
+              <span class="channel-icon">📞</span>
+              <div class="channel-meta">
+                <span class="channel-label">24×7 Helplines & Direct Phone</span>
+                <div class="channel-phone-links">
+                  <a href="tel:85955119239" class="phone-link" title="Call Helpline: 85955119239"><strong>85955119239</strong></a>
+                  <span class="phone-sep">•</span>
+                  <a href="tel:9868983010" class="phone-link" title="Call Helpline: 9868983010"><strong>9868983010</strong></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- WhatsApp Instant Desk -->
+            <a href="https://wa.me/919868983010?text=Hello%20JENUS%2C%20I%20am%20contacting%20regarding%20an%20order%20or%20inquiry." target="_blank" rel="noopener noreferrer" class="about-channel-item channel-whatsapp" title="Chat on WhatsApp with Customer Desk">
+              <span class="channel-icon">💬</span>
+              <div class="channel-meta">
+                <span class="channel-label">WhatsApp Quick Desk</span>
+                <strong class="channel-value">9868983010 (Instant Chat)</strong>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================
+       9. CUSTOMER REVIEWS WALL
+       =================================================== -->
+  <section class="reviews-section" id="reviews-section">
+    <div class="container">
+      <div class="section-header-row">
+        <div class="section-title-group">
+          <h2>Customer Reviews & Feedback</h2>
+          <p>Verified ratings and reviews from patrons who receive shipments across India</p>
+        </div>
+      </div>
+
+      <div class="reviews-wall-grid" id="reviews-wall-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       10. SLIDE-IN CART DRAWER
+       =================================================== -->
+  <div class="cart-backdrop" id="cart-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart">
+    
+    <div class="cart-drawer-header">
+      <div class="cart-header-title">
+        <h3>Shopping Cart (<span class="cart-count-badge">0</span>)</h3>
+      </div>
+      <button class="btn-close-cart" id="btn-close-cart" aria-label="Close Cart">&times;</button>
+    </div>
+
+    <!-- Free Shipping Progress Bar -->
+    <div class="cart-shipping-meter">
+      <div class="free-shipping-msg" id="free-shipping-msg">Add ₹499 more for Free Express Air Shipping</div>
+      <div class="shipping-bar-bg">
+        <div class="shipping-bar-fill" id="free-shipping-progress" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Cart Body -->
+    <div class="cart-drawer-body">
+      
+      <!-- Empty State -->
+      <div class="cart-empty-state hidden" id="cart-empty-state">
+        <div class="empty-cart-icon">🛒</div>
+        <h4>Your Cart is Empty</h4>
+        <p>Browse our fresh collection of Mamra almonds, snow walnuts, and pure saffron.</p>
+      </div>
+
+      <!-- Filled State -->
+      <div id="cart-filled-state">
+        <div class="cart-items-list" id="cart-items-list"></div>
+
+        <!-- Coupon Box -->
+        <div class="cart-coupon-wrapper">
+          <div class="coupon-input-group">
+            <input type="text" id="cart-coupon-input" placeholder="Coupon Code (e.g. KASHMIR10)" />
+            <button type="button" class="btn-apply-coupon" id="btn-apply-coupon">Apply</button>
+          </div>
+          <div id="active-coupon-tag" class="active-coupon-tag"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Cart Footer with Checkout Button -->
+    <div class="cart-drawer-footer">
+      <div class="cart-bill-row">
+        <span>Subtotal</span>
+        <strong id="cart-subtotal">₹0</strong>
+      </div>
+      <div class="cart-bill-row discount-row hidden" id="cart-discount-row">
+        <span>Discount</span>
+        <strong id="cart-discount-amount">-₹0</strong>
+      </div>
+      <div class="cart-bill-row">
+        <span>Express Air Delivery</span>
+        <strong id="cart-shipping">FREE</strong>
+      </div>
+      <div class="cart-bill-row total-row">
+        <span>Total Amount</span>
+        <strong id="cart-grand-total">₹0</strong>
+      </div>
+
+      <button type="button" class="btn-cart-checkout" id="btn-cart-checkout">
+        <span>Proceed to Checkout</span>
+        <span>→</span>
+      </button>
+    </div>
+
+  </aside>
+
+  <!-- ===================================================
+       12. MAIN FOOTER (PROFESSIONAL & CLEAN)
+       =================================================== -->
+  <footer class="main-footer">
+    <div class="container">
+      
+      <div class="footer-top-grid">
+        
+        <div class="footer-col">
+          <h4 style="font-size: 20px; color: #FFFFFF;">JENU'S</h4>
+          <p class="footer-brand-p">JENU'S delivers premium, food-safe dry fruits, authentic Pampore saffron, and handcrafted gift hampers directly from Kashmir. Complying with national FSSAI standards with certified batch testing.</p>
+          <div class="footer-fssai-tag">
+            <span>🌿 FSSAI Central License: 10026061000412</span>
+          </div>
+          <div class="footer-branches-preview" style="margin-top: 14px;">
+            <div class="footer-branch-item">
+              <strong style="color: #34D399;">🌸 Kashmir Flagship (Srinagar)</strong>
+              <span>Cherry Garden, गोग्जी बाग (Gogji Bagh), Srinagar – 190008</span>
+            </div>
+            <div class="footer-branch-item">
+              <strong style="color: #60A5FA;">🏔️ Jammu Regional Hub</strong>
+              <span>Residency Road / Raghunath Bazaar Corridor, Jammu Tawi – 180001</span>
+            </div>
+            <div class="footer-branch-item">
+              <strong style="color: #F59E0B;">🏛️ Delhi Branch (Kashyap Nathoo)</strong>
+              <span>Chandni Chowk, Khari Baoli Market, Gali Hinga Bag, Delhi – 110006</span>
+            </div>
+            <div class="footer-branch-item">
+              <strong style="color: #38BDF8;">🌊 Mumbai Metropolitan Hub</strong>
+              <span>APMC Market Complex & Crawford Market Corridor, Mumbai – 400703</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Product Lines</h4>
+          <ul class="footer-links-list">
+            <li><a href="#products-section" data-footer-cat="combos">Value & Super Saver Combos ✨</a></li>
+            <li><a href="#products-section" data-footer-cat="spices">Naturally Grown Valley Spices 🌶️</a></li>
+            <li><a href="#products-section" data-footer-cat="almonds">Kashmiri Mamra Almonds</a></li>
+            <li><a href="#products-section" data-footer-cat="walnuts">Kagzi Snow Walnuts</a></li>
+            <li><a href="#products-section" data-footer-cat="saffron">Pure Pampore Saffron</a></li>
+            <li><a href="#products-section" data-footer-cat="dried-fruits">Sun-Dried Figs & Apricots</a></li>
+            <li><a href="#products-section" data-footer-cat="berries-seeds">Himalayan Chilgoza</a></li>
+            <li><a href="#products-section" data-footer-cat="kahwa-spices">Shahi Kashmiri Kahwa</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Customer Care & Quality</h4>
+          <div class="footer-care-box">
+            <span class="f-care-title">📞 24×7 Customer Care Helpline:</span>
+            <div class="f-care-phone-group">
+              <a href="tel:85955119239" class="f-care-call-link">
+                <span>📞 <strong>85955119239</strong></span>
+              </a>
+              <a href="tel:9868983010" class="f-care-call-link">
+                <span>📞 <strong>9868983010</strong></span>
+              </a>
+            </div>
+            <a href="mailto:SriRadheEnterpriseswork@gmail.com" class="f-care-email-link" title="Email Customer Care">
+              <span>✉️ <strong>SriRadheEnterpriseswork@gmail.com</strong></span>
+            </a>
+            <a href="https://wa.me/919868983010?text=Hello%20JENUS%20Customer%20Care%2C%20I%20need%20assistance." target="_blank" rel="noopener noreferrer" class="f-care-wa-link">
+              <span>💬 WhatsApp Support (9868983010)</span>
+            </a>
+          </div>
+          <ul class="footer-links-list" style="margin-top: 12px;">
+            <li><a href="#wholesale-section" class="btn-open-wholesale" style="color: #34D399; font-weight: 600;">⚡ Wholesale & Bulk Procurement</a></li>
+            <li><a href="#about-section" style="color: #F59E0B; font-weight: 600;">Our 4 Branches (Jammu • Kashmir • Delhi • Mumbai) 🏛️</a></li>
+            <li><a href="#" class="btn-open-fssai-cert">FSSAI Lab Certificates</a></li>
+            <li><a href="#" class="btn-open-track-orders">Track Consignment via Phone 📦</a></li>
+            <li><a href="#hamper-builder-section">Bespoke Gift Boxes</a></li>
+            <li><a href="#deal-section">Daily Special Allocation</a></li>
+            <li><a href="#reviews-section">Customer Testimonials</a></li>
+            <li><a href="#">Shipping & Returns Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col newsletter-box">
+          <h4>Join the Newsletter</h4>
+          <p>Receive seasonal harvest notices, corporate gift catalog updates, and an immediate 10% coupon code.</p>
+          <form class="newsletter-form" id="newsletter-form">
+            <input type="email" id="newsletter-email" required placeholder="Enter your email address" />
+            <button type="submit">Subscribe</button>
+          </form>
+          <small style="color: #6B7280; font-size: 11px;">100% privacy guaranteed. Unsubscribe anytime.</small>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div class="footer-bottom-content">
+          <div class="footer-legal-copy" id="footer-legal-copy">
+            © 2026 JENU'S Kashmir Gourmet Pvt. Ltd. All rights reserved. FSSAI Lic. 10026061000412.
+            <span class="confidential-portal-anchor" id="secret-admin-anchor" title="Authorized Terminal" style="display:inline-block; width: 6px; height: 6px; border-radius: 50%; background: rgba(212, 175, 55, 0.18); margin-left: 8px; vertical-align: middle; cursor: default; user-select: none;"></span>
+          </div>
+          <div class="payment-gateways-list">
+            <span>Payment Options:</span>
+            <span class="gateway-chip">Razorpay Secure</span>
+            <span class="gateway-chip">UPI (GPay / PhonePe / Paytm)</span>
+            <span class="gateway-chip">Visa / Mastercard / RuPay</span>
+            <span class="gateway-chip">NetBanking</span>
+            <span class="gateway-chip">100% Prepaid Secure</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
