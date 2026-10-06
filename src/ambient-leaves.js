@@ -7,13 +7,14 @@ export class KashmirAmbientLeaves {
     this.ctx = null;
     this.sprites = {};
     this.particles = [];
-    this.maxParticles = 14; // Subtle, elegant atmospheric touch without blocking product photos
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    this.maxParticles = isMobile ? 18 : 34; // Generous, atmospheric cascade across the entire screen
     this.isRunning = true;
     this.animationFrameId = null;
-    this.width = window.innerWidth;
-    this.height = window.innerHeight;
-    this.mouse = { x: -1000, y: -1000, radius: 150 };
-    this.wind = { x: 0.45, y: 0.75, turbulence: 0 };
+    this.width = typeof window !== 'undefined' ? window.innerWidth : 1200;
+    this.height = typeof window !== 'undefined' ? window.innerHeight : 800;
+    this.mouse = { x: -1000, y: -1000, radius: 160 };
+    this.wind = { x: 0.35, y: 0.70, turbulence: 0 };
     this.init();
   }
 
@@ -27,9 +28,9 @@ export class KashmirAmbientLeaves {
       width: 100vw;
       height: 100vh;
       pointer-events: none;
-      z-index: 0;
-      opacity: 0.7;
-      transition: opacity 0.5s ease;
+      z-index: 90;
+      opacity: 0.92;
+      transition: opacity 0.4s ease;
     `;
     document.body.appendChild(this.canvas);
     this.ctx = this.canvas.getContext('2d');
@@ -40,17 +41,26 @@ export class KashmirAmbientLeaves {
     // Pre-render photorealistic offscreen vector sprites for 60fps performance
     this.generateSprites();
 
-    // Mouse breeze air disturbance
+    // Interactive mouse breeze air disturbance
     window.addEventListener('mousemove', (e) => {
       this.mouse.x = e.clientX;
       this.mouse.y = e.clientY;
     }, { passive: true });
 
-    // Scroll handler: fade out leaves when user scrolls into products so photos are 100% clear
+    // Aerodynamic mountain draft when scrolling (never hides leaves, gently sways them all over website)
+    let lastScrollY = window.scrollY;
+    let scrollTimeout = null;
     window.addEventListener('scroll', () => {
-      if (this.canvas) {
-        this.canvas.style.opacity = window.scrollY > 300 ? '0' : '0.7';
-      }
+      const currentScrollY = window.scrollY;
+      const scrollDelta = currentScrollY - lastScrollY;
+      lastScrollY = currentScrollY;
+
+      // Temporary wind turbulence simulating air displacement
+      this.wind.turbulence = Math.min(Math.max(scrollDelta * 0.035, -1.5), 1.5);
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        this.wind.turbulence = 0;
+      }, 120);
     }, { passive: true });
 
     // Energy saving when tab is inactive
@@ -124,7 +134,7 @@ export class KashmirAmbientLeaves {
       veinColor = '#713F12';
     }
 
-    // Gentle realistic drop shadow
+    // Warm realistic drop shadow
     ctx.shadowColor = 'rgba(0, 0, 0, 0.35)';
     ctx.shadowBlur = 8;
     ctx.shadowOffsetX = 2;
@@ -265,8 +275,8 @@ export class KashmirAmbientLeaves {
 
   // Authentic Pampore Mongra Saffron Single Filament with Trumpet Mouth
   createSaffronSingleSprite() {
-    const w = 70;
-    const h = 150;
+    const w = 90;
+    const h = 180;
     const offCanvas = document.createElement('canvas');
     offCanvas.width = w;
     offCanvas.height = h;
@@ -275,44 +285,45 @@ export class KashmirAmbientLeaves {
     ctx.save();
     ctx.translate(w / 2, h / 2);
 
-    ctx.shadowColor = 'rgba(0, 0, 0, 0.38)';
-    ctx.shadowBlur = 6;
-    ctx.shadowOffsetX = 2;
-    ctx.shadowOffsetY = 3;
+    // Warm radiant saffron crimson drop shadow & glow
+    ctx.shadowColor = 'rgba(220, 38, 38, 0.5)';
+    ctx.shadowBlur = 8;
+    ctx.shadowOffsetX = 1;
+    ctx.shadowOffsetY = 2;
 
-    const baseGrad = ctx.createLinearGradient(0, 60, 0, -60);
-    baseGrad.addColorStop(0, '#F59E0B');   // Saffron style base where plucked
-    baseGrad.addColorStop(0.18, '#EA580C'); // Carmine transition
-    baseGrad.addColorStop(0.5, '#DC2626');  // Pure Kashmiri scarlet
-    baseGrad.addColorStop(0.85, '#991B1B'); // Mongra crimson
-    baseGrad.addColorStop(1, '#7F1D1D');    // Serrated trumpet apex
+    const baseGrad = ctx.createLinearGradient(0, 68, 0, -68);
+    baseGrad.addColorStop(0, '#F59E0B');    // Saffron style base where plucked (golden amber)
+    baseGrad.addColorStop(0.18, '#EA580C'); // Carmine orange transition
+    baseGrad.addColorStop(0.48, '#DC2626'); // Vibrant Kashmiri scarlet
+    baseGrad.addColorStop(0.82, '#991B1B'); // Pure Pampore Mongra crimson
+    baseGrad.addColorStop(1, '#7F1D1D');    // Deep ruby serrated trumpet mouth
 
-    const c = 16;
+    const c = 20;
     ctx.beginPath();
-    ctx.moveTo(1.2, 58);
-    ctx.bezierCurveTo(c * 0.5, 28, c * 1.1, -8, 3.2, -48);
-    // Fluted 3-notched trumpet mouth
-    ctx.lineTo(6.5, -57);
-    ctx.lineTo(3.5, -60);
-    ctx.lineTo(5.5, -64);
-    ctx.lineTo(0.8, -62);
-    ctx.lineTo(-2, -65);
-    ctx.lineTo(-3.8, -61);
+    ctx.moveTo(2.2, 66);
+    ctx.bezierCurveTo(c * 0.5, 30, c * 1.1, -10, 4.5, -52);
+    // Fluted serrated trumpet mouth
+    ctx.lineTo(10.5, -64);
+    ctx.lineTo(6.5, -68);
+    ctx.lineTo(9.5, -73);
+    ctx.lineTo(2.0, -70);
+    ctx.lineTo(-2.5, -74);
+    ctx.lineTo(-5.5, -69);
+    ctx.lineTo(-9.5, -72);
     ctx.lineTo(-6.5, -63);
-    ctx.lineTo(-4.5, -56);
-    ctx.bezierCurveTo(c * 1.1 - 4, -8, c * 0.5 - 2, 28, -1.2, 58);
+    ctx.bezierCurveTo(c * 1.1 - 5, -10, c * 0.5 - 2.5, 30, -2.2, 66);
     ctx.closePath();
 
     ctx.fillStyle = baseGrad;
     ctx.fill();
 
-    // Silky thread sheen
+    // Silky thread highlight sheen
     ctx.shadowColor = 'transparent';
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.35)';
-    ctx.lineWidth = 0.8;
+    ctx.strokeStyle = 'rgba(255, 235, 205, 0.45)';
+    ctx.lineWidth = 1.0;
     ctx.beginPath();
-    ctx.moveTo(0, 45);
-    ctx.bezierCurveTo(c * 0.5, 22, c * 0.9, -12, 1, -48);
+    ctx.moveTo(0.5, 48);
+    ctx.bezierCurveTo(c * 0.5, 22, c * 0.9, -15, 1.5, -54);
     ctx.stroke();
 
     ctx.restore();
@@ -321,8 +332,8 @@ export class KashmirAmbientLeaves {
 
   // Gracefully Curved Mongra Saffron Thread
   createSaffronCurvedSprite() {
-    const w = 80;
-    const h = 150;
+    const w = 100;
+    const h = 180;
     const offCanvas = document.createElement('canvas');
     offCanvas.width = w;
     offCanvas.height = h;
@@ -331,35 +342,43 @@ export class KashmirAmbientLeaves {
     ctx.save();
     ctx.translate(w / 2, h / 2);
 
-    ctx.shadowColor = 'rgba(0, 0, 0, 0.38)';
-    ctx.shadowBlur = 6;
-    ctx.shadowOffsetX = -2;
-    ctx.shadowOffsetY = 3;
+    ctx.shadowColor = 'rgba(220, 38, 38, 0.5)';
+    ctx.shadowBlur = 8;
+    ctx.shadowOffsetX = -1;
+    ctx.shadowOffsetY = 2;
 
-    const baseGrad = ctx.createLinearGradient(0, 58, 0, -58);
+    const baseGrad = ctx.createLinearGradient(0, 66, 0, -66);
     baseGrad.addColorStop(0, '#F59E0B');
-    baseGrad.addColorStop(0.2, '#EA580C');
-    baseGrad.addColorStop(0.55, '#B91C1C');
-    baseGrad.addColorStop(0.9, '#881337');
+    baseGrad.addColorStop(0.18, '#EA580C');
+    baseGrad.addColorStop(0.50, '#B91C1C');
+    baseGrad.addColorStop(0.85, '#881337');
     baseGrad.addColorStop(1, '#701A75');
 
-    const c = -18;
+    const c = -24;
     ctx.beginPath();
-    ctx.moveTo(-1.2, 56);
-    ctx.bezierCurveTo(c * 0.5, 26, c * 1.1, -10, -3.2, -46);
-    ctx.lineTo(-6.5, -55);
-    ctx.lineTo(-3.5, -58);
-    ctx.lineTo(-5.5, -62);
-    ctx.lineTo(-0.8, -60);
-    ctx.lineTo(2, -63);
-    ctx.lineTo(3.8, -59);
+    ctx.moveTo(-2.2, 64);
+    ctx.bezierCurveTo(c * 0.5, 28, c * 1.1, -12, -4.5, -50);
+    ctx.lineTo(-10.5, -62);
+    ctx.lineTo(-6.5, -66);
+    ctx.lineTo(-9.5, -71);
+    ctx.lineTo(-2.0, -68);
+    ctx.lineTo(2.5, -72);
+    ctx.lineTo(5.5, -67);
+    ctx.lineTo(9.5, -70);
     ctx.lineTo(6.5, -61);
-    ctx.lineTo(4.5, -54);
-    ctx.bezierCurveTo(c * 1.1 + 4, -10, c * 0.5 + 2, 26, 1.2, 56);
+    ctx.bezierCurveTo(c * 1.1 + 5, -12, c * 0.5 + 2.5, 28, 2.2, 64);
     ctx.closePath();
 
     ctx.fillStyle = baseGrad;
     ctx.fill();
+
+    ctx.shadowColor = 'transparent';
+    ctx.strokeStyle = 'rgba(255, 230, 205, 0.45)';
+    ctx.lineWidth = 1.0;
+    ctx.beginPath();
+    ctx.moveTo(-0.5, 46);
+    ctx.bezierCurveTo(c * 0.5, 20, c * 0.9, -15, -1.5, -52);
+    ctx.stroke();
 
     ctx.restore();
     return offCanvas;
@@ -367,23 +386,23 @@ export class KashmirAmbientLeaves {
 
   // Royal Trifid Zafran Guchha (3-Stigma Pampore Saffron Cluster)
   createSaffronClusterSprite() {
-    const w = 110;
-    const h = 160;
+    const w = 130;
+    const h = 180;
     const offCanvas = document.createElement('canvas');
     offCanvas.width = w;
     offCanvas.height = h;
     const ctx = offCanvas.getContext('2d');
 
     ctx.save();
-    ctx.translate(w / 2, h / 2 + 10);
+    ctx.translate(w / 2, h / 2 + 12);
 
     // Golden style stem base where plucked
     ctx.strokeStyle = '#FBBF24';
-    ctx.lineWidth = 3.2;
+    ctx.lineWidth = 3.6;
     ctx.lineCap = 'round';
     ctx.beginPath();
-    ctx.moveTo(0, 54);
-    ctx.lineTo(0, 36);
+    ctx.moveTo(0, 60);
+    ctx.lineTo(0, 38);
     ctx.stroke();
 
     // Helper: draw single stigma inside cluster
@@ -393,29 +412,29 @@ export class KashmirAmbientLeaves {
       ctx.rotate((angle * Math.PI) / 180);
       ctx.scale(scale, scale);
 
-      ctx.shadowColor = 'rgba(0, 0, 0, 0.35)';
-      ctx.shadowBlur = 5;
+      ctx.shadowColor = 'rgba(220, 38, 38, 0.45)';
+      ctx.shadowBlur = 6;
 
-      const baseGrad = ctx.createLinearGradient(0, 50, 0, -50);
+      const baseGrad = ctx.createLinearGradient(0, 56, 0, -56);
       baseGrad.addColorStop(0, '#F59E0B');
-      baseGrad.addColorStop(0.2, '#EA580C');
-      baseGrad.addColorStop(0.55, '#DC2626');
-      baseGrad.addColorStop(0.9, '#991B1B');
+      baseGrad.addColorStop(0.18, '#EA580C');
+      baseGrad.addColorStop(0.50, '#DC2626');
+      baseGrad.addColorStop(0.85, '#991B1B');
       baseGrad.addColorStop(1, '#7F1D1D');
 
-      const c = curveSign * 14;
+      const c = curveSign * 18;
       ctx.beginPath();
-      ctx.moveTo(1, 48);
-      ctx.bezierCurveTo(c * 0.5, 20, c * 1.0, -8, 2.8, -42);
-      ctx.lineTo(5.5, -50);
-      ctx.lineTo(3, -53);
-      ctx.lineTo(4.5, -56);
-      ctx.lineTo(0.5, -54);
-      ctx.lineTo(-1.8, -57);
-      ctx.lineTo(-3.2, -53);
+      ctx.moveTo(1.5, 54);
+      ctx.bezierCurveTo(c * 0.5, 22, c * 1.0, -10, 3.5, -46);
+      ctx.lineTo(8.5, -56);
+      ctx.lineTo(4.5, -60);
+      ctx.lineTo(7.0, -64);
+      ctx.lineTo(1.0, -62);
+      ctx.lineTo(-2.5, -65);
+      ctx.lineTo(-4.5, -60);
+      ctx.lineTo(-8.0, -63);
       ctx.lineTo(-5.5, -55);
-      ctx.lineTo(-3.8, -49);
-      ctx.bezierCurveTo(c * 1.0 - 3, -8, c * 0.5 - 1.8, 20, -1, 48);
+      ctx.bezierCurveTo(c * 1.0 - 4, -10, c * 0.5 - 2, 22, -1.5, 54);
       ctx.closePath();
 
       ctx.fillStyle = baseGrad;
@@ -423,9 +442,9 @@ export class KashmirAmbientLeaves {
       ctx.restore();
     };
 
-    drawSubStigma(-2, 34, 0.85, -24, -1);
-    drawSubStigma(2, 34, 0.88, 22, 1);
-    drawSubStigma(0, 32, 0.95, -2, 0.3);
+    drawSubStigma(-3, 36, 0.90, -25, -1);
+    drawSubStigma(3, 36, 0.92, 23, 1);
+    drawSubStigma(0, 34, 1.0, -2, 0.3);
 
     ctx.restore();
     return offCanvas;
@@ -501,76 +520,71 @@ export class KashmirAmbientLeaves {
     const roll = Math.random();
     let type, spriteKey, baseScale;
 
-    if (roll < 0.38) {
-      // 38% Authentic Kashmiri Chinar Leaves
+    if (roll < 0.48) {
+      // 48% Authentic Kashmiri Chinar Leaves (Golden, Crimson, Amber)
       const chinarType = Math.random();
-      if (chinarType < 0.45) {
+      if (chinarType < 0.40) {
         type = 'chinar';
         spriteKey = 'chinarGolden';
-      } else if (chinarType < 0.80) {
+      } else if (chinarType < 0.75) {
         type = 'chinar';
         spriteKey = 'chinarCrimson';
       } else {
         type = 'chinar';
         spriteKey = 'chinarAmber';
       }
-      baseScale = Math.random() * 0.22 + 0.26; // 38px - 58px on screen
-    } else if (roll < 0.80) {
-      // 42% Pure Pampore Mongra Saffron Filaments & Clusters
+      baseScale = Math.random() * 0.22 + 0.28; // ~48px - 85px crisp Kashmiri Chinar leaf
+    } else if (roll < 0.94) {
+      // 46% Pure Pampore Mongra Saffron Threads (Single filaments, curved strands & 3-stigma clusters)
       const saffronType = Math.random();
-      if (saffronType < 0.50) {
+      if (saffronType < 0.45) {
         type = 'saffron';
         spriteKey = 'saffronSingle';
-      } else if (saffronType < 0.82) {
+      } else if (saffronType < 0.78) {
         type = 'saffron';
         spriteKey = 'saffronCurved';
       } else {
         type = 'saffron';
         spriteKey = 'saffronCluster';
       }
-      baseScale = Math.random() * 0.24 + 0.32; // 38px - 62px on screen
-    } else if (roll < 0.92) {
-      // 12% Pampore Purple Crocus Sativus Flower Petals
+      baseScale = Math.random() * 0.28 + 0.32; // ~48px - 85px distinct crimson saffron thread
+    } else {
+      // 6% Pampore Purple Crocus Sativus Flower Petals
       type = 'petal';
       spriteKey = 'pamporePetal';
-      baseScale = Math.random() * 0.20 + 0.24; // 24px - 38px on screen
-    } else {
-      // 8% Golden Saffron Pollen Specks (shimmering atmospheric motes)
-      type = 'pollen';
-      spriteKey = null;
-      baseScale = Math.random() * 1.5 + 1.2;
+      baseScale = Math.random() * 0.22 + 0.25;
     }
 
     // Depth layers: 0 (background, small, fast), 1 (midground), 2 (foreground, large, crisp)
-    const depthLayer = Math.random() < 0.25 ? 2 : (Math.random() < 0.65 ? 1 : 0);
+    const depthLayer = Math.random() < 0.30 ? 2 : (Math.random() < 0.70 ? 1 : 0);
     const depthScale = depthLayer === 2 ? 1.25 : (depthLayer === 0 ? 0.75 : 1.0);
-    const depthSpeed = depthLayer === 2 ? 1.15 : (depthLayer === 0 ? 0.8 : 1.0);
+    const depthSpeed = depthLayer === 2 ? 1.15 : (depthLayer === 0 ? 0.85 : 1.0);
 
     return {
       type,
       spriteKey,
       x: Math.random() * (this.width + 120) - 60,
-      y: randomY ? Math.random() * this.height : -45,
+      y: randomY ? Math.random() * this.height : -55,
       scale: baseScale * depthScale,
       depthLayer,
-      // Physical aerodynamic velocity
-      speedX: (Math.random() - 0.25) * 0.6 * depthSpeed,
-      speedY: (Math.random() * 0.65 + 0.6) * depthSpeed,
+      // Physical aerodynamic velocity (drifting gently downwards)
+      speedX: (Math.random() - 0.25) * 0.55 * depthSpeed,
+      speedY: (Math.random() * 0.65 + 0.55) * depthSpeed,
       // 3D Tumbling & Flutter Angles
       rotation: Math.random() * 360,
-      rotationSpeed: (Math.random() - 0.5) * 1.2,
+      rotationSpeed: (Math.random() - 0.5) * 1.0,
       flipAngle: Math.random() * Math.PI * 2,
-      flipSpeed: Math.random() * 0.025 + 0.015,
+      flipSpeed: Math.random() * 0.022 + 0.012,
       pitchAngle: Math.random() * Math.PI * 2,
-      pitchSpeed: Math.random() * 0.02 + 0.01,
+      pitchSpeed: Math.random() * 0.018 + 0.008,
       // Thermal updraft sway
       sway: Math.random() * Math.PI * 2,
-      swaySpeed: Math.random() * 0.022 + 0.012,
-      swayAmplitude: Math.random() * 1.4 + 0.8,
-      // Opacity
+      swaySpeed: Math.random() * 0.02 + 0.01,
+      swayAmplitude: Math.random() * 1.5 + 0.8,
+      // High-contrast, radiant opacity across all sections
       opacity: depthLayer === 2
-        ? Math.random() * 0.15 + 0.82
-        : (depthLayer === 0 ? Math.random() * 0.25 + 0.45 : Math.random() * 0.2 + 0.70)
+        ? Math.random() * 0.12 + 0.86
+        : (depthLayer === 0 ? Math.random() * 0.20 + 0.62 : Math.random() * 0.18 + 0.76)
     };
   }
 
@@ -616,28 +630,18 @@ export class KashmirAmbientLeaves {
       this.ctx.save();
       this.ctx.globalAlpha = p.opacity;
 
-      if (p.type === 'pollen') {
-        // Golden Saffron Pollen speck
-        this.ctx.fillStyle = '#FBBF24';
-        this.ctx.shadowColor = '#F59E0B';
-        this.ctx.shadowBlur = 6;
-        this.ctx.beginPath();
-        this.ctx.arc(p.x, p.y, p.scale, 0, Math.PI * 2);
-        this.ctx.fill();
-      } else {
-        const sprite = this.sprites[p.spriteKey];
-        if (sprite) {
-          this.ctx.translate(p.x, p.y);
-          this.ctx.rotate((p.rotation * Math.PI) / 180);
+      const sprite = this.sprites[p.spriteKey];
+      if (sprite) {
+        this.ctx.translate(p.x, p.y);
+        this.ctx.rotate((p.rotation * Math.PI) / 180);
 
-          // 3D Tumbling projection: cos(flip) simulates flipping in 3D space
-          const scale3DX = p.scale * Math.cos(p.flipAngle);
-          const scale3DY = p.scale * (0.85 + 0.15 * Math.sin(p.pitchAngle));
-          this.ctx.scale(scale3DX, scale3DY);
+        // 3D Tumbling projection: cos(flip) simulates flipping in 3D space
+        const scale3DX = p.scale * Math.cos(p.flipAngle);
+        const scale3DY = p.scale * (0.85 + 0.15 * Math.sin(p.pitchAngle));
+        this.ctx.scale(scale3DX, scale3DY);
 
-          // Draw centered
-          this.ctx.drawImage(sprite, -sprite.width / 2, -sprite.height / 2);
-        }
+        // Draw centered
+        this.ctx.drawImage(sprite, -sprite.width / 2, -sprite.height / 2);
       }
 
       this.ctx.restore();
@@ -654,7 +658,7 @@ export class KashmirAmbientLeaves {
   start() {
     if (!this.isRunning) {
       this.isRunning = true;
-      if (this.canvas) this.canvas.style.opacity = '0.95';
+      if (this.canvas) this.canvas.style.opacity = '0.92';
       this.update();
     } else if (!this.animationFrameId) {
       this.update();
