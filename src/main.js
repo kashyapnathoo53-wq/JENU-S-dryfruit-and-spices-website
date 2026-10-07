@@ -1462,6 +1462,24 @@ class JenusApp {
       if (curImg.includes('kashmiri-mirch-powder')) {
         return `🌶️ Photo ${idx + 1} of ${images.length}: Authentic Real Close-up — Stone-Ground Bright Ruby Kashmiri Mirch Powder in Brass Spoon`;
       }
+      if (curImg.includes('amchur-powder-macro')) {
+        return `🥭 Photo ${idx + 1} of ${images.length}: Authentic Real Macro — Pure Stone-Ground Unbleached Sun-Dried Amchur Powder`;
+      }
+      if (curImg.includes('amchur-powder-bowl')) {
+        return `☀️ Photo ${idx + 1} of ${images.length}: Authentic Origin Presentation — Solar-Dried Green Mango Slices (Sabut Khatai) & Stone-Milled Powder`;
+      }
+      if (curImg.includes('amchur-powder-packaged')) {
+        return `🏷️ Photo ${idx + 1} of ${images.length}: JENU'S Airtight Sealed Spice Jar — Pure Sun-Dried Amchur Powder (250g)`;
+      }
+      if (curImg.includes('hing-powder-macro')) {
+        return `✨ Photo ${idx + 1} of ${images.length}: Authentic Real Macro — Pure Raw Himalayan Ferula Assa-Foetida Milky Resin Crystal Tears`;
+      }
+      if (curImg.includes('hing-powder-bowl')) {
+        return `🥣 Photo ${idx + 1} of ${images.length}: Authentic Presentation — Pure Ferula Resin Crystals & Royal Compounded Hing Powder`;
+      }
+      if (curImg.includes('hing-powder-packaged')) {
+        return `🏷️ Photo ${idx + 1} of ${images.length}: JENU'S Airtight Spice Jar — Royal Compounded Kashmiri Hing (50g Hermetic Cap)`;
+      }
       if (curImg.includes('real-jeera-macro')) {
         return `📷 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Wild Himalayan Shahi Jeera Seeds with Fine Longitudinal Ridges on Walnut Tray`;
       }
@@ -1520,6 +1538,10 @@ class JenusApp {
       if (curImg.includes('sundried-mulberries-bowl')) return 'Mulberries';
       if (curImg.includes('sundried-plums-macro')) return 'Aloo Bukhara';
       if (curImg.includes('sundried-plums-bowl')) return 'Plums';
+      if (curImg.includes('amchur-powder-macro')) return 'Amchur Macro';
+      if (curImg.includes('amchur-powder-bowl')) return 'Mango Slices';
+      if (curImg.includes('hing-powder-macro')) return 'Resin Tears';
+      if (curImg.includes('hing-powder-bowl')) return 'Hing Bowl';
       if (curImg.includes('cranberries')) return 'Cranberries';
       if (curImg.includes('blueberries')) return 'Blueberries';
       if (curImg.includes('berries-bowl')) return 'Berry Bowl';
