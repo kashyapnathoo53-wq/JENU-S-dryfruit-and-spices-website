@@ -318,69 +318,51 @@ class JenusApp {
             </div>
           </div>
 
-          <!-- KASHMIRI CARVED WALNUT WOOD FRAME FOR PRODUCT ICON / VISUAL -->
-          <div class="product-walnut-frame" title="Kashmiri Carved Walnut Frame — Click to view all photos & details">
-            <span class="frame-corner frame-corner-tl" aria-hidden="true"></span>
-            <span class="frame-corner frame-corner-tr" aria-hidden="true"></span>
-            <span class="frame-corner frame-corner-bl" aria-hidden="true"></span>
-            <span class="frame-corner frame-corner-br" aria-hidden="true"></span>
-            
-            <div class="product-frame-inner">
-              <div class="product-image-box">
-                <img src="${p.image}" alt="${p.name}" class="product-img" loading="lazy" />
-                ${prodImages.some(img => img.includes('real-')) ? `
-                  <span class="card-real-tag">📷 Real Produce</span>
-                ` : ''}
-                <span class="frame-wood-tag">🪵 Carved Walnut Frame</span>
-              </div>
-            </div>
+          <!-- PRODUCT IMAGE DISPLAY -->
+          <div class="product-image-box">
+            <img src="${p.image}" alt="${p.name}" class="product-img" loading="lazy" />
+            ${prodImages.some(img => img.includes('real-')) ? `
+              <span class="card-real-tag">📷 Real Produce</span>
+            ` : ''}
           </div>
 
           <div class="product-info">
             <h3 class="product-title" data-pid="${p.id}">${p.name}</h3>
             <p class="product-subname">${p.subname}</p>
 
-            <!-- KASHMIRI CARVED WALNUT WOOD FRAME FOR PRODUCT DESCRIPTION & OVERVIEW -->
-            <div class="product-description-walnut-frame" title="Kashmiri Carved Walnut Wood Description & Overview Frame">
-              <span class="desc-frame-corner desc-frame-corner-tl" aria-hidden="true"></span>
-              <span class="desc-frame-corner desc-frame-corner-tr" aria-hidden="true"></span>
-              <span class="desc-frame-corner desc-frame-corner-bl" aria-hidden="true"></span>
-              <span class="desc-frame-corner desc-frame-corner-br" aria-hidden="true"></span>
-              
-              <div class="desc-frame-inner">
-                <div class="card-overview-header">
-                  <span class="overview-header-tag">
-                    <span class="overview-dot"></span> Product Overview
-                  </span>
-                  <span class="desc-wood-tag">🪵 Carved Walnut Frame</span>
-                  <span class="overview-quick-link" title="Click to view comprehensive specifications & lab certificates">Specs ↗</span>
-                </div>
+            <!-- PRODUCT OVERVIEW & SPECIFICATIONS -->
+            <div class="product-card-overview">
+              <div class="card-overview-header">
+                <span class="overview-header-tag">
+                  <span class="overview-dot"></span> Product Overview
+                </span>
+                <span class="overview-quick-link" title="Click to view comprehensive specifications & lab certificates">Specs ↗</span>
+              </div>
 
-                <!-- PRODUCT LEAD DESCRIPTION SNIPPET -->
-                <div class="card-description-box">
-                  <p class="card-description-text">${p.description ? p.description.split('.')[0] + '.' : ''}</p>
-                </div>
+              <!-- PRODUCT LEAD DESCRIPTION SNIPPET -->
+              <div class="card-description-box">
+                <p class="card-description-text">${p.description ? p.description.split('.')[0] + '.' : ''}</p>
+              </div>
 
-                <div class="card-overview-specs">
-                  <div class="card-overview-row">
-                    <span class="spec-k">Terroir:</span>
-                    <span class="spec-v" title="${p.overview?.terroir || p.origin}">${p.overview?.terroir || p.origin}</span>
-                  </div>
-                  <div class="card-overview-row">
-                    <span class="spec-k">Purity:</span>
-                    <span class="spec-v" title="${p.overview?.purityGrade || '100% Valley Pure'}">${p.overview?.purityGrade || '100% Valley Pure'}</span>
-                  </div>
-                  <div class="card-overview-row">
-                    <span class="spec-k">Harvest:</span>
-                    <span class="spec-v" title="${p.overview?.harvestMethod || p.harvestYear || 'Fresh Valley Harvest'}">${p.overview?.harvestMethod || p.harvestYear || 'Fresh Valley Harvest'}</span>
-                  </div>
-                  ${p.overview?.aromaFlavor ? `
-                  <div class="card-overview-row aroma-row">
-                    <span class="spec-k">Profile:</span>
-                    <span class="spec-v" title="${p.overview.aromaFlavor}">${p.overview.aromaFlavor}</span>
-                  </div>
-                  ` : ''}
+              <div class="card-overview-specs">
+                <div class="card-overview-row">
+                  <span class="spec-k">Terroir:</span>
+                  <span class="spec-v" title="${p.overview?.terroir || p.origin}">${p.overview?.terroir || p.origin}</span>
                 </div>
+                <div class="card-overview-row">
+                  <span class="spec-k">Purity:</span>
+                  <span class="spec-v" title="${p.overview?.purityGrade || '100% Valley Pure'}">${p.overview?.purityGrade || '100% Valley Pure'}</span>
+                </div>
+                <div class="card-overview-row">
+                  <span class="spec-k">Harvest:</span>
+                  <span class="spec-v" title="${p.overview?.harvestMethod || p.harvestYear || 'Fresh Valley Harvest'}">${p.overview?.harvestMethod || p.harvestYear || 'Fresh Valley Harvest'}</span>
+                </div>
+                ${p.overview?.aromaFlavor ? `
+                <div class="card-overview-row aroma-row">
+                  <span class="spec-k">Profile:</span>
+                  <span class="spec-v" title="${p.overview.aromaFlavor}">${p.overview.aromaFlavor}</span>
+                </div>
+                ` : ''}
               </div>
             </div>
 
@@ -1671,80 +1653,65 @@ class JenusApp {
               </button>
             </div>
 
-            <!-- KASHMIRI CARVED WALNUT WOOD FRAME FOR OVERVIEW & DESCRIPTION -->
-            <div class="qv-walnut-description-frame" title="Kashmiri Carved Walnut Heirloom Overview & Provenance Frame">
-              <span class="desc-frame-corner desc-frame-corner-tl" aria-hidden="true"></span>
-              <span class="desc-frame-corner desc-frame-corner-tr" aria-hidden="true"></span>
-              <span class="desc-frame-corner desc-frame-corner-bl" aria-hidden="true"></span>
-              <span class="desc-frame-corner desc-frame-corner-br" aria-hidden="true"></span>
-              
-              <div class="qv-walnut-frame-inner">
-                <div class="qv-frame-header-banner">
-                  <span class="qv-frame-wood-tag">🪵 Kashmiri Carved Walnut Heirloom Frame</span>
-                  <span class="qv-frame-origin-badge">Authenticated Srinagar Craft</span>
-                </div>
-
-                <!-- COMPREHENSIVE PRODUCT OVERVIEW GRID -->
-                <div class="qv-overview-section">
-                  <div class="qv-section-header">
-                    <span class="qv-section-icon">📋</span>
-                    <h4>Product Overview & Terroir Specifications</h4>
-                  </div>
-                  <div class="qv-overview-grid">
-                    <div class="qv-overview-card">
-                      <div class="qv-card-icon">🏔️</div>
-                      <div class="qv-card-content">
-                        <span class="qv-card-label">Terroir & Altitude</span>
-                        <strong class="qv-card-val">${product.overview?.terroir || product.origin}</strong>
-                      </div>
-                    </div>
-                    <div class="qv-overview-card">
-                      <div class="qv-card-icon">🌾</div>
-                      <div class="qv-card-content">
-                        <span class="qv-card-label">Harvesting Method</span>
-                        <strong class="qv-card-val">${product.overview?.harvestMethod || 'Hand-harvested 2026 Fresh Valley Harvest'}</strong>
-                      </div>
-                    </div>
-                    <div class="qv-overview-card">
-                      <div class="qv-card-icon">👃</div>
-                      <div class="qv-card-content">
-                        <span class="qv-card-label">Aroma & Flavor Profile</span>
-                        <strong class="qv-card-val">${product.overview?.aromaFlavor || 'Sweet mountain richness, rich bouquet'}</strong>
-                      </div>
-                    </div>
-                    <div class="qv-overview-card">
-                      <div class="qv-card-icon">💎</div>
-                      <div class="qv-card-content">
-                        <span class="qv-card-label">Purity & Processing</span>
-                        <strong class="qv-card-val">${product.overview?.purityGrade || '100% Pure, Unbleached & Non-GMO'}</strong>
-                      </div>
-                    </div>
-                    <div class="qv-overview-card">
-                      <div class="qv-card-icon">📦</div>
-                      <div class="qv-card-content">
-                        <span class="qv-card-label">Packaging Standard</span>
-                        <strong class="qv-card-val">${product.overview?.packagingStandard || 'Airtight nitrogen sealed food-grade canister'}</strong>
-                      </div>
-                    </div>
-                    <div class="qv-overview-card">
-                      <div class="qv-card-icon">⏳</div>
-                      <div class="qv-card-content">
-                        <span class="qv-card-label">Shelf Life & Storage</span>
-                        <strong class="qv-card-val">${product.overview?.shelfLife || '12 Months in cool dry mountain storage'}</strong>
-                      </div>
-                    </div>
+            <!-- COMPREHENSIVE PRODUCT OVERVIEW GRID -->
+            <div class="qv-overview-section">
+              <div class="qv-section-header">
+                <span class="qv-section-icon">📋</span>
+                <h4>Product Overview & Terroir Specifications</h4>
+              </div>
+              <div class="qv-overview-grid">
+                <div class="qv-overview-card">
+                  <div class="qv-card-icon">🏔️</div>
+                  <div class="qv-card-content">
+                    <span class="qv-card-label">Terroir & Altitude</span>
+                    <strong class="qv-card-val">${product.overview?.terroir || product.origin}</strong>
                   </div>
                 </div>
-
-                <!-- DETAILED PRODUCT DESCRIPTION -->
-                <div class="qv-description-section">
-                  <div class="qv-section-header">
-                    <span class="qv-section-icon">📖</span>
-                    <h4>Detailed Description & Provenance</h4>
+                <div class="qv-overview-card">
+                  <div class="qv-card-icon">🌾</div>
+                  <div class="qv-card-content">
+                    <span class="qv-card-label">Harvesting Method</span>
+                    <strong class="qv-card-val">${product.overview?.harvestMethod || 'Hand-harvested 2026 Fresh Valley Harvest'}</strong>
                   </div>
-                  <p class="qv-desc">${product.description}</p>
+                </div>
+                <div class="qv-overview-card">
+                  <div class="qv-card-icon">👃</div>
+                  <div class="qv-card-content">
+                    <span class="qv-card-label">Aroma & Flavor Profile</span>
+                    <strong class="qv-card-val">${product.overview?.aromaFlavor || 'Sweet mountain richness, rich bouquet'}</strong>
+                  </div>
+                </div>
+                <div class="qv-overview-card">
+                  <div class="qv-card-icon">💎</div>
+                  <div class="qv-card-content">
+                    <span class="qv-card-label">Purity & Processing</span>
+                    <strong class="qv-card-val">${product.overview?.purityGrade || '100% Pure, Unbleached & Non-GMO'}</strong>
+                  </div>
+                </div>
+                <div class="qv-overview-card">
+                  <div class="qv-card-icon">📦</div>
+                  <div class="qv-card-content">
+                    <span class="qv-card-label">Packaging Standard</span>
+                    <strong class="qv-card-val">${product.overview?.packagingStandard || 'Airtight nitrogen sealed food-grade canister'}</strong>
+                  </div>
+                </div>
+                <div class="qv-overview-card">
+                  <div class="qv-card-icon">⏳</div>
+                  <div class="qv-card-content">
+                    <span class="qv-card-label">Shelf Life & Storage</span>
+                    <strong class="qv-card-val">${product.overview?.shelfLife || '12 Months in cool dry mountain storage'}</strong>
+                  </div>
                 </div>
               </div>
+            </div>
+
+            <!-- DETAILED PRODUCT DESCRIPTION -->
+            <div class="qv-description-section">
+              <div class="qv-section-header">
+                <span class="qv-section-icon">📖</span>
+                <h4>Detailed Description & Provenance</h4>
+              </div>
+              <p class="qv-desc">${product.description}</p>
             </div>
 
             <!-- BENEFITS & QUALITY ASSURANCE -->
