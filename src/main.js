@@ -1369,14 +1369,56 @@ class JenusApp {
       if (curImg.includes('figs-close')) {
         return `🔍 Photo ${idx + 1} of ${images.length}: Extreme Real Macro Cross-Section — Sun-Dried Mountain Fig Sliced Open Showing Honey Amber Pulp & Crunchy Seeds`;
       }
-      if (curImg.includes('real-berries-macro') || curImg.includes('berries-seeds-mix-close')) {
-        return `🫐 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Wild Berries & Roasted Seeds Superfood Mix (Ruby Cranberries, Blueberries, Pumpkin & Sunflower Seeds)`;
+      if (curImg.includes('real-berries-macro')) {
+        return `🫐 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Wild Kashmiri Glacial Berries (Plump Sun-Dried Ruby Cranberries & High-Altitude Wild Blueberries)`;
       }
       if (curImg.includes('cranberries-close')) {
         return `🫐 Photo ${idx + 1} of ${images.length}: Real Macro Photography — Sun-Dried Kashmiri Mountain Ruby Cranberries`;
       }
       if (curImg.includes('blueberries-close')) {
         return `🫐 Photo ${idx + 1} of ${images.length}: Real Macro Photography — High-Altitude Glacial Wild Blueberries`;
+      }
+      if (curImg.includes('berries-bowl')) {
+        return `🫐 Photo ${idx + 1} of ${images.length}: Authentic Valley Harvest — Ceramic Bowl of Wild Mountain Dried Cranberries & Blueberries`;
+      }
+      if (curImg.includes('muesli-saffron-macro')) {
+        return `🥣 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Royal Kashmiri Saffron & Mamra Almond Muesli (Whole Rolled Oats, Sliced Mamra Flakes & Golden Saffron)`;
+      }
+      if (curImg.includes('muesli-saffron-bowl')) {
+        return `🥣 Photo ${idx + 1} of ${images.length}: Real Serving Photography — Hearty Breakfast Bowl with Whole Rolled Oats, Pecans, Sliced Almonds & Dried Fruits`;
+      }
+      if (curImg.includes('muesli-saffron-spoon')) {
+        return `🥄 Photo ${idx + 1} of ${images.length}: Close-up Spoonful & Texture — Crispy Golden Oat Clusters & Thin Mamra Almond Flakes`;
+      }
+      if (curImg.includes('granola-honey-macro')) {
+        return `🍯 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Crunchy Forest Honey & Walnut Granola (Golden Baked Clusters Glazed with Raw Acacia Honey)`;
+      }
+      if (curImg.includes('granola-honey-bowl')) {
+        return `🥣 Photo ${idx + 1} of ${images.length}: Gourmet Breakfast Serving — Parfait Bowl with Honey Granola Clusters, Chilled Yogurt & Fresh Berries`;
+      }
+      if (curImg.includes('granola-honey-clusters')) {
+        return `✨ Photo ${idx + 1} of ${images.length}: Extreme Close-up — Slow-Baked Crunchy Honeycomb Granola Clusters & Roasted Snow Walnut Halves`;
+      }
+      if (curImg.includes('trail-mix-macro')) {
+        return `🏔️ Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — High-Protein Himalayan Trail Mix (Whole Mamra Almonds, Snow Walnuts, Pumpkin Seeds, Sunflower Seeds & Sun-Cured Berries)`;
+      }
+      if (curImg.includes('trail-mix-bowl')) {
+        return `🥗 Photo ${idx + 1} of ${images.length}: Wholesome Artisan Serving — Energy-Dense Nut, Seed & Wild Berry Trekking Mix`;
+      }
+      if (curImg.includes('trail-mix-detail')) {
+        return `🔍 Photo ${idx + 1} of ${images.length}: Extreme Close-up Detail — Roasted Green Pumpkin Pepitas, Hulled Sunflower Kernels & Whole Almonds`;
+      }
+      if (curImg.includes('sundried-mulberries-macro')) {
+        return `🌿 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Sun-Dried Kashmiri White Shahtoot Mulberries (Golden-Cream Nectar Pearls)`;
+      }
+      if (curImg.includes('sundried-mulberries-bowl')) {
+        return `🥣 Photo ${idx + 1} of ${images.length}: Traditional Batch Photography — Solar-Dried Himalayan Sweet White Mulberries from Centuries-Old Groves`;
+      }
+      if (curImg.includes('sundried-plums-macro')) {
+        return `🍑 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Sun-Dried Kashmiri Mountain Plums / Aloo Bukhara (Deep Amber Pulp & Intact Stones)`;
+      }
+      if (curImg.includes('sundried-plums-bowl')) {
+        return `🥣 Photo ${idx + 1} of ${images.length}: Traditional Platter Photography — Sun-Cured Sweet-Tart Kashmiri Aloo Bukhara Plums`;
       }
       if (curImg.includes('real-gurbandi-macro') || curImg.includes('gurbandi-almonds-close')) {
         return `🥜 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Wild Kashmiri Gurbandi Choti Giri Almonds (Teardrop Shape, 52% Oil Sheen)`;
@@ -1465,8 +1507,22 @@ class JenusApp {
       if (curImg.includes('packaged')) return 'Packaging';
       if (curImg.includes('apricots') || curImg.includes('kargil')) return 'Apricots';
       if (curImg.includes('real-figs') || curImg.includes('figs-close')) return 'Anjeer';
+      if (curImg.includes('muesli-saffron-macro')) return 'Muesli';
+      if (curImg.includes('muesli-saffron-bowl')) return 'Bowl';
+      if (curImg.includes('muesli-saffron-spoon')) return 'Flakes';
+      if (curImg.includes('granola-honey-macro')) return 'Granola';
+      if (curImg.includes('granola-honey-bowl')) return 'Bowl';
+      if (curImg.includes('granola-honey-clusters')) return 'Clusters';
+      if (curImg.includes('trail-mix-macro')) return 'Trail Mix';
+      if (curImg.includes('trail-mix-bowl')) return 'Serving';
+      if (curImg.includes('trail-mix-detail')) return 'Seeds & Nuts';
+      if (curImg.includes('sundried-mulberries-macro')) return 'Shahtoot';
+      if (curImg.includes('sundried-mulberries-bowl')) return 'Mulberries';
+      if (curImg.includes('sundried-plums-macro')) return 'Aloo Bukhara';
+      if (curImg.includes('sundried-plums-bowl')) return 'Plums';
       if (curImg.includes('cranberries')) return 'Cranberries';
       if (curImg.includes('blueberries')) return 'Blueberries';
+      if (curImg.includes('berries-bowl')) return 'Berry Bowl';
       if (curImg.includes('berries')) return 'Berries';
       if (curImg.includes('gurbandi')) return 'Gurbandi';
       if (curImg.includes('kahwa-brewed')) return 'Brewed';
