@@ -32,44 +32,16 @@ class KashmirAudio {
     }
   }
 
-  // Play a soft bell/santoor pluck note when an item is added to cart
-  playSantoorNote(freq = 523.25) { // C5 note by default
-    // STRICT GUARD: Zero sound allowed during scrolling
-    if (this.isScrolling) return;
-    try {
-      this.init();
-      if (!this.ctx) return;
-
-      const osc = this.ctx.createOscillator();
-      const gain = this.ctx.createGain();
-
-      // Santoor-like harmonic content
-      osc.type = 'triangle';
-      osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
-      // Soft pitch decay
-      osc.frequency.exponentialRampToValueAtTime(freq * 0.99, this.ctx.currentTime + 0.8);
-
-      gain.gain.setValueAtTime(0.2, this.ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 1.2);
-
-      osc.connect(gain);
-      gain.connect(this.ctx.destination);
-
-      osc.start();
-      osc.stop(this.ctx.currentTime + 1.2);
-    } catch (e) {
-      console.warn("Audio play prevented:", e);
-    }
+  // Click sound effects disabled as requested
+  playSantoorNote(freq = 523.25) {
+    // Sound effects on click removed
+    return;
   }
 
-  // Celebration chord for Razorpay order success
+  // Celebration sound effect disabled
   playCelebrationChime() {
-    const notes = [523.25, 659.25, 783.99, 1046.50]; // C - E - G - C arpeggio
-    notes.forEach((freq, idx) => {
-      setTimeout(() => {
-        this.playSantoorNote(freq);
-      }, idx * 160);
-    });
+    // Sound effects on click removed
+    return;
   }
 
   // Ambient gentle Kashmir valley breeze + warm harmonic drone
