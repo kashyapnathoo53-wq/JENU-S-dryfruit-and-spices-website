@@ -126,31 +126,51 @@ export class AdminPortalManager {
     });
 
     // Login Form Submit
-    document.getElementById('admin-login-form')?.addEventListener('submit', (e) => {
+    document.getElementById('admin-login-form')?.addEventListener('submit', async (e) => {
       e.preventDefault();
       const id = document.getElementById('admin-user-id')?.value;
       const pwd = document.getElementById('admin-password')?.value;
       const feedback = document.getElementById('admin-login-feedback');
+      const submitBtn = document.getElementById('btn-submit-admin-login');
 
-      const result = dbStore.login(id, pwd);
-      if (result.success) {
-        if (feedback) feedback.classList.add('hidden');
-        const pwdInput = document.getElementById('admin-password');
-        if (pwdInput) pwdInput.value = '';
-        this.closeLoginModal();
-        kashmirAudio.playCelebrationChime();
-        this.openDatabasePortal();
-        this.flashAutoSaveStatus('✓ Administrator Authenticated • Master Database Live');
-      } else {
-        if (feedback) {
-          feedback.textContent = result.message || 'Invalid administrative credentials. Access restricted.';
-          feedback.classList.remove('hidden');
-          feedback.classList.add('animate-shake');
-          setTimeout(() => feedback.classList.remove('animate-shake'), 600);
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.7';
+        submitBtn.querySelector('span').textContent = 'Authenticating with Secure Server...';
+      }
+
+      try {
+        const result = await dbStore.login(id, pwd);
+        if (result.success) {
+          if (feedback) feedback.classList.add('hidden');
+          const pwdInput = document.getElementById('admin-password');
+          if (pwdInput) pwdInput.value = '';
+          this.closeLoginModal();
+          kashmirAudio.playCelebrationChime();
+          this.openDatabasePortal();
+          this.flashAutoSaveStatus('✓ Administrator Authenticated • Master Database Live');
         } else {
-          alert(result.message || 'Invalid administrative credentials.');
+          if (feedback) {
+            feedback.textContent = result.message || 'Invalid administrative credentials. Access restricted.';
+            feedback.classList.remove('hidden');
+            feedback.classList.add('animate-shake');
+            setTimeout(() => feedback.classList.remove('animate-shake'), 600);
+          } else {
+            alert(result.message || 'Invalid administrative credentials.');
+          }
+          kashmirAudio.playSantoorNote(330);
         }
-        kashmirAudio.playSantoorNote(330);
+      } catch (err) {
+        if (feedback) {
+          feedback.textContent = 'Server connection error. Please try again.';
+          feedback.classList.remove('hidden');
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = '1';
+          submitBtn.querySelector('span').textContent = 'Authenticate & Enter Master Database ➔';
+        }
       }
     });
   }
@@ -909,10 +929,16 @@ export class AdminPortalManager {
     document.body.classList.remove('modal-open');
   }
 
-  openDatabasePortal() {
+  async openDatabasePortal() {
     this.portalEl?.classList.remove('hidden');
     document.body.classList.add('modal-open');
     this.renderActiveTab();
+    try {
+      await dbStore.syncOrdersFromBackend();
+      if (this.activeTab === 'orders' || this.activeTab === 'dashboard') {
+        this.renderActiveTab();
+      }
+    } catch {}
   }
 
   closeDatabasePortal() {

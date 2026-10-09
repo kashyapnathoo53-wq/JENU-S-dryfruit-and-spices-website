@@ -2,6 +2,7 @@
 // Instant phone login with OTP simulation and real-time Srinagar Air Cargo dispatch timeline
 
 import { kashmirAudio } from './audio.js';
+import { api } from './api.js';
 
 export class OrderTrackingManager {
   constructor() {
@@ -111,7 +112,7 @@ export class OrderTrackingManager {
     });
   }
 
-  openModal(prefilledPhone = null, targetOrderId = null) {
+  async openModal(prefilledPhone = null, targetOrderId = null) {
     this.modalEl?.classList.remove('hidden');
     document.body.classList.add('modal-open');
     kashmirAudio.playSantoorNote(587.33);
@@ -121,7 +122,16 @@ export class OrderTrackingManager {
     // Never auto-login on its own.
     const activePhone = prefilledPhone || this.currentPhone;
     if (activePhone) {
-      const orders = this.getOrdersForPhone(activePhone);
+      let orders = this.getOrdersForPhone(activePhone);
+      try {
+        const res = await api.trackOrders(activePhone);
+        if (res && res.orders && Array.isArray(res.orders)) {
+          const map = new Map(orders.map(o => [o.orderId, o]));
+          res.orders.forEach(ro => map.set(ro.orderId, { ...map.get(ro.orderId), ...ro }));
+          orders = Array.from(map.values());
+          localStorage.setItem('jenus_orders', JSON.stringify(orders));
+        }
+      } catch {}
       if (orders.length > 0) {
         this.renderOrdersView(activePhone, orders, targetOrderId);
         return;
@@ -401,8 +411,17 @@ export class OrderTrackingManager {
 
         window.dispatchEvent(new CustomEvent('jenus_auth_change', { detail: { phone } }));
 
-        setTimeout(() => {
-          const orders = this.getOrdersForPhone(phone);
+        setTimeout(async () => {
+          let orders = this.getOrdersForPhone(phone);
+          try {
+            const res = await api.trackOrders(phone);
+            if (res && res.orders && Array.isArray(res.orders)) {
+              const map = new Map(orders.map(o => [o.orderId, o]));
+              res.orders.forEach(ro => map.set(ro.orderId, { ...map.get(ro.orderId), ...ro }));
+              orders = Array.from(map.values());
+              localStorage.setItem('jenus_orders', JSON.stringify(orders));
+            }
+          } catch {}
           this.renderOrdersView(phone, orders);
         }, 600);
       }

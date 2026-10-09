@@ -3,6 +3,7 @@
 // Instant "Blink Us" notification system with WhatsApp connect & Admin Portal synchronization
 
 import { kashmirAudio } from './audio.js';
+import { api } from './api.js';
 
 export class WholesaleManager {
   constructor() {
@@ -83,6 +84,24 @@ export class WholesaleManager {
       list.unshift(newRecord);
       localStorage.setItem('jenus_wholesale_inquiries', JSON.stringify(list));
       window.dispatchEvent(new CustomEvent('wholesale-inquiry-created', { detail: newRecord }));
+
+      // Persist to backend database
+      api.submitWholesaleInquiry({
+        name: inquiryData.name,
+        phone: inquiryData.phone,
+        email: inquiryData.email,
+        businessName: inquiryData.business,
+        city: inquiryData.city,
+        productInterest: inquiryData.product,
+        estimatedQuantity: inquiryData.quantity,
+        targetPrice: inquiryData.targetPrice,
+        packaging: inquiryData.packaging,
+        preferredHub: inquiryData.branch,
+        notes: inquiryData.notes
+      }).catch(err => {
+        console.warn('Backend wholesale submission warning:', err.message);
+      });
+
       return newRecord;
     } catch (e) {
       console.warn('Error saving wholesale inquiry:', e);
@@ -99,6 +118,11 @@ export class WholesaleManager {
         item.isRead = true;
         localStorage.setItem('jenus_wholesale_inquiries', JSON.stringify(list));
         window.dispatchEvent(new CustomEvent('wholesale-inquiry-updated', { detail: item }));
+
+        // Sync to backend if admin token available
+        api.updateWholesaleStatus(refId, newStatus).catch(err => {
+          console.warn('Backend wholesale update status warning:', err.message);
+        });
       }
     } catch (e) {}
   }

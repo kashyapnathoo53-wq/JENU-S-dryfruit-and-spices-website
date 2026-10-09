@@ -4,10 +4,10 @@
 import { cartStore } from './cart.js';
 import { kashmirAudio } from './audio.js';
 import { orderTrackingManager } from './tracking.js';
+import { api } from './api.js';
 
 export const RAZORPAY_CONFIG = {
   keyId: import.meta.env?.VITE_RAZORPAY_KEY_ID || 'rzp_test_Tf36riXXdeFssw',
-  keySecret: 'dicOk0uK8cqQl6OrjWibh1a4',
   merchantName: "JENU'S Kashmir Gourmet",
   fssaiLicense: "10026061000412",
   themeColor: "#0F2E24"
@@ -18,8 +18,19 @@ export class RazorpayManager {
     this.modalEl = null;
     this.currentOrder = null;
     this.currentCheckout = null;
+    this.currentServerOrder = null;
     this.selectedMethod = 'upi';
     this.initDOM();
+    this.fetchLiveConfig();
+  }
+
+  async fetchLiveConfig() {
+    try {
+      const cfg = await api.getConfig();
+      if (cfg && cfg.razorpayKeyId) {
+        RAZORPAY_CONFIG.keyId = cfg.razorpayKeyId;
+      }
+    } catch {}
   }
 
   initDOM() {
@@ -389,16 +400,19 @@ export class RazorpayManager {
       return;
     }
 
-    const total = data.total;
-    const sessionRef = data.txnRef || `TXN-${Math.floor(100000 + Math.random() * 900000)}`;
+    const orderNumber = this.currentServerOrder?.orderNumber || `JNU-KSH-${Math.floor(100000 + Math.random() * 900000)}`;
+    const rzpOrderId = this.currentServerOrder?.razorpayOrderId;
+    const verifiedAmount = this.currentServerOrder?.amount || data.total;
+    const sessionRef = data.txnRef || orderNumber;
 
     const options = {
       key: RAZORPAY_CONFIG.keyId,
-      amount: Math.round(total * 100), // in paise
+      amount: Math.round(verifiedAmount * 100), // in paise
       currency: "INR",
       name: RAZORPAY_CONFIG.merchantName,
       description: "Direct Valley Harvest Consignment • FSSAI Lic 10026061000412",
       image: "/favicon.svg",
+      ...(rzpOrderId ? { order_id: rzpOrderId } : {}),
       prefill: {
         name: data.customer?.name || "",
         email: data.customer?.email || "",
@@ -407,20 +421,41 @@ export class RazorpayManager {
       notes: {
         address: `${data.customer?.address || ''}, ${data.customer?.city || ''} - ${data.customer?.pincode || ''}`,
         session_ref: sessionRef,
-        fssai_cert: "10026061000412"
+        fssai_cert: "10026061000412",
+        order_number: orderNumber
       },
       theme: {
         color: RAZORPAY_CONFIG.themeColor
       },
-      handler: (response) => {
+      handler: async (response) => {
         // Successful payment captured through official Razorpay checkout!
-        this.closeModal();
-        this.showOrderSuccess({
-          paymentId: response.razorpay_payment_id || `pay_${Math.random().toString(36).substring(2, 10).toUpperCase()}`,
-          orderId: response.razorpay_order_id,
-          signature: response.razorpay_signature,
-          method: 'Official Razorpay SDK Checkout'
-        });
+        try {
+          const verifyRes = await api.verifyPayment({
+            orderNumber: orderNumber,
+            razorpayOrderId: response.razorpay_order_id || rzpOrderId,
+            razorpayPaymentId: response.razorpay_payment_id,
+            razorpaySignature: response.razorpay_signature,
+            method: 'Official Razorpay SDK Checkout'
+          });
+          this.closeModal();
+          this.showOrderSuccess({
+            paymentId: response.razorpay_payment_id || `pay_${Math.random().toString(36).substring(2, 10).toUpperCase()}`,
+            orderId: (verifyRes && verifyRes.order && verifyRes.order.orderNumber) || orderNumber,
+            signature: response.razorpay_signature,
+            method: 'Official Razorpay SDK Checkout',
+            serverOrder: verifyRes?.order
+          });
+        } catch (err) {
+          console.error("Signature verification failed:", err);
+          alert(`Payment signature verification warning: ${err.message || 'Verification failed'}. Our dispatch team will confirm your order.`);
+          this.closeModal();
+          this.showOrderSuccess({
+            paymentId: response.razorpay_payment_id,
+            orderId: orderNumber,
+            signature: response.razorpay_signature,
+            method: 'Official Razorpay SDK Checkout'
+          });
+        }
       },
       modal: {
         ondismiss: () => {
@@ -444,12 +479,12 @@ export class RazorpayManager {
 
   openEmbeddedModal(checkoutData) {
     this.currentCheckout = checkoutData;
-    const total = checkoutData.total;
-    const sessionRef = checkoutData.txnRef || `TXN-${Math.floor(100000 + Math.random() * 900000)}`;
+    const total = this.currentServerOrder?.amount || checkoutData.total;
+    const sessionRef = this.currentServerOrder?.orderNumber || checkoutData.txnRef || `TXN-${Math.floor(100000 + Math.random() * 900000)}`;
     this.currentCheckout.txnRef = sessionRef;
 
     // Display session transaction reference during payment (no order ID yet)
-    document.getElementById('rzp-display-order-id').textContent = `Payment Session #${sessionRef}`;
+    document.getElementById('rzp-display-order-id').textContent = `Payment Order #${sessionRef}`;
     document.getElementById('rzp-display-amount').textContent = total.toLocaleString('en-IN');
     this.updatePayButtonLabel();
 
@@ -458,53 +493,39 @@ export class RazorpayManager {
     kashmirAudio.playSantoorNote(587.33);
   }
 
-  openPayment(checkoutData) {
+  async openPayment(checkoutData) {
     this.currentCheckout = checkoutData;
+    this.currentServerOrder = null;
 
-    // Check if official Razorpay checkout script is available
+    // 1. Create secure order record on Python Flask REST API
+    try {
+      const orderPayload = {
+        customer: checkoutData.customer || {},
+        items: (checkoutData.items || []).map(it => ({
+          id: it.id,
+          weight: it.weight || '500g',
+          quantity: it.quantity || 1,
+          customPrice: it.price
+        })),
+        promoCode: checkoutData.promoCode || null,
+        notes: `Storefront order - Phone: ${checkoutData.customer?.phone || 'N/A'}`
+      };
+
+      const serverRes = await api.createOrder(orderPayload);
+      if (serverRes && serverRes.success) {
+        this.currentServerOrder = serverRes;
+        if (serverRes.amount) {
+          checkoutData.total = serverRes.amount;
+        }
+      }
+    } catch (err) {
+      console.warn("Could not create pending order on backend:", err.message);
+    }
+
+    // 2. Check if official Razorpay checkout script is available
     if (typeof window.Razorpay === 'function') {
       try {
-        const totalAmount = checkoutData.total || cartStore.getTotal();
-        const totalPaise = Math.round(Number(totalAmount) * 100);
-        const options = {
-          key: RAZORPAY_CONFIG.keyId,
-          amount: totalPaise,
-          currency: "INR",
-          name: RAZORPAY_CONFIG.merchantName,
-          description: `Kashmir Valley Direct Harvest (${(checkoutData.items || []).length} items)`,
-          image: "/favicon.svg",
-          prefill: {
-            name: checkoutData.customer?.name || "",
-            contact: checkoutData.customer?.phone || "",
-            email: checkoutData.customer?.email || "SriRadheEnterpriseswork@gmail.com"
-          },
-          notes: {
-            address: `${checkoutData.customer?.address || ''}, ${checkoutData.customer?.city || ''} - ${checkoutData.customer?.pincode || ''}`,
-            fssai_central_license: RAZORPAY_CONFIG.fssaiLicense
-          },
-          theme: {
-            color: RAZORPAY_CONFIG.themeColor
-          },
-          handler: (response) => {
-            // Payment success callback from Razorpay official checkout
-            this.showOrderSuccess({
-              paymentId: response.razorpay_payment_id || `pay_${Math.random().toString(36).substring(2, 10).toUpperCase()}`,
-              orderId: response.razorpay_order_id || `JNU-KSH-${Math.floor(100000 + Math.random() * 900000)}`,
-              method: 'Razorpay Gateway (UPI / Card / Netbanking)'
-            });
-          },
-          modal: {
-            ondismiss: () => {
-              console.log("Razorpay checkout modal closed by user");
-            }
-          }
-        };
-
-        const rzp = new window.Razorpay(options);
-        rzp.on('payment.failed', (response) => {
-          alert(`Payment Failed: ${response.error?.description || 'Transaction declined by bank'}`);
-        });
-        rzp.open();
+        this.openOfficialRazorpayCheckout(checkoutData);
         return;
       } catch (err) {
         console.warn("Could not launch Razorpay official popup, switching to embedded modal:", err);
@@ -527,31 +548,53 @@ export class RazorpayManager {
 
     processingEl.classList.remove('hidden');
     procStatus.textContent = "Connecting to Razorpay Banking Gateway...";
-    procSub.textContent = `Authorizing through Sandbox Key: ${RAZORPAY_CONFIG.keyId}...`;
+    procSub.textContent = `Authorizing transaction through Razorpay Gateway...`;
 
     setTimeout(() => {
       procStatus.textContent = "Authorizing with Bank Server...";
-      procSub.textContent = "Bank authorization token validated. Confirming payment capture...";
-    }, 1100);
+      procSub.textContent = "Validating cryptographic signature with backend server...";
+    }, 1000);
 
-    setTimeout(() => {
+    setTimeout(async () => {
+      const orderNumber = this.currentServerOrder?.orderNumber || `JNU-KSH-${Math.floor(100000 + Math.random() * 900000)}`;
+      const rzpOrderId = this.currentServerOrder?.razorpayOrderId;
+      const dummyPayId = `pay_RzpKsh${Math.random().toString(36).substring(2, 10).toUpperCase()}`;
+
+      let verifiedOrder = null;
+      if (this.currentServerOrder?.orderNumber) {
+        try {
+          const verifyRes = await api.verifyPayment({
+            orderNumber: orderNumber,
+            razorpayOrderId: rzpOrderId,
+            razorpayPaymentId: dummyPayId,
+            razorpaySignature: 'simulated_success_sig',
+            method: `${this.selectedMethod.toUpperCase()} (Razorpay Active Sandbox)`
+          });
+          verifiedOrder = verifyRes?.order;
+        } catch (e) {
+          console.warn('Backend payment verification note:', e.message);
+        }
+      }
+
       procStatus.textContent = "Payment Verified & Captured!";
       procSub.textContent = "Generating official FSSAI tax invoice & valley dispatch order...";
-    }, 2200);
 
-    setTimeout(() => {
-      processingEl.classList.add('hidden');
-      this.closeModal();
-      // Order placed and order number displayed strictly after payment completion
-      this.showOrderSuccess({
-        method: `${this.selectedMethod.toUpperCase()} (Razorpay Active Sandbox)`
-      });
-    }, 3000);
+      setTimeout(() => {
+        processingEl.classList.add('hidden');
+        this.closeModal();
+        this.showOrderSuccess({
+          paymentId: dummyPayId,
+          orderId: verifiedOrder?.orderNumber || orderNumber,
+          method: `${this.selectedMethod.toUpperCase()} (Razorpay Active Sandbox)`,
+          serverOrder: verifiedOrder
+        });
+      }, 700);
+    }, 1800);
   }
 
   showOrderSuccess(paymentMeta = {}) {
     // Official Order Number generated ONLY after payment is captured
-    const officialOrderId = paymentMeta.orderId || `JNU-KSH-${Math.floor(100000 + Math.random() * 900000)}`;
+    const officialOrderId = (paymentMeta.serverOrder && paymentMeta.serverOrder.orderNumber) || paymentMeta.orderId || `JNU-KSH-${Math.floor(100000 + Math.random() * 900000)}`;
     const paymentId = paymentMeta.paymentId || `pay_RzpKsh${Math.random().toString(36).substring(2, 10).toUpperCase()}`;
     const placedDate = new Date().toLocaleDateString('en-IN', {
       day: 'numeric',
@@ -561,14 +604,16 @@ export class RazorpayManager {
       minute: '2-digit'
     });
 
+    const orderTotal = (paymentMeta.serverOrder && paymentMeta.serverOrder.total) || (this.currentCheckout ? this.currentCheckout.total : cartStore.getTotal());
+
     const order = {
       orderId: officialOrderId,
       paymentId: paymentId,
       placedDate: placedDate,
       method: paymentMeta.method || 'Razorpay Prepaid',
-      total: this.currentCheckout ? this.currentCheckout.total : cartStore.getTotal(),
-      items: this.currentCheckout ? this.currentCheckout.items : cartStore.getState().cart,
-      customer: this.currentCheckout?.customer || {
+      total: orderTotal,
+      items: (paymentMeta.serverOrder && paymentMeta.serverOrder.items) || (this.currentCheckout ? this.currentCheckout.items : cartStore.getState().cart),
+      customer: (paymentMeta.serverOrder && paymentMeta.serverOrder.customer) || this.currentCheckout?.customer || {
         name: "Valued Patron",
         phone: "",
         address: "",

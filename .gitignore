@@ -35,5 +35,13 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
-.DS_Store
-Thumbs.db
+# Python & Database
+__pycache__/
+*.py[cod]
+*$py.class
+*.db
+*.sqlite
+*.sqlite3
+.pytest_cache/
+.coverage
+htmlcov/

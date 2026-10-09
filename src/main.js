@@ -1155,6 +1155,7 @@ class JenusApp {
       const checkoutData = {
         txnRef: `TXN-${Math.floor(100000 + Math.random() * 900000)}`,
         total: state.total,
+        promoCode: state.activeCoupon?.code || null,
         items: [...state.cart],
         customer: {
           name: document.getElementById('chk-name').value.trim(),

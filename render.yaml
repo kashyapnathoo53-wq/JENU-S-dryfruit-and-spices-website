@@ -1,0 +1,32 @@
+services:
+  # -------------------------------------------------------------
+  # Python Flask REST API Service (Render Web Service)
+  # -------------------------------------------------------------
+  - type: web
+    name: jenus-kashmir-api
+    env: python
+    region: sing  # Singapore (closest to India / J&K patrons)
+    plan: starter
+    branch: main
+    buildCommand: "pip install -r backend/requirements.txt"
+    startCommand: "gunicorn backend.app:app --bind 0.0.0.0:$PORT --workers 4 --threads 2 --timeout 120"
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: FLASK_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false  # Provide Supabase PostgreSQL URL in Render Dashboard
+      - key: SECRET_KEY
+        generateValue: true
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
+      - key: RAZORPAY_WEBHOOK_SECRET
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
