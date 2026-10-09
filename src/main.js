@@ -1770,7 +1770,7 @@ class JenusApp {
                   <span class="qv-tel-sep">•</span>
                   <a href="tel:9868983010" class="qv-tel-link"><strong>9868983010</strong></a>
                   <span class="qv-tel-sep">•</span>
-                  <a href="mailto:SriRadheEnterpriseswork@gmail.com" class="qv-tel-link" style="color: #FDE68A;"><strong>SriRadheEnterpriseswork@gmail.com</strong></a>
+                  <a href="mailto:SriRadheEnterpriseswork@gmail.com" class="qv-tel-link" style="color: #059669;"><strong>SriRadheEnterpriseswork@gmail.com</strong></a>
                   <span class="qv-support-hubs">(Jammu • Kashmir • Delhi • Mumbai)</span>
                 </div>
               </div>

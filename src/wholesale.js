@@ -462,10 +462,10 @@ export class WholesaleManager {
             <a href="tel:85955119239" class="btn-w-phone-call" style="flex: 1; background: #0F2E24; color: #FFFDF9; border: 1.5px solid #F59E0B; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13.5px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px;">
               <span>📞 Call 85955119239</span>
             </a>
-            <a href="tel:9868983010" class="btn-w-phone-call" style="flex: 1; background: #0F2E24; color: #FFFDF9; border: 1.5px solid #F59E0B; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13.5px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px;">
+            <a href="tel:9868983010" class="btn-w-phone-call" style="flex: 1; background: #059669; color: #FFFFFF; border: none; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13.5px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px;">
               <span>📞 Call 9868983010</span>
             </a>
-            <a href="mailto:SriRadheEnterpriseswork@gmail.com" class="btn-w-phone-call" style="width: 100%; background: #1C110A; color: #FCD34D; border: 1.5px solid rgba(212, 175, 55, 0.4); padding: 10px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px;">
+            <a href="mailto:SriRadheEnterpriseswork@gmail.com" class="btn-w-phone-call" style="width: 100%; background: #F8FAFC; color: #1D1D1F; border: 1px solid #E2E8F0; padding: 10px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px;">
               <span>✉️ SriRadheEnterpriseswork@gmail.com</span>
             </a>
           </div>

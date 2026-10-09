@@ -429,15 +429,15 @@ export class RazorpayManager {
               </div>
             </div>
             <div class="success-care-links" style="display: flex; flex-wrap: wrap; gap: 8px;">
-              <a href="tel:85955119239" class="success-care-pill" title="Call Helpline 1" style="background: #180E08; color: #FCD34D; border: 1px solid rgba(212, 175, 55, 0.4); padding: 6px 12px; border-radius: 6px; font-size: 12px; text-decoration: none; font-weight: 600;">📞 85955119239</a>
-              <a href="tel:9868983010" class="success-care-pill" title="Call Helpline 2" style="background: #180E08; color: #FCD34D; border: 1px solid rgba(212, 175, 55, 0.4); padding: 6px 12px; border-radius: 6px; font-size: 12px; text-decoration: none; font-weight: 600;">📞 9868983010</a>
-              <a href="mailto:SriRadheEnterpriseswork@gmail.com" class="success-care-pill" title="Email Order Desk" style="background: #180E08; color: #E0E7FF; border: 1px solid rgba(224, 231, 255, 0.3); padding: 6px 12px; border-radius: 6px; font-size: 12px; text-decoration: none;">✉️ SriRadheEnterpriseswork@gmail.com</a>
-              <a href="https://wa.me/919868983010?text=Hi%20JENU%27S,%20inquiry%20regarding%20Order%20${order.orderId}" target="_blank" rel="noopener noreferrer" class="success-care-pill wa" title="WhatsApp Order Support" style="background: #065F46; color: #FFFFFF; border: 1px solid #34D399; padding: 6px 12px; border-radius: 6px; font-size: 12px; text-decoration: none; font-weight: 600;">💬 WhatsApp Support</a>
+              <a href="tel:85955119239" class="success-care-pill" title="Call Helpline 1" style="background: #F8FAFC; color: #1D1D1F; border: 1px solid #E2E8F0; padding: 6px 12px; border-radius: 6px; font-size: 12px; text-decoration: none; font-weight: 600;">📞 85955119239</a>
+              <a href="tel:9868983010" class="success-care-pill" title="Call Helpline 2" style="background: #F8FAFC; color: #1D1D1F; border: 1px solid #E2E8F0; padding: 6px 12px; border-radius: 6px; font-size: 12px; text-decoration: none; font-weight: 600;">📞 9868983010</a>
+              <a href="mailto:SriRadheEnterpriseswork@gmail.com" class="success-care-pill" title="Email Order Desk" style="background: #F8FAFC; color: #1D1D1F; border: 1px solid #E2E8F0; padding: 6px 12px; border-radius: 6px; font-size: 12px; text-decoration: none; font-weight: 600;">✉️ SriRadheEnterpriseswork@gmail.com</a>
+              <a href="https://wa.me/919868983010?text=Hi%20JENU%27S,%20inquiry%20regarding%20Order%20${order.orderId}" target="_blank" rel="noopener noreferrer" class="success-care-pill wa" title="WhatsApp Order Support" style="background: #D1FAE5; color: #065F46; border: 1px solid #A7F3D0; padding: 6px 12px; border-radius: 6px; font-size: 12px; text-decoration: none; font-weight: 600;">💬 WhatsApp Support</a>
             </div>
           </div>
 
           <div class="success-actions" style="display: flex; flex-direction: column; gap: 10px;">
-            <button type="button" class="btn-success-track" id="btn-success-track-consignment" style="background: #0F2E24; color: #FFF; font-weight: 700; padding: 14px 22px; border-radius: 8px; border: 1.5px solid #F59E0B; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px;">
+            <button type="button" class="btn-success-track" id="btn-success-track-consignment" style="background: #059669; color: #FFF; font-weight: 700; padding: 14px 22px; border-radius: 8px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px;">
               📦 Track Consignment via Mobile Number ➔
             </button>
             <div style="display: flex; gap: 10px; flex-wrap: wrap;">
