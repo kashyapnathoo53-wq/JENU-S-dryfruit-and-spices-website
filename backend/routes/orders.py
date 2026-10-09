@@ -32,11 +32,14 @@ def create_razorpay_order(amount_rupees, receipt_id, notes=None):
             return rzp_order.get("id")
         except Exception as e:
             current_app.logger.error(f"Razorpay API error: {e}")
-            # Fallback to deterministic test order ID in sandbox
-            return f"order_rzp_test_{random.randint(10000000, 99999999)}"
+            return None
 
-    # Sandbox / Local dev mode
-    return f"order_rzp_mock_{random.randint(10000000, 99999999)}"
+    # In test mode or when mock keys are configured:
+    if current_app.config.get("TESTING") or (key_secret and key_secret.startswith("mock_")):
+        clean_receipt = re.sub(r"[^a-zA-Z0-9]", "", receipt_id)
+        return f"order_{clean_receipt}"
+
+    return None
 
 @orders_bp.route("/create", methods=["POST"])
 def create_order():

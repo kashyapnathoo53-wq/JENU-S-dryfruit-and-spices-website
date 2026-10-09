@@ -23,8 +23,10 @@ def health_check():
 @health_bp.route("/config", methods=["GET"])
 def get_public_config():
     """Returns safe, public-facing configuration for frontend initialization."""
+    key_id = current_app.config.get("RAZORPAY_KEY_ID")
     return jsonify({
-        "keyId": current_app.config.get("RAZORPAY_KEY_ID"),
+        "keyId": key_id,
+        "razorpayKeyId": key_id,
         "merchantName": current_app.config.get("MERCHANT_NAME"),
         "fssaiLicense": current_app.config.get("FSSAI_LICENSE"),
         "currency": current_app.config.get("CURRENCY", "INR")
