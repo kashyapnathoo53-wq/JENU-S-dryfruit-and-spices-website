@@ -578,8 +578,8 @@ export class OrderTrackingManager {
                 <strong class="awb-val">${selectedOrder.customer?.city || 'New Delhi'} (${selectedOrder.customer?.pincode || '110001'})</strong>
               </div>
             </div>
-            <div class="awb-hub-route-strip" style="margin-top: 10px; padding-top: 8px; border-top: 1px dashed #E2E8F0; font-size: 11px; color: #065F46; display: flex; align-items: center; gap: 6px;">
-              <span>🏛️ <strong>National Hub Network:</strong> Fulfilled via JENU'S branches in Srinagar (Valley Hub) ➔ Jammu Transit ➔ Delhi (Khari Baoli) ➔ Mumbai (Western Hub).</span>
+            <div class="awb-hub-route-strip" style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed rgba(212, 175, 55, 0.35); font-size: 12px; color: #E5E7EB; display: flex; align-items: center; gap: 8px; line-height: 1.45;">
+              <span>🏛️ <strong style="color: #FCD34D;">National Hub Network:</strong> <span style="color: #A7F3D0;">Fulfilled via JENU'S branches in Srinagar (Valley Hub) ➔ Jammu Transit ➔ Delhi (Khari Baoli) ➔ Mumbai (Western Hub).</span></span>
             </div>
           </div>
 
