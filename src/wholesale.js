@@ -184,7 +184,7 @@ export class WholesaleManager {
             </div>
             <div class="w-banner-text">
               <strong>⚡ Instant Wholesale Blink Desk Active:</strong>
-              <p>Submit your requirements below to instantly alert our commercial desks across <strong>Delhi (Khari Baoli), Srinagar, Jammu, and Mumbai</strong>. Direct Call Helplines: <a href="tel:85955119239" style="color: #065F46; font-weight: 700; text-decoration: underline;">85955119239</a> | <a href="tel:9868983010" style="color: #065F46; font-weight: 700; text-decoration: underline;">9868983010</a> • Email: <a href="mailto:SriRadheEnterpriseswork@gmail.com" style="color: #065F46; font-weight: 700; text-decoration: underline;">SriRadheEnterpriseswork@gmail.com</a>. We reply within 15 minutes with our shortest wholesale bulk price sheet.</p>
+              <p>Submit your requirements below to instantly alert our commercial desks across <strong>Delhi (Khari Baoli), Srinagar, Jammu, and Mumbai</strong>. Direct Call Helplines: <a href="tel:85955119239" style="color: #1D1D1F; font-weight: 700; text-decoration: underline;">85955119239</a> | <a href="tel:9868983010" style="color: #1D1D1F; font-weight: 700; text-decoration: underline;">9868983010</a> • Email: <a href="mailto:SriRadheEnterpriseswork@gmail.com" style="color: #1D1D1F; font-weight: 700; text-decoration: underline;">SriRadheEnterpriseswork@gmail.com</a>. We reply within 15 minutes with our shortest wholesale bulk price sheet.</p>
             </div>
           </div>
 
@@ -459,10 +459,10 @@ export class WholesaleManager {
             <span>💬 Chat on WhatsApp with Wholesale Desk Now (9868983010)</span>
           </a>
           <div class="w-direct-call-row" style="display: flex; gap: 10px; margin: 10px 0; width: 100%; flex-wrap: wrap;">
-            <a href="tel:85955119239" class="btn-w-phone-call" style="flex: 1; background: #0F2E24; color: #FFFDF9; border: 1.5px solid #F59E0B; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13.5px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px;">
+            <a href="tel:85955119239" class="btn-w-phone-call" style="flex: 1; background: #1D1D1F; color: #FFFFFF; border: none; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13.5px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px;">
               <span>📞 Call 85955119239</span>
             </a>
-            <a href="tel:9868983010" class="btn-w-phone-call" style="flex: 1; background: #059669; color: #FFFFFF; border: none; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13.5px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px;">
+            <a href="tel:9868983010" class="btn-w-phone-call" style="flex: 1; background: #1D1D1F; color: #FFFFFF; border: none; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13.5px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px;">
               <span>📞 Call 9868983010</span>
             </a>
             <a href="mailto:SriRadheEnterpriseswork@gmail.com" class="btn-w-phone-call" style="width: 100%; background: #F8FAFC; color: #1D1D1F; border: 1px solid #E2E8F0; padding: 10px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px;">

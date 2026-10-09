@@ -100,7 +100,7 @@ export class KashmirInteractiveExperience {
           const next = Math.max(9, Math.min(34, current + delta));
           
           span.style.transform = 'scale(1.25)';
-          span.style.color = '#F59E0B';
+          span.style.color = '#1D1D1F';
           setTimeout(() => {
             span.textContent = `${next} viewing now`;
             span.style.transform = 'scale(1)';

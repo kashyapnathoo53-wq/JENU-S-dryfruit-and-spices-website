@@ -311,7 +311,7 @@ class JenusApp {
             <div class="product-card-top-actions">
               ${p.isBestseller ? '<span class="product-clean-badge bestseller">⭐ Bestseller</span>' : (p.badge ? `<span class="product-clean-badge">${p.badge}</span>` : '')}
               <button type="button" class="wishlist-btn ${isWish ? 'active' : ''}" data-pid="${p.id}" title="${isWish ? 'Remove from Wishlist' : 'Add to Wishlist'}" aria-label="Wishlist">
-                <svg class="wishlist-heart-icon" viewBox="0 0 24 24" width="15" height="15" fill="${isWish ? '#DC2626' : 'none'}" stroke="${isWish ? '#DC2626' : '#D1D5DB'}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="wishlist-heart-icon" viewBox="0 0 24 24" width="15" height="15" fill="${isWish ? '#1D1D1F' : 'none'}" stroke="${isWish ? '#1D1D1F' : '#D1D5DB'}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                 </svg>
               </button>
@@ -469,8 +469,8 @@ class JenusApp {
           btn.classList.toggle('active', added);
           const icon = btn.querySelector('.wishlist-heart-icon');
           if (icon) {
-            icon.setAttribute('fill', added ? '#DC2626' : 'none');
-            icon.setAttribute('stroke', added ? '#DC2626' : '#D1D5DB');
+            icon.setAttribute('fill', added ? '#1D1D1F' : 'none');
+            icon.setAttribute('stroke', added ? '#1D1D1F' : '#D1D5DB');
           }
           btn.title = added ? 'Remove from Wishlist' : 'Add to Wishlist';
           this.showToast(added ? `❤️ Saved "${prod.name}" to Wishlist` : `Removed "${prod.name}" from Wishlist`);
@@ -809,7 +809,7 @@ class JenusApp {
               <span class="search-drop-price">₹${p.weights[0].price}</span>
             </div>
             ${p.inStock === false 
-              ? `<span style="font-size: 11px; color: #EF4444; font-weight: 700;">Out of Stock</span>` 
+              ? `<span style="font-size: 11px; color: #6E6E73; font-weight: 700;">Out of Stock</span>` 
               : `<button class="search-drop-add" data-pid="${p.id}">Add</button>`}
           </div>
         `).join('');
@@ -1770,7 +1770,7 @@ class JenusApp {
                   <span class="qv-tel-sep">•</span>
                   <a href="tel:9868983010" class="qv-tel-link"><strong>9868983010</strong></a>
                   <span class="qv-tel-sep">•</span>
-                  <a href="mailto:SriRadheEnterpriseswork@gmail.com" class="qv-tel-link" style="color: #059669;"><strong>SriRadheEnterpriseswork@gmail.com</strong></a>
+                  <a href="mailto:SriRadheEnterpriseswork@gmail.com" class="qv-tel-link" style="color: #1D1D1F;"><strong>SriRadheEnterpriseswork@gmail.com</strong></a>
                   <span class="qv-support-hubs">(Jammu • Kashmir • Delhi • Mumbai)</span>
                 </div>
               </div>
@@ -1825,7 +1825,7 @@ class JenusApp {
             <!-- BUYING ACTIONS & WISHLIST (IMMEDIATELY VISIBLE) -->
             <div class="qv-actions-box">
               ${product.inStock === false ? `
-                <button class="btn-qv-add-cart disabled" disabled style="background: #E5E7EB; color: #9CA3AF; cursor: not-allowed; border: 1px solid #D1D5DB;">
+                <button class="btn-qv-add-cart disabled" disabled style="background: #E5E7EB; color: #8E8E93; cursor: not-allowed; border: 1px solid #D1D5DB;">
                   <span>Out of Stock</span>
                   <span id="qv-btn-price">🚫 Sold Out in Cold Storage</span>
                 </button>
@@ -1836,7 +1836,7 @@ class JenusApp {
                 </button>
               `}
               <button type="button" class="btn-qv-wishlist ${cartStore.isInWishlist(product.id) ? 'active' : ''}" id="btn-qv-wishlist" title="${cartStore.isInWishlist(product.id) ? 'Remove from Wishlist' : 'Add to Wishlist'}" aria-label="Wishlist">
-                <svg class="qv-wishlist-icon" viewBox="0 0 24 24" width="20" height="20" fill="${cartStore.isInWishlist(product.id) ? '#DC2626' : 'none'}" stroke="${cartStore.isInWishlist(product.id) ? '#DC2626' : 'currentColor'}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="qv-wishlist-icon" viewBox="0 0 24 24" width="20" height="20" fill="${cartStore.isInWishlist(product.id) ? '#1D1D1F' : 'none'}" stroke="${cartStore.isInWishlist(product.id) ? '#1D1D1F' : 'currentColor'}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                 </svg>
                 <span class="qv-wishlist-label">${cartStore.isInWishlist(product.id) ? 'Saved in Wishlist' : 'Add to Wishlist'}</span>
@@ -2062,8 +2062,8 @@ class JenusApp {
       const icon = qvWishBtn.querySelector('.qv-wishlist-icon');
       const label = qvWishBtn.querySelector('.qv-wishlist-label');
       if (icon) {
-        icon.setAttribute('fill', added ? '#DC2626' : 'none');
-        icon.setAttribute('stroke', added ? '#DC2626' : 'currentColor');
+        icon.setAttribute('fill', added ? '#1D1D1F' : 'none');
+        icon.setAttribute('stroke', added ? '#1D1D1F' : 'currentColor');
       }
       if (label) {
         label.textContent = added ? 'Saved in Wishlist' : 'Add to Wishlist';
@@ -2320,7 +2320,7 @@ class JenusApp {
         <div class="wishlist-modal-container animate-scale-up">
           <div class="wishlist-modal-header">
             <div class="wishlist-header-title">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="#DC2626" stroke="#DC2626" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="#1D1D1F" stroke="#1D1D1F" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
               <h3>My Saved Wishlist</h3>
               <span class="wishlist-count-pill">${count} ${count === 1 ? 'item' : 'items'}</span>
             </div>
@@ -2537,7 +2537,7 @@ class JenusApp {
       flyingDot.style.width = '36px';
       flyingDot.style.height = '36px';
       flyingDot.style.borderRadius = '50%';
-      flyingDot.style.boxShadow = '0 8px 24px rgba(245, 158, 11, 0.65)';
+      flyingDot.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.25)';
       document.body.appendChild(flyingDot);
 
       // Force reflow

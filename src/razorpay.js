@@ -11,7 +11,7 @@ export const RAZORPAY_CONFIG = {
   keyId: import.meta.env?.VITE_RAZORPAY_KEY_ID || 'rzp_test_Tf36riXXdeFssw',
   merchantName: "JENU'S Kashmir Gourmet",
   fssaiLicense: "10026061000412",
-  themeColor: "#0F2E24"
+  themeColor: "#1D1D1F"
 };
 
 export class RazorpayManager {
@@ -184,7 +184,7 @@ export class RazorpayManager {
       },
       theme: {
         color: RAZORPAY_CONFIG.themeColor,
-        backdrop_color: "rgba(15, 46, 36, 0.85)"
+        backdrop_color: "rgba(0, 0, 0, 0.6)"
       },
       // Real Razorpay custom blocks: Show UPI (QR code, Google Pay, PhonePe, Paytm, BHIM) prominently at the top!
       config: {
@@ -325,102 +325,102 @@ export class RazorpayManager {
 
     const itemsHtml = (order.items || []).map(item => `
       <div class="success-item-row" style="display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
-        <img src="${item.image}" alt="${item.name}" class="success-item-thumb" style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover; border: 1px solid rgba(212, 175, 55, 0.3);" />
+        <img src="${item.image}" alt="${item.name}" class="success-item-thumb" style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover; border: 1px solid #E2E8F0;" />
         <div class="success-item-info" style="flex: 1;">
           <strong style="color: #FFFFFF; font-size: 13.5px; display: block;">${item.name}</strong>
-          <span style="color: #9CA3AF; font-size: 11.5px;">Qty: ${item.quantity} | Weight: ${item.weight}</span>
+          <span style="color: #8E8E93; font-size: 11.5px;">Qty: ${item.quantity} | Weight: ${item.weight}</span>
         </div>
-        <div class="success-item-price" style="color: #FCD34D; font-weight: 700; font-size: 14px;">₹${(item.price * item.quantity).toLocaleString('en-IN')}</div>
+        <div class="success-item-price" style="color: #1D1D1F; font-weight: 700; font-size: 14px;">₹${(item.price * item.quantity).toLocaleString('en-IN')}</div>
       </div>
     `).join('');
 
     successModal.innerHTML = `
-      <div class="kashmir-success-container animate-scale-up" style="background: linear-gradient(145deg, #24160E 0%, #170E08 100%); border: 2px solid rgba(212, 175, 55, 0.5); color: #FFFDF9;">
-        <div class="success-header-banner" style="background: #0F2E24; color: white; text-align: center; padding: 26px 20px;">
+      <div class="kashmir-success-container animate-scale-up" style="background: #FFFFFF; border: 1px solid #E2E8F0; color: #1D1D1F; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);">
+        <div class="success-header-banner" style="background: #F1F5F9; color: #1D1D1F; text-align: center; padding: 26px 20px;">
           <div class="success-seal-icon" style="font-size: 36px; margin-bottom: 6px;">🎉</div>
           <h2 style="color: #FFFFFF; font-size: 23px; margin-bottom: 6px; font-family: 'Cinzel', serif;">Payment Verified & Order Confirmed!</h2>
-          <p style="color: #D1D5DB; font-size: 13px; line-height: 1.5; margin: 0;">Payment of <strong style="color: #34D399;">₹${order.total.toLocaleString('en-IN')}</strong> has been received securely via Razorpay straight to JENU'S. Registered under Consignment <strong>#${order.orderId}</strong>.</p>
+          <p style="color: #D1D5DB; font-size: 13px; line-height: 1.5; margin: 0;">Payment of <strong style="color: #1D1D1F;">₹${order.total.toLocaleString('en-IN')}</strong> has been received securely via Razorpay straight to JENU'S. Registered under Consignment <strong>#${order.orderId}</strong>.</p>
         </div>
 
         <div class="success-body" style="padding: 22px;">
-          <div class="success-order-meta" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; background: #180E08; border: 1px solid rgba(212, 175, 55, 0.35); border-radius: 8px; padding: 14px; margin-bottom: 20px; text-align: center;">
+          <div class="success-order-meta" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 14px; margin-bottom: 20px; text-align: center;">
             <div class="meta-col">
-              <span class="meta-label" style="display: block; font-size: 10.5px; color: #9CA3AF; text-transform: uppercase; font-weight: 600; margin-bottom: 4px;">Order Number</span>
-              <strong class="meta-value" style="color: #FCD34D; font-size: 13.5px; font-weight: 700;">${order.orderId}</strong>
+              <span class="meta-label" style="display: block; font-size: 10.5px; color: #8E8E93; text-transform: uppercase; font-weight: 600; margin-bottom: 4px;">Order Number</span>
+              <strong class="meta-value" style="color: #1D1D1F; font-size: 13.5px; font-weight: 700;">${order.orderId}</strong>
             </div>
             <div class="meta-col">
-              <span class="meta-label" style="display: block; font-size: 10.5px; color: #9CA3AF; text-transform: uppercase; font-weight: 600; margin-bottom: 4px;">Payment Status</span>
-              <strong class="meta-badge-success" style="background: rgba(5, 150, 105, 0.25); color: #34D399; border: 1px solid #059669; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 700;">Paid Online ✓</strong>
+              <span class="meta-label" style="display: block; font-size: 10.5px; color: #8E8E93; text-transform: uppercase; font-weight: 600; margin-bottom: 4px;">Payment Status</span>
+              <strong class="meta-badge-success" style="background: #F1F5F9; color: #1D1D1F; border: 1px solid #E2E8F0; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: 700;">Paid Online ✓</strong>
             </div>
             <div class="meta-col">
-              <span class="meta-label" style="display: block; font-size: 10.5px; color: #9CA3AF; text-transform: uppercase; font-weight: 600; margin-bottom: 4px;">Razorpay Ref</span>
-              <strong class="meta-value" style="color: #E0E7FF; font-size: 11.5px; word-break: break-all;">${paymentId}</strong>
+              <span class="meta-label" style="display: block; font-size: 10.5px; color: #8E8E93; text-transform: uppercase; font-weight: 600; margin-bottom: 4px;">Razorpay Ref</span>
+              <strong class="meta-value" style="color: #1D1D1F; font-size: 11.5px; word-break: break-all;">${paymentId}</strong>
             </div>
             <div class="meta-col">
-              <span class="meta-label" style="display: block; font-size: 10.5px; color: #9CA3AF; text-transform: uppercase; font-weight: 600; margin-bottom: 4px;">Placed On</span>
+              <span class="meta-label" style="display: block; font-size: 10.5px; color: #8E8E93; text-transform: uppercase; font-weight: 600; margin-bottom: 4px;">Placed On</span>
               <strong class="meta-value" style="color: #FFFFFF; font-size: 12px;">${placedDate}</strong>
             </div>
             <div class="meta-col">
-              <span class="meta-label" style="display: block; font-size: 10.5px; color: #9CA3AF; text-transform: uppercase; font-weight: 600; margin-bottom: 4px;">Total Paid</span>
-              <strong class="meta-value" style="color: #34D399; font-weight: 800; font-size: 14.5px;">₹${order.total.toLocaleString('en-IN')}</strong>
+              <span class="meta-label" style="display: block; font-size: 10.5px; color: #8E8E93; text-transform: uppercase; font-weight: 600; margin-bottom: 4px;">Total Paid</span>
+              <strong class="meta-value" style="color: #1D1D1F; font-weight: 800; font-size: 14.5px;">₹${order.total.toLocaleString('en-IN')}</strong>
             </div>
           </div>
 
           <!-- Dispatch Tracker -->
-          <div class="valley-tracker-box" style="background: #1C1009; border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 8px; padding: 16px; margin-bottom: 20px;">
-            <h4 class="tracker-title" style="color: #FCD34D; font-size: 13px; margin: 0 0 14px 0; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700;">Kashmir Valley Air-Dispatch Timeline</h4>
+          <div class="valley-tracker-box" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 8px; padding: 16px; margin-bottom: 20px;">
+            <h4 class="tracker-title" style="color: #1D1D1F; font-size: 13px; margin: 0 0 14px 0; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700;">Kashmir Valley Air-Dispatch Timeline</h4>
             <div class="tracker-steps">
               <div class="step-node completed">
-                <div class="node-circle" style="background: #059669; color: #FFF; font-weight: 700;">✓</div>
+                <div class="node-circle" style="background: #1D1D1F; color: #FFF; font-weight: 700;">✓</div>
                 <div class="node-text">
                   <strong style="color: #FFFFFF;">Payment Captured</strong>
-                  <small style="color: #9CA3AF;">Via Razorpay</small>
+                  <small style="color: #8E8E93;">Via Razorpay</small>
                 </div>
               </div>
               <div class="step-node active">
-                <div class="node-circle" style="background: #D97706; color: #FFF; font-weight: 700;">2</div>
+                <div class="node-circle" style="background: #424245; color: #FFF; font-weight: 700;">2</div>
                 <div class="node-text">
-                  <strong style="color: #FCD34D;">Pampore Packaging</strong>
-                  <small style="color: #FCD34D;">Nitrogen Vacuum</small>
+                  <strong style="color: #1D1D1F;">Pampore Packaging</strong>
+                  <small style="color: #1D1D1F;">Nitrogen Vacuum</small>
                 </div>
               </div>
               <div class="step-node">
-                <div class="node-circle" style="background: rgba(255,255,255,0.1); color: #9CA3AF;">3</div>
+                <div class="node-circle" style="background: #F1F5F9; color: #6E6E73;">3</div>
                 <div class="node-text">
                   <strong style="color: #D1D5DB;">Air Cargo IndiGo</strong>
-                  <small style="color: #9CA3AF;">Srinagar Airport</small>
+                  <small style="color: #8E8E93;">Srinagar Airport</small>
                 </div>
               </div>
               <div class="step-node">
-                <div class="node-circle" style="background: rgba(255,255,255,0.1); color: #9CA3AF;">4</div>
+                <div class="node-circle" style="background: rgba(255,255,255,0.1); color: #8E8E93;">4</div>
                 <div class="node-text">
                   <strong style="color: #D1D5DB;">Delivery</strong>
-                  <small style="color: #9CA3AF;">${order.customer?.city || 'Your City'}</small>
+                  <small style="color: #8E8E93;">${order.customer?.city || 'Your City'}</small>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="success-items-list" style="margin-bottom: 20px;">
-            <h5 style="color: #FCD34D; font-size: 13px; text-transform: uppercase; margin: 0 0 10px 0; font-weight: 700;">Items in Consignment</h5>
+            <h5 style="color: #1D1D1F; font-size: 13px; text-transform: uppercase; margin: 0 0 10px 0; font-weight: 700;">Items in Consignment</h5>
             ${itemsHtml}
           </div>
 
           <div class="success-shipping-info" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px;">
-            <div class="shipping-card" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(212, 175, 55, 0.25); border-radius: 8px; padding: 12px;">
-              <h6 style="color: #FCD34D; font-size: 11.5px; margin: 0 0 6px 0; text-transform: uppercase; font-weight: 700;">Delivering To:</h6>
+            <div class="shipping-card" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 12px;">
+              <h6 style="color: #1D1D1F; font-size: 11.5px; margin: 0 0 6px 0; text-transform: uppercase; font-weight: 700;">Delivering To:</h6>
               <p style="color: #FFFFFF; font-size: 13px; margin: 0 0 3px 0;"><strong>${order.customer?.name || 'Customer'}</strong></p>
               <p style="color: #D1D5DB; font-size: 12px; margin: 0 0 3px 0;">${order.customer?.address || ''}, ${order.customer?.city || ''} - ${order.customer?.pincode || ''}</p>
-              <p style="color: #9CA3AF; font-size: 12px; margin: 0;">Phone: <strong style="color: #34D399;">${order.customer?.phone || ''}</strong></p>
+              <p style="color: #8E8E93; font-size: 12px; margin: 0;">Phone: <strong style="color: #1D1D1F;">${order.customer?.phone || ''}</strong></p>
             </div>
-            <div class="shipping-card" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(212, 175, 55, 0.25); border-radius: 8px; padding: 12px;">
-              <h6 style="color: #FCD34D; font-size: 11.5px; margin: 0 0 6px 0; text-transform: uppercase; font-weight: 700;">FSSAI Purity Guarantee:</h6>
+            <div class="shipping-card" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 12px;">
+              <h6 style="color: #1D1D1F; font-size: 11.5px; margin: 0 0 6px 0; text-transform: uppercase; font-weight: 700;">FSSAI Purity Guarantee:</h6>
               <p style="color: #D1D5DB; font-size: 12px; line-height: 1.5; margin: 0;">Central License No. <strong>10026061000412</strong>. Nitrogen vacuum sealed food-grade packaging. Direct valley orchard produce.</p>
             </div>
           </div>
 
           <!-- Customer Care Support Banner -->
-          <div class="success-care-banner" style="background: rgba(15, 46, 36, 0.6); border: 1px solid rgba(52, 211, 153, 0.3); border-radius: 8px; padding: 14px; margin-bottom: 22px;">
+          <div class="success-care-banner" style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 14px; margin-bottom: 22px;">
             <div class="success-care-text" style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
               <span class="care-icon-badge" style="font-size: 24px;">📞</span>
               <div>
@@ -432,19 +432,19 @@ export class RazorpayManager {
               <a href="tel:85955119239" class="success-care-pill" title="Call Helpline 1" style="background: #F8FAFC; color: #1D1D1F; border: 1px solid #E2E8F0; padding: 6px 12px; border-radius: 6px; font-size: 12px; text-decoration: none; font-weight: 600;">📞 85955119239</a>
               <a href="tel:9868983010" class="success-care-pill" title="Call Helpline 2" style="background: #F8FAFC; color: #1D1D1F; border: 1px solid #E2E8F0; padding: 6px 12px; border-radius: 6px; font-size: 12px; text-decoration: none; font-weight: 600;">📞 9868983010</a>
               <a href="mailto:SriRadheEnterpriseswork@gmail.com" class="success-care-pill" title="Email Order Desk" style="background: #F8FAFC; color: #1D1D1F; border: 1px solid #E2E8F0; padding: 6px 12px; border-radius: 6px; font-size: 12px; text-decoration: none; font-weight: 600;">✉️ SriRadheEnterpriseswork@gmail.com</a>
-              <a href="https://wa.me/919868983010?text=Hi%20JENU%27S,%20inquiry%20regarding%20Order%20${order.orderId}" target="_blank" rel="noopener noreferrer" class="success-care-pill wa" title="WhatsApp Order Support" style="background: #D1FAE5; color: #065F46; border: 1px solid #A7F3D0; padding: 6px 12px; border-radius: 6px; font-size: 12px; text-decoration: none; font-weight: 600;">💬 WhatsApp Support</a>
+              <a href="https://wa.me/919868983010?text=Hi%20JENU%27S,%20inquiry%20regarding%20Order%20${order.orderId}" target="_blank" rel="noopener noreferrer" class="success-care-pill wa" title="WhatsApp Order Support" style="background: #F1F5F9; color: #1D1D1F; border: 1px solid #E2E8F0; padding: 6px 12px; border-radius: 6px; font-size: 12px; text-decoration: none; font-weight: 600;">💬 WhatsApp Support</a>
             </div>
           </div>
 
           <div class="success-actions" style="display: flex; flex-direction: column; gap: 10px;">
-            <button type="button" class="btn-success-track" id="btn-success-track-consignment" style="background: #059669; color: #FFF; font-weight: 700; padding: 14px 22px; border-radius: 8px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px;">
+            <button type="button" class="btn-success-track" id="btn-success-track-consignment" style="background: #1D1D1F; color: #FFF; font-weight: 700; padding: 14px 22px; border-radius: 8px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px;">
               📦 Track Consignment via Mobile Number ➔
             </button>
             <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-              <button class="btn-print-invoice" id="btn-print-invoice" style="flex: 1; min-width: 180px; background: rgba(255, 255, 255, 0.08); color: #FFF; border: 1px solid rgba(212, 175, 55, 0.4); padding: 11px 16px; border-radius: 6px; cursor: pointer; font-size: 12.5px;">
+              <button class="btn-print-invoice" id="btn-print-invoice" style="flex: 1; min-width: 180px; background: #FFFFFF; color: #1D1D1F; border: 1px solid #D1D5DB; padding: 11px 16px; border-radius: 6px; cursor: pointer; font-size: 12.5px;">
                 📄 Download GST Tax Invoice
               </button>
-              <button class="btn-continue-store" id="btn-continue-store" style="flex: 1; min-width: 140px; background: #D97706; color: #FFF; border: none; padding: 11px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12.5px;">
+              <button class="btn-continue-store" id="btn-continue-store" style="flex: 1; min-width: 140px; background: #F1F5F9; color: #1D1D1F; border: 1px solid #D1D5DB; padding: 11px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12.5px;">
                 Continue Shopping
               </button>
             </div>
@@ -499,17 +499,17 @@ export class RazorpayManager {
         <title>Tax Invoice - ${order.orderId} - JENU'S Kashmir Gourmet</title>
         <style>
           body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 40px; color: #222; max-width: 800px; margin: 0 auto; font-size: 13px; }
-          .header { display: flex; justify-content: space-between; border-bottom: 2px solid #0F2E24; padding-bottom: 16px; margin-bottom: 24px; }
-          .logo { font-size: 24px; font-weight: bold; color: #0F2E24; }
-          .logo span { font-size: 11px; display: block; color: #059669; font-weight: 600; }
+          .header { display: flex; justify-content: space-between; border-bottom: 2px solid #1D1D1F; padding-bottom: 16px; margin-bottom: 24px; }
+          .logo { font-size: 24px; font-weight: bold; color: #1D1D1F; }
+          .logo span { font-size: 11px; display: block; color: #1D1D1F; font-weight: 600; }
           .meta-table { width: 100%; margin-bottom: 20px; font-size: 12px; }
           .items-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
-          .items-table th { background: #0F2E24; color: white; padding: 8px; text-align: left; font-size: 12px; }
+          .items-table th { background: #F1F5F9; color: #1D1D1F; padding: 8px; text-align: left; font-size: 12px; }
           .total-box { float: right; width: 280px; margin-bottom: 24px; }
           .total-row { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid #eee; }
-          .grand-total { font-size: 15px; font-weight: bold; color: #0F2E24; border-top: 2px solid #0F2E24; padding-top: 8px; }
+          .grand-total { font-size: 15px; font-weight: bold; color: #1D1D1F; border-top: 2px solid #1D1D1F; padding-top: 8px; }
           .footer { clear: both; border-top: 1px solid #ddd; padding-top: 16px; font-size: 11px; color: #666; text-align: center; }
-          .stamp { border: 1px solid #059669; background: #ECFDF5; display: inline-block; padding: 4px 10px; border-radius: 4px; color: #065F46; font-weight: 600; margin-top: 10px; font-size: 11px; }
+          .stamp { border: 1px solid #1D1D1F; background: #F1F5F9; display: inline-block; padding: 4px 10px; border-radius: 4px; color: #1D1D1F; font-weight: 600; margin-top: 10px; font-size: 11px; }
         </style>
       </head>
       <body>
@@ -519,7 +519,7 @@ export class RazorpayManager {
             <span>FSSAI Central Lic. No: 10026061000412</span>
           </div>
           <div style="text-align:right;">
-            <h3 style="margin:0; color:#0F2E24;">OFFICIAL TAX INVOICE</h3>
+            <h3 style="margin:0; color:#1D1D1F;">OFFICIAL TAX INVOICE</h3>
             <p style="margin:3px 0 0 0; color:#555;"><strong>Invoice No:</strong> ${order.orderId}</p>
             <p style="margin:2px 0 0 0; color:#555;"><strong>Payment Ref:</strong> ${paymentId}</p>
             <p style="margin:2px 0 0 0; color:#555;"><strong>Date:</strong> ${order.placedDate || 'Oct 2026'}</p>
@@ -567,7 +567,7 @@ export class RazorpayManager {
           </div>
           <div class="total-row">
             <span>Express Air Freight:</span>
-            <span style="color:#059669; font-weight:600;">FREE</span>
+            <span style="color:#1D1D1F; font-weight:600;">FREE</span>
           </div>
           <div class="total-row">
             <span>GST (5% Included):</span>
@@ -610,7 +610,7 @@ export class RazorpayManager {
     canvas.height = window.innerHeight;
 
     const particles = [];
-    const colors = ['#0F2E24', '#059669', '#B45309', '#FCD34D', '#10B981', '#3B82F6'];
+    const colors = ['#1D1D1F', '#424245', '#6E6E73', '#8E8E93', '#D1D5DB', '#FFFFFF'];
 
     for (let i = 0; i < 90; i++) {
       particles.push({

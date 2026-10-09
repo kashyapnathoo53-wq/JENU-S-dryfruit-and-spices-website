@@ -745,7 +745,7 @@ export class AdminPortalManager {
 
     const rowsHtml = inquiries.length === 0 ? `
       <tr>
-        <td colspan="9" style="text-align: center; padding: 40px; color: #9CA3AF;">
+        <td colspan="9" style="text-align: center; padding: 40px; color: #8E8E93;">
           No wholesale bulk inquiries yet. Click "⚡ Simulate Test Bulk Inquiry" below to test.
         </td>
       </tr>
@@ -753,28 +753,28 @@ export class AdminPortalManager {
       <tr class="wholesale-db-row ${!item.isRead ? 'is-new-blink' : ''}">
         <td>
           <strong class="w-db-ref">${item.refId}</strong>
-          <small class="w-db-time" style="display:block; color:#9CA3AF; font-size:11px;">${item.date}</small>
+          <small class="w-db-time" style="display:block; color:#8E8E93; font-size:11px;">${item.date}</small>
         </td>
         <td>
-          <strong class="w-db-name" style="display:block; color:#111827;">${item.name}</strong>
-          <span class="w-db-biz" style="font-size:11.5px; color:#4B5563;">${item.business || 'Direct Purchaser'}</span>
+          <strong class="w-db-name" style="display:block; color:#1D1D1F;">${item.name}</strong>
+          <span class="w-db-biz" style="font-size:11.5px; color:#424245;">${item.business || 'Direct Purchaser'}</span>
         </td>
         <td>
-          <a href="tel:${item.phone}" class="w-db-phone" style="display:block; color:#0284C7; font-weight:600; font-size:12px;">📞 +91 ${item.phone}</a>
-          <a href="https://wa.me/91${item.phone}" target="_blank" rel="noopener noreferrer" class="w-db-wa" style="color:#059669; font-size:11px; font-weight:600;">💬 Open WhatsApp</a>
+          <a href="tel:${item.phone}" class="w-db-phone" style="display:block; color:#1D1D1F; font-weight:600; text-decoration:underline; font-size:12px;">📞 +91 ${item.phone}</a>
+          <a href="https://wa.me/91${item.phone}" target="_blank" rel="noopener noreferrer" class="w-db-wa" style="color:#1D1D1F; font-size:11px; font-weight:600;">💬 Open WhatsApp</a>
         </td>
         <td>
-          <strong class="w-db-prod" style="display:block; color:#0F2E24; font-size:12.5px;">${item.product}</strong>
-          <small class="w-db-pack" style="color:#6B7280; font-size:11px;">${item.packaging ? item.packaging.split('(')[0] : 'Standard Packing'}</small>
+          <strong class="w-db-prod" style="display:block; color:#1D1D1F; font-size:12.5px;">${item.product}</strong>
+          <small class="w-db-pack" style="color:#6E6E73; font-size:11px;">${item.packaging ? item.packaging.split('(')[0] : 'Standard Packing'}</small>
         </td>
         <td>
-          <span class="w-db-qty-pill" style="background:#FEF3C7; color:#92400E; padding:3px 8px; border-radius:12px; font-weight:700; font-size:11.5px;">${item.quantity}</span>
+          <span class="w-db-qty-pill" style="background:#F1F5F9; color:#1D1D1F; border:1px solid #E2E8F0; padding:3px 8px; border-radius:12px; font-weight:700; font-size:11.5px;">${item.quantity}</span>
         </td>
         <td>
-          <strong class="w-db-target-price" style="color:#D97706; font-size:12.5px;">${item.targetPrice}</strong>
+          <strong class="w-db-target-price" style="color:#1D1D1F; font-size:12.5px;">${item.targetPrice}</strong>
         </td>
         <td>
-          <span class="w-db-branch" style="font-size:11.5px; color:#374151;">${item.branch ? item.branch.split('(')[0] : 'Central Hub'}</span>
+          <span class="w-db-branch" style="font-size:11.5px; color:#2C2C2E;">${item.branch ? item.branch.split('(')[0] : 'Central Hub'}</span>
         </td>
         <td>
           <select class="w-status-select" data-ref="${item.refId}" style="padding:4px 8px; border-radius:6px; border:1px solid #D1D5DB; font-size:11.5px; font-weight:600;">
@@ -813,7 +813,7 @@ export class AdminPortalManager {
           </div>
           <div class="metric-card">
             <span class="metric-label">Direct Hub Dispatch</span>
-            <span class="metric-num" style="color: #059669;">4 Hubs</span>
+            <span class="metric-num" style="color: #1D1D1F;">4 Hubs</span>
             <span class="metric-sub">Delhi • Srinagar • Jammu • Mumbai</span>
           </div>
         </div>
@@ -821,8 +821,8 @@ export class AdminPortalManager {
         <!-- Action Toolbar -->
         <div class="db-toolbar">
           <div class="db-toolbar-title">
-            <h4 style="font-size: 16px; color: #111827; margin-bottom: 2px;">⚡ Live Wholesale Bulk Inquiries</h4>
-            <small style="color: #6B7280;">Instant blink leads submitted by purchasers requesting shorter wholesale bulk pricing.</small>
+            <h4 style="font-size: 16px; color: #1D1D1F; margin-bottom: 2px;">⚡ Live Wholesale Bulk Inquiries</h4>
+            <small style="color: #6E6E73;">Instant blink leads submitted by purchasers requesting shorter wholesale bulk pricing.</small>
           </div>
           <div class="db-actions-group" style="display: flex; gap: 8px;">
             <button type="button" class="btn-suite-preview" id="btn-mark-all-wholesale-read">
