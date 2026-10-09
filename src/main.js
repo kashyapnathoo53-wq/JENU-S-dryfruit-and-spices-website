@@ -1259,9 +1259,11 @@ class JenusApp {
       if (curImg.includes('saunf-harvest') || curImg.includes('saunf-mortar')) return `🌿 Photo ${idx + 1} of ${images.length}: Valley Harvest & Stone Mortar Pulverizing — Handpicked Anantnag Umbel Seeds`;
       if (curImg.includes('saunf-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Food-Grade Tin Canister Freshness Seal — Cornerstone Spice for Wazwan Rogan Josh`;
 
-      if (curImg.includes('sonth-powder-macro')) return `🍂 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Sun-Cured Mountain Sonth Powder (Golden Fibrous Ginger Zing)`;
-      if (curImg.includes('sonth-roots-macro') || curImg.includes('sonth-sliced-dry')) return `🍂 Photo ${idx + 1} of ${images.length}: Real Macro Photography — Whole Dried Himalayan Ginger Rhizomes (Zero Bleach, Pure Natural Root)`;
-      if (curImg.includes('sonth-stone-grind') || curImg.includes('sonth-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Traditional Valley Grinding & Hermetic Moisture-Barrier Pouch Packaging`;
+      if (curImg.includes('sonth-powder-macro')) return `🍂 Photo ${idx + 1} of ${images.length}: Extreme Real Macro Photography — Sun-Cured Mountain Sonth Powder (Golden Fibrous Ginger Zing, 100% Pure)`;
+      if (curImg.includes('sonth-roots-macro')) return `🍂 Photo ${idx + 1} of ${images.length}: Whole Dried Himalayan Ginger Rhizomes (Artisan Glass Bowl Display, Zero Bleach)`;
+      if (curImg.includes('sonth-sliced-dry')) return `🍂 Photo ${idx + 1} of ${images.length}: Pure Sun-Cured Ginger Rhizomes Spread (Naturally Dehydrated Himalayan Mountain Crop)`;
+      if (curImg.includes('sonth-stone-grind')) return `🍂 Photo ${idx + 1} of ${images.length}: Traditional Valley Processing — Whole Dried Rhizomes & Stone-Ground Sonth Powder Dual Display`;
+      if (curImg.includes('sonth-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: JENU'S Heritage Collection Airtight Stand-Up Pouch (Aroma-Lock Moisture-Barrier Packaging)`;
 
       if (curImg.includes('haldi-powder-macro')) return `✨ Photo ${idx + 1} of ${images.length}: Extreme Real Macro Photography — 5.5% High Curcumin Kashmiri Haldi Powder (Luminous Deep Golden Glow)`;
       if (curImg.includes('haldi-rhizome-macro') || curImg.includes('haldi-cross-section')) return `✨ Photo ${idx + 1} of ${images.length}: Real Macro Rhizome Cross-Section — Dense Concentric Rings of Pure Golden Curcuminoids`;
