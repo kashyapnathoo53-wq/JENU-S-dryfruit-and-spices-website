@@ -48,8 +48,8 @@ def test_get_all_products(client):
     res = client.get("/api/products")
     assert res.status_code == 200
     data = res.get_json()
-    assert data["total"] == 75
-    assert len(data["products"]) == 75
+    assert data["total"] == 84
+    assert len(data["products"]) == 84
 
 def test_get_product_detail(client):
     res = client.get("/api/products/jnu-mamra-01")

@@ -1528,6 +1528,44 @@ class JenusApp {
       if (curImg.includes('wazwan-ver')) {
         return `🌶️ Photo ${idx + 1} of ${images.length}: Authentic Real Photography — Handcrafted Traditional Kashmiri Wazwan Masala Ver Spice Cake Disc`;
       }
+      // Royal Dates Varieties
+      if (curImg.includes('dates-ajwa-macro')) return `🌴 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Royal Saudi Ajwa Al-Madinah Dates (Fine White Crevices & Obsidian Sheen)`;
+      if (curImg.includes('dates-ajwa-bowl')) return `✨ Photo ${idx + 1} of ${images.length}: Sacred Oasis Serving — Authentic Madinah Aaliyah Ajwa Dates in Crystal Presentation Bowl`;
+      if (curImg.includes('dates-ajwa-split')) return `🔍 Photo ${idx + 1} of ${images.length}: Pulp & Texture Cross-Section — Tender Melt-in-Mouth Chewy Ajwa Flesh`;
+
+      if (curImg.includes('dates-kimia-macro')) return `🌴 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Iranian Soft Kimia Mazafati Dates (Glossy Skin & Honey Pulp)`;
+      if (curImg.includes('dates-kimia-bowl')) return `✨ Photo ${idx + 1} of ${images.length}: Fresh Harvest Serving — Luscious Silk-Soft Mazafati Black Dates on Artisan Platter`;
+      if (curImg.includes('dates-kimia-split')) return `🔍 Photo ${idx + 1} of ${images.length}: Fresh Halves Detail — 35% Natural Moisture Velvet Date Mousse Texture`;
+
+      if (curImg.includes('dates-medjool-macro')) return `👑 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Jumbo Royal Medjool Date (Wrinkled Amber Skin & Honey Core)`;
+      if (curImg.includes('dates-medjool-open-close')) return `✨ Photo ${idx + 1} of ${images.length}: Jewel of Dates Selection — Plump Large Tree-Ripened Medjool Cluster`;
+      if (curImg.includes('dates-medjool-five')) return `🔍 Photo ${idx + 1} of ${images.length}: Caramel Pulp Texture — Rich Maple Syrup Notes & Pillowy Tender Bite`;
+
+      if (curImg.includes('dates-kalmi-macro')) return `🌴 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Saudi Kalmi / Safawi Dark Dates (Dense Toffee Consistency)`;
+      if (curImg.includes('dates-kalmi-bowl')) return `✨ Photo ${idx + 1} of ${images.length}: Natural Harvest Serving — Slender Cylindrical Dark Mahogany Safawi Dates`;
+      if (curImg.includes('dates-kalmi-detail')) return `🔍 Photo ${idx + 1} of ${images.length}: Chewy Texture Detail — Rich Molasses Undertones & Athletic Energy Fiber`;
+
+      if (curImg.includes('dates-mabroom-macro')) return `🌴 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Saudi Mabroom Royal Sweet Dates (Translucent Bronze Skin)`;
+      if (curImg.includes('dates-mabroom-bowl')) return `✨ Photo ${idx + 1} of ${images.length}: Connoisseur Harvest Presentation — Slender Elongated Amber Bronze Mabroom Dates`;
+      if (curImg.includes('dates-mabroom-detail')) return `🔍 Photo ${idx + 1} of ${images.length}: Firm Chewy Texture Detail — Delightful Elastic Bite Dissolving into Toffee Sweetness`;
+
+      if (curImg.includes('dates-sukari-macro')) return `👑 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Golden Royal Sukari Dates (Crisp Cone Base & Caramel Center)`;
+      if (curImg.includes('dates-sukari-bowl')) return `✨ Photo ${idx + 1} of ${images.length}: Queen of Dates Presentation — Radiant Golden-Yellow Al-Qassim Soft Sukari Dates`;
+      if (curImg.includes('dates-sukari-split')) return `🔍 Photo ${idx + 1} of ${images.length}: Longitudinal Section — Brown-Sugar Molten Center Dissolving on Tongue`;
+
+      // Exotic Tree Nuts
+      if (curImg.includes('brazil-nuts-macro')) return `🌿 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Wild Giant Amazonian Brazil Nuts (High Selenium Bertholletia Kernels)`;
+      if (curImg.includes('brazil-nuts-bowl')) return `✨ Photo ${idx + 1} of ${images.length}: Wild Canopy Harvest — Whole Raw Extra-Large Shelled Brazil Nut Kernels`;
+      if (curImg.includes('brazil-nuts-cluster')) return `🔍 Photo ${idx + 1} of ${images.length}: Kernel Density Detail — Crisp Buttery Richness & 100% Daily Selenium per 2 Nuts`;
+
+      if (curImg.includes('macadamia-macro')) return `👑 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Jumbo Royal Macadamia Nuts (Ivory Spheres & Rich Omega-7 Fats)`;
+      if (curImg.includes('macadamia-bowl')) return `✨ Photo ${idx + 1} of ${images.length}: Connoisseur Platter — Shelled Whole Golden-Ivory Volcanic Foothill Macadamias`;
+      if (curImg.includes('macadamia-cluster')) return `🔍 Photo ${idx + 1} of ${images.length}: Split & Whole Kernel Detail — Melting Creamy Dairy Butter Palate & Delicate Crunch`;
+
+      if (curImg.includes('pecans-macro')) return `🍂 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Alpine Raw Pecan Halves (Mammoth Fluted Ridges & Maple Warmth)`;
+      if (curImg.includes('pecans-bowl')) return `✨ Photo ${idx + 1} of ${images.length}: Mountain Harvest Serving — Golden-Brown Jumbo Pecan Halves on Natural Timber`;
+      if (curImg.includes('pecans-shell-cracking')) return `🔍 Photo ${idx + 1} of ${images.length}: Hand-Cracked Harvest Detail — #1 Highest Antioxidant Tree Nut Halves`;
+
       if (curImg.includes('packaged')) {
         return `🏷️ Photo ${idx + 1} of ${images.length}: JENU'S Srinagar Cold-Storage Packaging (Nitrogen-Flushed Airtight Aroma-Lock Container)`;
       }
@@ -1565,6 +1603,33 @@ class JenusApp {
       if (curImg.includes('dates-chhuara-handful')) return 'In Hand';
       if (curImg.includes('dates-chhuara-split')) return 'Split Core';
       if (curImg.includes('dates-chhuara-brass-bowl')) return 'Brass Bowl';
+      if (curImg.includes('dates-ajwa-macro')) return 'Ajwa Macro';
+      if (curImg.includes('dates-ajwa-bowl')) return 'Crystal Bowl';
+      if (curImg.includes('dates-ajwa-split')) return 'Ajwa Pulp';
+      if (curImg.includes('dates-kimia-macro')) return 'Kimia Macro';
+      if (curImg.includes('dates-kimia-bowl')) return 'Serving Dish';
+      if (curImg.includes('dates-kimia-split')) return 'Soft Halves';
+      if (curImg.includes('dates-medjool-macro')) return 'Medjool Macro';
+      if (curImg.includes('dates-medjool-open-close')) return 'Jumbo Dates';
+      if (curImg.includes('dates-medjool-five')) return 'Caramel Core';
+      if (curImg.includes('dates-kalmi-macro')) return 'Kalmi Macro';
+      if (curImg.includes('dates-kalmi-bowl')) return 'Safawi Dates';
+      if (curImg.includes('dates-kalmi-detail')) return 'Toffee Texture';
+      if (curImg.includes('dates-mabroom-macro')) return 'Mabroom Macro';
+      if (curImg.includes('dates-mabroom-bowl')) return 'Bronze Dates';
+      if (curImg.includes('dates-mabroom-detail')) return 'Amber Chewy';
+      if (curImg.includes('dates-sukari-macro')) return 'Sukari Macro';
+      if (curImg.includes('dates-sukari-bowl')) return 'Golden Dates';
+      if (curImg.includes('dates-sukari-split')) return 'Sugar Center';
+      if (curImg.includes('brazil-nuts-macro')) return 'Brazil Macro';
+      if (curImg.includes('brazil-nuts-bowl')) return 'Harvest Platter';
+      if (curImg.includes('brazil-nuts-cluster')) return 'Raw Kernels';
+      if (curImg.includes('macadamia-macro')) return 'Macadamia Macro';
+      if (curImg.includes('macadamia-bowl')) return 'Ivory Bowl';
+      if (curImg.includes('macadamia-cluster')) return 'Buttery Spheres';
+      if (curImg.includes('pecans-macro')) return 'Pecan Macro';
+      if (curImg.includes('pecans-bowl')) return 'Pecan Bowl';
+      if (curImg.includes('pecans-shell-cracking')) return 'Hand-Cracked';
       if (curImg.includes('packaged')) return 'Packaging';
       if (curImg.includes('apricots') || curImg.includes('kargil')) return 'Apricots';
       if (curImg.includes('real-figs') || curImg.includes('figs-close')) return 'Anjeer';

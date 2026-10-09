@@ -1,996 +1,1418 @@
-// JENU'S - Kashmir Valley Gourmet Dry Fruits & Saffron Dataset
-// Certified under FSSAI Central License: 10026061000412
+// JENU'S Authentic Kashmir Dry Fruits & Artisan Spices Data Store
+// Curated Authentic Inventory with Geographical Origin, Terroir & Heritage Documentation
 
 export const CATEGORIES = [
-  { id: 'all', name: 'All Products', image: '/images/cat-all-crest.svg' },
-  { id: 'combos', name: 'Value Combos', image: '/images/combos-pack.jpg' },
-  { id: 'teas', name: 'Shehar Chai & Teas', image: '/images/noon-chai-cup-authentic.jpg' },
-  { id: 'powdered-spices', name: 'Powdered Spices & Masalas', image: '/images/chaat-masala-macro.jpg' },
-  { id: 'raw-spices', name: 'Raw Whole Spices', image: '/images/choti-elaichi-macro.jpg' },
-  { id: 'spices', name: 'All Spices & Masalas', image: '/images/real-mirch-macro.jpg' },
-  { id: 'dates', name: 'Phool Makhana, Chhuara & Wellness', image: '/images/phool-makhana-jumbo.jpg' },
-  { id: 'seeds', name: 'Super Seeds & Confectionery', image: '/images/seeds-7in1-macro.jpg' },
-  { id: 'breakfast', name: 'Muesli & Breakfast Mixes', image: '/images/muesli-saffron-macro.jpg' },
-  { id: 'dried-fruits', name: 'Sun-Dried Fruits & Gucchi Morels', image: '/images/gucchi-morels-kashmir.jpg' },
-  { id: 'cashews', name: 'King Cashews', image: '/images/cashews-jumbo-macro.jpg' },
-  { id: 'pistachios', name: 'Mountain Pistachios', image: '/images/pista-inshell-macro.jpg' },
-  { id: 'raisins', name: 'Kishmish & Jumbo Munakka', image: '/images/munakka-jumbo-amber.jpg' },
-  { id: 'almonds', name: 'Mamra Almonds', image: '/images/real-mamra-macro.jpg' },
-  { id: 'walnuts', name: 'Snow Walnuts', image: '/images/real-walnuts-macro.jpg' },
-  { id: 'saffron', name: 'Pampore Saffron', image: '/images/real-saffron-macro.jpg' },
-  { id: 'berries-seeds', name: 'Chironji & Native Forest Nuts', image: '/images/chironji-charoli-nuts.jpg' },
-  { id: 'hampers', name: 'Gourmet Hampers', image: '/images/royal-hamper.jpg' }
+  {
+    "id": "all",
+    "name": "All Products",
+    "image": "/images/cat-all-crest.svg"
+  },
+  {
+    "id": "combos",
+    "name": "Value Combos",
+    "image": "/images/combos-pack.jpg"
+  },
+  {
+    "id": "teas",
+    "name": "Shehar Chai & Teas",
+    "image": "/images/noon-chai-cup-authentic.jpg"
+  },
+  {
+    "id": "powdered-spices",
+    "name": "Powdered Spices & Masalas",
+    "image": "/images/chaat-masala-macro.jpg"
+  },
+  {
+    "id": "raw-spices",
+    "name": "Raw Whole Spices",
+    "image": "/images/choti-elaichi-macro.jpg"
+  },
+  {
+    "id": "spices",
+    "name": "All Spices & Masalas",
+    "image": "/images/real-mirch-macro.jpg"
+  },
+  {
+    "id": "dates",
+    "name": "Phool Makhana, Chhuara & Wellness",
+    "image": "/images/phool-makhana-jumbo.jpg"
+  },
+  {
+    "id": "seeds",
+    "name": "Super Seeds & Confectionery",
+    "image": "/images/seeds-7in1-macro.jpg"
+  },
+  {
+    "id": "breakfast",
+    "name": "Muesli & Breakfast Mixes",
+    "image": "/images/muesli-saffron-macro.jpg"
+  },
+  {
+    "id": "dried-fruits",
+    "name": "Sun-Dried Fruits & Gucchi Morels",
+    "image": "/images/gucchi-morels-kashmir.jpg"
+  },
+  {
+    "id": "cashews",
+    "name": "King Cashews",
+    "image": "/images/cashews-jumbo-macro.jpg"
+  },
+  {
+    "id": "pistachios",
+    "name": "Mountain Pistachios",
+    "image": "/images/pista-inshell-macro.jpg"
+  },
+  {
+    "id": "raisins",
+    "name": "Kishmish & Jumbo Munakka",
+    "image": "/images/munakka-jumbo-amber.jpg"
+  },
+  {
+    "id": "almonds",
+    "name": "Mamra Almonds",
+    "image": "/images/real-mamra-macro.jpg"
+  },
+  {
+    "id": "walnuts",
+    "name": "Snow Walnuts",
+    "image": "/images/real-walnuts-macro.jpg"
+  },
+  {
+    "id": "saffron",
+    "name": "Pampore Saffron",
+    "image": "/images/real-saffron-macro.jpg"
+  },
+  {
+    "id": "berries-seeds",
+    "name": "Chironji & Native Forest Nuts",
+    "image": "/images/chironji-charoli-nuts.jpg"
+  },
+  {
+    "id": "hampers",
+    "name": "Gourmet Hampers",
+    "image": "/images/royal-hamper.jpg"
+  }
 ];
 
 export const PRODUCTS = [
   {
-    id: 'jnu-mamra-01',
-    name: "JENU'S Royal Kashmiri Mamra Almonds",
-    subname: "Grade A+ Oil-Rich Kashmiri Mamra Badam",
-    category: 'almonds',
-    productType: "Grade A+ Himalayan Mamra Almond (Prunus dulcis)",
-    origin: 'Shopian & Pulwama, Kashmir',
-    harvestYear: '2026 Fresh Valley Harvest',
-    rating: 4.9,
-    reviewsCount: 1420,
-    badge: 'Bestseller',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/real-mamra-macro.jpg',
-    images: [
-      '/images/real-mamra-macro.jpg',
-      '/images/real-almonds-raw-camera.jpg',
-      '/images/real-almonds-stages-camera.jpg',
-      '/images/mamra-almonds-packaged.jpg'
+    "id": "jnu-mamra-01",
+    "name": "JENU'S Royal Kashmiri Mamra Almonds",
+    "subname": "Grade A+ Oil-Rich Kashmiri Mamra Badam",
+    "category": "almonds",
+    "productType": "Grade A+ Himalayan Mamra Almond (Prunus dulcis)",
+    "origin": "Shopian & Pulwama, Kashmir",
+    "harvestYear": "2026 Fresh Valley Harvest",
+    "rating": 4.9,
+    "reviewsCount": 1420,
+    "badge": "Bestseller",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/real-mamra-macro.jpg",
+    "images": [
+      "/images/real-mamra-macro.jpg",
+      "/images/real-almonds-raw-camera.jpg",
+      "/images/real-almonds-stages-camera.jpg",
+      "/images/mamra-almonds-packaged.jpg"
     ],
-    overview: {
-      terroir: "Shopian Terraced Slopes (6,800 ft Altitude)",
-      harvestMethod: "100% Handpicked, Mountain Air Sun-Cured",
-      aromaFlavor: "Crisp crunch, rich sweet almond butter & natural oils",
-      purityGrade: "50% Natural Almond Oil, Unbleached & Non-GMO",
-      packagingStandard: "Nitrogen-flushed cold storage canister with aroma-lock",
-      shelfLife: "12 Months in cool dry mountain storage"
+    "overview": {
+      "terroir": "Shopian Terraced Slopes (6,800 ft Altitude)",
+      "harvestMethod": "100% Handpicked, Mountain Air Sun-Cured",
+      "aromaFlavor": "Crisp crunch, rich sweet almond butter & natural oils",
+      "purityGrade": "50% Natural Almond Oil, Unbleached & Non-GMO",
+      "packagingStandard": "Nitrogen-flushed cold storage canister with aroma-lock",
+      "shelfLife": "12 Months in cool dry mountain storage"
     },
-    description: "Handpicked from high-altitude orchards in Kashmir. Our Mamra Badam contains up to 50% natural almond oil content—nearly twice that of commercial California almonds. Crisp, nutrient-dense, and sweet.",
-    benefits: [
+    "description": "Handpicked from high-altitude orchards in Kashmir. Our Mamra Badam contains up to 50% natural almond oil content—nearly twice that of commercial California almonds. Crisp, nutrient-dense, and sweet.",
+    "benefits": [
       "FSSAI Certified: 100% food safety & heavy-metal tested",
       "50% natural almond oil content (rich in natural Vitamin E)",
       "Sun-dried in crisp sub-zero Himalayan mountain air",
       "Zero chemical polishing, unbleached and non-GMO"
     ],
-    nutrition: {
-      calories: "579 kcal",
-      protein: "21.2g",
-      healthyFats: "49.9g",
-      carbs: "21.6g",
-      fiber: "12.5g"
+    "nutrition": {
+      "calories": "579 kcal",
+      "protein": "21.2g",
+      "healthyFats": "49.9g",
+      "carbs": "21.6g",
+      "fiber": "12.5g"
     },
-    weights: [
-      { weight: '250g', price: 890, originalPrice: 1150, discount: 22 },
-      { weight: '500g', price: 1690, originalPrice: 2200, discount: 23, isDefault: true },
-      { weight: '1kg', price: 3250, originalPrice: 4200, discount: 22 }
+    "weights": [
+      {
+        "weight": "250g",
+        "price": 890,
+        "originalPrice": 1150,
+        "discount": 22
+      },
+      {
+        "weight": "500g",
+        "price": 1690,
+        "originalPrice": 2200,
+        "discount": 23,
+        "isDefault": true
+      },
+      {
+        "weight": "1kg",
+        "price": 3250,
+        "originalPrice": 4200,
+        "discount": 22
+      }
     ]
   },
   {
-    id: 'jnu-saffron-02',
-    name: "JENU'S Pure Pampore Mongra Saffron",
-    subname: "Grade A1+ Certified Kashmiri Mongra Kesar",
-    category: 'saffron',
-    productType: "GI-Tagged Grade A1+ Pampore Mongra (Crocus sativus)",
-    origin: 'Pampore Plateau, Kashmir',
-    harvestYear: '2026 Purple Crocus Bloom',
-    rating: 5.0,
-    reviewsCount: 2180,
-    badge: 'FSSAI Certified',
-    badgeType: 'fssai',
-    fssaiCertified: true,
-    image: '/images/real-saffron-macro.jpg',
-    images: [
-      '/images/real-saffron-macro.jpg',
-      '/images/real-saffron-raw-camera.jpg',
-      '/images/saffron-infusion.jpg',
-      '/images/saffron-pampore-packaged.jpg'
+    "id": "jnu-saffron-02",
+    "name": "JENU'S Pure Pampore Mongra Saffron",
+    "subname": "Grade A1+ Certified Kashmiri Mongra Kesar",
+    "category": "saffron",
+    "productType": "GI-Tagged Grade A1+ Pampore Mongra (Crocus sativus)",
+    "origin": "Pampore Plateau, Kashmir",
+    "harvestYear": "2026 Purple Crocus Bloom",
+    "rating": 5,
+    "reviewsCount": 2180,
+    "badge": "FSSAI Certified",
+    "badgeType": "fssai",
+    "fssaiCertified": true,
+    "image": "/images/real-saffron-macro.jpg",
+    "images": [
+      "/images/real-saffron-macro.jpg",
+      "/images/real-saffron-raw-camera.jpg",
+      "/images/saffron-infusion.jpg",
+      "/images/saffron-pampore-packaged.jpg"
     ],
-    overview: {
-      terroir: "Pampore Karewa Plateau (5,300 ft Altitude)",
-      harvestMethod: "Dawn hand-plucked crimson stigmas only (Mongra grade)",
-      aromaFlavor: "Warm honeyed hay, delicate floral & bittersweet saffron bouquet",
-      purityGrade: "Crocin coloring strength 254+, Zero yellow style filaments",
-      packagingStandard: "Pharmaceutical-grade airtight amber glass vial",
-      shelfLife: "24 Months when kept away from moisture and direct sunlight"
+    "overview": {
+      "terroir": "Pampore Karewa Plateau (5,300 ft Altitude)",
+      "harvestMethod": "Dawn hand-plucked crimson stigmas only (Mongra grade)",
+      "aromaFlavor": "Warm honeyed hay, delicate floral & bittersweet saffron bouquet",
+      "purityGrade": "Crocin coloring strength 254+, Zero yellow style filaments",
+      "packagingStandard": "Pharmaceutical-grade airtight amber glass vial",
+      "shelfLife": "24 Months when kept away from moisture and direct sunlight"
     },
-    description: "Directly harvested from purple crocus sativus fields in Pampore. Comprises only deep crimson stigmas (Mongra) free from yellow styles, providing extraordinary natural crocin coloring strength (254+) and floral notes.",
-    benefits: [
+    "description": "Directly harvested from purple crocus sativus fields in Pampore. Comprises only deep crimson stigmas (Mongra) free from yellow styles, providing extraordinary natural crocin coloring strength (254+) and floral notes.",
+    "benefits": [
       "FSSAI Certified & Lab Tested: Zero artificial color or adulteration",
       "Certified Grade A1+ with Crocin color strength exceeding 250",
       "Rich in active safranal & picrocrocin antioxidants",
       "Sealed in pharmaceutical-grade airtight glass jars"
     ],
-    nutrition: {
-      calories: "310 kcal",
-      protein: "11.4g",
-      healthyFats: "5.8g",
-      carbs: "65.4g",
-      fiber: "3.9g"
+    "nutrition": {
+      "calories": "310 kcal",
+      "protein": "11.4g",
+      "healthyFats": "5.8g",
+      "carbs": "65.4g",
+      "fiber": "3.9g"
     },
-    weights: [
-      { weight: '1g', price: 420, originalPrice: 550, discount: 23, isDefault: true },
-      { weight: '2g', price: 810, originalPrice: 1080, discount: 25 },
-      { weight: '5g', price: 1950, originalPrice: 2650, discount: 26 }
+    "weights": [
+      {
+        "weight": "1g",
+        "price": 420,
+        "originalPrice": 550,
+        "discount": 23,
+        "isDefault": true
+      },
+      {
+        "weight": "2g",
+        "price": 810,
+        "originalPrice": 1080,
+        "discount": 25
+      },
+      {
+        "weight": "5g",
+        "price": 1950,
+        "originalPrice": 2650,
+        "discount": 26
+      }
     ]
   },
   {
-    id: 'jnu-walnut-03',
-    name: "JENU'S Kashmiri Kagzi Snow Walnuts",
-    subname: "Extra-White Hand-Sorted Kernels (Akhrot Halves)",
-    category: 'walnuts',
-    productType: "Paper-Shell Kagzi Snow Walnut (Juglans regia)",
-    origin: 'Kupwara & Pahalgam, Kashmir',
-    harvestYear: '2026 Fresh Valley Harvest',
-    rating: 4.9,
-    reviewsCount: 980,
-    badge: 'Extra White',
-    badgeType: 'premium',
-    fssaiCertified: true,
-    image: '/images/real-walnuts-macro.jpg',
-    images: [
-      '/images/real-walnuts-macro.jpg',
-      '/images/real-walnuts-raw-camera.jpg',
-      '/images/walnuts-shell.jpg',
-      '/images/walnuts-akhrot-packaged.jpg'
+    "id": "jnu-walnut-03",
+    "name": "JENU'S Kashmiri Kagzi Snow Walnuts",
+    "subname": "Extra-White Hand-Sorted Kernels (Akhrot Halves)",
+    "category": "walnuts",
+    "productType": "Paper-Shell Kagzi Snow Walnut (Juglans regia)",
+    "origin": "Kupwara & Pahalgam, Kashmir",
+    "harvestYear": "2026 Fresh Valley Harvest",
+    "rating": 4.9,
+    "reviewsCount": 980,
+    "badge": "Extra White",
+    "badgeType": "premium",
+    "fssaiCertified": true,
+    "image": "/images/real-walnuts-macro.jpg",
+    "images": [
+      "/images/real-walnuts-macro.jpg",
+      "/images/real-walnuts-raw-camera.jpg",
+      "/images/walnuts-shell.jpg",
+      "/images/walnuts-akhrot-packaged.jpg"
     ],
-    overview: {
-      terroir: "Kupwara & Pahalgam Alpine Valleys (7,200 ft Altitude)",
-      harvestMethod: "Traditional wooden pole harvest & clean river washing",
-      aromaFlavor: "Delicate buttery sweetness, velvety crunch, zero bitterness",
-      purityGrade: "Hand-cracked unbroken whole halves, chlorine-free & unbleached",
-      packagingStandard: "Nitrogen-purged vacuum sealed preservation canister",
-      shelfLife: "9 Months in airtight cool dry storage"
+    "overview": {
+      "terroir": "Kupwara & Pahalgam Alpine Valleys (7,200 ft Altitude)",
+      "harvestMethod": "Traditional wooden pole harvest & clean river washing",
+      "aromaFlavor": "Delicate buttery sweetness, velvety crunch, zero bitterness",
+      "purityGrade": "Hand-cracked unbroken whole halves, chlorine-free & unbleached",
+      "packagingStandard": "Nitrogen-purged vacuum sealed preservation canister",
+      "shelfLife": "9 Months in airtight cool dry storage"
     },
-    description: "Distinctive paper-thin 'Kagzi' shells with creamy, snow-white kernels. Hand-cracked and carefully graded to retain whole unbroken halves. Naturally loaded with plant-based Omega-3 ALA.",
-    benefits: [
+    "description": "Distinctive paper-thin 'Kagzi' shells with creamy, snow-white kernels. Hand-cracked and carefully graded to retain whole unbroken halves. Naturally loaded with plant-based Omega-3 ALA.",
+    "benefits": [
       "FSSAI Certified: 100% natural, chlorine-free and unbleached",
       "High concentration of brain-healthy Omega-3 ALA fatty acids",
       "Gentle buttery flavor with zero bitterness",
       "Sun-cured on hygienic wooden racks in alpine air"
     ],
-    nutrition: {
-      calories: "654 kcal",
-      protein: "15.2g",
-      healthyFats: "65.2g",
-      carbs: "13.7g",
-      fiber: "6.7g"
+    "nutrition": {
+      "calories": "654 kcal",
+      "protein": "15.2g",
+      "healthyFats": "65.2g",
+      "carbs": "13.7g",
+      "fiber": "6.7g"
     },
-    weights: [
-      { weight: '250g', price: 480, originalPrice: 650, discount: 26 },
-      { weight: '500g', price: 890, originalPrice: 1250, discount: 28, isDefault: true },
-      { weight: '1kg', price: 1690, originalPrice: 2400, discount: 29 }
+    "weights": [
+      {
+        "weight": "250g",
+        "price": 480,
+        "originalPrice": 650,
+        "discount": 26
+      },
+      {
+        "weight": "500g",
+        "price": 890,
+        "originalPrice": 1250,
+        "discount": 28,
+        "isDefault": true
+      },
+      {
+        "weight": "1kg",
+        "price": 1690,
+        "originalPrice": 2400,
+        "discount": 29
+      }
     ]
   },
   {
-    id: 'jnu-hamper-04',
-    name: "JENU'S Royal Khatamband Wooden Gift Hamper",
-    subname: "Handcrafted Seasoned Kashmir Walnut Wood Suite",
-    category: 'hampers',
-    productType: "Artisanal Seasoned Walnut Wood Khatamband Gift Suite",
-    origin: 'Artisan Woodcraft Atelier, Srinagar',
-    harvestYear: 'Festive Edition 2026',
-    rating: 5.0,
-    reviewsCount: 640,
-    badge: 'Luxury Suite',
-    badgeType: 'luxury',
-    fssaiCertified: true,
-    image: '/images/khatamband-gift-box.jpg',
-    images: [
-      '/images/khatamband-gift-box.jpg',
-      '/images/hamper-open-suite.jpg',
-      '/images/royal-hamper-packaged.jpg'
+    "id": "jnu-hamper-04",
+    "name": "JENU'S Royal Khatamband Wooden Gift Hamper",
+    "subname": "Handcrafted Seasoned Kashmir Walnut Wood Suite",
+    "category": "hampers",
+    "productType": "Artisanal Seasoned Walnut Wood Khatamband Gift Suite",
+    "origin": "Artisan Woodcraft Atelier, Srinagar",
+    "harvestYear": "Festive Edition 2026",
+    "rating": 5,
+    "reviewsCount": 640,
+    "badge": "Luxury Suite",
+    "badgeType": "luxury",
+    "fssaiCertified": true,
+    "image": "/images/khatamband-gift-box.jpg",
+    "images": [
+      "/images/khatamband-gift-box.jpg",
+      "/images/hamper-open-suite.jpg",
+      "/images/royal-hamper-packaged.jpg",
+      "/images/khatamband-woodcraft-macro.jpg"
     ],
-    overview: {
-      terroir: "Artisan Woodcraft Atelier, Downtown Srinagar",
-      harvestMethod: "Hand-chiseled solid seasoned walnut timber with brass fittings",
-      aromaFlavor: "Natural timber aroma housing 5 royal valley gourmet harvests",
-      purityGrade: "Heirloom craftsmanship filled with 100% FSSAI certified dry fruits",
-      packagingStandard: "Hand-carved wooden case with velvet partitions & satin ribbon",
-      shelfLife: "12 Months (individual inner containers are vacuum sealed)"
+    "overview": {
+      "terroir": "Artisan Woodcraft Atelier, Downtown Srinagar",
+      "harvestMethod": "Hand-chiseled solid seasoned walnut timber with brass fittings",
+      "aromaFlavor": "Natural timber aroma housing 5 royal valley gourmet harvests",
+      "purityGrade": "Heirloom craftsmanship filled with 100% FSSAI certified dry fruits",
+      "packagingStandard": "Hand-carved wooden case with velvet partitions & satin ribbon",
+      "shelfLife": "12 Months (individual inner containers are vacuum sealed)"
     },
-    description: "An heirloom-quality presentation box hand-carved in solid Kashmir walnut wood. Houses 4 velvet-lined compartments containing Mamra Almonds (250g), Snow Walnuts (250g), Dried Figs (250g), Golden Apricots (250g), and a central glass jar of Pampore Saffron (1g).",
-    benefits: [
+    "description": "An heirloom-quality presentation box hand-carved in solid Kashmir walnut wood. Houses 4 velvet-lined compartments containing Mamra Almonds (250g), Snow Walnuts (250g), Dried Figs (250g), Golden Apricots (250g), and a central glass jar of Pampore Saffron (1g).",
+    "benefits": [
       "Solid hand-carved walnut wood box with brass latch",
       "All contents FSSAI Certified and batch tested",
       "Complimentary personalized greeting message",
       "Vacuum-sealed packaging preserving 12-month shelf life"
     ],
-    nutrition: {
-      calories: "Assorted",
-      protein: "18.5g avg",
-      healthyFats: "45.0g avg",
-      carbs: "28.0g avg",
-      fiber: "10.0g avg"
+    "nutrition": {
+      "calories": "Assorted",
+      "protein": "18.5g avg",
+      "healthyFats": "45.0g avg",
+      "carbs": "28.0g avg",
+      "fiber": "10.0g avg"
     },
-    weights: [
-      { weight: '1.2kg Grand Suite', price: 2999, originalPrice: 4200, discount: 28, isDefault: true },
-      { weight: '2kg Royal Suite', price: 4899, originalPrice: 6800, discount: 28 }
+    "weights": [
+      {
+        "weight": "1.2kg Grand Suite",
+        "price": 2999,
+        "originalPrice": 4200,
+        "discount": 28,
+        "isDefault": true
+      },
+      {
+        "weight": "2kg Royal Suite",
+        "price": 4899,
+        "originalPrice": 6800,
+        "discount": 28
+      }
     ]
   },
   {
-    id: 'jnu-figs-05',
-    name: "JENU'S Sun-Dried Kashmiri Figs & Apricots",
-    subname: "Traditional Threaded Golden Anjeer & Shopian Zardalu",
-    category: 'dried-fruits',
-    productType: "Sun-Dried Mountain Anjeer & Golden Zardalu (Ficus carica)",
-    origin: 'Shopian Terraced Orchards, Kashmir',
-    harvestYear: '2026 Fresh Valley Harvest',
-    rating: 4.8,
-    reviewsCount: 810,
-    badge: 'Sulphur Free',
-    badgeType: 'natural',
-    fssaiCertified: true,
-    image: '/images/real-figs-macro.jpg',
-    images: [
-      '/images/real-figs-macro.jpg',
-      '/images/figs-close.jpg',
-      '/images/real-figs-apricots-macro.jpg',
-      '/images/figs-apricots-close.jpg'
+    "id": "jnu-figs-05",
+    "name": "JENU'S Sun-Dried Kashmiri Figs & Apricots",
+    "subname": "Traditional Threaded Golden Anjeer & Shopian Zardalu",
+    "category": "dried-fruits",
+    "productType": "Sun-Dried Mountain Anjeer & Golden Zardalu (Ficus carica)",
+    "origin": "Shopian Terraced Orchards, Kashmir",
+    "harvestYear": "2026 Fresh Valley Harvest",
+    "rating": 4.8,
+    "reviewsCount": 810,
+    "badge": "Sulphur Free",
+    "badgeType": "natural",
+    "fssaiCertified": true,
+    "image": "/images/real-figs-macro.jpg",
+    "images": [
+      "/images/real-figs-macro.jpg",
+      "/images/figs-close.jpg",
+      "/images/real-figs-apricots-macro.jpg",
+      "/images/figs-apricots-close.jpg"
     ],
-    overview: {
-      terroir: "Shopian Terraced Orchards (6,500 ft Altitude)",
-      harvestMethod: "Tree-ripened, hand-threaded on natural hemp twine",
-      aromaFlavor: "Chewy honey nectar, caramelized date notes with pleasant seed crunch",
-      purityGrade: "100% Sulphur-Free, Zero artificial syrups or added sugar",
-      packagingStandard: "Resealable aroma-barrier zip pouch with moisture absorber",
-      shelfLife: "12 Months stored in ambient cool storage"
+    "overview": {
+      "terroir": "Shopian Terraced Orchards (6,500 ft Altitude)",
+      "harvestMethod": "Tree-ripened, hand-threaded on natural hemp twine",
+      "aromaFlavor": "Chewy honey nectar, caramelized date notes with pleasant seed crunch",
+      "purityGrade": "100% Sulphur-Free, Zero artificial syrups or added sugar",
+      "packagingStandard": "Resealable aroma-barrier zip pouch with moisture absorber",
+      "shelfLife": "12 Months stored in ambient cool storage"
     },
-    description: "Plump, sun-ripened Kashmiri figs threaded on traditional twine alongside sweet golden Shopian apricots. Dried slowly under mountain sunlight without artificial sulphur, refined syrups, or coloring.",
-    benefits: [
+    "description": "Plump, sun-ripened Kashmiri figs threaded on traditional twine alongside sweet golden Shopian apricots. Dried slowly under mountain sunlight without artificial sulphur, refined syrups, or coloring.",
+    "benefits": [
       "FSSAI Certified: 100% natural, zero preservatives or added sugars",
       "Rich in soluble dietary fiber and essential minerals (iron, potassium)",
       "Low glycemic index snack for everyday vitality",
       "Hygienically sorted and nitrogen sealed"
     ],
-    nutrition: {
-      calories: "249 kcal",
-      protein: "3.3g",
-      healthyFats: "0.9g",
-      carbs: "63.9g",
-      fiber: "9.8g"
+    "nutrition": {
+      "calories": "249 kcal",
+      "protein": "3.3g",
+      "healthyFats": "0.9g",
+      "carbs": "63.9g",
+      "fiber": "9.8g"
     },
-    weights: [
-      { weight: '250g', price: 390, originalPrice: 520, discount: 25 },
-      { weight: '500g', price: 740, originalPrice: 990, discount: 25, isDefault: true },
-      { weight: '1kg', price: 1390, originalPrice: 1900, discount: 26 }
+    "weights": [
+      {
+        "weight": "250g",
+        "price": 390,
+        "originalPrice": 520,
+        "discount": 25
+      },
+      {
+        "weight": "500g",
+        "price": 740,
+        "originalPrice": 990,
+        "discount": 25,
+        "isDefault": true
+      },
+      {
+        "weight": "1kg",
+        "price": 1390,
+        "originalPrice": 1900,
+        "discount": 26
+      }
     ]
   },
   {
-    id: 'jnu-kahwa-06',
-    name: "JENU'S Royal Shahi Kashmiri Saffron Kahwa",
-    subname: "Whole Leaf Green Tea, Saffron Strands, Sliced Almonds & Cardamom",
-    category: 'kahwa-spices',
-    productType: "Royal Himalayan Saffron Spiced Green Tea (Camellia sinensis blend)",
-    origin: 'Pampore & Gulmarg, Kashmir',
-    harvestYear: '2026 Special Blend',
-    rating: 4.9,
-    reviewsCount: 1120,
-    badge: 'Signature Blend',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/kahwa-tea-blend.jpg',
-    images: [
-      '/images/kahwa-tea-blend.jpg',
-      '/images/kahwa-brewed-cup.jpg',
-      '/images/kahwa-tea.jpg',
-      '/images/kahwa-tea-packaged.jpg'
+    "id": "jnu-kahwa-06",
+    "name": "JENU'S Royal Shahi Kashmiri Saffron Kahwa",
+    "subname": "Whole Leaf Green Tea, Saffron Strands, Sliced Almonds & Cardamom",
+    "category": "kahwa-spices",
+    "productType": "Royal Himalayan Saffron Spiced Green Tea (Camellia sinensis blend)",
+    "origin": "Pampore & Gulmarg, Kashmir",
+    "harvestYear": "2026 Special Blend",
+    "rating": 4.9,
+    "reviewsCount": 1120,
+    "badge": "Signature Blend",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/kahwa-tea-blend.jpg",
+    "images": [
+      "/images/kahwa-tea-blend.jpg",
+      "/images/kahwa-brewed-cup.jpg",
+      "/images/kahwa-tea.jpg",
+      "/images/kahwa-tea-packaged.jpg"
     ],
-    overview: {
-      terroir: "Pampore, Gulmarg & High Valley Slopes",
-      harvestMethod: "First-flush whole green tea leaves hand-blended with whole spices",
-      aromaFlavor: "Warming cardamom bouquet, sweet saffron notes, rose petal undertones",
-      purityGrade: "Contains genuine Pampore saffron threads and sliced Mamra badam",
-      packagingStandard: "Double-lid airtight matte tin canister with protective seal",
-      shelfLife: "18 Months in airtight dry tea caddy"
+    "overview": {
+      "terroir": "Pampore, Gulmarg & High Valley Slopes",
+      "harvestMethod": "First-flush whole green tea leaves hand-blended with whole spices",
+      "aromaFlavor": "Warming cardamom bouquet, sweet saffron notes, rose petal undertones",
+      "purityGrade": "Contains genuine Pampore saffron threads and sliced Mamra badam",
+      "packagingStandard": "Double-lid airtight matte tin canister with protective seal",
+      "shelfLife": "18 Months in airtight dry tea caddy"
     },
-    description: "An authentic Himalayan botanical brew crafted with whole green tea leaves, genuine Pampore saffron, slivered Mamra almonds, green cardamom, and fragrant Kashmiri rose petals.",
-    benefits: [
+    "description": "An authentic Himalayan botanical brew crafted with whole green tea leaves, genuine Pampore saffron, slivered Mamra almonds, green cardamom, and fragrant Kashmiri rose petals.",
+    "benefits": [
       "FSSAI Certified: 100% natural herbs and spices, no artificial flavors",
       "Infused with real Pampore saffron threads and almond slivers",
       "Natural digestive and warming winter wellness drink",
       "Sealed in an airtight matte presentation canister"
     ],
-    nutrition: {
-      calories: "45 kcal / cup",
-      protein: "1.8g",
-      healthyFats: "2.1g",
-      carbs: "4.2g",
-      fiber: "1.1g"
+    "nutrition": {
+      "calories": "45 kcal / cup",
+      "protein": "1.8g",
+      "healthyFats": "2.1g",
+      "carbs": "4.2g",
+      "fiber": "1.1g"
     },
-    weights: [
-      { weight: '250g Canister', price: 460, originalPrice: 620, discount: 25, isDefault: true },
-      { weight: '500g Pack', price: 860, originalPrice: 1190, discount: 27 },
-      { weight: '1kg Bulk Tin', price: 1590, originalPrice: 2200, discount: 27 }
+    "weights": [
+      {
+        "weight": "250g Canister",
+        "price": 460,
+        "originalPrice": 620,
+        "discount": 25,
+        "isDefault": true
+      },
+      {
+        "weight": "500g Pack",
+        "price": 860,
+        "originalPrice": 1190,
+        "discount": 27
+      },
+      {
+        "weight": "1kg Bulk Tin",
+        "price": 1590,
+        "originalPrice": 2200,
+        "discount": 27
+      }
     ]
   },
   {
-    id: 'jnu-chilgoza-07',
-    name: "JENU'S Wild Himalayan Chilgoza (Pine Nuts)",
-    subname: "Raw Himalayan Forest Hand-Harvested Pine Nuts in Shell",
-    category: 'berries-seeds',
-    productType: "Wild Himalayan Forest Pine Nuts (Pinus gerardiana)",
-    origin: 'High Kinnaur & Kashmir Forest Ridges',
-    harvestYear: '2026 Wild Crop',
-    rating: 4.9,
-    reviewsCount: 520,
-    badge: 'Wild Foraged',
-    badgeType: 'premium',
-    fssaiCertified: true,
-    image: '/images/real-chilgoza-macro.jpg',
-    images: [
-      '/images/real-chilgoza-macro.jpg',
-      '/images/chilgoza-pinenuts-macro.jpg',
-      '/images/chilgoza-pinenuts.jpg',
-      '/images/chilgoza-pinenuts-packaged.jpg'
+    "id": "jnu-chilgoza-07",
+    "name": "JENU'S Wild Himalayan Chilgoza (Pine Nuts)",
+    "subname": "Raw Himalayan Forest Hand-Harvested Pine Nuts in Shell",
+    "category": "berries-seeds",
+    "productType": "Wild Himalayan Forest Pine Nuts (Pinus gerardiana)",
+    "origin": "High Kinnaur & Kashmir Forest Ridges",
+    "harvestYear": "2026 Wild Crop",
+    "rating": 4.9,
+    "reviewsCount": 520,
+    "badge": "Wild Foraged",
+    "badgeType": "premium",
+    "fssaiCertified": true,
+    "image": "/images/real-chilgoza-macro.jpg",
+    "images": [
+      "/images/real-chilgoza-macro.jpg",
+      "/images/chilgoza-pinenuts-macro.jpg",
+      "/images/chilgoza-pinenuts.jpg",
+      "/images/chilgoza-pinenuts-packaged.jpg"
     ],
-    overview: {
-      terroir: "Wild Himalayan Ridges (Kinnaur & Kashmir High Forest, 8,500 ft)",
-      harvestMethod: "Foraged by local mountaineers from wild pine cones",
-      aromaFlavor: "Creamy, decadent buttery pine aroma with delicate resinous sweet finish",
-      purityGrade: "Raw in protective natural slender shell, zero heating or chemical wash",
-      packagingStandard: "Heavy-duty nitrogen vacuum foil pack",
-      shelfLife: "9 Months in cool refrigeration or dry pantry"
+    "overview": {
+      "terroir": "Wild Himalayan Ridges (Kinnaur & Kashmir High Forest, 8,500 ft)",
+      "harvestMethod": "Foraged by local mountaineers from wild pine cones",
+      "aromaFlavor": "Creamy, decadent buttery pine aroma with delicate resinous sweet finish",
+      "purityGrade": "Raw in protective natural slender shell, zero heating or chemical wash",
+      "packagingStandard": "Heavy-duty nitrogen vacuum foil pack",
+      "shelfLife": "9 Months in cool refrigeration or dry pantry"
     },
-    description: "Rare and prized edible delicacy gathered from wild Himalayan Pinus gerardiana trees. Slender golden shells with ivory, buttery pine nut kernels rich in pinolenic acid.",
-    benefits: [
+    "description": "Rare and prized edible delicacy gathered from wild Himalayan Pinus gerardiana trees. Slender golden shells with ivory, buttery pine nut kernels rich in pinolenic acid.",
+    "benefits": [
       "FSSAI Certified: Wild harvested, pesticide-free and unrefined",
       "Naturally abundant in pinolenic acid and monounsaturated fats",
       "Buttery, velvety texture with sweet pine aroma",
       "Carefully vacuum-packed for peak freshness"
     ],
-    nutrition: {
-      calories: "673 kcal",
-      protein: "13.7g",
-      healthyFats: "68.4g",
-      carbs: "13.1g",
-      fiber: "3.7g"
+    "nutrition": {
+      "calories": "673 kcal",
+      "protein": "13.7g",
+      "healthyFats": "68.4g",
+      "carbs": "13.1g",
+      "fiber": "3.7g"
     },
-    weights: [
-      { weight: '200g', price: 990, originalPrice: 1350, discount: 26 },
-      { weight: '500g', price: 2350, originalPrice: 3200, discount: 26, isDefault: true },
-      { weight: '1kg', price: 4490, originalPrice: 6100, discount: 26 }
+    "weights": [
+      {
+        "weight": "200g",
+        "price": 990,
+        "originalPrice": 1350,
+        "discount": 26
+      },
+      {
+        "weight": "500g",
+        "price": 2350,
+        "originalPrice": 3200,
+        "discount": 26,
+        "isDefault": true
+      },
+      {
+        "weight": "1kg",
+        "price": 4490,
+        "originalPrice": 6100,
+        "discount": 26
+      }
     ]
   },
   {
-    id: 'jnu-apricots-08',
-    name: "JENU'S Shopian Sweet Golden Apricots (Zardalu)",
-    subname: "Sun-Matured Sweet Apricots with Edible Kernel",
-    category: 'dried-fruits',
-    productType: "Shopian Sweet Golden Apricots with Edible Kernel (Prunus armeniaca)",
-    origin: 'Shopian Terraces, Kashmir',
-    harvestYear: '2026 Fresh Valley Harvest',
-    rating: 4.7,
-    reviewsCount: 460,
-    badge: 'Unsulphured',
-    badgeType: 'natural',
-    fssaiCertified: true,
-    image: '/images/real-apricots-macro.jpg',
-    images: [
-      '/images/real-apricots-macro.jpg',
-      '/images/apricots-khumani-close.jpg',
-      '/images/apricots-kargil.jpg',
-      '/images/figs-apricots-packaged.jpg'
+    "id": "jnu-apricots-08",
+    "name": "JENU'S Shopian Sweet Golden Apricots (Zardalu)",
+    "subname": "Sun-Matured Sweet Apricots with Edible Kernel",
+    "category": "dried-fruits",
+    "productType": "Shopian Sweet Golden Apricots with Edible Kernel (Prunus armeniaca)",
+    "origin": "Shopian Terraces, Kashmir",
+    "harvestYear": "2026 Fresh Valley Harvest",
+    "rating": 4.7,
+    "reviewsCount": 460,
+    "badge": "Unsulphured",
+    "badgeType": "natural",
+    "fssaiCertified": true,
+    "image": "/images/real-apricots-macro.jpg",
+    "images": [
+      "/images/real-apricots-macro.jpg",
+      "/images/apricots-khumani-close.jpg",
+      "/images/apricots-kargil.jpg",
+      "/images/figs-apricots-packaged.jpg"
     ],
-    overview: {
-      terroir: "Shopian Valley Orchards (6,700 ft Altitude)",
-      harvestMethod: "Gentle sun-drying on wooden alpine racks",
-      aromaFlavor: "Tangy sweet apricot jam aroma with crisp edible sweet kernel inside",
-      purityGrade: "Natural unbleached golden amber hue, sulphur dioxide free",
-      packagingStandard: "Nitrogen-purged matte stand-up pouch",
-      shelfLife: "12 Months in airtight cool pantry"
+    "overview": {
+      "terroir": "Shopian Valley Orchards (6,700 ft Altitude)",
+      "harvestMethod": "Gentle sun-drying on wooden alpine racks",
+      "aromaFlavor": "Tangy sweet apricot jam aroma with crisp edible sweet kernel inside",
+      "purityGrade": "Natural unbleached golden amber hue, sulphur dioxide free",
+      "packagingStandard": "Nitrogen-purged matte stand-up pouch",
+      "shelfLife": "12 Months in airtight cool pantry"
     },
-    description: "Naturally dried in the pure, dry mountain air of Shopian. These velvety caramel-golden apricots are rich in beta-carotene and dietary fiber, featuring a sweet, edible almond-like seed inside.",
-    benefits: [
+    "description": "Naturally dried in the pure, dry mountain air of Shopian. These velvety caramel-golden apricots are rich in beta-carotene and dietary fiber, featuring a sweet, edible almond-like seed inside.",
+    "benefits": [
       "FSSAI Certified: 100% pure fruit, no sulphur dioxide treatments",
       "Rich in Vitamin A (Beta-carotene) supporting eye health",
       "High natural potassium for cardiovascular wellness",
       "Includes nutritious sweet edible seed inside"
     ],
-    nutrition: {
-      calories: "241 kcal",
-      protein: "3.4g",
-      healthyFats: "0.5g",
-      carbs: "62.6g",
-      fiber: "7.3g"
+    "nutrition": {
+      "calories": "241 kcal",
+      "protein": "3.4g",
+      "healthyFats": "0.5g",
+      "carbs": "62.6g",
+      "fiber": "7.3g"
     },
-    weights: [
-      { weight: '250g', price: 340, originalPrice: 450, discount: 24 },
-      { weight: '500g', price: 640, originalPrice: 880, discount: 27, isDefault: true },
-      { weight: '1kg', price: 1190, originalPrice: 1650, discount: 27 }
+    "weights": [
+      {
+        "weight": "250g",
+        "price": 340,
+        "originalPrice": 450,
+        "discount": 24
+      },
+      {
+        "weight": "500g",
+        "price": 640,
+        "originalPrice": 880,
+        "discount": 27,
+        "isDefault": true
+      },
+      {
+        "weight": "1kg",
+        "price": 1190,
+        "originalPrice": 1650,
+        "discount": 27
+      }
     ]
   },
   {
-    id: 'jnu-gurbandi-09',
-    name: "JENU'S Kashmiri Gurbandi Almonds",
-    subname: "High-Oil Wild Almond Kernels (Chhoti Giri)",
-    category: 'almonds',
-    productType: "High-Oil Wild Kashmiri Mountain Almond (Chhoti Giri)",
-    origin: 'Pulwama Hills, Kashmir',
-    harvestYear: '2026 Fresh Valley Harvest',
-    rating: 4.8,
-    reviewsCount: 390,
-    badge: 'High Oil',
-    badgeType: 'natural',
-    fssaiCertified: true,
-    image: '/images/real-gurbandi-macro.jpg',
-    images: [
-      '/images/real-gurbandi-macro.jpg',
-      '/images/gurbandi-almonds-close.jpg',
-      '/images/mamra-almonds.jpg'
+    "id": "jnu-gurbandi-09",
+    "name": "JENU'S Kashmiri Gurbandi Almonds",
+    "subname": "High-Oil Wild Almond Kernels (Chhoti Giri)",
+    "category": "almonds",
+    "productType": "High-Oil Wild Kashmiri Mountain Almond (Chhoti Giri)",
+    "origin": "Pulwama Hills, Kashmir",
+    "harvestYear": "2026 Fresh Valley Harvest",
+    "rating": 4.8,
+    "reviewsCount": 390,
+    "badge": "High Oil",
+    "badgeType": "natural",
+    "fssaiCertified": true,
+    "image": "/images/real-gurbandi-macro.jpg",
+    "images": [
+      "/images/real-gurbandi-macro.jpg",
+      "/images/gurbandi-almonds-close.jpg",
+      "/images/mamra-almonds.jpg",
+      "/images/gurbandi-packaged.jpg"
     ],
-    overview: {
-      terroir: "Pulwama Foothills & South Kashmir Slopes",
-      harvestMethod: "Wild-harvested small batch picking & natural sun curing",
-      aromaFlavor: "Intense concentrated almond flavor with natural essential oil richness",
-      purityGrade: "Up to 52% natural cold-press oil yield, unpolished",
-      packagingStandard: "Airtight vacuum sealed canister with gold tamper seal",
-      shelfLife: "12 Months in dry ambient conditions"
+    "overview": {
+      "terroir": "Pulwama Foothills & South Kashmir Slopes",
+      "harvestMethod": "Wild-harvested small batch picking & natural sun curing",
+      "aromaFlavor": "Intense concentrated almond flavor with natural essential oil richness",
+      "purityGrade": "Up to 52% natural cold-press oil yield, unpolished",
+      "packagingStandard": "Airtight vacuum sealed canister with gold tamper seal",
+      "shelfLife": "12 Months in dry ambient conditions"
     },
-    description: "Cherished in traditional Ayurvedic nutrition. While more compact in size, wild Gurbandi almonds boast the highest concentration of cold-pressed natural almond oil and Vitamin E.",
-    benefits: [
+    "description": "Cherished in traditional Ayurvedic nutrition. While more compact in size, wild Gurbandi almonds boast the highest concentration of cold-pressed natural almond oil and Vitamin E.",
+    "benefits": [
       "FSSAI Certified: Unprocessed, zero artificial gloss or wax",
       "Highest concentration of natural cold-press almond oil",
       "Ideal for daily soaked morning nutrition",
       "Pure high-altitude mountain harvest"
     ],
-    nutrition: {
-      calories: "595 kcal",
-      protein: "22.0g",
-      healthyFats: "52.0g",
-      carbs: "19.5g",
-      fiber: "11.8g"
+    "nutrition": {
+      "calories": "595 kcal",
+      "protein": "22.0g",
+      "healthyFats": "52.0g",
+      "carbs": "19.5g",
+      "fiber": "11.8g"
     },
-    weights: [
-      { weight: '250g', price: 420, originalPrice: 580, discount: 27 },
-      { weight: '500g', price: 790, originalPrice: 1100, discount: 28, isDefault: true },
-      { weight: '1kg', price: 1490, originalPrice: 2100, discount: 29 }
+    "weights": [
+      {
+        "weight": "250g",
+        "price": 420,
+        "originalPrice": 580,
+        "discount": 27
+      },
+      {
+        "weight": "500g",
+        "price": 790,
+        "originalPrice": 1100,
+        "discount": 28,
+        "isDefault": true
+      },
+      {
+        "weight": "1kg",
+        "price": 1490,
+        "originalPrice": 2100,
+        "discount": 29
+      }
     ]
   },
   {
-    id: 'jnu-berries-10',
-    name: "JENU'S Valley Cranberries & Blueberries",
-    subname: "Sun-Infused Antioxidant Superfood Blend",
-    category: 'berries-seeds',
-    productType: "Glacial Valley Ruby Cranberries & Blueberries (Vaccinium blend)",
-    origin: 'High Altitude Glacial Valleys, Kashmir',
-    harvestYear: '2026 Crop',
-    rating: 4.8,
-    reviewsCount: 670,
-    badge: 'Antioxidants',
-    badgeType: 'natural',
-    fssaiCertified: true,
-    image: '/images/real-berries-macro.jpg',
-    images: [
-      '/images/real-berries-macro.jpg',
-      '/images/cranberries-close.jpg',
-      '/images/blueberries-close.jpg',
-      '/images/berries-bowl.jpg'
+    "id": "jnu-berries-10",
+    "name": "JENU'S Valley Cranberries & Blueberries",
+    "subname": "Sun-Infused Antioxidant Superfood Blend",
+    "category": "berries-seeds",
+    "productType": "Glacial Valley Ruby Cranberries & Blueberries (Vaccinium blend)",
+    "origin": "High Altitude Glacial Valleys, Kashmir",
+    "harvestYear": "2026 Crop",
+    "rating": 4.8,
+    "reviewsCount": 670,
+    "badge": "Antioxidants",
+    "badgeType": "natural",
+    "fssaiCertified": true,
+    "image": "/images/real-berries-macro.jpg",
+    "images": [
+      "/images/real-berries-macro.jpg",
+      "/images/cranberries-close.jpg",
+      "/images/blueberries-close.jpg",
+      "/images/berries-bowl.jpg"
     ],
-    overview: {
-      terroir: "Glacial Stream Basins of Northern Kashmir",
-      harvestMethod: "Hand-gathered wild berries gently sun-infused",
-      aromaFlavor: "Zesty sweet-tart berry explosion with bright alpine sweetness",
-      purityGrade: "No refined high-fructose syrups, sweetened with mountain apple juice",
-      packagingStandard: "Multilayer UV-barrier zip pouch",
-      shelfLife: "12 Months in sealed pouch"
+    "overview": {
+      "terroir": "Glacial Stream Basins of Northern Kashmir",
+      "harvestMethod": "Hand-gathered wild berries gently sun-infused",
+      "aromaFlavor": "Zesty sweet-tart berry explosion with bright alpine sweetness",
+      "purityGrade": "No refined high-fructose syrups, sweetened with mountain apple juice",
+      "packagingStandard": "Multilayer UV-barrier zip pouch",
+      "shelfLife": "12 Months in sealed pouch"
     },
-    description: "Plump ruby cranberries and Himalayan blueberries gently dried to retain proanthocyanidins. Naturally balanced with mountain apple juice extract, without refined white sugar.",
-    benefits: [
+    "description": "Plump ruby cranberries and Himalayan blueberries gently dried to retain proanthocyanidins. Naturally balanced with mountain apple juice extract, without refined white sugar.",
+    "benefits": [
       "FSSAI Certified: Free from high-fructose corn syrups and artificial dyes",
       "High in anthocyanin and polyphenolic antioxidants",
       "Clean label: Sweetened naturally with apple juice",
       "Packed in nitrogen-purged resealable pouches"
     ],
-    nutrition: {
-      calories: "325 kcal",
-      protein: "1.2g",
-      healthyFats: "0.8g",
-      carbs: "82.0g",
-      fiber: "6.5g"
+    "nutrition": {
+      "calories": "325 kcal",
+      "protein": "1.2g",
+      "healthyFats": "0.8g",
+      "carbs": "82.0g",
+      "fiber": "6.5g"
     },
-    weights: [
-      { weight: '250g', price: 380, originalPrice: 500, discount: 24 },
-      { weight: '500g', price: 720, originalPrice: 960, discount: 25, isDefault: true },
-      { weight: '1kg', price: 1350, originalPrice: 1850, discount: 27 }
+    "weights": [
+      {
+        "weight": "250g",
+        "price": 380,
+        "originalPrice": 500,
+        "discount": 24
+      },
+      {
+        "weight": "500g",
+        "price": 720,
+        "originalPrice": 960,
+        "discount": 25,
+        "isDefault": true
+      },
+      {
+        "weight": "1kg",
+        "price": 1350,
+        "originalPrice": 1850,
+        "discount": 27
+      }
     ]
   },
   {
-    id: 'jnu-chinar-box-11',
-    name: "JENU'S Royal Chinar Velvet Festive Box",
-    subname: "Imperial Presentation Box with Brass Lock & Saffron",
-    category: 'hampers',
-    productType: "Imperial Crimson Velvet Gifting Box with Brass Fittings",
-    origin: 'Pampore & Srinagar Heritage Series',
-    harvestYear: '2026 Special Release',
-    rating: 5.0,
-    reviewsCount: 780,
-    badge: 'Festive Choice',
-    badgeType: 'luxury',
-    fssaiCertified: true,
-    image: '/images/chinar-box-velvet.jpg',
-    images: [
-      '/images/chinar-box-velvet.jpg',
-      '/images/royal-hamper.jpg'
+    "id": "jnu-chinar-box-11",
+    "name": "JENU'S Royal Chinar Velvet Festive Box",
+    "subname": "Imperial Presentation Box with Brass Lock & Saffron",
+    "category": "hampers",
+    "productType": "Imperial Crimson Velvet Gifting Box with Brass Fittings",
+    "origin": "Pampore & Srinagar Heritage Series",
+    "harvestYear": "2026 Special Release",
+    "rating": 5,
+    "reviewsCount": 780,
+    "badge": "Festive Choice",
+    "badgeType": "luxury",
+    "fssaiCertified": true,
+    "image": "/images/chinar-box-velvet.jpg",
+    "images": [
+      "/images/chinar-box-velvet.jpg",
+      "/images/chinar-box-macro.jpg",
+      "/images/chinar-box-open-suite.jpg",
+      "/images/royal-hamper.jpg"
     ],
-    overview: {
-      terroir: "Pampore, Kupwara & Downtown Srinagar",
-      harvestMethod: "Master artisan presentation packaging housing Grade-A dry fruits",
-      aromaFlavor: "Enchanting aroma of fresh Mamra almonds, walnuts & pure Mongra saffron",
-      purityGrade: "Includes certified 2g jar of Grade A1 Pampore Saffron & brass spoon",
-      packagingStandard: "Rich royal crimson velvet case with gold foil and brass latch",
-      shelfLife: "12 Months (individual airtight jars inside)"
+    "overview": {
+      "terroir": "Pampore, Kupwara & Downtown Srinagar",
+      "harvestMethod": "Master artisan presentation packaging housing Grade-A dry fruits",
+      "aromaFlavor": "Enchanting aroma of fresh Mamra almonds, walnuts & pure Mongra saffron",
+      "purityGrade": "Includes certified 2g jar of Grade A1 Pampore Saffron & brass spoon",
+      "packagingStandard": "Rich royal crimson velvet case with gold foil and brass latch",
+      "shelfLife": "12 Months (individual airtight jars inside)"
     },
-    description: "Presented in an opulent crimson velvet gift case with embossed gold accents. Houses 500g Snow Walnuts, 500g Mamra Almonds, and a certified 2g jar of Grade A1 Pampore Saffron with a brass serving spoon.",
-    benefits: [
+    "description": "Presented in an opulent crimson velvet gift case with embossed gold accents. Houses 500g Snow Walnuts, 500g Mamra Almonds, and a certified 2g jar of Grade A1 Pampore Saffron with a brass serving spoon.",
+    "benefits": [
       "FSSAI Certified gourmet contents in sealed glass containers",
       "Includes 1000g of dry fruits + 2g Pampore Saffron + brass spoon",
       "Elegant gift packaging suitable for corporate & family gifting",
       "Certified freshness and laboratory purity documentation"
     ],
-    nutrition: {
-      calories: "Assorted",
-      protein: "19.0g avg",
-      healthyFats: "52.0g avg",
-      carbs: "20.0g avg",
-      fiber: "9.0g avg"
+    "nutrition": {
+      "calories": "Assorted",
+      "protein": "19.0g avg",
+      "healthyFats": "52.0g avg",
+      "carbs": "20.0g avg",
+      "fiber": "9.0g avg"
     },
-    weights: [
-      { weight: '1kg + 2g Saffron Suite', price: 3499, originalPrice: 4800, discount: 27, isDefault: true },
-      { weight: '2kg + 5g Saffron Suite', price: 5999, originalPrice: 8200, discount: 26 }
+    "weights": [
+      {
+        "weight": "1kg + 2g Saffron Suite",
+        "price": 3499,
+        "originalPrice": 4800,
+        "discount": 27,
+        "isDefault": true
+      },
+      {
+        "weight": "2kg + 5g Saffron Suite",
+        "price": 5999,
+        "originalPrice": 8200,
+        "discount": 26
+      }
     ]
   },
   {
-    id: 'jnu-deal-bundle-12',
-    name: "The Kashmir Royal Valley Trio (Daily Special)",
-    subname: "500g Mamra Almonds + 500g Snow Walnuts + 1g Pampore Saffron",
-    category: 'combos',
-    productType: "Flagship Valley 3-in-1 Trio: Mamra Almonds + Snow Walnuts + Pampore Saffron",
-    origin: 'Shopian, Kupwara & Pampore',
-    harvestYear: '2026 Special Allocation',
-    rating: 5.0,
-    reviewsCount: 1890,
-    badge: '31% Savings',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/royal-valley-trio.jpg',
-    comboItems: [
-      { name: "Kashmiri Mamra Almonds (Grade AAA)", weight: "250g", img: "/images/royal-valley-trio.jpg" },
-      { name: "Pampore Mongra Saffron (Grade A1)", weight: "1g", img: "/images/royal-valley-trio-close.jpg" },
-      { name: "Kagzi Snow Walnuts Halves", weight: "250g", img: "/images/royal-valley-trio-gift.jpg" }
+    "id": "jnu-deal-bundle-12",
+    "name": "The Kashmir Royal Valley Trio (Daily Special)",
+    "subname": "500g Mamra Almonds + 500g Snow Walnuts + 1g Pampore Saffron",
+    "category": "combos",
+    "productType": "Flagship Valley 3-in-1 Trio: Mamra Almonds + Snow Walnuts + Pampore Saffron",
+    "origin": "Shopian, Kupwara & Pampore",
+    "harvestYear": "2026 Special Allocation",
+    "rating": 5,
+    "reviewsCount": 1890,
+    "badge": "31% Savings",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/royal-valley-trio.jpg",
+    "comboItems": [
+      {
+        "name": "Kashmiri Mamra Almonds (Grade AAA)",
+        "weight": "250g",
+        "img": "/images/royal-valley-trio.jpg"
+      },
+      {
+        "name": "Pampore Mongra Saffron (Grade A1)",
+        "weight": "1g",
+        "img": "/images/royal-valley-trio-close.jpg"
+      },
+      {
+        "name": "Kagzi Snow Walnuts Halves",
+        "weight": "250g",
+        "img": "/images/royal-valley-trio-gift.jpg"
+      }
     ],
-    images: [
-      '/images/royal-valley-trio.jpg',
-      '/images/royal-valley-trio-close.jpg',
-      '/images/royal-valley-trio-gift.jpg',
-      '/images/combos-pack-daily.jpg'
+    "images": [
+      "/images/royal-valley-trio.jpg",
+      "/images/royal-valley-trio-close.jpg",
+      "/images/royal-valley-trio-gift.jpg",
+      "/images/combos-pack-daily.jpg"
     ],
-    overview: {
-      terroir: "Shopian, Kupwara & Pampore Karewas",
-      harvestMethod: "Coordinated seasonal harvest fresh from grower collectives",
-      aromaFlavor: "Harmonious union of rich almond oil, buttery walnut halves & floral saffron",
-      purityGrade: "100% Laboratory Tested, FSSAI Central Certified Batch",
-      packagingStandard: "Insulated thermal gift box with individual sealed canisters",
-      shelfLife: "12 Months under standard dry conditions"
+    "overview": {
+      "terroir": "Shopian, Kupwara & Pampore Karewas",
+      "harvestMethod": "Coordinated seasonal harvest fresh from grower collectives",
+      "aromaFlavor": "Harmonious union of rich almond oil, buttery walnut halves & floral saffron",
+      "purityGrade": "100% Laboratory Tested, FSSAI Central Certified Batch",
+      "packagingStandard": "Insulated thermal gift box with individual sealed canisters",
+      "shelfLife": "12 Months under standard dry conditions"
     },
-    description: "Our signature flagship bundle bringing the purest harvests of Kashmir into your home at an exceptional price. Contains 500g oil-rich Mamra Almonds, 500g crisp Snow Walnuts, and 1g FSSAI Certified Pampore Saffron in an insulated thermal carton.",
-    benefits: [
+    "description": "Our signature flagship bundle bringing the purest harvests of Kashmir into your home at an exceptional price. Contains 500g oil-rich Mamra Almonds, 500g crisp Snow Walnuts, and 1g FSSAI Certified Pampore Saffron in an insulated thermal carton.",
+    "benefits": [
       "FSSAI Certified: 100% natural, laboratory tested for purity",
       "Save 31% over individual item prices",
       "Packaged in an insulated thermal-protective gift carton",
       "Includes complimentary priority air dispatch from Srinagar"
     ],
-    nutrition: {
-      calories: "Assorted",
-      protein: "20.0g avg",
-      healthyFats: "55.0g avg",
-      carbs: "18.0g avg",
-      fiber: "10.0g avg"
+    "nutrition": {
+      "calories": "Assorted",
+      "protein": "20.0g avg",
+      "healthyFats": "55.0g avg",
+      "carbs": "18.0g avg",
+      "fiber": "10.0g avg"
     },
-    weights: [
-      { weight: 'Full Trio Suite', price: 1899, originalPrice: 2750, discount: 31, isDefault: true }
+    "weights": [
+      {
+        "weight": "Full Trio Suite",
+        "price": 1899,
+        "originalPrice": 2750,
+        "discount": 31,
+        "isDefault": true
+      }
     ]
   },
   {
-    id: 'jnu-spice-mirch-13',
-    name: "JENU'S Authentic Sun-Dried Kashmiri Mirch",
-    subname: "Naturally Grown Wrinkled Deep Crimson Mild Chillies",
-    category: 'spices',
-    productType: "GI-Cultivar Pure Kashmiri Lal Mirch (Capsicum annuum var. kashmiri)",
-    origin: 'Kulgam & Pulwama, Kashmir',
-    harvestYear: '2026 Sun-Cured Valley Harvest',
-    rating: 4.9,
-    reviewsCount: 1280,
-    badge: 'Naturally Grown',
-    badgeType: 'natural',
-    fssaiCertified: true,
-    image: '/images/real-mirch-macro.jpg',
-    images: [
-      '/images/real-mirch-macro.jpg',
-      '/images/kashmiri-mirch.jpg',
-      '/images/kashmiri-mirch-packaged.jpg'
+    "id": "jnu-spice-mirch-13",
+    "name": "JENU'S Authentic Sun-Dried Kashmiri Mirch",
+    "subname": "Naturally Grown Wrinkled Deep Crimson Mild Chillies",
+    "category": "spices",
+    "productType": "GI-Cultivar Pure Kashmiri Lal Mirch (Capsicum annuum var. kashmiri)",
+    "origin": "Kulgam & Pulwama, Kashmir",
+    "harvestYear": "2026 Sun-Cured Valley Harvest",
+    "rating": 4.9,
+    "reviewsCount": 1280,
+    "badge": "Naturally Grown",
+    "badgeType": "natural",
+    "fssaiCertified": true,
+    "image": "/images/real-mirch-macro.jpg",
+    "images": [
+      "/images/real-mirch-macro.jpg",
+      "/images/kashmiri-mirch.jpg",
+      "/images/kashmiri-mirch-packaged.jpg",
+      "/images/kashmiri-mirch-powder.jpg"
     ],
-    overview: {
-      terroir: "Kulgam & Pulwama Alluvial Valley Loam",
-      harvestMethod: "Hand-picked ripe ruby pods, sun-dried on hygienic wooden racks",
-      aromaFlavor: "Vibrant smoky sweetness, gentle warming heat (1,000–2,000 SHU), vivid red color",
-      purityGrade: "Cold stone-ground, 100% free of Sudan red dye, synthetic oil or fillers",
-      packagingStandard: "Food-grade airtight canister with inner moisture-barrier membrane",
-      shelfLife: "12 Months in airtight cool spice rack"
+    "overview": {
+      "terroir": "Kulgam & Pulwama Alluvial Valley Loam",
+      "harvestMethod": "Hand-picked ripe ruby pods, sun-dried on hygienic wooden racks",
+      "aromaFlavor": "Vibrant smoky sweetness, gentle warming heat (1,000–2,000 SHU), vivid red color",
+      "purityGrade": "Cold stone-ground, 100% free of Sudan red dye, synthetic oil or fillers",
+      "packagingStandard": "Food-grade airtight canister with inner moisture-barrier membrane",
+      "shelfLife": "12 Months in airtight cool spice rack"
     },
-    description: "Naturally cultivated in mineral-dense Kashmir valley loam without synthetic fertilizers. Famed worldwide for its intensely vivid ruby-red hue, subtle smoky sweetness, and gentle heating (1,000–2,000 SHU). Zero Sudan dyes or chemical adulteration.",
-    benefits: [
+    "description": "Naturally cultivated in mineral-dense Kashmir valley loam without synthetic fertilizers. Famed worldwide for its intensely vivid ruby-red hue, subtle smoky sweetness, and gentle heating (1,000–2,000 SHU). Zero Sudan dyes or chemical adulteration.",
+    "benefits": [
       "100% Naturally Grown: Zero artificial coloring, non-GMO, chemical-free",
       "Rich in natural capsaicin and immune-boosting bioflavonoids",
       "Hygienically sun-cured on mountain wooden racks in pristine valley air",
       "Stone-ground cold process preserving volatile essential aromatic oils"
     ],
-    nutrition: {
-      calories: "282 kcal",
-      protein: "12.0g",
-      healthyFats: "14.3g",
-      carbs: "31.6g",
-      fiber: "27.2g"
+    "nutrition": {
+      "calories": "282 kcal",
+      "protein": "12.0g",
+      "healthyFats": "14.3g",
+      "carbs": "31.6g",
+      "fiber": "27.2g"
     },
-    weights: [
-      { weight: '100g Whole Pods', price: 190, originalPrice: 260, discount: 27 },
-      { weight: '250g Stone-Ground', price: 380, originalPrice: 520, discount: 27, isDefault: true },
-      { weight: '500g Value Pack', price: 690, originalPrice: 980, discount: 30 },
-      { weight: '1kg Chef Tin', price: 1290, originalPrice: 1850, discount: 30 }
+    "weights": [
+      {
+        "weight": "100g Whole Pods",
+        "price": 190,
+        "originalPrice": 260,
+        "discount": 27
+      },
+      {
+        "weight": "250g Stone-Ground",
+        "price": 380,
+        "originalPrice": 520,
+        "discount": 27,
+        "isDefault": true
+      },
+      {
+        "weight": "500g Value Pack",
+        "price": 690,
+        "originalPrice": 980,
+        "discount": 30
+      },
+      {
+        "weight": "1kg Chef Tin",
+        "price": 1290,
+        "originalPrice": 1850,
+        "discount": 30
+      }
     ]
   },
   {
-    id: 'jnu-spice-jeera-14',
-    name: "JENU'S Wild Kashmiri Shahi Jeera",
-    subname: "Wild-Foraged Alpine Royal Black Cumin from Gurez",
-    category: 'spices',
-    productType: "Wild Himalayan Alpine Shahi Jeera (Bunium persicum)",
-    origin: 'High Gurez & Kishtwar Valley Slopes',
-    harvestYear: '2026 Alpine Foraged Harvest',
-    rating: 5.0,
-    reviewsCount: 940,
-    badge: 'Wild Foraged',
-    badgeType: 'premium',
-    fssaiCertified: true,
-    image: '/images/real-jeera-macro.jpg',
-    images: [
-      '/images/real-jeera-macro.jpg',
-      '/images/shahi-jeera.jpg',
-      '/images/shahi-jeera-close.jpg',
-      '/images/shahi-jeera-packaged.jpg'
+    "id": "jnu-spice-jeera-14",
+    "name": "JENU'S Wild Kashmiri Shahi Jeera",
+    "subname": "Wild-Foraged Alpine Royal Black Cumin from Gurez",
+    "category": "spices",
+    "productType": "Wild Himalayan Alpine Shahi Jeera (Bunium persicum)",
+    "origin": "High Gurez & Kishtwar Valley Slopes",
+    "harvestYear": "2026 Alpine Foraged Harvest",
+    "rating": 5,
+    "reviewsCount": 940,
+    "badge": "Wild Foraged",
+    "badgeType": "premium",
+    "fssaiCertified": true,
+    "image": "/images/real-jeera-macro.jpg",
+    "images": [
+      "/images/real-jeera-macro.jpg",
+      "/images/shahi-jeera.jpg",
+      "/images/shahi-jeera-close.jpg",
+      "/images/shahi-jeera-packaged.jpg"
     ],
-    overview: {
-      terroir: "High Gurez Valley & Kishtwar Alpine Slopes (8,200 ft Altitude)",
-      harvestMethod: "Wild foraged from rocky slopes by pastoral mountain collectors",
-      aromaFlavor: "Complex pine, thyme, roasted anise bouquet with warm peppery finish",
-      purityGrade: "3.8% Natural essential volatile oils, unwashed and chemical-free",
-      packagingStandard: "Airtight glass apothecary spice jar with aroma-lock gasket",
-      shelfLife: "18 Months in airtight glass container"
+    "overview": {
+      "terroir": "High Gurez Valley & Kishtwar Alpine Slopes (8,200 ft Altitude)",
+      "harvestMethod": "Wild foraged from rocky slopes by pastoral mountain collectors",
+      "aromaFlavor": "Complex pine, thyme, roasted anise bouquet with warm peppery finish",
+      "purityGrade": "3.8% Natural essential volatile oils, unwashed and chemical-free",
+      "packagingStandard": "Airtight glass apothecary spice jar with aroma-lock gasket",
+      "shelfLife": "18 Months in airtight glass container"
     },
-    description: "Naturally wild-foraged from rocky alpine ridges at 8,000+ feet altitude. Considerably thinner, darker, and more fragrant than regular cumin seeds, boasting an intoxicating bouquet of pine, thyme, and roasted anise.",
-    benefits: [
+    "description": "Naturally wild-foraged from rocky alpine ridges at 8,000+ feet altitude. Considerably thinner, darker, and more fragrant than regular cumin seeds, boasting an intoxicating bouquet of pine, thyme, and roasted anise.",
+    "benefits": [
       "Wild-crafted mountain harvest completely free from agricultural chemicals",
       "High natural volatile oil concentration (3.8%) delivering intense aroma",
       "Traditional Ayurvedic digestive tonic and respiratory revitalizer",
       "Airtight glass jar sealing preserves crisp aromatic longevity"
     ],
-    nutrition: {
-      calories: "375 kcal",
-      protein: "17.8g",
-      healthyFats: "22.3g",
-      carbs: "44.2g",
-      fiber: "10.5g"
+    "nutrition": {
+      "calories": "375 kcal",
+      "protein": "17.8g",
+      "healthyFats": "22.3g",
+      "carbs": "44.2g",
+      "fiber": "10.5g"
     },
-    weights: [
-      { weight: '100g Glass Jar', price: 360, originalPrice: 490, discount: 27, isDefault: true },
-      { weight: '250g Pouch', price: 820, originalPrice: 1150, discount: 29 },
-      { weight: '500g Pack', price: 1540, originalPrice: 2200, discount: 30 }
+    "weights": [
+      {
+        "weight": "100g Glass Jar",
+        "price": 360,
+        "originalPrice": 490,
+        "discount": 27,
+        "isDefault": true
+      },
+      {
+        "weight": "250g Pouch",
+        "price": 820,
+        "originalPrice": 1150,
+        "discount": 29
+      },
+      {
+        "weight": "500g Pack",
+        "price": 1540,
+        "originalPrice": 2200,
+        "discount": 30
+      }
     ]
   },
   {
-    id: 'jnu-spice-ver-15',
-    name: "JENU'S Traditional Kashmiri Wazwan Masala Ver",
-    subname: "Artisanal Sun-Cured Heritage Spice Cake Disc",
-    category: 'spices',
-    productType: "Artisanal Wazwan Heritage Spice Cake Disc (Kashmiri Ver Tikki)",
-    origin: 'Heritage Spice Atelier, Downtown Srinagar',
-    harvestYear: 'Handcrafted 2026 Season',
-    rating: 4.9,
-    reviewsCount: 710,
-    badge: 'Heritage Recipe',
-    badgeType: 'luxury',
-    fssaiCertified: true,
-    image: '/images/wazwan-ver.jpg',
-    images: [
-      '/images/wazwan-ver.jpg',
-      '/images/wazwan-ver-macro.jpg',
-      '/images/wazwan-ver-slice.jpg',
-      '/images/wazwan-ver-packaged.jpg'
+    "id": "jnu-spice-ver-15",
+    "name": "JENU'S Traditional Kashmiri Wazwan Masala Ver",
+    "subname": "Artisanal Sun-Cured Heritage Spice Cake Disc",
+    "category": "spices",
+    "productType": "Artisanal Wazwan Heritage Spice Cake Disc (Kashmiri Ver Tikki)",
+    "origin": "Heritage Spice Atelier, Downtown Srinagar",
+    "harvestYear": "Handcrafted 2026 Season",
+    "rating": 4.9,
+    "reviewsCount": 710,
+    "badge": "Heritage Recipe",
+    "badgeType": "luxury",
+    "fssaiCertified": true,
+    "image": "/images/wazwan-ver.jpg",
+    "images": [
+      "/images/wazwan-ver.jpg",
+      "/images/wazwan-ver-macro.jpg",
+      "/images/wazwan-ver-slice.jpg",
+      "/images/wazwan-ver-packaged.jpg"
     ],
-    overview: {
-      terroir: "Heritage Spice Atelier, Downtown Srinagar",
-      harvestMethod: "Hand-kneaded with wild shallots (pran), garlic, mirch & whole valley spices",
-      aromaFlavor: "Pungent royal Wazwan aromatics, roasted alliums, warm cloves and mustard oil",
-      purityGrade: "Heirloom slow sun-cure, preserved in cold-pressed mustard oil",
-      packagingStandard: "Vacuum-sealed presentation pack with wax paper wrap",
-      shelfLife: "12 Months at room temperature"
+    "overview": {
+      "terroir": "Heritage Spice Atelier, Downtown Srinagar",
+      "harvestMethod": "Hand-kneaded with wild shallots (pran), garlic, mirch & whole valley spices",
+      "aromaFlavor": "Pungent royal Wazwan aromatics, roasted alliums, warm cloves and mustard oil",
+      "purityGrade": "Heirloom slow sun-cure, preserved in cold-pressed mustard oil",
+      "packagingStandard": "Vacuum-sealed presentation pack with wax paper wrap",
+      "shelfLife": "12 Months at room temperature"
     },
-    description: "The centuries-old culinary crown of Kashmir's master chefs (Wazas). Hand-kneaded discs of sun-dried wild shallots (pran), valley garlic, Kashmiri red chillies, black cumin, ginger, cloves, and asafoetida, slow-cured in pure cold-pressed mustard oil.",
-    benefits: [
+    "description": "The centuries-old culinary crown of Kashmir's master chefs (Wazas). Hand-kneaded discs of sun-dried wild shallots (pran), valley garlic, Kashmiri red chillies, black cumin, ginger, cloves, and asafoetida, slow-cured in pure cold-pressed mustard oil.",
+    "benefits": [
       "Authentic artisanal heirloom recipe passed down through generations",
       "100% naturally grown mountain spices preserved in cold-pressed mustard oil",
       "Instantly imparts royal Wazwan aroma and complexity to dishes",
       "Naturally cured traditional disc with 12-month ambient shelf life"
     ],
-    nutrition: {
-      calories: "320 kcal",
-      protein: "9.4g",
-      healthyFats: "18.2g",
-      carbs: "38.5g",
-      fiber: "14.0g"
+    "nutrition": {
+      "calories": "320 kcal",
+      "protein": "9.4g",
+      "healthyFats": "18.2g",
+      "carbs": "38.5g",
+      "fiber": "14.0g"
     },
-    weights: [
-      { weight: '150g Spice Cake Disc', price: 320, originalPrice: 440, discount: 27, isDefault: true },
-      { weight: '300g Twin Pack (2 Discs)', price: 590, originalPrice: 850, discount: 31 },
-      { weight: '600g Master Box (4 Discs)', price: 1120, originalPrice: 1650, discount: 32 }
+    "weights": [
+      {
+        "weight": "150g Spice Cake Disc",
+        "price": 320,
+        "originalPrice": 440,
+        "discount": 27,
+        "isDefault": true
+      },
+      {
+        "weight": "300g Twin Pack (2 Discs)",
+        "price": 590,
+        "originalPrice": 850,
+        "discount": 31
+      },
+      {
+        "weight": "600g Master Box (4 Discs)",
+        "price": 1120,
+        "originalPrice": 1650,
+        "discount": 32
+      }
     ]
   },
   {
-    id: 'jnu-spice-chest-16',
-    name: "JENU'S Royal Valley 5-Spice Kitchen Chest",
-    subname: "Naturally Grown Kashmiri Mirch, Shahi Jeera, Black Cardamom, Ginger & Fennel",
-    category: 'spices',
-    productType: "Heritage 5-Spice Gourmet Collection in Wooden Aroma Caddy",
-    origin: 'Pampore, Kishtwar & Pulwama, Kashmir',
-    harvestYear: '2026 Complete Harvest Collection',
-    rating: 5.0,
-    reviewsCount: 1150,
-    badge: 'Kitchen Essential',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/spices-assortment.jpg',
-    images: [
-      '/images/spices-assortment.jpg',
-      '/images/spices-assortment-dishes.jpg',
-      '/images/spices-assortment-packaged.jpg'
+    "id": "jnu-spice-chest-16",
+    "name": "JENU'S Royal Valley 5-Spice Kitchen Chest",
+    "subname": "Naturally Grown Kashmiri Mirch, Shahi Jeera, Black Cardamom, Ginger & Fennel",
+    "category": "spices",
+    "productType": "Heritage 5-Spice Gourmet Collection in Wooden Aroma Caddy",
+    "origin": "Pampore, Kishtwar & Pulwama, Kashmir",
+    "harvestYear": "2026 Complete Harvest Collection",
+    "rating": 5,
+    "reviewsCount": 1150,
+    "badge": "Kitchen Essential",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/spices-assortment.jpg",
+    "images": [
+      "/images/spices-assortment.jpg",
+      "/images/spices-assortment-dishes.jpg",
+      "/images/spices-assortment-packaged.jpg",
+      "/images/spices-assortment-macro.jpg"
     ],
-    overview: {
-      terroir: "Pampore, Kishtwar, Pulwama & Srinagar",
-      harvestMethod: "Handpicked and stone-ground by master Kashmiri spice artisans",
-      aromaFlavor: "Complete Kashmiri flavor profile: sweet mirch, black cumin, cardamom, ginger & fennel",
-      purityGrade: "Zero adulteration, batch lab-tested for heavy metals and aflatoxins",
-      packagingStandard: "5 Modular glass jars housed in an engraved Kashmiri wooden display chest",
-      shelfLife: "12 Months for optimum volatile oil potency"
+    "overview": {
+      "terroir": "Pampore, Kishtwar, Pulwama & Srinagar",
+      "harvestMethod": "Handpicked and stone-ground by master Kashmiri spice artisans",
+      "aromaFlavor": "Complete Kashmiri flavor profile: sweet mirch, black cumin, cardamom, ginger & fennel",
+      "purityGrade": "Zero adulteration, batch lab-tested for heavy metals and aflatoxins",
+      "packagingStandard": "5 Modular glass jars housed in an engraved Kashmiri wooden display chest",
+      "shelfLife": "12 Months for optimum volatile oil potency"
     },
-    description: "The definitive collection of naturally grown Kashmiri kitchen spices. Contains 100g Kashmiri Mirch, 100g Wild Shahi Jeera, 100g Smoky Black Cardamom (Badi Elaichi), 100g Sun-Dried Ginger (Sonth), and 100g Alpine Fennel Seeds (Badiyan) in separate modular aroma-lock jars.",
-    benefits: [
+    "description": "The definitive collection of naturally grown Kashmiri kitchen spices. Contains 100g Kashmiri Mirch, 100g Wild Shahi Jeera, 100g Smoky Black Cardamom (Badi Elaichi), 100g Sun-Dried Ginger (Sonth), and 100g Alpine Fennel Seeds (Badiyan) in separate modular aroma-lock jars.",
+    "benefits": [
       "All 5 spices 100% naturally grown and sun-cured in Kashmir",
       "FSSAI certified: laboratory tested for purity, aflatoxins and heavy metals",
       "Pre-portioned in modular airtight glass aroma-lock containers",
       "Includes complimentary authentic Kashmiri recipe collection booklet"
     ],
-    nutrition: {
-      calories: "Assorted",
-      protein: "14.2g avg",
-      healthyFats: "15.0g avg",
-      carbs: "42.0g avg",
-      fiber: "19.0g avg"
+    "nutrition": {
+      "calories": "Assorted",
+      "protein": "14.2g avg",
+      "healthyFats": "15.0g avg",
+      "carbs": "42.0g avg",
+      "fiber": "19.0g avg"
     },
-    weights: [
-      { weight: '500g Complete 5-Spice Chest', price: 890, originalPrice: 1250, discount: 29, isDefault: true },
-      { weight: '1kg Grand Kitchen Chest', price: 1690, originalPrice: 2400, discount: 30 }
+    "weights": [
+      {
+        "weight": "500g Complete 5-Spice Chest",
+        "price": 890,
+        "originalPrice": 1250,
+        "discount": 29,
+        "isDefault": true
+      },
+      {
+        "weight": "1kg Grand Kitchen Chest",
+        "price": 1690,
+        "originalPrice": 2400,
+        "discount": 30
+      }
     ]
   },
   {
-    id: 'jnu-combo-vitality-17',
-    name: "JENU'S Valley Vitality Duo (Mamra Almonds + Snow Walnuts)",
-    subname: "500g High-Oil Mamra Badam + 500g Kagzi Snow Walnut Halves",
-    category: 'combos',
-    productType: "Valley Vitality Wellness Duo: 500g Mamra Badam + 500g Kagzi Walnuts",
-    origin: 'Shopian & Kupwara, Kashmir',
-    harvestYear: '2026 Fresh Valley Harvest',
-    rating: 5.0,
-    reviewsCount: 2480,
-    badge: 'Super Saver Combo',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/combo-vitality-duo.jpg',
-    comboItems: [
-      { name: "Kashmiri Mamra Almonds", weight: "500g", img: "/images/combo-vitality-duo.jpg" },
-      { name: "Kagzi Snow Walnuts", weight: "500g", img: "/images/combo-vitality-duo-close.jpg" }
+    "id": "jnu-combo-vitality-17",
+    "name": "JENU'S Valley Vitality Duo (Mamra Almonds + Snow Walnuts)",
+    "subname": "500g High-Oil Mamra Badam + 500g Kagzi Snow Walnut Halves",
+    "category": "combos",
+    "productType": "Valley Vitality Wellness Duo: 500g Mamra Badam + 500g Kagzi Walnuts",
+    "origin": "Shopian & Kupwara, Kashmir",
+    "harvestYear": "2026 Fresh Valley Harvest",
+    "rating": 5,
+    "reviewsCount": 2480,
+    "badge": "Super Saver Combo",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/combo-vitality-duo.jpg",
+    "comboItems": [
+      {
+        "name": "Kashmiri Mamra Almonds",
+        "weight": "500g",
+        "img": "/images/combo-vitality-duo.jpg"
+      },
+      {
+        "name": "Kagzi Snow Walnuts",
+        "weight": "500g",
+        "img": "/images/combo-vitality-duo-close.jpg"
+      }
     ],
-    images: [
-      '/images/combo-vitality-duo.jpg',
-      '/images/combo-vitality-duo-close.jpg',
-      '/images/combo-vitality-duo-tray.jpg'
+    "images": [
+      "/images/combo-vitality-duo.jpg",
+      "/images/combo-vitality-duo-close.jpg",
+      "/images/combo-vitality-duo-tray.jpg",
+      "/images/combo-vitality-duo-packaged.jpg"
     ],
-    overview: {
-      terroir: "Shopian & Kupwara High Altitude Valley",
-      harvestMethod: "Fresh 2026 harvest, hand-cracked and sort-graded for maximum crunch",
-      aromaFlavor: "Natural plant-based sweetness, rich almond oils & buttery walnut halves",
-      purityGrade: "Unbleached, chlorine-free, high Omega-3 and natural Vitamin E",
-      packagingStandard: "Dual vacuum-sealed canisters in protective twin gift box",
-      shelfLife: "12 Months in cool dry storage"
+    "overview": {
+      "terroir": "Shopian & Kupwara High Altitude Valley",
+      "harvestMethod": "Fresh 2026 harvest, hand-cracked and sort-graded for maximum crunch",
+      "aromaFlavor": "Natural plant-based sweetness, rich almond oils & buttery walnut halves",
+      "purityGrade": "Unbleached, chlorine-free, high Omega-3 and natural Vitamin E",
+      "packagingStandard": "Dual vacuum-sealed canisters in protective twin gift box",
+      "shelfLife": "12 Months in cool dry storage"
     },
-    description: "Our most popular everyday wellness combination. Pairs 500g of cold-climate Kashmiri Mamra Almonds with 500g of extra-white Kagzi Snow Walnut halves. Packed with natural almond oil, Omega-3 ALA, and plant protein at a massive 28% bundle discount.",
-    benefits: [
+    "description": "Our most popular everyday wellness combination. Pairs 500g of cold-climate Kashmiri Mamra Almonds with 500g of extra-white Kagzi Snow Walnut halves. Packed with natural almond oil, Omega-3 ALA, and plant protein at a massive 28% bundle discount.",
+    "benefits": [
       "Save 28% compared to buying individual packs",
       "500g Mamra Almonds (50% natural oil) + 500g Snow Walnuts",
       "100% unbleached, raw, non-GMO, zero chemicals",
       "Nitrogen vacuum sealed in resealable stand-up pouches"
     ],
-    nutrition: {
-      calories: "616 kcal avg",
-      protein: "18.2g",
-      healthyFats: "57.5g",
-      carbs: "17.6g",
-      fiber: "9.6g"
+    "nutrition": {
+      "calories": "616 kcal avg",
+      "protein": "18.2g",
+      "healthyFats": "57.5g",
+      "carbs": "17.6g",
+      "fiber": "9.6g"
     },
-    weights: [
-      { weight: '1kg Standard Duo (500g + 500g)', price: 2190, originalPrice: 3050, discount: 28, isDefault: true },
-      { weight: '2kg Family Mega Saver (1kg + 1kg)', price: 4190, originalPrice: 5900, discount: 29 }
+    "weights": [
+      {
+        "weight": "1kg Standard Duo (500g + 500g)",
+        "price": 2190,
+        "originalPrice": 3050,
+        "discount": 28,
+        "isDefault": true
+      },
+      {
+        "weight": "2kg Family Mega Saver (1kg + 1kg)",
+        "price": 4190,
+        "originalPrice": 5900,
+        "discount": 29
+      }
     ]
   },
   {
-    id: 'jnu-combo-saffron-kahwa-18',
-    name: "JENU'S Himalayan Royal Morning Combo",
-    subname: "1g Pure Pampore Mongra Saffron + 250g Shahi Saffron Kahwa Tea + Brass Spoon",
-    category: 'combos',
-    productType: "Royal Valley Morning Awakening Set: 1g Pampore Saffron + 250g Shahi Kahwa",
-    origin: 'Pampore Plateau & Gulmarg, Kashmir',
-    harvestYear: '2026 Fresh Bloom Blend',
-    rating: 4.9,
-    reviewsCount: 1320,
-    badge: 'Immunity Booster',
-    badgeType: 'premium',
-    fssaiCertified: true,
-    image: '/images/combo-morning-saffron.jpg',
-    comboItems: [
-      { name: "Pure Pampore Mongra Saffron", weight: "1g", img: "/images/combo-morning-saffron.jpg" },
-      { name: "Royal Shahi Saffron Kahwa Tea", weight: "250g", img: "/images/combo-morning-saffron-close.jpg" }
+    "id": "jnu-combo-saffron-kahwa-18",
+    "name": "JENU'S Himalayan Royal Morning Combo",
+    "subname": "1g Pure Pampore Mongra Saffron + 250g Shahi Saffron Kahwa Tea + Brass Spoon",
+    "category": "combos",
+    "productType": "Royal Valley Morning Awakening Set: 1g Pampore Saffron + 250g Shahi Kahwa",
+    "origin": "Pampore Plateau & Gulmarg, Kashmir",
+    "harvestYear": "2026 Fresh Bloom Blend",
+    "rating": 4.9,
+    "reviewsCount": 1320,
+    "badge": "Immunity Booster",
+    "badgeType": "premium",
+    "fssaiCertified": true,
+    "image": "/images/combo-morning-saffron.jpg",
+    "comboItems": [
+      {
+        "name": "Pure Pampore Mongra Saffron",
+        "weight": "1g",
+        "img": "/images/combo-morning-saffron.jpg"
+      },
+      {
+        "name": "Royal Shahi Saffron Kahwa Tea",
+        "weight": "250g",
+        "img": "/images/combo-morning-saffron-close.jpg"
+      }
     ],
-    images: [
-      '/images/combo-morning-saffron.jpg',
-      '/images/combo-morning-saffron-close.jpg',
-      '/images/combo-morning-saffron-tray.jpg'
+    "images": [
+      "/images/combo-morning-saffron.jpg",
+      "/images/combo-morning-saffron-close.jpg",
+      "/images/combo-morning-saffron-tray.jpg",
+      "/images/combo-morning-saffron-packaged.jpg"
     ],
-    overview: {
-      terroir: "Pampore Karewas & Gulmarg Mountain Slopes",
-      harvestMethod: "Hand-plucked crocus sativus threads blended with whole tea leaves",
-      aromaFlavor: "Invigorating saffron floral warmth, crisp cardamom and almond notes",
-      purityGrade: "Grade A1+ certified saffron paired with authentic Kashmiri green tea",
-      packagingStandard: "Matte royal tea canister + glass saffron jar + brass measuring spoon",
-      shelfLife: "18 Months in sealed containers"
+    "overview": {
+      "terroir": "Pampore Karewas & Gulmarg Mountain Slopes",
+      "harvestMethod": "Hand-plucked crocus sativus threads blended with whole tea leaves",
+      "aromaFlavor": "Invigorating saffron floral warmth, crisp cardamom and almond notes",
+      "purityGrade": "Grade A1+ certified saffron paired with authentic Kashmiri green tea",
+      "packagingStandard": "Matte royal tea canister + glass saffron jar + brass measuring spoon",
+      "shelfLife": "18 Months in sealed containers"
     },
-    description: "The quintessential Kashmiri morning ritual. Combines 1g of Grade A1+ Pampore Mongra Saffron (Crocin 254+) with a 250g canister of authentic whole-leaf Shahi Kahwa blended with green cardamom and almond slivers. Includes a hand-finished brass measuring spoon.",
-    benefits: [
+    "description": "The quintessential Kashmiri morning ritual. Combines 1g of Grade A1+ Pampore Mongra Saffron (Crocin 254+) with a 250g canister of authentic whole-leaf Shahi Kahwa blended with green cardamom and almond slivers. Includes a hand-finished brass measuring spoon.",
+    "benefits": [
       "26% instant savings on Kashmir's two iconic royal botanicals",
       "Certified Grade A1+ Mongra Saffron + Whole leaf spiced green tea",
       "Natural immune support, glowing complexion, and digestive warmth",
       "Complimentary brass dosing spoon and ceremonial brewing guide"
     ],
-    nutrition: {
-      calories: "45 kcal/cup",
-      protein: "1.8g",
-      healthyFats: "2.1g",
-      carbs: "4.2g",
-      fiber: "1.1g"
+    "nutrition": {
+      "calories": "45 kcal/cup",
+      "protein": "1.8g",
+      "healthyFats": "2.1g",
+      "carbs": "4.2g",
+      "fiber": "1.1g"
     },
-    weights: [
-      { weight: 'Single Ritual Set (1g Saffron + 250g Kahwa)', price: 799, originalPrice: 1080, discount: 26, isDefault: true },
-      { weight: 'Double Ritual Set (2g Saffron + 500g Kahwa)', price: 1499, originalPrice: 2090, discount: 28 }
+    "weights": [
+      {
+        "weight": "Single Ritual Set (1g Saffron + 250g Kahwa)",
+        "price": 799,
+        "originalPrice": 1080,
+        "discount": 26,
+        "isDefault": true
+      },
+      {
+        "weight": "Double Ritual Set (2g Saffron + 500g Kahwa)",
+        "price": 1499,
+        "originalPrice": 2090,
+        "discount": 28
+      }
     ]
   },
   {
-    id: 'jnu-combo-grand-quad-19',
-    name: "JENU'S Grand Alpine Four Connoisseur Combo",
-    subname: "250g Mamra + 250g Walnuts + 250g Figs + 200g Wild Chilgoza",
-    category: 'combos',
-    productType: "Grand Alpine 4-Piece Connoisseur Pack (Mamra + Walnuts + Figs + Chilgoza)",
-    origin: 'High Valleys of Kashmir & Kinnaur',
-    harvestYear: '2026 Fresh Valley Harvest',
-    rating: 5.0,
-    reviewsCount: 1650,
-    badge: 'Best Value Quad',
-    badgeType: 'luxury',
-    fssaiCertified: true,
-    image: '/images/combo-grand-quad.jpg',
-    comboItems: [
-      { name: "Kashmiri Mamra Almonds", weight: "250g", img: "/images/combo-grand-quad.jpg" },
-      { name: "Kagzi Snow Walnuts", weight: "250g", img: "/images/combo-grand-quad-close.jpg" },
-      { name: "Pampore Mongra Saffron", weight: "1g", img: "/images/combo-grand-quad-tray.jpg" },
-      { name: "Himalayan Chilgoza Pine Nuts", weight: "100g", img: "/images/combo-grand-quad.jpg" }
+    "id": "jnu-combo-grand-quad-19",
+    "name": "JENU'S Grand Alpine Four Connoisseur Combo",
+    "subname": "250g Mamra + 250g Walnuts + 250g Figs + 200g Wild Chilgoza",
+    "category": "combos",
+    "productType": "Grand Alpine 4-Piece Connoisseur Pack (Mamra + Walnuts + Figs + Chilgoza)",
+    "origin": "High Valleys of Kashmir & Kinnaur",
+    "harvestYear": "2026 Fresh Valley Harvest",
+    "rating": 5,
+    "reviewsCount": 1650,
+    "badge": "Best Value Quad",
+    "badgeType": "luxury",
+    "fssaiCertified": true,
+    "image": "/images/combo-grand-quad.jpg",
+    "comboItems": [
+      {
+        "name": "Kashmiri Mamra Almonds",
+        "weight": "250g",
+        "img": "/images/combo-grand-quad.jpg"
+      },
+      {
+        "name": "Kagzi Snow Walnuts",
+        "weight": "250g",
+        "img": "/images/combo-grand-quad-close.jpg"
+      },
+      {
+        "name": "Pampore Mongra Saffron",
+        "weight": "1g",
+        "img": "/images/combo-grand-quad-tray.jpg"
+      },
+      {
+        "name": "Himalayan Chilgoza Pine Nuts",
+        "weight": "100g",
+        "img": "/images/combo-grand-quad.jpg"
+      }
     ],
-    images: [
-      '/images/combo-grand-quad.jpg',
-      '/images/combo-grand-quad-close.jpg',
-      '/images/combo-grand-quad-tray.jpg'
+    "images": [
+      "/images/combo-grand-quad.jpg",
+      "/images/combo-grand-quad-close.jpg",
+      "/images/combo-grand-quad-tray.jpg",
+      "/images/combo-grand-quad-packaged.jpg"
     ],
-    overview: {
-      terroir: "Shopian, Kupwara, Kinnaur & Pulwama High Ridges",
-      harvestMethod: "Wild foraged & orchard hand-selected 2026 premium crop",
-      aromaFlavor: "Exquisite diversity: buttery chilgoza, honey figs, crisp mamra & sweet walnuts",
-      purityGrade: "100% Raw, chemical-free and heavy-metal laboratory tested",
-      packagingStandard: "4 Individual nitrogen-vacuum sealed packages in master gift carton",
-      shelfLife: "10 Months in cool ambient storage"
+    "overview": {
+      "terroir": "Shopian, Kupwara, Kinnaur & Pulwama High Ridges",
+      "harvestMethod": "Wild foraged & orchard hand-selected 2026 premium crop",
+      "aromaFlavor": "Exquisite diversity: buttery chilgoza, honey figs, crisp mamra & sweet walnuts",
+      "purityGrade": "100% Raw, chemical-free and heavy-metal laboratory tested",
+      "packagingStandard": "4 Individual nitrogen-vacuum sealed packages in master gift carton",
+      "shelfLife": "10 Months in cool ambient storage"
     },
-    description: "The ultimate dry fruit connoisseur pack. Gathers 250g Mamra Almonds, 250g Kagzi Snow Walnuts, 250g Sun-Dried Figs, and 200g Wild Himalayan Chilgoza pine nuts into one seamless luxury bundle with maximum savings.",
-    benefits: [
+    "description": "The ultimate dry fruit connoisseur pack. Gathers 250g Mamra Almonds, 250g Kagzi Snow Walnuts, 250g Sun-Dried Figs, and 200g Wild Himalayan Chilgoza pine nuts into one seamless luxury bundle with maximum savings.",
+    "benefits": [
       "Save 30% over individual retail packs",
       "Complete spectrum of heart-healthy fats, minerals, and dietary fiber",
       "Individually vacuum packed to preserve peak crunch and freshness",
       "Free express air delivery from Srinagar included"
     ],
-    nutrition: {
-      calories: "560 kcal avg",
-      protein: "14.5g",
-      healthyFats: "46.0g",
-      carbs: "32.0g",
-      fiber: "9.0g"
+    "nutrition": {
+      "calories": "560 kcal avg",
+      "protein": "14.5g",
+      "healthyFats": "46.0g",
+      "carbs": "32.0g",
+      "fiber": "9.0g"
     },
-    weights: [
-      { weight: '950g Grand Quad Pack', price: 2390, originalPrice: 3420, discount: 30, isDefault: true },
-      { weight: '1.9kg Double Grand Quad', price: 4590, originalPrice: 6600, discount: 30 }
+    "weights": [
+      {
+        "weight": "950g Grand Quad Pack",
+        "price": 2390,
+        "originalPrice": 3420,
+        "discount": 30,
+        "isDefault": true
+      },
+      {
+        "weight": "1.9kg Double Grand Quad",
+        "price": 4590,
+        "originalPrice": 6600,
+        "discount": 30
+      }
     ]
   },
   {
-    id: 'jnu-combo-spice-nut-20',
-    name: "JENU'S Royal Valley Spice & Nut Kitchen Heritage Bundle",
-    subname: "250g Kashmiri Mirch + 100g Wild Shahi Jeera + 500g Mamra Almonds + 1g Saffron",
-    category: 'combos',
-    productType: "Royal Valley Culinary Master Suite: Mirch + Shahi Jeera + Mamra + Saffron",
-    origin: 'Shopian, Pulwama, Kishtwar & Pampore',
-    harvestYear: '2026 Complete Valley Heritage Batch',
-    rating: 5.0,
-    reviewsCount: 1820,
-    badge: 'Valley Complete',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/combo-spice-nut.jpg',
-    comboItems: [
-      { name: "Authentic Sun-Dried Kashmiri Mirch", weight: "250g", img: "/images/combo-spice-nut.jpg" },
-      { name: "Wild Kashmiri Shahi Jeera", weight: "100g", img: "/images/combo-spice-nut-close.jpg" },
-      { name: "Kashmiri Mamra Almonds", weight: "250g", img: "/images/combo-spice-nut-tray.jpg" },
-      { name: "Pampore Mongra Saffron", weight: "1g", img: "/images/combo-spice-nut.jpg" }
+    "id": "jnu-combo-spice-nut-20",
+    "name": "JENU'S Royal Valley Spice & Nut Kitchen Heritage Bundle",
+    "subname": "250g Kashmiri Mirch + 100g Wild Shahi Jeera + 500g Mamra Almonds + 1g Saffron",
+    "category": "combos",
+    "productType": "Royal Valley Culinary Master Suite: Mirch + Shahi Jeera + Mamra + Saffron",
+    "origin": "Shopian, Pulwama, Kishtwar & Pampore",
+    "harvestYear": "2026 Complete Valley Heritage Batch",
+    "rating": 5,
+    "reviewsCount": 1820,
+    "badge": "Valley Complete",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/combo-spice-nut.jpg",
+    "comboItems": [
+      {
+        "name": "Authentic Sun-Dried Kashmiri Mirch",
+        "weight": "250g",
+        "img": "/images/combo-spice-nut.jpg"
+      },
+      {
+        "name": "Wild Kashmiri Shahi Jeera",
+        "weight": "100g",
+        "img": "/images/combo-spice-nut-close.jpg"
+      },
+      {
+        "name": "Kashmiri Mamra Almonds",
+        "weight": "250g",
+        "img": "/images/combo-spice-nut-tray.jpg"
+      },
+      {
+        "name": "Pampore Mongra Saffron",
+        "weight": "1g",
+        "img": "/images/combo-spice-nut.jpg"
+      }
     ],
-    images: [
-      '/images/combo-spice-nut.jpg',
-      '/images/combo-spice-nut-close.jpg',
-      '/images/combo-spice-nut-tray.jpg'
+    "images": [
+      "/images/combo-spice-nut.jpg",
+      "/images/combo-spice-nut-close.jpg",
+      "/images/combo-spice-nut-tray.jpg",
+      "/images/combo-spice-nut-packaged.jpg"
     ],
-    overview: {
-      terroir: "Kulgam, Gurez, Shopian & Pampore Valley",
-      harvestMethod: "Traditional Kashmiri smallholder farming & wild mountain gathering",
-      aromaFlavor: "Complete symphony: smoky sweet mirch, aromatic black cumin, almond oil & saffron",
-      purityGrade: "Unadulterated spices and Grade-A dry fruits, FSSAI Central Certified",
-      packagingStandard: "Deluxe airtight canisters and glass jars in rigid presentation carton",
-      shelfLife: "12 Months in cool pantry"
+    "overview": {
+      "terroir": "Kulgam, Gurez, Shopian & Pampore Valley",
+      "harvestMethod": "Traditional Kashmiri smallholder farming & wild mountain gathering",
+      "aromaFlavor": "Complete symphony: smoky sweet mirch, aromatic black cumin, almond oil & saffron",
+      "purityGrade": "Unadulterated spices and Grade-A dry fruits, FSSAI Central Certified",
+      "packagingStandard": "Deluxe airtight canisters and glass jars in rigid presentation carton",
+      "shelfLife": "12 Months in cool pantry"
     },
-    description: "Bring the complete authentic taste of Kashmir into your home. Combines 250g stone-ground Kashmiri Mirch, 100g wild Shahi Jeera in a glass jar, 500g oil-rich Mamra Almonds, and 1g Pure Pampore Mongra Saffron. Everything needed for royal Kashmiri cooking and nutrition.",
-    benefits: [
+    "description": "Bring the complete authentic taste of Kashmir into your home. Combines 250g stone-ground Kashmiri Mirch, 100g wild Shahi Jeera in a glass jar, 500g oil-rich Mamra Almonds, and 1g Pure Pampore Mongra Saffron. Everything needed for royal Kashmiri cooking and nutrition.",
+    "benefits": [
       "Save 32% with our most comprehensive culinary package",
       "Naturally grown spices + wild foraged cumin + oil-dense almonds + pure saffron",
       "Zero chemicals, artificial dyes, or preservatives across all items",
       "Packed in premium nitrogen-sealed gourmet presentation box"
     ],
-    nutrition: {
-      calories: "Assorted",
-      protein: "18.0g avg",
-      healthyFats: "38.0g avg",
-      carbs: "34.0g avg",
-      fiber: "16.0g avg"
+    "nutrition": {
+      "calories": "Assorted",
+      "protein": "18.0g avg",
+      "healthyFats": "38.0g avg",
+      "carbs": "34.0g avg",
+      "fiber": "16.0g avg"
     },
-    weights: [
-      { weight: 'Full Heritage Kitchen Suite (851g)', price: 2690, originalPrice: 3950, discount: 32, isDefault: true },
-      { weight: 'Grand Executive Suite (1.7kg)', price: 5190, originalPrice: 7650, discount: 32 }
+    "weights": [
+      {
+        "weight": "Full Heritage Kitchen Suite (851g)",
+        "price": 2690,
+        "originalPrice": 3950,
+        "discount": 32,
+        "isDefault": true
+      },
+      {
+        "weight": "Grand Executive Suite (1.7kg)",
+        "price": 5190,
+        "originalPrice": 7650,
+        "discount": 32
+      }
     ]
   },
-{
+  {
     "id": "jnu-powder-mirch-21",
     "name": "JENU'S Authentic Kashmiri Degi Mirch Powder",
     "subname": "Sun-Dried Stemless Kashmiri Red Chilli Ground Fine (Natural Crimson Glow)",
@@ -1023,7 +1445,7 @@ export const PRODUCTS = [
     "benefits": [
       "FSSAI Certified: 100% pure, zero artificial colors, zero Sudan dye tested",
       "Delivers iconic vibrant crimson color without overpowering fiery heat",
-      "Cold-milled below 40\u00b0C to preserve natural capsaicin and essential aroma oils",
+      "Cold-milled below 40°C to preserve natural capsaicin and essential aroma oils",
       "Rich in natural Vitamin C and bioflavonoid antioxidants"
     ],
     "nutrition": {
@@ -1071,11 +1493,11 @@ export const PRODUCTS = [
     "fssaiCertified": true,
     "image": "/images/saunf-powder-macro.jpg",
     "images": [
-      '/images/saunf-powder-macro.jpg',
-      '/images/saunf-seeds-macro.jpg',
-      '/images/saunf-mortar.jpg',
-      '/images/saunf-harvest.jpg',
-      '/images/saunf-packaged.jpg'
+      "/images/saunf-powder-macro.jpg",
+      "/images/saunf-seeds-macro.jpg",
+      "/images/saunf-mortar.jpg",
+      "/images/saunf-harvest.jpg",
+      "/images/saunf-packaged.jpg"
     ],
     "overview": {
       "terroir": "Anantnag Alpine Slopes (6,100 ft Altitude)",
@@ -1137,11 +1559,11 @@ export const PRODUCTS = [
     "fssaiCertified": true,
     "image": "/images/sonth-powder-macro.jpg",
     "images": [
-      '/images/sonth-powder-macro.jpg',
-      '/images/sonth-roots-macro.jpg',
-      '/images/sonth-sliced-dry.jpg',
-      '/images/sonth-stone-grind.jpg',
-      '/images/sonth-packaged.jpg'
+      "/images/sonth-powder-macro.jpg",
+      "/images/sonth-roots-macro.jpg",
+      "/images/sonth-sliced-dry.jpg",
+      "/images/sonth-stone-grind.jpg",
+      "/images/sonth-packaged.jpg"
     ],
     "overview": {
       "terroir": "Baramulla Foothills (5,800 ft Altitude)",
@@ -1196,18 +1618,18 @@ export const PRODUCTS = [
     "productType": "High-Curcumin Pure Mountain Turmeric Powder (Curcuma longa)",
     "origin": "Pulwama Valley, Kashmir",
     "harvestYear": "2026 Fresh Valley Harvest",
-    "rating": 5.0,
+    "rating": 5,
     "reviewsCount": 1150,
     "badge": "7% Curcumin",
     "badgeType": "gold",
     "fssaiCertified": true,
     "image": "/images/haldi-powder-macro.jpg",
     "images": [
-      '/images/haldi-powder-macro.jpg',
-      '/images/haldi-rhizome-macro.jpg',
-      '/images/haldi-cross-section.jpg',
-      '/images/haldi-harvest-roots.jpg',
-      '/images/haldi-packaged.jpg'
+      "/images/haldi-powder-macro.jpg",
+      "/images/haldi-rhizome-macro.jpg",
+      "/images/haldi-cross-section.jpg",
+      "/images/haldi-harvest-roots.jpg",
+      "/images/haldi-packaged.jpg"
     ],
     "overview": {
       "terroir": "Pulwama Highland Slopes (5,600 ft Altitude)",
@@ -1220,7 +1642,7 @@ export const PRODUCTS = [
     "description": "Standard supermarket turmeric is stripped of volatile oils and has barely 2% curcumin. JENU'S Mountain Haldi is sourced from pristine highland plots yielding unbleached roots with over 7% natural curcumin. Radiates deep golden saffron brilliance.",
     "benefits": [
       "FSSAI Certified: 100% pure, 0% lead chromate, 0% starch adulteration",
-      "Exceptional 7.2% curcumin strength\u2014powerful cellular antioxidant & anti-inflammatory",
+      "Exceptional 7.2% curcumin strength—powerful cellular antioxidant & anti-inflammatory",
       "Retains natural turmeric oleoresin and healing turmerone volatile oils",
       "Creates golden milk lattes and rich Kashmiri curries with intense color"
     ],
@@ -1269,11 +1691,11 @@ export const PRODUCTS = [
     "fssaiCertified": true,
     "image": "/images/garam-masala-powder-macro.jpg",
     "images": [
-      '/images/garam-masala-powder-macro.jpg',
-      '/images/garam-masala-whole-blend.jpg',
-      '/images/garam-masala-roasting.jpg',
-      '/images/garam-masala-bowl.jpg',
-      '/images/garam-masala-packaged.jpg'
+      "/images/garam-masala-powder-macro.jpg",
+      "/images/garam-masala-whole-blend.jpg",
+      "/images/garam-masala-roasting.jpg",
+      "/images/garam-masala-bowl.jpg",
+      "/images/garam-masala-packaged.jpg"
     ],
     "overview": {
       "terroir": "Old Srinagar Spice Bazaar & Pampore Orchards",
@@ -1335,11 +1757,11 @@ export const PRODUCTS = [
     "fssaiCertified": true,
     "image": "/images/dhaniya-powder-macro.jpg",
     "images": [
-      '/images/dhaniya-powder-macro.jpg',
-      '/images/dhaniya-seeds-macro.jpg',
-      '/images/dhaniya-seeds-harvest.jpg',
-      '/images/dhaniya-mortar.jpg',
-      '/images/dhaniya-packaged.jpg'
+      "/images/dhaniya-powder-macro.jpg",
+      "/images/dhaniya-seeds-macro.jpg",
+      "/images/dhaniya-seeds-harvest.jpg",
+      "/images/dhaniya-mortar.jpg",
+      "/images/dhaniya-packaged.jpg"
     ],
     "overview": {
       "terroir": "Kupwara Mountain Terraces (5,400 ft Altitude)",
@@ -1401,11 +1823,11 @@ export const PRODUCTS = [
     "fssaiCertified": true,
     "image": "/images/badi-elaichi-macro.jpg",
     "images": [
-      '/images/badi-elaichi-macro.jpg',
-      '/images/badi-elaichi-seeds-close.jpg',
-      '/images/badi-elaichi-tray.jpg',
-      '/images/badi-elaichi-harvest.jpg',
-      '/images/badi-elaichi-packaged.jpg'
+      "/images/badi-elaichi-macro.jpg",
+      "/images/badi-elaichi-seeds-close.jpg",
+      "/images/badi-elaichi-tray.jpg",
+      "/images/badi-elaichi-harvest.jpg",
+      "/images/badi-elaichi-packaged.jpg"
     ],
     "overview": {
       "terroir": "High Himalayan Forest Glades (6,200 ft Altitude)",
@@ -1460,18 +1882,18 @@ export const PRODUCTS = [
     "productType": "Grade A+ Extra Bold 8mm+ Whole Green Cardamom (Elettaria cardamomum)",
     "origin": "Himalayan Forest Foothills",
     "harvestYear": "2026 Fresh Valley Harvest",
-    "rating": 5.0,
+    "rating": 5,
     "reviewsCount": 1640,
     "badge": "8mm+ Bold",
     "badgeType": "gold",
     "fssaiCertified": true,
     "image": "/images/choti-elaichi-macro.jpg",
     "images": [
-      '/images/choti-elaichi-macro.jpg',
-      '/images/choti-elaichi-seeds-close.jpg',
-      '/images/choti-elaichi-handful.jpg',
-      '/images/choti-elaichi-brass-bowl.jpg',
-      '/images/choti-elaichi-packaged.jpg'
+      "/images/choti-elaichi-macro.jpg",
+      "/images/choti-elaichi-seeds-close.jpg",
+      "/images/choti-elaichi-handful.jpg",
+      "/images/choti-elaichi-brass-bowl.jpg",
+      "/images/choti-elaichi-packaged.jpg"
     ],
     "overview": {
       "terroir": "Shaded Mountain Rain Slopes (4,500 ft Altitude)",
@@ -1481,7 +1903,7 @@ export const PRODUCTS = [
       "packagingStandard": "Gold luxury airtight container with aroma-lock seal",
       "shelfLife": "24 Months in cool dark pantry"
     },
-    "description": "Known as the Queen of Spices. JENU'S selects only the rarest 8mm+ extra bold pods\u2014fat, heavy, and intensely green. Crack open a pod to find densely packed, pitch-black resinous seeds that release a heady rush of floral, sweet cineole perfume.",
+    "description": "Known as the Queen of Spices. JENU'S selects only the rarest 8mm+ extra bold pods—fat, heavy, and intensely green. Crack open a pod to find densely packed, pitch-black resinous seeds that release a heady rush of floral, sweet cineole perfume.",
     "benefits": [
       "FSSAI Certified: 100% natural, lab-tested free from chemical green dye or washes",
       "Extra-bold 8mm+ pods contain high 8-10% volatile essential oil concentration",
@@ -1533,21 +1955,21 @@ export const PRODUCTS = [
     "fssaiCertified": true,
     "image": "/images/cinnamon-quills-macro.jpg",
     "images": [
-      '/images/cinnamon-quills-macro.jpg',
-      '/images/cinnamon-bundle.jpg',
-      '/images/cinnamon-layers-close.jpg',
-      '/images/cinnamon-bark-harvest.jpg',
-      '/images/cinnamon-packaged.jpg'
+      "/images/cinnamon-quills-macro.jpg",
+      "/images/cinnamon-bundle.jpg",
+      "/images/cinnamon-layers-close.jpg",
+      "/images/cinnamon-bark-harvest.jpg",
+      "/images/cinnamon-packaged.jpg"
     ],
     "overview": {
       "terroir": "High Altitude Organic Forest Groves (4,000 ft Altitude)",
       "harvestMethod": "Paper-thin inner bark hand-peeled and rolled into multi-layered cigar quills",
       "aromaFlavor": "Delicate sweet warm cinnamon aroma, subtle spicy citrus, zero harsh bite",
-      "purityGrade": "True Ceylon (Cinnamomum verum) \u2014 under 0.004% coumarin (safe for daily use)",
+      "purityGrade": "True Ceylon (Cinnamomum verum) — under 0.004% coumarin (safe for daily use)",
       "packagingStandard": "Airtight tall canister to preserve intact quill sticks",
       "shelfLife": "36 Months in cool dry storage"
     },
-    "description": "Most commercial 'cinnamon' in stores is actually cheap Chinese Cassia\u2014hard as rock and full of liver-toxic coumarin. JENU'S brings you True Ceylon Cinnamon: fragile, multi-layered quills that crumble in your fingers, releasing a subtle, sweet, refined warmth.",
+    "description": "Most commercial 'cinnamon' in stores is actually cheap Chinese Cassia—hard as rock and full of liver-toxic coumarin. JENU'S brings you True Ceylon Cinnamon: fragile, multi-layered quills that crumble in your fingers, releasing a subtle, sweet, refined warmth.",
     "benefits": [
       "FSSAI Certified: True Ceylon cinnamon verified, safe ultra-low coumarin (<0.004%)",
       "Multiple paper-thin layers rolled into cigar quills, easily crushed by hand",
@@ -1599,11 +2021,11 @@ export const PRODUCTS = [
     "fssaiCertified": true,
     "image": "/images/cloves-macro.jpg",
     "images": [
-      '/images/cloves-macro.jpg',
-      '/images/cloves-oil-sheen.jpg',
-      '/images/cloves-handful.jpg',
-      '/images/cloves-harvest.jpg',
-      '/images/cloves-packaged.jpg'
+      "/images/cloves-macro.jpg",
+      "/images/cloves-oil-sheen.jpg",
+      "/images/cloves-handful.jpg",
+      "/images/cloves-harvest.jpg",
+      "/images/cloves-packaged.jpg"
     ],
     "overview": {
       "terroir": "Himalayan Forest Gardens (4,200 ft Altitude)",
@@ -1616,7 +2038,7 @@ export const PRODUCTS = [
     "description": "Press a JENU'S clove with your fingernail and you will see pure eugenol oil seep onto your skin. Every single clove is hand-sorted to ensure the spherical flower bud (head) is intact on the stem. Imparts profound aromatic depth and comforting winter warmth.",
     "benefits": [
       "FSSAI Certified: 100% whole cloves, zero headless stems or exhausted oil rejects",
-      "Floats vertically in water\u2014the authentic hallmark of oil-saturated premium cloves",
+      "Floats vertically in water—the authentic hallmark of oil-saturated premium cloves",
       "Rich in eugenol: potent natural antibacterial, dental soother, and throat warmer",
       "Essential anchor spice for Shahi Kahwa tea, biryani tadka, and mulled drinks"
     ],
@@ -1665,11 +2087,11 @@ export const PRODUCTS = [
     "fssaiCertified": true,
     "image": "/images/star-anise-macro.jpg",
     "images": [
-      '/images/star-anise-macro.jpg',
-      '/images/star-anise-single-close.jpg',
-      '/images/star-anise-walnut-wood.jpg',
-      '/images/star-anise-harvest.jpg',
-      '/images/star-anise-packaged.jpg'
+      "/images/star-anise-macro.jpg",
+      "/images/star-anise-single-close.jpg",
+      "/images/star-anise-walnut-wood.jpg",
+      "/images/star-anise-harvest.jpg",
+      "/images/star-anise-packaged.jpg"
     ],
     "overview": {
       "terroir": "Himalayan Mountain Foothills (4,800 ft Altitude)",
@@ -1731,11 +2153,11 @@ export const PRODUCTS = [
     "fssaiCertified": true,
     "image": "/images/mace-javitri-macro.jpg",
     "images": [
-      '/images/mace-javitri-macro.jpg',
-      '/images/mace-aril-nutmeg-close.jpg',
-      '/images/mace-handful.jpg',
-      '/images/mace-tray.jpg',
-      '/images/mace-packaged.jpg'
+      "/images/mace-javitri-macro.jpg",
+      "/images/mace-aril-nutmeg-close.jpg",
+      "/images/mace-handful.jpg",
+      "/images/mace-tray.jpg",
+      "/images/mace-packaged.jpg"
     ],
     "overview": {
       "terroir": "Sub-Himalayan Spice Groves (4,100 ft Altitude)",
@@ -1790,18 +2212,18 @@ export const PRODUCTS = [
     "productType": "Grade W180 King Size Jumbo Whole Cashew Kernels (Anacardium occidentale)",
     "origin": "Himalayan Mountain Storage Reserve",
     "harvestYear": "2026 Fresh Valley Harvest",
-    "rating": 5.0,
+    "rating": 5,
     "reviewsCount": 1820,
     "badge": "W180 King Size",
     "badgeType": "gold",
     "fssaiCertified": true,
     "image": "/images/cashews-jumbo-macro.jpg",
     "images": [
-      '/images/cashews-jumbo-macro.jpg',
-      '/images/cashews-raw-bowl.jpg',
-      '/images/cashews-handful.jpg',
-      '/images/cashews-w180-scale.jpg',
-      '/images/cashews-packaged.jpg'
+      "/images/cashews-jumbo-macro.jpg",
+      "/images/cashews-raw-bowl.jpg",
+      "/images/cashews-handful.jpg",
+      "/images/cashews-w180-scale.jpg",
+      "/images/cashews-packaged.jpg"
     ],
     "overview": {
       "terroir": "Pristine Mountain Reserve Storage (4,800 ft Altitude)",
@@ -1811,7 +2233,7 @@ export const PRODUCTS = [
       "packagingStandard": "Nitrogen-flushed vacuum-sealed food-grade tin canister",
       "shelfLife": "12 Months in airtight container"
     },
-    "description": "Known across the dryfruit trade as the 'King of Cashews'. W180 represents the largest, rarest cashew grade in the world\u2014requiring less than 180 nuts to weigh a full pound. Hand-selected for immaculate ivory color, giant crescent curve, and rich buttery crunch.",
+    "description": "Known across the dryfruit trade as the 'King of Cashews'. W180 represents the largest, rarest cashew grade in the world—requiring less than 180 nuts to weigh a full pound. Hand-selected for immaculate ivory color, giant crescent curve, and rich buttery crunch.",
     "benefits": [
       "FSSAI Certified: 100% natural, unbleached, zero chemical polishing agents",
       "Giant King W180 size delivers an exceptionally rich, velvety creamy crunch",
@@ -1863,11 +2285,11 @@ export const PRODUCTS = [
     "fssaiCertified": true,
     "image": "/images/cashews-roasted-macro.jpg",
     "images": [
-      '/images/cashews-roasted-macro.jpg',
-      '/images/cashews-roasted-bowl.jpg',
-      '/images/cashews-roasted-split.jpg',
-      '/images/cashews-roasting-process.jpg',
-      '/images/cashews-roasted-packaged.jpg'
+      "/images/cashews-roasted-macro.jpg",
+      "/images/cashews-roasted-bowl.jpg",
+      "/images/cashews-roasted-split.jpg",
+      "/images/cashews-roasting-process.jpg",
+      "/images/cashews-roasted-packaged.jpg"
     ],
     "overview": {
       "terroir": "Artisanal Valley Roastery, Srinagar",
@@ -1877,7 +2299,7 @@ export const PRODUCTS = [
       "packagingStandard": "Aroma-locked nitrogen-flushed foil canister",
       "shelfLife": "9 Months in airtight container"
     },
-    "description": "We take our giant jumbo cashews and slow-roast them in small batches with hot mountain air\u2014never deep-fried in commercial palm oil. Finished with a delicate dusting of mineral-rich Himalayan pink salt to accentuate the natural sweetness of the cashew nut.",
+    "description": "We take our giant jumbo cashews and slow-roast them in small batches with hot mountain air—never deep-fried in commercial palm oil. Finished with a delicate dusting of mineral-rich Himalayan pink salt to accentuate the natural sweetness of the cashew nut.",
     "benefits": [
       "FSSAI Certified: 100% oil-free dry roasted, zero added palm oil or hydrogenated fats",
       "Seasoned with genuine unrefined Himalayan pink salt containing 84 trace minerals",
@@ -1929,11 +2351,11 @@ export const PRODUCTS = [
     "fssaiCertified": true,
     "image": "/images/pista-inshell-macro.jpg",
     "images": [
-      '/images/pista-inshell-macro.jpg',
-      '/images/pista-split-handful.jpg',
-      '/images/pista-wood-tray.jpg',
-      '/images/pista-harvest-orchard.jpg',
-      '/images/pista-inshell-packaged.jpg'
+      "/images/pista-inshell-macro.jpg",
+      "/images/pista-split-handful.jpg",
+      "/images/pista-wood-tray.jpg",
+      "/images/pista-harvest-orchard.jpg",
+      "/images/pista-inshell-packaged.jpg"
     ],
     "overview": {
       "terroir": "High Altitude Arid Mountain Slopes (5,200 ft Altitude)",
@@ -1988,18 +2410,18 @@ export const PRODUCTS = [
     "productType": "Raw Unsalted Emerald Shelled Pistachio Kernels (Super-Green Pista Giri)",
     "origin": "Himalayan Highland Orchards",
     "harvestYear": "2026 Fresh Valley Harvest",
-    "rating": 5.0,
+    "rating": 5,
     "reviewsCount": 840,
     "badge": "Emerald Green",
     "badgeType": "gold",
     "fssaiCertified": true,
     "image": "/images/pista-giri-macro.jpg",
     "images": [
-      '/images/pista-giri-macro.jpg',
-      '/images/pista-giri-handful.jpg',
-      '/images/pista-slivers-close.jpg',
-      '/images/pista-kahwa-garnish.jpg',
-      '/images/pista-giri-packaged.jpg'
+      "/images/pista-giri-macro.jpg",
+      "/images/pista-giri-handful.jpg",
+      "/images/pista-slivers-close.jpg",
+      "/images/pista-kahwa-garnish.jpg",
+      "/images/pista-giri-packaged.jpg"
     ],
     "overview": {
       "terroir": "High Altitude Cold Slopes (5,800 ft Altitude)",
@@ -2061,11 +2483,11 @@ export const PRODUCTS = [
     "fssaiCertified": true,
     "image": "/images/raisins-green-macro.jpg",
     "images": [
-      '/images/raisins-green-macro.jpg',
-      '/images/raisins-green-handful.jpg',
-      '/images/raisins-green-bowl.jpg',
-      '/images/raisins-drying-shade.jpg',
-      '/images/raisins-green-packaged.jpg'
+      "/images/raisins-green-macro.jpg",
+      "/images/raisins-green-handful.jpg",
+      "/images/raisins-green-bowl.jpg",
+      "/images/raisins-drying-shade.jpg",
+      "/images/raisins-green-packaged.jpg"
     ],
     "overview": {
       "terroir": "Arid Mountain River Terraces (4,900 ft Altitude)",
@@ -2078,7 +2500,7 @@ export const PRODUCTS = [
     "description": "Slender, elongated grapes dried in traditional mud-brick ventilated drying houses called 'Kishmish Khana'. The gentle mountain breeze cures the grapes slowly without harsh sunlight, preserving their natural translucent emerald-amber hue and juicy sweetness.",
     "benefits": [
       "FSSAI Certified: 100% natural shade-cured, certified zero sulphur dioxide residue",
-      "Signature long slender grape profile (up to 2.5cm long)\u2014tender and non-sticky",
+      "Signature long slender grape profile (up to 2.5cm long)—tender and non-sticky",
       "Rich in natural fruit fructose, potassium, iron, and digestive dietary fiber",
       "Perfect wholesome natural sweetener for morning oatmeal, desserts, and snacks"
     ],
@@ -2127,11 +2549,11 @@ export const PRODUCTS = [
     "fssaiCertified": true,
     "image": "/images/raisins-black-macro.jpg",
     "images": [
-      '/images/raisins-black-macro.jpg',
-      '/images/raisins-black-handful.jpg',
-      '/images/raisins-black-hydrated.jpg',
-      '/images/raisins-black-vine.jpg',
-      '/images/raisins-black-packaged.jpg'
+      "/images/raisins-black-macro.jpg",
+      "/images/raisins-black-handful.jpg",
+      "/images/raisins-black-hydrated.jpg",
+      "/images/raisins-black-vine.jpg",
+      "/images/raisins-black-packaged.jpg"
     ],
     "overview": {
       "terroir": "High Himalayan Valleys (5,600 ft Altitude)",
@@ -2177,7 +2599,7 @@ export const PRODUCTS = [
       }
     ]
   },
-    {
+  {
     "id": "jnu-amla-candy-01",
     "name": "JENU'S Sun-Dried Pratapgarh Sweet & Salty Amla Candy",
     "subname": "Vitamin C-Rich Indian Gooseberry Slices Sun-Cured with Desi Rock Salt & Spices",
@@ -2193,10 +2615,10 @@ export const PRODUCTS = [
     "fssaiCertified": true,
     "image": "/images/amla-candy-sundried.jpg",
     "images": [
-      '/images/amla-candy-sundried.jpg',
-      '/images/amla-candy-macro.jpg',
-      '/images/amla-candy-bowl.jpg',
-      '/images/amla-candy-packaged.jpg'
+      "/images/amla-candy-sundried.jpg",
+      "/images/amla-candy-macro.jpg",
+      "/images/amla-candy-bowl.jpg",
+      "/images/amla-candy-packaged.jpg"
     ],
     "overview": {
       "terroir": "Pratapgarh Fertile Alluvial Plains, Uttar Pradesh",
@@ -2221,9 +2643,25 @@ export const PRODUCTS = [
       "fiber": "6.8g"
     },
     "weights": [
-      { "weight": "250g Jar", "price": 180, "originalPrice": 230, "discount": 21, "isDefault": true },
-      { "weight": "500g Pack", "price": 340, "originalPrice": 390, "discount": 12 },
-      { "weight": "1kg Family Pack", "price": 630, "originalPrice": 680, "discount": 7 }
+      {
+        "weight": "250g Jar",
+        "price": 180,
+        "originalPrice": 230,
+        "discount": 21,
+        "isDefault": true
+      },
+      {
+        "weight": "500g Pack",
+        "price": 340,
+        "originalPrice": 390,
+        "discount": 12
+      },
+      {
+        "weight": "1kg Family Pack",
+        "price": 630,
+        "originalPrice": 680,
+        "discount": 7
+      }
     ]
   },
   {
@@ -2242,11 +2680,11 @@ export const PRODUCTS = [
     "fssaiCertified": true,
     "image": "/images/dates-chhuara-macro.jpg",
     "images": [
-      '/images/dates-chhuara-macro.jpg',
-      '/images/dates-chhuara-handful.jpg',
-      '/images/dates-chhuara-split.jpg',
-      '/images/dates-chhuara-brass-bowl.jpg',
-      '/images/dates-chhuara-packaged.jpg'
+      "/images/dates-chhuara-macro.jpg",
+      "/images/dates-chhuara-handful.jpg",
+      "/images/dates-chhuara-split.jpg",
+      "/images/dates-chhuara-brass-bowl.jpg",
+      "/images/dates-chhuara-packaged.jpg"
     ],
     "overview": {
       "terroir": "Highland Mountain Terraces (5,100 ft Altitude)",
@@ -2308,11 +2746,11 @@ export const PRODUCTS = [
     "fssaiCertified": true,
     "image": "/images/hazelnuts-macro.jpg",
     "images": [
-      '/images/hazelnuts-macro.jpg',
-      '/images/hazelnuts-inshell-cracked.jpg',
-      '/images/hazelnuts-roasted-skins.jpg',
-      '/images/hazelnuts-forest-harvest.jpg',
-      '/images/hazelnuts-packaged.jpg'
+      "/images/hazelnuts-macro.jpg",
+      "/images/hazelnuts-inshell-cracked.jpg",
+      "/images/hazelnuts-roasted-skins.jpg",
+      "/images/hazelnuts-forest-harvest.jpg",
+      "/images/hazelnuts-packaged.jpg"
     ],
     "overview": {
       "terroir": "Pir Panjal Conifer Slopes (7,200 ft Altitude)",
@@ -2358,7 +2796,7 @@ export const PRODUCTS = [
       }
     ]
   },
-    {
+  {
     "id": "jnu-kala-til-01",
     "name": "JENU'S Premium Organic Black Sesame Seeds (Kala Til)",
     "subname": "Pure Unpolished Jet-Black Sesame Seeds for Ayurvedic Rasayana & Traditional Rituals",
@@ -2374,9 +2812,10 @@ export const PRODUCTS = [
     "fssaiCertified": true,
     "image": "/images/kala-til-macro.jpg",
     "images": [
-      '/images/kala-til-macro.jpg',
-      '/images/kala-til-bowl.jpg',
-      '/images/kala-til-packaged.jpg'
+      "/images/kala-til-macro.jpg",
+      "/images/kala-til-bowl.jpg",
+      "/images/kala-til-packaged.jpg",
+      "/images/kala-til-detail.jpg"
     ],
     "overview": {
       "terroir": "Mineral-Rich Black Cotton Soils, Vidarbha",
@@ -2393,1700 +2832,2762 @@ export const PRODUCTS = [
       "Classic Ayurvedic rasayana for winter vitality and ceremonial offerings"
     ],
     "nutrition": {
-      calories: "573 kcal",
-      protein: "17.7g",
-      healthyFats: "49.7g",
-      carbs: "23.4g",
-      fiber: "11.8g"
+      "calories": "573 kcal",
+      "protein": "17.7g",
+      "healthyFats": "49.7g",
+      "carbs": "23.4g",
+      "fiber": "11.8g"
     },
     "weights": [
-      { "weight": "250g Pouch", "price": 160, "originalPrice": 210, "discount": 23, "isDefault": true },
-      { "weight": "500g Pack", "price": 300, "originalPrice": 350, "discount": 14 },
-      { "weight": "1kg Value Pack", "price": 570, "originalPrice": 620, "discount": 8 }
+      {
+        "weight": "250g Pouch",
+        "price": 160,
+        "originalPrice": 210,
+        "discount": 23,
+        "isDefault": true
+      },
+      {
+        "weight": "500g Pack",
+        "price": 300,
+        "originalPrice": 350,
+        "discount": 14
+      },
+      {
+        "weight": "1kg Value Pack",
+        "price": 570,
+        "originalPrice": 620,
+        "discount": 8
+      }
     ]
   },
-    {
-    id: 'jnu-tea-noonchai-01',
-    name: "JENU'S Authentic Kashmiri Noon Chai (Shehar Chai / Pink Tea)",
-    subname: "Traditional Gunpowder Green Tea Leaves Brewed with Baking Soda, Milk & Pistachios",
-    category: 'teas',
-    subCategory: 'teas',
-    productType: "Authentic Kashmiri Gunpowder Green Tea Leaves (Camellia sinensis)",
-    origin: "Pampore Orchards & Pir Panjal Slopes, Kashmir",
-    harvestYear: "2026 Fresh Valley Harvest",
-    rating: 5.0,
-    reviewsCount: 1680,
-    badge: "Kashmiri Heritage",
-    badgeType: "bestseller",
-    fssaiCertified: true,
-    image: '/images/noon-chai-cup-authentic.jpg',
-    images: [
-      '/images/noon-chai-cup-authentic.jpg',
-      '/images/noon-chai-froth-macro.jpg',
-      '/images/noon-chai-leaves-real.jpg',
-      '/images/noon-chai-samovar-detail.jpg'
+  {
+    "id": "jnu-tea-noonchai-01",
+    "name": "JENU'S Authentic Kashmiri Noon Chai (Shehar Chai / Pink Tea)",
+    "subname": "Traditional Gunpowder Green Tea Leaves Brewed with Baking Soda, Milk & Pistachios",
+    "category": "teas",
+    "subCategory": "teas",
+    "productType": "Authentic Kashmiri Gunpowder Green Tea Leaves (Camellia sinensis)",
+    "origin": "Pampore Orchards & Pir Panjal Slopes, Kashmir",
+    "harvestYear": "2026 Fresh Valley Harvest",
+    "rating": 5,
+    "reviewsCount": 1680,
+    "badge": "Kashmiri Heritage",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/noon-chai-cup-authentic.jpg",
+    "images": [
+      "/images/noon-chai-cup-authentic.jpg",
+      "/images/noon-chai-froth-macro.jpg",
+      "/images/noon-chai-leaves-real.jpg",
+      "/images/noon-chai-samovar-detail.jpg"
     ],
-    overview: {
-      terroir: "Pir Panjal Terraced Slopes (6,500 ft Altitude)",
-      harvestMethod: "100% Handpicked, tight gunpowder leaf rolling with mountain air curing",
-      aromaFlavor: "Authentic creamy pink tea, velvety rich froth, crushed green pistachios & cardamom aroma",
-      purityGrade: "Pure Gunpowder Green Tea, Zero Artificial Color (natural pink reaction from aeration & baking soda)",
-      packagingStandard: "Aroma-locking nitrogen flushed tin container with inner gold foil seal",
-      shelfLife: "24 Months in cool dry mountain storage"
+    "overview": {
+      "terroir": "Pir Panjal Terraced Slopes (6,500 ft Altitude)",
+      "harvestMethod": "100% Handpicked, tight gunpowder leaf rolling with mountain air curing",
+      "aromaFlavor": "Authentic creamy pink tea, velvety rich froth, crushed green pistachios & cardamom aroma",
+      "purityGrade": "Pure Gunpowder Green Tea, Zero Artificial Color (natural pink reaction from aeration & baking soda)",
+      "packagingStandard": "Aroma-locking nitrogen flushed tin container with inner gold foil seal",
+      "shelfLife": "24 Months in cool dry mountain storage"
     },
-    description: "The pride of Srinagar mornings. JENU'S Authentic Noon Chai (Shehar Chai / Pink Tea) is prepared from handpicked high-altitude Kashmiri gunpowder green tea leaves. When traditionally brewed with a pinch of baking soda, milk, and salt or sugar, it produces the authentic, natural creamy rose-pink color garnished with emerald pistachios.",
-    benefits: [
+    "description": "The pride of Srinagar mornings. JENU'S Authentic Noon Chai (Shehar Chai / Pink Tea) is prepared from handpicked high-altitude Kashmiri gunpowder green tea leaves. When traditionally brewed with a pinch of baking soda, milk, and salt or sugar, it produces the authentic, natural creamy rose-pink color garnished with emerald pistachios.",
+    "benefits": [
       "FSSAI Certified: 100% pure high-altitude green tea leaves, zero synthetic food colors",
       "Traditional digestive Himalayan brew, rich in polyphenols and natural antioxidants",
       "Priced ₹50 lower than retail price of ₹320 (Now ₹270 per 100g Tin)",
       "Direct from Kashmir's traditional tea blenders with authentic brewing guide"
     ],
-    nutrition: {
-      calories: "2 kcal (unbrewed leaves)",
-      protein: "0.2g",
-      healthyFats: "0.0g",
-      carbs: "0.4g",
-      fiber: "0.1g"
+    "nutrition": {
+      "calories": "2 kcal (unbrewed leaves)",
+      "protein": "0.2g",
+      "healthyFats": "0.0g",
+      "carbs": "0.4g",
+      "fiber": "0.1g"
     },
-    weights: [
-      { weight: "100g Tin", price: 270, originalPrice: 320, discount: 16, isDefault: true },
-      { weight: "250g Tin", price: 600, originalPrice: 650, discount: 8 },
-      { weight: "500g Pack", price: 1100, originalPrice: 1150, discount: 4 }
+    "weights": [
+      {
+        "weight": "100g Tin",
+        "price": 270,
+        "originalPrice": 320,
+        "discount": 16,
+        "isDefault": true
+      },
+      {
+        "weight": "250g Tin",
+        "price": 600,
+        "originalPrice": 650,
+        "discount": 8
+      },
+      {
+        "weight": "500g Pack",
+        "price": 1100,
+        "originalPrice": 1150,
+        "discount": 4
+      }
     ]
   },
   {
-    id: 'jnu-tea-saffron-rose-01',
-    name: "JENU'S Kashmiri Saffron Rose Herbal Infusion",
-    subname: "Sun-Dried Damask Rose Petals Infused with Pampore Mongra Saffron & Green Cardamom",
-    category: 'teas',
-    subCategory: 'teas',
-    productType: "Caffeine-Free Valley Floral & Saffron Infusion",
-    origin: 'Pampore & Nishat Gardens, Kashmir',
-    harvestYear: '2026 Fresh Harvest',
-    rating: 4.9,
-    reviewsCount: 720,
-    badge: 'Caffeine-Free',
-    badgeType: 'organic',
-    fssaiCertified: true,
-    image: '/images/tea-saffron-rose-cup.jpg',
-    images: [
-      '/images/tea-saffron-rose-cup.jpg',
-      '/images/tea-saffron-rose-leaves.jpg',
-      '/images/tea-saffron-rose-infusion.jpg',
-      '/images/tea-saffron-rose-packaged.jpg'
+    "id": "jnu-tea-saffron-rose-01",
+    "name": "JENU'S Kashmiri Saffron Rose Herbal Infusion",
+    "subname": "Sun-Dried Damask Rose Petals Infused with Pampore Mongra Saffron & Green Cardamom",
+    "category": "teas",
+    "subCategory": "teas",
+    "productType": "Caffeine-Free Valley Floral & Saffron Infusion",
+    "origin": "Pampore & Nishat Gardens, Kashmir",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 4.9,
+    "reviewsCount": 720,
+    "badge": "Caffeine-Free",
+    "badgeType": "organic",
+    "fssaiCertified": true,
+    "image": "/images/tea-saffron-rose-cup.jpg",
+    "images": [
+      "/images/tea-saffron-rose-cup.jpg",
+      "/images/tea-saffron-rose-leaves.jpg",
+      "/images/tea-saffron-rose-infusion.jpg",
+      "/images/tea-saffron-rose-packaged.jpg"
     ],
-    overview: {
-      terroir: "Dal Lake Foothills & Pampore Terroir",
-      harvestMethod: "Dawn Hand-Plucked Rose Petals, Shade Dried & Blended with Saffron",
-      aromaFlavor: "Heady Damascus rose perfume, rich saffron warmth, sweet cardamom finish",
-      purityGrade: "100% Pure Botanical Blend, Zero Flavoring Essence",
-      packagingStandard: "UV-protected amber glass jar with air seal",
-      shelfLife: "18 Months"
+    "overview": {
+      "terroir": "Dal Lake Foothills & Pampore Terroir",
+      "harvestMethod": "Dawn Hand-Plucked Rose Petals, Shade Dried & Blended with Saffron",
+      "aromaFlavor": "Heady Damascus rose perfume, rich saffron warmth, sweet cardamom finish",
+      "purityGrade": "100% Pure Botanical Blend, Zero Flavoring Essence",
+      "packagingStandard": "UV-protected amber glass jar with air seal",
+      "shelfLife": "18 Months"
     },
-    description: "An imperial Mughal blend of sweet sun-dried Kashmiri Damask rose petals, pure Pampore Grade A1+ Mongra saffron strands, and green cardamom seeds. Brews a soothing amber-pink liquor that relaxes the senses, promotes radiant skin, and soothes the mind before sleep.",
-    benefits: [
+    "description": "An imperial Mughal blend of sweet sun-dried Kashmiri Damask rose petals, pure Pampore Grade A1+ Mongra saffron strands, and green cardamom seeds. Brews a soothing amber-pink liquor that relaxes the senses, promotes radiant skin, and soothes the mind before sleep.",
+    "benefits": [
       "Naturally 100% caffeine-free, excellent evening calming brew",
       "High bioflavonoids for collagen support and skin radiance",
       "Pampore saffron boosts mood and relieves stress naturally",
       "Lowered by ₹50 from market rate of ₹450"
     ],
-    nutrition: {
-      calories: "1 kcal",
-      protein: "0.1g",
-      healthyFats: "0.0g",
-      carbs: "0.2g",
-      fiber: "0.0g"
+    "nutrition": {
+      "calories": "1 kcal",
+      "protein": "0.1g",
+      "healthyFats": "0.0g",
+      "carbs": "0.2g",
+      "fiber": "0.0g"
     },
-    weights: [
-      { weight: "100g Jar", price: 400, originalPrice: 450, discount: 11, isDefault: true },
-      { weight: "250g Jar", price: 800, originalPrice: 850, discount: 6 }
+    "weights": [
+      {
+        "weight": "100g Jar",
+        "price": 400,
+        "originalPrice": 450,
+        "discount": 11,
+        "isDefault": true
+      },
+      {
+        "weight": "250g Jar",
+        "price": 800,
+        "originalPrice": 850,
+        "discount": 6
+      }
     ]
   },
   {
-    id: 'jnu-tea-kangra-01',
-    name: "JENU'S Kangra Orthodox Whole Leaf Black Tea",
-    subname: "GI-Tagged Single-Estate Himalayan Orthodox Leaf (Golden Tippy Liquor)",
-    category: 'teas',
-    subCategory: 'teas',
-    productType: "GI-Tagged Himalayan Orthodox Whole Leaf Black Tea",
-    origin: 'Kangra Valley, High Himalayas',
-    harvestYear: '2026 Second Flush',
-    rating: 4.8,
-    reviewsCount: 610,
-    badge: 'GI Tagged',
-    badgeType: 'single-estate',
-    fssaiCertified: true,
-    image: '/images/tea-kangra-orthodox-cup.jpg',
-    images: [
-      '/images/tea-kangra-orthodox-cup.jpg',
-      '/images/tea-kangra-orthodox-leaves.jpg',
-      '/images/tea-kangra-orthodox-liquor.jpg',
-      '/images/tea-kangra-orthodox-packaged.jpg'
+    "id": "jnu-tea-kangra-01",
+    "name": "JENU'S Kangra Orthodox Whole Leaf Black Tea",
+    "subname": "GI-Tagged Single-Estate Himalayan Orthodox Leaf (Golden Tippy Liquor)",
+    "category": "teas",
+    "subCategory": "teas",
+    "productType": "GI-Tagged Himalayan Orthodox Whole Leaf Black Tea",
+    "origin": "Kangra Valley, High Himalayas",
+    "harvestYear": "2026 Second Flush",
+    "rating": 4.8,
+    "reviewsCount": 610,
+    "badge": "GI Tagged",
+    "badgeType": "single-estate",
+    "fssaiCertified": true,
+    "image": "/images/tea-kangra-orthodox-cup.jpg",
+    "images": [
+      "/images/tea-kangra-orthodox-cup.jpg",
+      "/images/tea-kangra-orthodox-leaves.jpg",
+      "/images/tea-kangra-orthodox-liquor.jpg",
+      "/images/tea-kangra-orthodox-packaged.jpg"
     ],
-    overview: {
-      terroir: "Dhauladhar Snow Range Foothills (4,500 ft Altitude)",
-      harvestMethod: "Orthodox Two Leaves & A Bud Hand-Plucked",
-      aromaFlavor: "Delicate muscatel sweetness, woodsy pine notes, amber cup",
-      purityGrade: "100% Unblended Orthodox Whole Leaf",
-      packagingStandard: "Double-sealed golden caddy",
-      shelfLife: "24 Months"
+    "overview": {
+      "terroir": "Dhauladhar Snow Range Foothills (4,500 ft Altitude)",
+      "harvestMethod": "Orthodox Two Leaves & A Bud Hand-Plucked",
+      "aromaFlavor": "Delicate muscatel sweetness, woodsy pine notes, amber cup",
+      "purityGrade": "100% Unblended Orthodox Whole Leaf",
+      "packagingStandard": "Double-sealed golden caddy",
+      "shelfLife": "24 Months"
     },
-    description: "Authentic GI-tagged Kangra Orthodox whole leaf tea, cultivated on the mineral-rich glacial terraces of the Dhauladhar mountain range. Rich in natural polyphenols with an exquisite sweet muscatel finish that rivals the finest teas in the world.",
-    benefits: [
+    "description": "Authentic GI-tagged Kangra Orthodox whole leaf tea, cultivated on the mineral-rich glacial terraces of the Dhauladhar mountain range. Rich in natural polyphenols with an exquisite sweet muscatel finish that rivals the finest teas in the world.",
+    "benefits": [
       "GI-Tagged authenticity: 100% pure Himalayan single-estate whole leaves",
       "Rich in theaflavins and thearubigins for cardiovascular health",
       "Zero CTC dust, zero artificial aroma sprays",
       "Discounted ₹50 below prevailing market rates"
     ],
-    nutrition: {
-      calories: "2 kcal",
-      protein: "0.2g",
-      healthyFats: "0.0g",
-      carbs: "0.2g",
-      fiber: "0.0g"
+    "nutrition": {
+      "calories": "2 kcal",
+      "protein": "0.2g",
+      "healthyFats": "0.0g",
+      "carbs": "0.2g",
+      "fiber": "0.0g"
     },
-    weights: [
-      { weight: "250g Canister", price: 340, originalPrice: 390, discount: 13, isDefault: true },
-      { weight: "500g Pack", price: 640, originalPrice: 690, discount: 7 }
+    "weights": [
+      {
+        "weight": "250g Canister",
+        "price": 340,
+        "originalPrice": 390,
+        "discount": 13,
+        "isDefault": true
+      },
+      {
+        "weight": "500g Pack",
+        "price": 640,
+        "originalPrice": 690,
+        "discount": 7
+      }
     ]
   },
-
-  // ===================================================
-  // 2. COMPREHENSIVE MASALAS & POWDERED SPICES
-  // ===================================================
   {
-    id: 'jnu-chaat-masala-01',
-    name: "JENU'S Royal Kashmiri Chaat Masala",
-    subname: "Tangy Himalayan Rock Salt, Sun-Dried Amchur, Cumin & Wild Anardana Blend",
-    category: 'spices',
-    subCategory: 'powdered-spices',
-    productType: "Artisanal Stone-Ground Tangy Finishing Spice Blend",
-    origin: 'Kashmir Valley & Anantnag, Kashmir',
-    harvestYear: '2026 Fresh Harvest',
-    rating: 4.9,
-    reviewsCount: 1140,
-    badge: 'Stone Ground',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/chaat-masala-macro.jpg',
-    images: [
-      '/images/chaat-masala-macro.jpg',
-      '/images/chaat-masala-bowl.jpg',
-      '/images/chaat-masala-sprinkle.jpg',
-      '/images/chaat-masala-packaged.jpg'
+    "id": "jnu-chaat-masala-01",
+    "name": "JENU'S Royal Kashmiri Chaat Masala",
+    "subname": "Tangy Himalayan Rock Salt, Sun-Dried Amchur, Cumin & Wild Anardana Blend",
+    "category": "spices",
+    "subCategory": "powdered-spices",
+    "productType": "Artisanal Stone-Ground Tangy Finishing Spice Blend",
+    "origin": "Kashmir Valley & Anantnag, Kashmir",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 4.9,
+    "reviewsCount": 1140,
+    "badge": "Stone Ground",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/chaat-masala-macro.jpg",
+    "images": [
+      "/images/chaat-masala-macro.jpg",
+      "/images/chaat-masala-bowl.jpg",
+      "/images/chaat-masala-sprinkle.jpg",
+      "/images/chaat-masala-packaged.jpg"
     ],
-    overview: {
-      terroir: "Anantnag Wild Pomegranate Groves",
-      harvestMethod: "Sun-Cured Dried Mango & Wild Anardana Stone-Milled with Black Salt",
-      aromaFlavor: "Explosive zesty tanginess, warm roasted cumin, savory sulfur umami, mint finish",
-      purityGrade: "100% Natural Spices, Zero Starch, Zero MSG, Zero Anti-Caking Chemical",
-      packagingStandard: "Dual-dispenser shaker jar with moisture gasket",
-      shelfLife: "12 Months"
+    "overview": {
+      "terroir": "Anantnag Wild Pomegranate Groves",
+      "harvestMethod": "Sun-Cured Dried Mango & Wild Anardana Stone-Milled with Black Salt",
+      "aromaFlavor": "Explosive zesty tanginess, warm roasted cumin, savory sulfur umami, mint finish",
+      "purityGrade": "100% Natural Spices, Zero Starch, Zero MSG, Zero Anti-Caking Chemical",
+      "packagingStandard": "Dual-dispenser shaker jar with moisture gasket",
+      "shelfLife": "12 Months"
     },
-    description: "The crown jewel of Indian tangy street spice. Our proprietary recipe marries slow-roasted Shahi jeera, sun-cured green amchur mango powder, tart wild Kashmiri pomegranate seeds (anardana), black rock salt, and aromatic mint. Elevates fresh fruits, salads, tikkas, and street snacks with an irresistible mouthwatering burst.",
-    benefits: [
+    "description": "The crown jewel of Indian tangy street spice. Our proprietary recipe marries slow-roasted Shahi jeera, sun-cured green amchur mango powder, tart wild Kashmiri pomegranate seeds (anardana), black rock salt, and aromatic mint. Elevates fresh fruits, salads, tikkas, and street snacks with an irresistible mouthwatering burst.",
+    "benefits": [
       "FSSAI Certified: 100% pure whole spices, zero starch or cheap fillers",
       "Wild Kashmiri Anardana delivers authentic tangy fruit acidity",
       "Stimulates digestive enzymes naturally and curbs bloating",
       "Priced ₹50 lower than prevailing market price of ₹210"
     ],
-    nutrition: {
-      calories: "220 kcal",
-      protein: "7.8g",
-      healthyFats: "4.2g",
-      carbs: "38.5g",
-      fiber: "14.2g"
+    "nutrition": {
+      "calories": "220 kcal",
+      "protein": "7.8g",
+      "healthyFats": "4.2g",
+      "carbs": "38.5g",
+      "fiber": "14.2g"
     },
-    weights: [
-      { weight: "100g Shaker", price: 160, originalPrice: 210, discount: 24, isDefault: true },
-      { weight: "250g Pouch", price: 410, originalPrice: 460, discount: 11 },
-      { weight: "500g Pack", price: 780, originalPrice: 830, discount: 6 }
+    "weights": [
+      {
+        "weight": "100g Shaker",
+        "price": 160,
+        "originalPrice": 210,
+        "discount": 24,
+        "isDefault": true
+      },
+      {
+        "weight": "250g Pouch",
+        "price": 410,
+        "originalPrice": 460,
+        "discount": 11
+      },
+      {
+        "weight": "500g Pack",
+        "price": 780,
+        "originalPrice": 830,
+        "discount": 6
+      }
     ]
   },
   {
-    id: 'jnu-biryani-masala-01',
-    name: "JENU'S Shahi Kashmiri Biryani Masala",
-    subname: "Whole Roasted Mace, Star Anise, Green Cardamom, Cloves & Pampore Saffron Dust",
-    category: 'spices',
-    subCategory: 'powdered-spices',
-    productType: "Royal Feast Biryani Spice Blend with Real Saffron",
-    origin: 'Pampore & Shopian, Kashmir',
-    harvestYear: '2026 Fresh Harvest',
-    rating: 5.0,
-    reviewsCount: 1320,
-    badge: 'Royal Feast',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/biryani-masala-macro.jpg',
-    images: [
-      '/images/biryani-masala-macro.jpg',
-      '/images/biryani-masala-bowl.jpg',
-      '/images/biryani-masala-roasting.jpg',
-      '/images/biryani-masala-packaged.jpg'
+    "id": "jnu-biryani-masala-01",
+    "name": "JENU'S Shahi Kashmiri Biryani Masala",
+    "subname": "Whole Roasted Mace, Star Anise, Green Cardamom, Cloves & Pampore Saffron Dust",
+    "category": "spices",
+    "subCategory": "powdered-spices",
+    "productType": "Royal Feast Biryani Spice Blend with Real Saffron",
+    "origin": "Pampore & Shopian, Kashmir",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 5,
+    "reviewsCount": 1320,
+    "badge": "Royal Feast",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/biryani-masala-macro.jpg",
+    "images": [
+      "/images/biryani-masala-macro.jpg",
+      "/images/biryani-masala-bowl.jpg",
+      "/images/biryani-masala-roasting.jpg",
+      "/images/biryani-masala-packaged.jpg"
     ],
-    overview: {
-      terroir: "Pampore Saffron Orchards & Valley Spice Gardens",
-      harvestMethod: "Iron Skillet Low-Temperature Dry Roast & Slow Burr Grinding",
-      aromaFlavor: "Heady warm royal aroma, sweet cinnamon-mace notes, subtle peppery warmth",
-      purityGrade: "100% Whole Spices with Real Mongra Saffron, Zero Artificial Perfume",
-      packagingStandard: "Triple-layer nitrogen barrier pouch",
-      shelfLife: "12 Months"
+    "overview": {
+      "terroir": "Pampore Saffron Orchards & Valley Spice Gardens",
+      "harvestMethod": "Iron Skillet Low-Temperature Dry Roast & Slow Burr Grinding",
+      "aromaFlavor": "Heady warm royal aroma, sweet cinnamon-mace notes, subtle peppery warmth",
+      "purityGrade": "100% Whole Spices with Real Mongra Saffron, Zero Artificial Perfume",
+      "packagingStandard": "Triple-layer nitrogen barrier pouch",
+      "shelfLife": "12 Months"
     },
-    description: "Crafted for grand celebratory biryanis and pulaos. Contains 18 whole whole spices including javitri (mace), royal shahi jeera, dalchini (ceylon cinnamon), green cardamom, black stone flower, and pure Kashmiri saffron. Imparts unmatched royal aroma and deep layered flavor to basmati rice dishes.",
-    benefits: [
+    "description": "Crafted for grand celebratory biryanis and pulaos. Contains 18 whole whole spices including javitri (mace), royal shahi jeera, dalchini (ceylon cinnamon), green cardamom, black stone flower, and pure Kashmiri saffron. Imparts unmatched royal aroma and deep layered flavor to basmati rice dishes.",
+    "benefits": [
       "Infused with real Pampore Mongra saffron for majestic aroma",
       "Zero synthetic flavoring essence, non-irradiated whole spices",
       "Coarsely milled to release essential volatile oils gradually during dum cooking",
       "Priced ₹50 below market rate of ₹240"
     ],
-    nutrition: {
-      calories: "285 kcal",
-      protein: "11.2g",
-      healthyFats: "12.8g",
-      carbs: "32.0g",
-      fiber: "22.5g"
+    "nutrition": {
+      "calories": "285 kcal",
+      "protein": "11.2g",
+      "healthyFats": "12.8g",
+      "carbs": "32.0g",
+      "fiber": "22.5g"
     },
-    weights: [
-      { weight: "100g Pouch", price: 190, originalPrice: 240, discount: 21, isDefault: true },
-      { weight: "250g Jar", price: 480, originalPrice: 530, discount: 9 },
-      { weight: "500g Pack", price: 920, originalPrice: 970, discount: 5 }
+    "weights": [
+      {
+        "weight": "100g Pouch",
+        "price": 190,
+        "originalPrice": 240,
+        "discount": 21,
+        "isDefault": true
+      },
+      {
+        "weight": "250g Jar",
+        "price": 480,
+        "originalPrice": 530,
+        "discount": 9
+      },
+      {
+        "weight": "500g Pack",
+        "price": 920,
+        "originalPrice": 970,
+        "discount": 5
+      }
     ]
   },
   {
-    id: 'jnu-kitchen-king-01',
-    name: "JENU'S Imperial Kashmiri Kitchen King Masala",
-    subname: "All-Purpose 24-Spice Master Culinary Blend (Rich Golden Umami)",
-    category: 'spices',
-    subCategory: 'powdered-spices',
-    productType: "Universal Culinary Master Masala for Curries, Gravies & Sabzis",
-    origin: 'Kashmir Valley & Jammu Desks',
-    harvestYear: '2026 Fresh Harvest',
-    rating: 4.9,
-    reviewsCount: 1540,
-    badge: 'All-Purpose',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/kitchen-king-macro.jpg',
-    images: [
-      '/images/kitchen-king-macro.jpg',
-      '/images/kitchen-king-bowl.jpg',
-      '/images/kitchen-king-cooking.jpg',
-      '/images/kitchen-king-packaged.jpg'
+    "id": "jnu-kitchen-king-01",
+    "name": "JENU'S Imperial Kashmiri Kitchen King Masala",
+    "subname": "All-Purpose 24-Spice Master Culinary Blend (Rich Golden Umami)",
+    "category": "spices",
+    "subCategory": "powdered-spices",
+    "productType": "Universal Culinary Master Masala for Curries, Gravies & Sabzis",
+    "origin": "Kashmir Valley & Jammu Desks",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 4.9,
+    "reviewsCount": 1540,
+    "badge": "All-Purpose",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/kitchen-king-macro.jpg",
+    "images": [
+      "/images/kitchen-king-macro.jpg",
+      "/images/kitchen-king-bowl.jpg",
+      "/images/kitchen-king-cooking.jpg",
+      "/images/kitchen-king-packaged.jpg"
     ],
-    overview: {
-      terroir: "Himalayan Foothills & Mountain Spice Terraces",
-      harvestMethod: "Triple-Shift Sorting, Cold Roller Milled below 38°C",
-      aromaFlavor: "Harmonious warm savory profile, coriander-cumin base with nutty kasuri methi note",
-      purityGrade: "100% Pure Spices, Zero Preservatives, Zero Sodium Benzoate",
-      packagingStandard: "Foil-sealed canister with aroma freshness cap",
-      shelfLife: "12 Months"
+    "overview": {
+      "terroir": "Himalayan Foothills & Mountain Spice Terraces",
+      "harvestMethod": "Triple-Shift Sorting, Cold Roller Milled below 38°C",
+      "aromaFlavor": "Harmonious warm savory profile, coriander-cumin base with nutty kasuri methi note",
+      "purityGrade": "100% Pure Spices, Zero Preservatives, Zero Sodium Benzoate",
+      "packagingStandard": "Foil-sealed canister with aroma freshness cap",
+      "shelfLife": "12 Months"
     },
-    description: "The ultimate secret weapon of gourmet home chefs. Our Imperial Kitchen King blends 24 hand-selected spices—including turmeric, coriander, roasted cumin, black cardamom, nutmeg, mace, and fragrant kasuri methi—creating restaurant-quality rich golden gravies for paneer, vegetables, and lentils.",
-    benefits: [
+    "description": "The ultimate secret weapon of gourmet home chefs. Our Imperial Kitchen King blends 24 hand-selected spices—including turmeric, coriander, roasted cumin, black cardamom, nutmeg, mace, and fragrant kasuri methi—creating restaurant-quality rich golden gravies for paneer, vegetables, and lentils.",
+    "benefits": [
       "FSSAI Certified: 100% pure food-grade spices, zero salt adulteration",
       "Cold-milled below 38°C preserving sensitive volatile flavor oils",
       "One spoon elevates everyday curries into celebratory meals",
       "Priced ₹50 below market rate of ₹220"
     ],
-    nutrition: {
-      calories: "298 kcal",
-      protein: "12.5g",
-      healthyFats: "13.2g",
-      carbs: "34.0g",
-      fiber: "24.1g"
+    "nutrition": {
+      "calories": "298 kcal",
+      "protein": "12.5g",
+      "healthyFats": "13.2g",
+      "carbs": "34.0g",
+      "fiber": "24.1g"
     },
-    weights: [
-      { weight: "100g Canister", price: 170, originalPrice: 220, discount: 23, isDefault: true },
-      { weight: "250g Pouch", price: 440, originalPrice: 490, discount: 10 },
-      { weight: "500g Pack", price: 840, originalPrice: 890, discount: 6 }
+    "weights": [
+      {
+        "weight": "100g Canister",
+        "price": 170,
+        "originalPrice": 220,
+        "discount": 23,
+        "isDefault": true
+      },
+      {
+        "weight": "250g Pouch",
+        "price": 440,
+        "originalPrice": 490,
+        "discount": 10
+      },
+      {
+        "weight": "500g Pack",
+        "price": 840,
+        "originalPrice": 890,
+        "discount": 6
+      }
     ]
   },
   {
-    id: 'jnu-pav-bhaji-01',
-    name: "JENU'S Artisan Pav Bhaji Masala",
-    subname: "Bold Kashmiri Degi Mirch, Stone-Ground Cumin, Fennel & Coriander Blend",
-    category: 'spices',
-    subCategory: 'powdered-spices',
-    productType: "Artisan Street Cuisine Masala for Rich Mashed Vegetable Gravies",
-    origin: 'Pampore & Pulwama, Kashmir',
-    harvestYear: '2026 Fresh Harvest',
-    rating: 4.8,
-    reviewsCount: 890,
-    badge: 'Artisan Blend',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/pav-bhaji-macro.jpg',
-    images: [
-      '/images/pav-bhaji-macro.jpg',
-      '/images/pav-bhaji-bowl.jpg',
-      '/images/pav-bhaji-packaged.jpg'
+    "id": "jnu-pav-bhaji-01",
+    "name": "JENU'S Artisan Pav Bhaji Masala",
+    "subname": "Bold Kashmiri Degi Mirch, Stone-Ground Cumin, Fennel & Coriander Blend",
+    "category": "spices",
+    "subCategory": "powdered-spices",
+    "productType": "Artisan Street Cuisine Masala for Rich Mashed Vegetable Gravies",
+    "origin": "Pampore & Pulwama, Kashmir",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 4.8,
+    "reviewsCount": 890,
+    "badge": "Artisan Blend",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/pav-bhaji-macro.jpg",
+    "images": [
+      "/images/pav-bhaji-macro.jpg",
+      "/images/pav-bhaji-bowl.jpg",
+      "/images/pav-bhaji-packaged.jpg",
+      "/images/pav-bhaji-dish.jpg"
     ],
-    overview: {
-      terroir: "Pampore Alluvial Terraces",
-      harvestMethod: "Sun-Cured Spices, Slow Stone Milled with Natural Coriander Oils",
-      aromaFlavor: "Deep smoky paprika, rich cumin warmth, appetizing clove-cinnamon finish",
-      purityGrade: "100% Pure Valley Spices, Zero Artificial Red Coloring",
-      packagingStandard: "Aroma-lock foil pouch",
-      shelfLife: "12 Months"
+    "overview": {
+      "terroir": "Pampore Alluvial Terraces",
+      "harvestMethod": "Sun-Cured Spices, Slow Stone Milled with Natural Coriander Oils",
+      "aromaFlavor": "Deep smoky paprika, rich cumin warmth, appetizing clove-cinnamon finish",
+      "purityGrade": "100% Pure Valley Spices, Zero Artificial Red Coloring",
+      "packagingStandard": "Aroma-lock foil pouch",
+      "shelfLife": "12 Months"
     },
-    description: "Recreate legendary Mumbai street pav bhaji with authentic Kashmiri gourmet quality. Packed with genuine stemless Kashmiri red chillies for magnificent natural ruby color, paired with roasted saunf, coriander, and black pepper for authentic street taste without synthetic colors.",
-    benefits: [
+    "description": "Recreate legendary Mumbai street pav bhaji with authentic Kashmiri gourmet quality. Packed with genuine stemless Kashmiri red chillies for magnificent natural ruby color, paired with roasted saunf, coriander, and black pepper for authentic street taste without synthetic colors.",
+    "benefits": [
       "Natural brilliant crimson color from pure Kashmiri chillies, zero dyes",
       "Authentic balanced tanginess and warm aromatic spices",
       "Priced ₹50 lower than market rate of ₹200"
     ],
-    nutrition: {
-      calories: "275 kcal",
-      protein: "10.4g",
-      healthyFats: "11.6g",
-      carbs: "33.2g",
-      fiber: "21.0g"
+    "nutrition": {
+      "calories": "275 kcal",
+      "protein": "10.4g",
+      "healthyFats": "11.6g",
+      "carbs": "33.2g",
+      "fiber": "21.0g"
     },
-    weights: [
-      { weight: "100g Pouch", price: 150, originalPrice: 200, discount: 25, isDefault: true },
-      { weight: "250g Jar", price: 400, originalPrice: 450, discount: 11 }
+    "weights": [
+      {
+        "weight": "100g Pouch",
+        "price": 150,
+        "originalPrice": 200,
+        "discount": 25,
+        "isDefault": true
+      },
+      {
+        "weight": "250g Jar",
+        "price": 400,
+        "originalPrice": 450,
+        "discount": 11
+      }
     ]
   },
   {
-    id: 'jnu-sambar-masala-01',
-    name: "JENU'S Authentic Sambar & Rasam Masala",
-    subname: "Slow-Roasted Chana Dal, Urad Dal, Coriander, Kashmiri Mirch & Curry Leaves",
-    category: 'spices',
-    subCategory: 'powdered-spices',
-    productType: "Traditional Hearth-Roasted Lentil & Spice Blend",
-    origin: 'Kashmir Valley Spice Desk',
-    harvestYear: '2026 Fresh Harvest',
-    rating: 4.9,
-    reviewsCount: 760,
-    badge: 'Hearth Roasted',
-    badgeType: 'organic',
-    fssaiCertified: true,
-    image: '/images/sambar-masala-macro.jpg',
-    images: [
-      '/images/sambar-masala-macro.jpg',
-      '/images/sambar-masala-bowl.jpg',
-      '/images/sambar-masala-packaged.jpg'
+    "id": "jnu-sambar-masala-01",
+    "name": "JENU'S Authentic Sambar & Rasam Masala",
+    "subname": "Slow-Roasted Chana Dal, Urad Dal, Coriander, Kashmiri Mirch & Curry Leaves",
+    "category": "spices",
+    "subCategory": "powdered-spices",
+    "productType": "Traditional Hearth-Roasted Lentil & Spice Blend",
+    "origin": "Kashmir Valley Spice Desk",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 4.9,
+    "reviewsCount": 760,
+    "badge": "Hearth Roasted",
+    "badgeType": "organic",
+    "fssaiCertified": true,
+    "image": "/images/sambar-masala-macro.jpg",
+    "images": [
+      "/images/sambar-masala-macro.jpg",
+      "/images/sambar-masala-bowl.jpg",
+      "/images/sambar-masala-packaged.jpg",
+      "/images/sambar-masala-dish.jpg"
     ],
-    overview: {
-      terroir: "Mountain Spice Terraces",
-      harvestMethod: "Fire-Roasted Native Lentils & Hand-Cleaned Whole Spices",
-      aromaFlavor: "Warm nutty roasted lentil fragrance, balanced tangy cumin and fenugreek savor",
-      purityGrade: "100% Pure, Zero MSG, Zero Starch Fillers",
-      packagingStandard: "Moisture-proof foil pouch",
-      shelfLife: "12 Months"
+    "overview": {
+      "terroir": "Mountain Spice Terraces",
+      "harvestMethod": "Fire-Roasted Native Lentils & Hand-Cleaned Whole Spices",
+      "aromaFlavor": "Warm nutty roasted lentil fragrance, balanced tangy cumin and fenugreek savor",
+      "purityGrade": "100% Pure, Zero MSG, Zero Starch Fillers",
+      "packagingStandard": "Moisture-proof foil pouch",
+      "shelfLife": "12 Months"
     },
-    description: "Crafted by roasting native chana and urad lentils with whole coriander, Kashmiri red chillies, fragrant fenugreek, and fresh curry leaves over gentle hearth heat. Delivers rich natural body and aromatic depth to traditional South Indian sambars and rasams.",
-    benefits: [
+    "description": "Crafted by roasting native chana and urad lentils with whole coriander, Kashmiri red chillies, fragrant fenugreek, and fresh curry leaves over gentle hearth heat. Delivers rich natural body and aromatic depth to traditional South Indian sambars and rasams.",
+    "benefits": [
       "Slow hearth roasted lentils provide natural thick gravy texture",
       "Zero synthetic preservatives or anti-caking compounds",
       "Discounted ₹50 below prevailing market price of ₹210"
     ],
-    nutrition: {
-      calories: "288 kcal",
-      protein: "14.2g",
-      healthyFats: "9.5g",
-      carbs: "36.8g",
-      fiber: "19.4g"
+    "nutrition": {
+      "calories": "288 kcal",
+      "protein": "14.2g",
+      "healthyFats": "9.5g",
+      "carbs": "36.8g",
+      "fiber": "19.4g"
     },
-    weights: [
-      { weight: "100g Pouch", price: 160, originalPrice: 210, discount: 24, isDefault: true },
-      { weight: "250g Pouch", price: 410, originalPrice: 460, discount: 11 }
+    "weights": [
+      {
+        "weight": "100g Pouch",
+        "price": 160,
+        "originalPrice": 210,
+        "discount": 24,
+        "isDefault": true
+      },
+      {
+        "weight": "250g Pouch",
+        "price": 410,
+        "originalPrice": 460,
+        "discount": 11
+      }
     ]
   },
   {
-    id: 'jnu-kashmiri-korma-01',
-    name: "JENU'S Kashmiri Wazwan Rogan Josh & Korma Masala",
-    subname: "Authentic Waza Recipe with Ratanjot, Maval Cockscomb & Sun-Dried Ginger",
-    category: 'spices',
-    subCategory: 'powdered-spices',
-    productType: "Authentic Imperial Wazwan Banquet Spice Blend",
-    origin: 'Old Srinagar & Pulwama, Kashmir',
-    harvestYear: '2026 Fresh Harvest',
-    rating: 5.0,
-    reviewsCount: 1460,
-    badge: 'Wazwan Secret',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/kashmiri-korma-macro.jpg',
-    images: [
-      '/images/kashmiri-korma-macro.jpg',
-      '/images/kashmiri-korma-bowl.jpg',
-      '/images/kashmiri-korma-packaged.jpg'
+    "id": "jnu-kashmiri-korma-01",
+    "name": "JENU'S Kashmiri Wazwan Rogan Josh & Korma Masala",
+    "subname": "Authentic Waza Recipe with Ratanjot, Maval Cockscomb & Sun-Dried Ginger",
+    "category": "spices",
+    "subCategory": "powdered-spices",
+    "productType": "Authentic Imperial Wazwan Banquet Spice Blend",
+    "origin": "Old Srinagar & Pulwama, Kashmir",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 5,
+    "reviewsCount": 1460,
+    "badge": "Wazwan Secret",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/kashmiri-korma-macro.jpg",
+    "images": [
+      "/images/kashmiri-korma-macro.jpg",
+      "/images/kashmiri-korma-bowl.jpg",
+      "/images/kashmiri-korma-packaged.jpg",
+      "/images/kashmiri-korma-dish.jpg"
     ],
-    overview: {
-      terroir: "Srinagar Valley Culinary Guild",
-      harvestMethod: "Sun-Cured Ratanjot Herb & Fennel Stone Ground by Master Wazas",
-      aromaFlavor: "Intense Kashmiri sonth-saunf fragrance, glowing ruby sheen, zero onion-garlic needed",
-      purityGrade: "100% Traditional Kashmiri Botanical Herbs & Spices",
-      packagingStandard: "Aroma-tight presentation tin",
-      shelfLife: "12 Months"
+    "overview": {
+      "terroir": "Srinagar Valley Culinary Guild",
+      "harvestMethod": "Sun-Cured Ratanjot Herb & Fennel Stone Ground by Master Wazas",
+      "aromaFlavor": "Intense Kashmiri sonth-saunf fragrance, glowing ruby sheen, zero onion-garlic needed",
+      "purityGrade": "100% Traditional Kashmiri Botanical Herbs & Spices",
+      "packagingStandard": "Aroma-tight presentation tin",
+      "shelfLife": "12 Months"
     },
-    description: "The closely guarded secret of Srinagar's master culinary wazas. Formulated with authentic Himalayan ratanjot herb for an imperial glowing scarlet sheen, paired with sun-cured sonth (ginger), sweet saunf (fennel), green cardamom, and cloves. Cook authentic Rogan Josh, Dum Aloo, or Paneer Korma at home.",
-    benefits: [
+    "description": "The closely guarded secret of Srinagar's master culinary wazas. Formulated with authentic Himalayan ratanjot herb for an imperial glowing scarlet sheen, paired with sun-cured sonth (ginger), sweet saunf (fennel), green cardamom, and cloves. Cook authentic Rogan Josh, Dum Aloo, or Paneer Korma at home.",
+    "benefits": [
       "Contains authentic Himalayan ratanjot for royal crimson glaze",
       "Traditional recipe formulated without onion or garlic",
       "₹50 Below Prevailing Market Rate: Direct from Srinagar Waza Guild"
     ],
-    nutrition: {
-      calories: "290 kcal",
-      protein: "11.8g",
-      healthyFats: "13.4g",
-      carbs: "31.0g",
-      fiber: "23.5g"
+    "nutrition": {
+      "calories": "290 kcal",
+      "protein": "11.8g",
+      "healthyFats": "13.4g",
+      "carbs": "31.0g",
+      "fiber": "23.5g"
     },
-    weights: [
-      { weight: "100g Tin", price: 210, originalPrice: 260, discount: 19, isDefault: true },
-      { weight: "250g Tin", price: 520, originalPrice: 570, discount: 9 }
+    "weights": [
+      {
+        "weight": "100g Tin",
+        "price": 210,
+        "originalPrice": 260,
+        "discount": 19,
+        "isDefault": true
+      },
+      {
+        "weight": "250g Tin",
+        "price": 520,
+        "originalPrice": 570,
+        "discount": 9
+      }
     ]
   },
   {
-    id: 'jnu-amchur-01',
-    name: "JENU'S Pure Sun-Dried Amchur Powder (Dry Mango)",
-    subname: "Raw Unripe Green Mountain Mango Slices Naturally Solar-Cured & Ground Fine",
-    category: 'spices',
-    subCategory: 'powdered-spices',
-    productType: "Pure Sun-Dried Raw Mango Acidulant Powder",
-    origin: 'Himalayan Foothills',
-    harvestYear: '2026 Fresh Season',
-    rating: 4.8,
-    reviewsCount: 680,
-    badge: 'Pure Sun-Dried',
-    badgeType: 'organic',
-    fssaiCertified: true,
-    image: '/images/amchur-powder-macro.jpg',
-    images: [
-      '/images/amchur-powder-macro.jpg',
-      '/images/amchur-powder-bowl.jpg',
-      '/images/amchur-powder-packaged.jpg'
+    "id": "jnu-amchur-01",
+    "name": "JENU'S Pure Sun-Dried Amchur Powder (Dry Mango)",
+    "subname": "Raw Unripe Green Mountain Mango Slices Naturally Solar-Cured & Ground Fine",
+    "category": "spices",
+    "subCategory": "powdered-spices",
+    "productType": "Pure Sun-Dried Raw Mango Acidulant Powder",
+    "origin": "Himalayan Foothills",
+    "harvestYear": "2026 Fresh Season",
+    "rating": 4.8,
+    "reviewsCount": 680,
+    "badge": "Pure Sun-Dried",
+    "badgeType": "organic",
+    "fssaiCertified": true,
+    "image": "/images/amchur-powder-macro.jpg",
+    "images": [
+      "/images/amchur-powder-macro.jpg",
+      "/images/amchur-powder-bowl.jpg",
+      "/images/amchur-powder-packaged.jpg",
+      "/images/amchur-powder-slices.jpg"
     ],
-    overview: {
-      terroir: "Sub-Himalayan Organic Mango Belts",
-      harvestMethod: "Unripe Green Mangoes Peeled, Sliced Thin & Solar-Dried for 10 Days",
-      aromaFlavor: "Pleasing tart-sweet fruity acidity, clean refreshing citrus tang",
-      purityGrade: "100% Pure Mango, Zero Sulfur Dioxide, Unbleached",
-      packagingStandard: "Double-seal glass jar",
-      shelfLife: "12 Months"
+    "overview": {
+      "terroir": "Sub-Himalayan Organic Mango Belts",
+      "harvestMethod": "Unripe Green Mangoes Peeled, Sliced Thin & Solar-Dried for 10 Days",
+      "aromaFlavor": "Pleasing tart-sweet fruity acidity, clean refreshing citrus tang",
+      "purityGrade": "100% Pure Mango, Zero Sulfur Dioxide, Unbleached",
+      "packagingStandard": "Double-seal glass jar",
+      "shelfLife": "12 Months"
     },
-    description: "Real raw green mangoes, hand-sliced and sun-dried in clean mountain air for 10 days before slow cold-milling. Yields a light tan, unbleached, intensely tart powder that adds clean fruity acidity to samosas, dal, chutneys, and chaats.",
-    benefits: [
+    "description": "Real raw green mangoes, hand-sliced and sun-dried in clean mountain air for 10 days before slow cold-milling. Yields a light tan, unbleached, intensely tart powder that adds clean fruity acidity to samosas, dal, chutneys, and chaats.",
+    "benefits": [
       "100% natural fruit acidity, completely free from sulfur dioxide preservatives",
       "Unbleached natural olive-tan color indicates pure fruit processing",
       "Discounted ₹50 from market rate of ₹190"
     ],
-    nutrition: {
-      calories: "310 kcal",
-      protein: "2.8g",
-      healthyFats: "1.1g",
-      carbs: "72.0g",
-      fiber: "14.5g"
+    "nutrition": {
+      "calories": "310 kcal",
+      "protein": "2.8g",
+      "healthyFats": "1.1g",
+      "carbs": "72.0g",
+      "fiber": "14.5g"
     },
-    weights: [
-      { weight: "100g Jar", price: 140, originalPrice: 190, discount: 26, isDefault: true },
-      { weight: "250g Jar", price: 370, originalPrice: 420, discount: 12 }
+    "weights": [
+      {
+        "weight": "100g Jar",
+        "price": 140,
+        "originalPrice": 190,
+        "discount": 26,
+        "isDefault": true
+      },
+      {
+        "weight": "250g Jar",
+        "price": 370,
+        "originalPrice": 420,
+        "discount": 12
+      }
     ]
   },
   {
-    id: 'jnu-kasuri-methi-01',
-    name: "JENU'S Mountain Dried Kasuri Methi (Fenugreek Leaves)",
-    subname: "Fragrant Hand-Harvested Fenugreek Leaves Shade-Dried in Cool Kashmir Breeze",
-    category: 'spices',
-    subCategory: 'raw-spices',
-    productType: "Premium Whole Dried Fenugreek Herb Leaves (Trigonella foenum-graecum)",
-    origin: 'Shopian Foothills, Kashmir',
-    harvestYear: '2026 Fresh Crop',
-    rating: 4.9,
-    reviewsCount: 940,
-    badge: 'Triple Cleaned',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/kasuri-methi-macro.jpg',
-    images: [
-      '/images/kasuri-methi-macro.jpg',
-      '/images/kasuri-methi-bowl.jpg',
-      '/images/kasuri-methi-packaged.jpg'
+    "id": "jnu-kasuri-methi-01",
+    "name": "JENU'S Mountain Dried Kasuri Methi (Fenugreek Leaves)",
+    "subname": "Fragrant Hand-Harvested Fenugreek Leaves Shade-Dried in Cool Kashmir Breeze",
+    "category": "spices",
+    "subCategory": "raw-spices",
+    "productType": "Premium Whole Dried Fenugreek Herb Leaves (Trigonella foenum-graecum)",
+    "origin": "Shopian Foothills, Kashmir",
+    "harvestYear": "2026 Fresh Crop",
+    "rating": 4.9,
+    "reviewsCount": 940,
+    "badge": "Triple Cleaned",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/kasuri-methi-macro.jpg",
+    "images": [
+      "/images/kasuri-methi-macro.jpg",
+      "/images/kasuri-methi-bowl.jpg",
+      "/images/kasuri-methi-packaged.jpg",
+      "/images/kasuri-methi-crushed.jpg"
     ],
-    overview: {
-      terroir: "Shopian High-Altitude Herb Gardens",
-      harvestMethod: "Stem-Free Hand Sorting, Gentle Shade Drying",
-      aromaFlavor: "Intense herbaceous maple aroma, savory pleasant bittersweet finish",
-      purityGrade: "100% Whole Leaves, Zero Twigs, Zero Added Dye",
-      packagingStandard: "Airtight vacuum carton box",
-      shelfLife: "18 Months"
+    "overview": {
+      "terroir": "Shopian High-Altitude Herb Gardens",
+      "harvestMethod": "Stem-Free Hand Sorting, Gentle Shade Drying",
+      "aromaFlavor": "Intense herbaceous maple aroma, savory pleasant bittersweet finish",
+      "purityGrade": "100% Whole Leaves, Zero Twigs, Zero Added Dye",
+      "packagingStandard": "Airtight vacuum carton box",
+      "shelfLife": "18 Months"
     },
-    description: "Carefully hand-harvested tender fenugreek leaves, dried in cool mountain shade to preserve chlorophyll and intense volatile aroma oils. Crumbled gently over butter chicken, dal makhani, or paneer tikka, it releases an intoxicating restaurant-style maple fragrance.",
-    benefits: [
+    "description": "Carefully hand-harvested tender fenugreek leaves, dried in cool mountain shade to preserve chlorophyll and intense volatile aroma oils. Crumbled gently over butter chicken, dal makhani, or paneer tikka, it releases an intoxicating restaurant-style maple fragrance.",
+    "benefits": [
       "Triple cleaned and stem-free: only tender aromatic leaf blades",
       "Natural shade-drying preserves vivid olive-green color and aroma",
       "Discounted ₹50 below prevailing market price"
     ],
-    nutrition: {
-      calories: "49 kcal per 100g",
-      protein: "4.4g",
-      healthyFats: "0.9g",
-      carbs: "6.0g",
-      fiber: "3.2g"
+    "nutrition": {
+      "calories": "49 kcal per 100g",
+      "protein": "4.4g",
+      "healthyFats": "0.9g",
+      "carbs": "6.0g",
+      "fiber": "3.2g"
     },
-    weights: [
-      { weight: "50g Box", price: 120, originalPrice: 170, discount: 29, isDefault: true },
-      { weight: "100g Box", price: 240, originalPrice: 290, discount: 17 }
+    "weights": [
+      {
+        "weight": "50g Box",
+        "price": 120,
+        "originalPrice": 170,
+        "discount": 29,
+        "isDefault": true
+      },
+      {
+        "weight": "100g Box",
+        "price": 240,
+        "originalPrice": 290,
+        "discount": 17
+      }
     ]
   },
   {
-    id: 'jnu-hing-01',
-    name: "JENU'S Royal Compounded Kashmiri Hing (Asafoetida)",
-    subname: "Pure Himalayan Ferula Assa-Foetida Milky Resin Compounded with Wheat Starch",
-    category: 'spices',
-    subCategory: 'powdered-spices',
-    productType: "High-Potency Ferula Resin Compounded Hing Powder",
-    origin: 'Kashmir High Passes & Hindukush Boundary',
-    harvestYear: '2026 Fresh Extraction',
-    rating: 5.0,
-    reviewsCount: 1120,
-    badge: 'High Potency',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/hing-powder-macro.jpg',
-    images: [
-      '/images/hing-powder-macro.jpg',
-      '/images/hing-powder-bowl.jpg',
-      '/images/hing-powder-packaged.jpg'
+    "id": "jnu-hing-01",
+    "name": "JENU'S Royal Compounded Kashmiri Hing (Asafoetida)",
+    "subname": "Pure Himalayan Ferula Assa-Foetida Milky Resin Compounded with Wheat Starch",
+    "category": "spices",
+    "subCategory": "powdered-spices",
+    "productType": "High-Potency Ferula Resin Compounded Hing Powder",
+    "origin": "Kashmir High Passes & Hindukush Boundary",
+    "harvestYear": "2026 Fresh Extraction",
+    "rating": 5,
+    "reviewsCount": 1120,
+    "badge": "High Potency",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/hing-powder-macro.jpg",
+    "images": [
+      "/images/hing-powder-macro.jpg",
+      "/images/hing-powder-bowl.jpg",
+      "/images/hing-powder-packaged.jpg",
+      "/images/hing-raw-resin.jpg"
     ],
-    overview: {
-      terroir: "High Himalayan Arid Alpine Screes (10,000 ft)",
-      harvestMethod: "Root Tap Infiltration of Pure Milky Latex Resin",
-      aromaFlavor: "Pungent leek-garlic umami aroma that blooms into sweet savory ecstasy in hot ghee",
-      purityGrade: "Authentic Ferula Resin, Zero Soapstone Adulteration",
-      packagingStandard: "Hermetically sealed dual-cap glass vial",
-      shelfLife: "24 Months"
+    "overview": {
+      "terroir": "High Himalayan Arid Alpine Screes (10,000 ft)",
+      "harvestMethod": "Root Tap Infiltration of Pure Milky Latex Resin",
+      "aromaFlavor": "Pungent leek-garlic umami aroma that blooms into sweet savory ecstasy in hot ghee",
+      "purityGrade": "Authentic Ferula Resin, Zero Soapstone Adulteration",
+      "packagingStandard": "Hermetically sealed dual-cap glass vial",
+      "shelfLife": "24 Months"
     },
-    description: "An authentic culinary powerhouse. Extracted from pure Himalayan Ferula roots and compounded with organic wheat flour. Just a microscopic pinch bloomed in hot mustard oil or ghee creates an intoxicating onion-garlic savoriness while naturally assisting digestion.",
-    benefits: [
+    "description": "An authentic culinary powerhouse. Extracted from pure Himalayan Ferula roots and compounded with organic wheat flour. Just a microscopic pinch bloomed in hot mustard oil or ghee creates an intoxicating onion-garlic savoriness while naturally assisting digestion.",
+    "benefits": [
       "Extremely high potency: a pinch goes 3x further than commercial hing",
       "FSSAI Certified: 100% pure resin, zero chalk or synthetic fragrance",
       "Priced ₹50 lower than market rate of ₹280"
     ],
-    nutrition: {
-      calories: "295 kcal",
-      protein: "4.0g",
-      healthyFats: "1.1g",
-      carbs: "67.8g",
-      fiber: "4.1g"
+    "nutrition": {
+      "calories": "295 kcal",
+      "protein": "4.0g",
+      "healthyFats": "1.1g",
+      "carbs": "67.8g",
+      "fiber": "4.1g"
     },
-    weights: [
-      { weight: "50g Glass Vial", price: 230, originalPrice: 280, discount: 18, isDefault: true },
-      { weight: "100g Glass Vial", price: 440, originalPrice: 490, discount: 10 }
+    "weights": [
+      {
+        "weight": "50g Glass Vial",
+        "price": 230,
+        "originalPrice": 280,
+        "discount": 18,
+        "isDefault": true
+      },
+      {
+        "weight": "100g Glass Vial",
+        "price": 440,
+        "originalPrice": 490,
+        "discount": 10
+      }
     ]
   },
-
-  // ===================================================
-  // 3. COMPLETE DATES (EVERY KIND IN CURRENT MARKET, LOWERED BY ₹50)
-  // ===================================================
-    {
-    id: 'jnu-phool-makhana-01',
-    name: "JENU'S Royal Phool Makhana (Jumbo 7-Suta Lotus Seeds)",
-    subname: "Puffed Snow-White Jumbo Foxnuts from Darbhanga (Khari Baoli Cleared)",
-    category: 'dates',
-    subCategory: 'seeds',
-    productType: "Jumbo Grade 7-Suta Euryale Ferox (Phool Makhana)",
-    origin: "Darbhanga & Madhubani, Bihar (Khari Baoli, Old Delhi Market)",
-    harvestYear: "2026 Fresh Harvest",
-    rating: 5.0,
-    reviewsCount: 2150,
-    badge: "Khari Baoli Gold",
-    badgeType: "bestseller",
-    fssaiCertified: true,
-    image: "/images/phool-makhana-jumbo.jpg",
-    images: [
-      '/images/phool-makhana-jumbo.jpg',
-      '/images/phool-makhana-macro.jpg',
-      '/images/phool-makhana-bowl.jpg',
-      '/images/phool-makhana-packaged.jpg'
+  {
+    "id": "jnu-phool-makhana-01",
+    "name": "JENU'S Royal Phool Makhana (Jumbo 7-Suta Lotus Seeds)",
+    "subname": "Puffed Snow-White Jumbo Foxnuts from Darbhanga (Khari Baoli Cleared)",
+    "category": "dates",
+    "subCategory": "seeds",
+    "productType": "Jumbo Grade 7-Suta Euryale Ferox (Phool Makhana)",
+    "origin": "Darbhanga & Madhubani, Bihar (Khari Baoli, Old Delhi Market)",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 5,
+    "reviewsCount": 2150,
+    "badge": "Khari Baoli Gold",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/phool-makhana-jumbo.jpg",
+    "images": [
+      "/images/phool-makhana-jumbo.jpg",
+      "/images/phool-makhana-macro.jpg",
+      "/images/phool-makhana-bowl.jpg",
+      "/images/phool-makhana-packaged.jpg"
     ],
-    overview: {
-      terroir: "Mithila Aquatic Ponds, Bihar (Clean Fresh Water Lotus Cultivation)",
-      harvestMethod: "Hand-collected seed harvest, traditional wood-fire popping & graded to Jumbo 7-Suta",
-      aromaFlavor: "Mild nutty crunch, airy and crisp, absorbs ghee and rock salt beautifully",
-      purityGrade: "100% Gluten-Free, Zero Chemical Bleaching, Unpolished Snow White",
-      packagingStandard: "Airtight nitrogen-flushed multi-layer canister with moisture seal",
-      shelfLife: "12 Months in cool dry storage"
+    "overview": {
+      "terroir": "Mithila Aquatic Ponds, Bihar (Clean Fresh Water Lotus Cultivation)",
+      "harvestMethod": "Hand-collected seed harvest, traditional wood-fire popping & graded to Jumbo 7-Suta",
+      "aromaFlavor": "Mild nutty crunch, airy and crisp, absorbs ghee and rock salt beautifully",
+      "purityGrade": "100% Gluten-Free, Zero Chemical Bleaching, Unpolished Snow White",
+      "packagingStandard": "Airtight nitrogen-flushed multi-layer canister with moisture seal",
+      "shelfLife": "12 Months in cool dry storage"
     },
-    description: "Hand-graded Jumbo 7-Suta Phool Makhana sourced directly from pristine lotus ponds and cleared through Delhi's Khari Baoli market. Fluffy, snow-white, zero chemical bleaching. Packed with natural plant protein, calcium, and antioxidants.",
-    benefits: [
+    "description": "Hand-graded Jumbo 7-Suta Phool Makhana sourced directly from pristine lotus ponds and cleared through Delhi's Khari Baoli market. Fluffy, snow-white, zero chemical bleaching. Packed with natural plant protein, calcium, and antioxidants.",
+    "benefits": [
       "FSSAI Certified: 100% natural, unbleached, lab-tested for purity",
       "High plant protein, magnesium, and potassium with zero trans fats",
       "Lowest glycemic index superfood for diabetic and fast-day (vrat) nutrition",
       "Supplied directly from Asia's largest dry fruit wholesale market at Khari Baoli"
     ],
-    nutrition: {
-      calories: "347 kcal",
-      protein: "9.7g",
-      healthyFats: "0.5g",
-      carbs: "76.9g",
-      fiber: "14.5g"
+    "nutrition": {
+      "calories": "347 kcal",
+      "protein": "9.7g",
+      "healthyFats": "0.5g",
+      "carbs": "76.9g",
+      "fiber": "14.5g"
     },
-    weights: [
-      { weight: "250g Artisanal Canister", price: 340, originalPrice: 390, discount: 12, isDefault: true },
-      { weight: "500g Value Pack", price: 650, originalPrice: 700, discount: 7 },
-      { weight: "1kg Wholesale Carton", price: 1250, originalPrice: 1300, discount: 4 }
+    "weights": [
+      {
+        "weight": "250g Artisanal Canister",
+        "price": 340,
+        "originalPrice": 390,
+        "discount": 12,
+        "isDefault": true
+      },
+      {
+        "weight": "500g Value Pack",
+        "price": 650,
+        "originalPrice": 700,
+        "discount": 7
+      },
+      {
+        "weight": "1kg Wholesale Carton",
+        "price": 1250,
+        "originalPrice": 1300,
+        "discount": 4
+      }
     ]
   },
-    {
-    id: 'jnu-gucchi-morels-01',
-    name: "JENU'S Himalayan Wild Gucchi (Black Morel Mushrooms)",
-    subname: "Wild-Foraged Black Morel Mushrooms (Morchella esculenta) on Carved Walnut Wood",
-    category: 'dried-fruits',
-    subCategory: 'dried-fruits',
-    productType: "Grade A1 Wild Himalayan Black Morel Mushrooms (Morchella esculenta)",
-    origin: "Kishtwar, Doda & High Conifer Valleys, Jammu & Kashmir (Khari Baoli Trade)",
-    harvestYear: "2026 Spring Forest Harvest",
-    rating: 5.0,
-    reviewsCount: 1280,
-    badge: "Crown Jewel of Khari Baoli",
-    badgeType: "bestseller",
-    fssaiCertified: true,
-    image: "/images/gucchi-morels-kashmir.jpg",
-    images: [
-      '/images/gucchi-morels-kashmir.jpg',
-      '/images/gucchi-morels-macro.jpg',
-      '/images/gucchi-morels-dry.jpg',
-      '/images/gucchi-morels-packaged.jpg'
+  {
+    "id": "jnu-gucchi-morels-01",
+    "name": "JENU'S Himalayan Wild Gucchi (Black Morel Mushrooms)",
+    "subname": "Wild-Foraged Black Morel Mushrooms (Morchella esculenta) on Carved Walnut Wood",
+    "category": "dried-fruits",
+    "subCategory": "dried-fruits",
+    "productType": "Grade A1 Wild Himalayan Black Morel Mushrooms (Morchella esculenta)",
+    "origin": "Kishtwar, Doda & High Conifer Valleys, Jammu & Kashmir (Khari Baoli Trade)",
+    "harvestYear": "2026 Spring Forest Harvest",
+    "rating": 5,
+    "reviewsCount": 1280,
+    "badge": "Crown Jewel of Khari Baoli",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/gucchi-morels-kashmir.jpg",
+    "images": [
+      "/images/gucchi-morels-kashmir.jpg",
+      "/images/gucchi-morels-macro.jpg",
+      "/images/gucchi-morels-dry.jpg",
+      "/images/gucchi-morels-packaged.jpg"
     ],
-    overview: {
-      terroir: "High Conifer & Pine Ridges (8,500 ft Altitude, Kishtwar Forests)",
-      harvestMethod: "Wild hand-foraged after snowmelt, sun-cured with honey-comb caps intact",
-      aromaFlavor: "Intense smoky forest aroma, rich umami depth, velvety earthy flavor",
-      purityGrade: "Grade 1 Hand-Sorted: Unbroken conical caps, 100% wild and uncultivated",
-      packagingStandard: "Airtight glass jar with golden seal in wooden presentation box",
-      shelfLife: "24 Months in dry mountain storage"
+    "overview": {
+      "terroir": "High Conifer & Pine Ridges (8,500 ft Altitude, Kishtwar Forests)",
+      "harvestMethod": "Wild hand-foraged after snowmelt, sun-cured with honey-comb caps intact",
+      "aromaFlavor": "Intense smoky forest aroma, rich umami depth, velvety earthy flavor",
+      "purityGrade": "Grade 1 Hand-Sorted: Unbroken conical caps, 100% wild and uncultivated",
+      "packagingStandard": "Airtight glass jar with golden seal in wooden presentation box",
+      "shelfLife": "24 Months in dry mountain storage"
     },
-    description: "Known as the most prized delicacy in Khari Baoli, Delhi. Wild Gucchi mushrooms grow wild in the high Himalayan pine forests following springtime thunderstorms. Revered by royal chefs for their rich, earthy umami essence.",
-    benefits: [
+    "description": "Known as the most prized delicacy in Khari Baoli, Delhi. Wild Gucchi mushrooms grow wild in the high Himalayan pine forests following springtime thunderstorms. Revered by royal chefs for their rich, earthy umami essence.",
+    "benefits": [
       "FSSAI Certified: 100% wild Himalayan produce, zero artificial additives",
       "Highest natural concentration of Vitamin D and natural forest antioxidants",
       "Prized heirloom culinary ingredient for Kashmiri Wazwan and Shahi Pulao",
       "Hand-selected in the traditional Khari Baoli spice markets of Old Delhi"
     ],
-    nutrition: {
-      calories: "128 kcal",
-      protein: "31.2g",
-      healthyFats: "2.3g",
-      carbs: "18.5g",
-      fiber: "24.0g"
+    "nutrition": {
+      "calories": "128 kcal",
+      "protein": "31.2g",
+      "healthyFats": "2.3g",
+      "carbs": "18.5g",
+      "fiber": "24.0g"
     },
-    weights: [
-      { weight: "25g Sealed Jar", price: 890, originalPrice: 940, discount: 5, isDefault: true },
-      { weight: "50g Royal Canister", price: 1750, originalPrice: 1800, discount: 3 },
-      { weight: "100g Vault Box", price: 3450, originalPrice: 3500, discount: 1 }
+    "weights": [
+      {
+        "weight": "25g Sealed Jar",
+        "price": 890,
+        "originalPrice": 940,
+        "discount": 5,
+        "isDefault": true
+      },
+      {
+        "weight": "50g Royal Canister",
+        "price": 1750,
+        "originalPrice": 1800,
+        "discount": 3
+      },
+      {
+        "weight": "100g Vault Box",
+        "price": 3450,
+        "originalPrice": 3500,
+        "discount": 1
+      }
     ]
   },
-    {
-    id: 'jnu-munakka-jumbo-01',
-    name: "JENU'S Royal Sangli Golden Jumbo Munakka (Medicinal Seeded Raisins)",
-    subname: "Extra-Large Plump Amber Raisins with Natural Cooling Seeds from Maharashtra & Kashmir Trade",
-    category: 'raisins',
-    subCategory: 'dryfruits',
-    productType: "Grade A Jumbo Seeded Amber Munakka (Vitis vinifera)",
-    origin: "Sangli & Tasgaon Vineyards, Maharashtra (Khari Baoli Gadodia Market Cleared)",
-    harvestYear: "2026 Fresh Valley Harvest",
-    rating: 4.9,
-    reviewsCount: 1420,
-    badge: "Ayurvedic Rasayana",
-    badgeType: "bestseller",
-    fssaiCertified: true,
-    image: "/images/munakka-jumbo-amber.jpg",
-    images: [
-      '/images/munakka-jumbo-amber.jpg',
-      '/images/munakka-jumbo-macro.jpg',
-      '/images/munakka-jumbo-bowl.jpg',
-      '/images/munakka-jumbo-packaged.jpg'
+  {
+    "id": "jnu-munakka-jumbo-01",
+    "name": "JENU'S Royal Sangli Golden Jumbo Munakka (Medicinal Seeded Raisins)",
+    "subname": "Extra-Large Plump Amber Raisins with Natural Cooling Seeds from Maharashtra & Kashmir Trade",
+    "category": "raisins",
+    "subCategory": "dryfruits",
+    "productType": "Grade A Jumbo Seeded Amber Munakka (Vitis vinifera)",
+    "origin": "Sangli & Tasgaon Vineyards, Maharashtra (Khari Baoli Gadodia Market Cleared)",
+    "harvestYear": "2026 Fresh Valley Harvest",
+    "rating": 4.9,
+    "reviewsCount": 1420,
+    "badge": "Ayurvedic Rasayana",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/munakka-jumbo-amber.jpg",
+    "images": [
+      "/images/munakka-jumbo-amber.jpg",
+      "/images/munakka-jumbo-macro.jpg",
+      "/images/munakka-jumbo-bowl.jpg",
+      "/images/munakka-jumbo-packaged.jpg"
     ],
-    overview: {
-      terroir: "Sun-Drenched Sangli River Basins, Maharashtra",
-      harvestMethod: "100% Vine-ripened, shade-cured with intact medicinal seeds",
-      aromaFlavor: "Rich honeyed caramel sweetness, soft chewy fruit flesh with crunchy cooling seeds",
-      purityGrade: "Unpolished, sulphur-free, 100% naturally dried with zero sugar syrup",
-      packagingStandard: "Food-grade aroma canister with airtight foil seal",
-      shelfLife: "12 Months in cool dry storage"
+    "overview": {
+      "terroir": "Sun-Drenched Sangli River Basins, Maharashtra",
+      "harvestMethod": "100% Vine-ripened, shade-cured with intact medicinal seeds",
+      "aromaFlavor": "Rich honeyed caramel sweetness, soft chewy fruit flesh with crunchy cooling seeds",
+      "purityGrade": "Unpolished, sulphur-free, 100% naturally dried with zero sugar syrup",
+      "packagingStandard": "Food-grade aroma canister with airtight foil seal",
+      "shelfLife": "12 Months in cool dry storage"
     },
-    description: "Unlike seedless raisins, authentic Indian Munakka contains therapeutic seeds prized in Ayurveda for blood purification, hemoglobin boost, and soothing acidity. Sourced from Sangli's prime vineyards and traded in Khari Baoli.",
-    benefits: [
+    "description": "Unlike seedless raisins, authentic Indian Munakka contains therapeutic seeds prized in Ayurveda for blood purification, hemoglobin boost, and soothing acidity. Sourced from Sangli's prime vineyards and traded in Khari Baoli.",
+    "benefits": [
       "FSSAI Certified: 100% pure dried grapes, zero chemical polish or artificial glaze",
       "Boil 5-6 Munakkas in milk for overnight digestion and vitality",
       "Natural source of bioavailable iron, potassium, and dietary fiber",
       "Traded directly through Khari Baoli wholesale dry fruit corridors"
     ],
-    nutrition: {
-      calories: "299 kcal",
-      protein: "3.1g",
-      healthyFats: "0.5g",
-      carbs: "79.2g",
-      fiber: "5.4g"
+    "nutrition": {
+      "calories": "299 kcal",
+      "protein": "3.1g",
+      "healthyFats": "0.5g",
+      "carbs": "79.2g",
+      "fiber": "5.4g"
     },
-    weights: [
-      { weight: "250g Pouch", price: 290, originalPrice: 340, discount: 15, isDefault: true },
-      { weight: "500g Canister", price: 560, originalPrice: 610, discount: 8 },
-      { weight: "1kg Family Pack", price: 1080, originalPrice: 1130, discount: 4 }
+    "weights": [
+      {
+        "weight": "250g Pouch",
+        "price": 290,
+        "originalPrice": 340,
+        "discount": 15,
+        "isDefault": true
+      },
+      {
+        "weight": "500g Canister",
+        "price": 560,
+        "originalPrice": 610,
+        "discount": 8
+      },
+      {
+        "weight": "1kg Family Pack",
+        "price": 1080,
+        "originalPrice": 1130,
+        "discount": 4
+      }
     ]
   },
-    {
-    id: 'jnu-chironji-giri-01',
-    name: "JENU'S Wild Forest Chironji Giri (Charoli Nut Kernels)",
-    subname: "Lentil-Sized Sweet Royal Nut Kernels Handpicked from Central Indian Forest Groves",
-    category: 'berries-seeds',
-    subCategory: 'berries-seeds',
-    productType: "Grade A1 Chironji / Charoli Nut Kernels (Buchanania lanzan)",
-    origin: "Sagar & Alwar Wild Deciduous Forests, Central India (Khari Baoli Trade)",
-    harvestYear: "2026 Fresh Forest Harvest",
-    rating: 4.9,
-    reviewsCount: 960,
-    badge: "Royal Mithai Nut",
-    badgeType: "bestseller",
-    fssaiCertified: true,
-    image: "/images/chironji-charoli-nuts.jpg",
-    images: [
-      '/images/chironji-charoli-nuts.jpg',
-      '/images/chironji-charoli-macro.jpg',
-      '/images/chironji-charoli-bowl.jpg',
-      '/images/chironji-charoli-packaged.jpg'
+  {
+    "id": "jnu-chironji-giri-01",
+    "name": "JENU'S Wild Forest Chironji Giri (Charoli Nut Kernels)",
+    "subname": "Lentil-Sized Sweet Royal Nut Kernels Handpicked from Central Indian Forest Groves",
+    "category": "berries-seeds",
+    "subCategory": "berries-seeds",
+    "productType": "Grade A1 Chironji / Charoli Nut Kernels (Buchanania lanzan)",
+    "origin": "Sagar & Alwar Wild Deciduous Forests, Central India (Khari Baoli Trade)",
+    "harvestYear": "2026 Fresh Forest Harvest",
+    "rating": 4.9,
+    "reviewsCount": 960,
+    "badge": "Royal Mithai Nut",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/chironji-charoli-nuts.jpg",
+    "images": [
+      "/images/chironji-charoli-nuts.jpg",
+      "/images/chironji-charoli-macro.jpg",
+      "/images/chironji-charoli-bowl.jpg",
+      "/images/chironji-charoli-packaged.jpg"
     ],
-    overview: {
-      terroir: "Wild Deciduous Forest Belts, Central India",
-      harvestMethod: "Wild tree berries harvested by tribal gatherers, hard shells cracked by hand",
-      aromaFlavor: "Delicate sweet almond-like crunch with subtle forest pine aroma",
-      purityGrade: "Grade 1 Hand-Cleaned: Whole unbroken kernels, zero shell fragments",
-      packagingStandard: "Vacuum-sealed airtight glass canister with aroma lock",
-      shelfLife: "12 Months in cool dry storage"
+    "overview": {
+      "terroir": "Wild Deciduous Forest Belts, Central India",
+      "harvestMethod": "Wild tree berries harvested by tribal gatherers, hard shells cracked by hand",
+      "aromaFlavor": "Delicate sweet almond-like crunch with subtle forest pine aroma",
+      "purityGrade": "Grade 1 Hand-Cleaned: Whole unbroken kernels, zero shell fragments",
+      "packagingStandard": "Vacuum-sealed airtight glass canister with aroma lock",
+      "shelfLife": "12 Months in cool dry storage"
     },
-    description: "Chironji (Charoli) is a prized native Indian forest nut, irreplaceable in royal Old Delhi confectionery, Shahi Kheer, Halwa, Panjiri, and celebratory festive dishes. Delicate, creamy, and packed with wholesome nutrition.",
-    benefits: [
+    "description": "Chironji (Charoli) is a prized native Indian forest nut, irreplaceable in royal Old Delhi confectionery, Shahi Kheer, Halwa, Panjiri, and celebratory festive dishes. Delicate, creamy, and packed with wholesome nutrition.",
+    "benefits": [
       "FSSAI Certified: 100% wild Indian produce, zero bleaching or polishing",
       "Rich in natural proteins, Vitamin B1, B2, and healthy unsaturated fatty acids",
       "Essential ingredient in traditional Ayurvedic brain and stamina tonics",
       "Staple royal commodity in Delhi's historic Chandni Chowk spice markets"
     ],
-    nutrition: {
-      calories: "656 kcal",
-      protein: "19.0g",
-      healthyFats: "59.1g",
-      carbs: "12.1g",
-      fiber: "3.8g"
+    "nutrition": {
+      "calories": "656 kcal",
+      "protein": "19.0g",
+      "healthyFats": "59.1g",
+      "carbs": "12.1g",
+      "fiber": "3.8g"
     },
-    weights: [
-      { weight: "100g Jar", price: 340, originalPrice: 390, discount: 12, isDefault: true },
-      { weight: "250g Canister", price: 790, originalPrice: 840, discount: 6 },
-      { weight: "500g Pack", price: 1520, originalPrice: 1570, discount: 3 }
+    "weights": [
+      {
+        "weight": "100g Jar",
+        "price": 340,
+        "originalPrice": 390,
+        "discount": 12,
+        "isDefault": true
+      },
+      {
+        "weight": "250g Canister",
+        "price": 790,
+        "originalPrice": 840,
+        "discount": 6
+      },
+      {
+        "weight": "500g Pack",
+        "price": 1520,
+        "originalPrice": 1570,
+        "discount": 3
+      }
     ]
   },
-    {
-    id: 'jnu-gond-katira-01',
-    name: "JENU'S Pure Ayurvedic Gond Katira (Flaked Cooling Tragacanth Gum)",
-    subname: "Crystalline Translucent Natural Tree Gum Flakes for Summer Sharbat & Body Vitality",
-    category: 'dried-fruits',
-    subCategory: 'wellness',
-    productType: "100% Pure Natural Tragacanth Gum Flakes (Gond Katira)",
-    origin: "Kathiawar & Aravalli Belt, India (Old Delhi Katra Cleared)",
-    harvestYear: "2026 Fresh Harvest",
-    rating: 4.9,
-    reviewsCount: 1140,
-    badge: "Natural Cooling",
-    badgeType: "bestseller",
-    fssaiCertified: true,
-    image: "/images/gond-katira-crystals.jpg",
-    images: [
-      '/images/gond-katira-crystals.jpg',
-      '/images/gond-katira-macro.jpg',
-      '/images/gond-katira-bowl.jpg',
-      '/images/gond-katira-packaged.jpg'
+  {
+    "id": "jnu-gond-katira-01",
+    "name": "JENU'S Pure Ayurvedic Gond Katira (Flaked Cooling Tragacanth Gum)",
+    "subname": "Crystalline Translucent Natural Tree Gum Flakes for Summer Sharbat & Body Vitality",
+    "category": "dried-fruits",
+    "subCategory": "wellness",
+    "productType": "100% Pure Natural Tragacanth Gum Flakes (Gond Katira)",
+    "origin": "Kathiawar & Aravalli Belt, India (Old Delhi Katra Cleared)",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 4.9,
+    "reviewsCount": 1140,
+    "badge": "Natural Cooling",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/gond-katira-crystals.jpg",
+    "images": [
+      "/images/gond-katira-crystals.jpg",
+      "/images/gond-katira-macro.jpg",
+      "/images/gond-katira-bowl.jpg",
+      "/images/gond-katira-packaged.jpg"
     ],
-    overview: {
-      terroir: "Dry Aravalli Mountain Forest Slopes",
-      harvestMethod: "Natural gum exudate collected from wild thorny shrub bark, sun-dried into crystal shards",
-      aromaFlavor: "Neutral taste with refreshing cooling texture when soaked into thick crystal jelly",
-      purityGrade: "Grade A Snow Flakes: 100% translucent, expands 20x in volume in clean water",
-      packagingStandard: "Airtight moisture-barrier container",
-      shelfLife: "24 Months in cool dry storage"
+    "overview": {
+      "terroir": "Dry Aravalli Mountain Forest Slopes",
+      "harvestMethod": "Natural gum exudate collected from wild thorny shrub bark, sun-dried into crystal shards",
+      "aromaFlavor": "Neutral taste with refreshing cooling texture when soaked into thick crystal jelly",
+      "purityGrade": "Grade A Snow Flakes: 100% translucent, expands 20x in volume in clean water",
+      "packagingStandard": "Airtight moisture-barrier container",
+      "shelfLife": "24 Months in cool dry storage"
     },
-    description: "Gond Katira is celebrated throughout Chandni Chowk as the ultimate Ayurvedic body coolant during harsh summers. When soaked overnight, a single tablespoon blooms into a bowl of soothing crystal-clear jelly.",
-    benefits: [
+    "description": "Gond Katira is celebrated throughout Chandni Chowk as the ultimate Ayurvedic body coolant during harsh summers. When soaked overnight, a single tablespoon blooms into a bowl of soothing crystal-clear jelly.",
+    "benefits": [
       "FSSAI Certified: 100% pure food-grade gum, zero chemical additives",
       "Expands 20x in cool water, milk, or rose syrup for instant hydration",
       "Ayurvedic pitta-pacifying agent, soothes internal heat, and boosts gut comfort",
       "Classic Chandni Chowk Falooda, Shikanji, and summer drink ingredient"
     ],
-    nutrition: {
-      calories: "70 kcal",
-      protein: "0.2g",
-      healthyFats: "0.1g",
-      carbs: "17.0g",
-      fiber: "16.5g"
+    "nutrition": {
+      "calories": "70 kcal",
+      "protein": "0.2g",
+      "healthyFats": "0.1g",
+      "carbs": "17.0g",
+      "fiber": "16.5g"
     },
-    weights: [
-      { weight: "200g Jar", price: 230, originalPrice: 280, discount: 17, isDefault: true },
-      { weight: "500g Value Pack", price: 490, originalPrice: 540, discount: 9 },
-      { weight: "1kg Bulk Pack", price: 920, originalPrice: 970, discount: 5 }
+    "weights": [
+      {
+        "weight": "200g Jar",
+        "price": 230,
+        "originalPrice": 280,
+        "discount": 17,
+        "isDefault": true
+      },
+      {
+        "weight": "500g Value Pack",
+        "price": 490,
+        "originalPrice": 540,
+        "discount": 9
+      },
+      {
+        "weight": "1kg Bulk Pack",
+        "price": 920,
+        "originalPrice": 970,
+        "discount": 5
+      }
     ]
   },
-
-  // ===================================================
-  // 4. SUPER SEEDS & MIXTURES (CONFECTION SEEDS)
-  // ===================================================
   {
-    id: 'jnu-seeds-7in1-01',
-    name: "JENU'S 7-in-1 Super Seeds Daily Wellness Mix",
-    subname: "Roasted Chia, Flax, Pumpkin, Sunflower, Watermelon & White/Black Sesame",
-    category: 'seeds',
-    subCategory: 'seeds',
-    productType: "Multi-Seed Plant Omega-3 & Zinc Superfood Blend",
-    origin: 'Kashmir Valley & Himalayan Foothills',
-    harvestYear: '2026 Fresh Crop',
-    rating: 4.9,
-    reviewsCount: 1780,
-    badge: 'Superfood 7-in-1',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/seeds-7in1-macro.jpg',
-    images: [
-      '/images/seeds-7in1-macro.jpg',
-      '/images/seeds-7in1-bowl.jpg',
-      '/images/seeds-7in1-packaged.jpg',
-      '/images/seeds-7in1-handful.jpg'
+    "id": "jnu-seeds-7in1-01",
+    "name": "JENU'S 7-in-1 Super Seeds Daily Wellness Mix",
+    "subname": "Roasted Chia, Flax, Pumpkin, Sunflower, Watermelon & White/Black Sesame",
+    "category": "seeds",
+    "subCategory": "seeds",
+    "productType": "Multi-Seed Plant Omega-3 & Zinc Superfood Blend",
+    "origin": "Kashmir Valley & Himalayan Foothills",
+    "harvestYear": "2026 Fresh Crop",
+    "rating": 4.9,
+    "reviewsCount": 1780,
+    "badge": "Superfood 7-in-1",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/seeds-7in1-macro.jpg",
+    "images": [
+      "/images/seeds-7in1-macro.jpg",
+      "/images/seeds-7in1-bowl.jpg",
+      "/images/seeds-7in1-packaged.jpg",
+      "/images/seeds-7in1-handful.jpg"
     ],
-    overview: {
-      terroir: "Himalayan Agro-Ecological Farms",
-      harvestMethod: "Slow Gentle Roasting with Himalayan Rock Salt",
-      aromaFlavor: "Crisp nutty crunch, delicate roasted sesame perfume, savory finish",
-      purityGrade: "100% Whole Seeds, Non-GMO, Zero Preservatives",
-      packagingStandard: "Resealable nitrogen-flushed zipper pouch",
-      shelfLife: "12 Months"
+    "overview": {
+      "terroir": "Himalayan Agro-Ecological Farms",
+      "harvestMethod": "Slow Gentle Roasting with Himalayan Rock Salt",
+      "aromaFlavor": "Crisp nutty crunch, delicate roasted sesame perfume, savory finish",
+      "purityGrade": "100% Whole Seeds, Non-GMO, Zero Preservatives",
+      "packagingStandard": "Resealable nitrogen-flushed zipper pouch",
+      "shelfLife": "12 Months"
     },
-    description: "The ultimate daily vitality mix. Combines 7 nutrient-dense super seeds: crisp roasted pumpkin pepitas, omega-3 golden flax seeds, organic chia seeds, hulled sunflower kernels, watermelon seeds (char magaz), and black and white sesame. Seasoned with a pinch of Himalayan pink salt.",
-    benefits: [
+    "description": "The ultimate daily vitality mix. Combines 7 nutrient-dense super seeds: crisp roasted pumpkin pepitas, omega-3 golden flax seeds, organic chia seeds, hulled sunflower kernels, watermelon seeds (char magaz), and black and white sesame. Seasoned with a pinch of Himalayan pink salt.",
+    "benefits": [
       "FSSAI Certified: 100% natural seeds, packed with plant protein & omega-3",
       "High natural zinc, magnesium, and dietary fiber for hair and metabolic vitality",
       "Priced ₹50 lower than market rate of ₹380 (Now ₹330 per 250g)"
     ],
-    nutrition: {
-      calories: "542 kcal per 100g",
-      protein: "22.4g",
-      healthyFats: "44.2g",
-      carbs: "18.6g",
-      fiber: "14.8g"
+    "nutrition": {
+      "calories": "542 kcal per 100g",
+      "protein": "22.4g",
+      "healthyFats": "44.2g",
+      "carbs": "18.6g",
+      "fiber": "14.8g"
     },
-    weights: [
-      { weight: "250g Pouch", price: 330, originalPrice: 380, discount: 13, isDefault: true },
-      { weight: "500g Pouch", price: 640, originalPrice: 690, discount: 7 },
-      { weight: "1kg Mega Jar", price: 1220, originalPrice: 1270, discount: 4 }
+    "weights": [
+      {
+        "weight": "250g Pouch",
+        "price": 330,
+        "originalPrice": 380,
+        "discount": 13,
+        "isDefault": true
+      },
+      {
+        "weight": "500g Pouch",
+        "price": 640,
+        "originalPrice": 690,
+        "discount": 7
+      },
+      {
+        "weight": "1kg Mega Jar",
+        "price": 1220,
+        "originalPrice": 1270,
+        "discount": 4
+      }
     ]
   },
   {
-    id: 'jnu-seeds-pumpkin-01',
-    name: "JENU'S Roasted AAA Himalayan Pumpkin Seeds",
-    subname: "Plump Dark-Green Pepitas Slow-Roasted with Fine Rock Salt",
-    category: 'seeds',
-    subCategory: 'seeds',
-    productType: "AAA Grade Roasted Green Pumpkin Seeds (Cucurbita pepo)",
-    origin: 'Himalayan Organic Farms',
-    harvestYear: '2026 Fresh Harvest',
-    rating: 4.9,
-    reviewsCount: 1140,
-    badge: 'Zinc Rich',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/pumpkin-seeds-green.jpg',
-    images: [
-      '/images/pumpkin-seeds-green.jpg',
-      '/images/seeds-pumpkin-macro.jpg',
-      '/images/seeds-pumpkin-bowl.jpg',
-      '/images/seeds-pumpkin-packaged.jpg'
+    "id": "jnu-seeds-pumpkin-01",
+    "name": "JENU'S Roasted AAA Himalayan Pumpkin Seeds",
+    "subname": "Plump Dark-Green Pepitas Slow-Roasted with Fine Rock Salt",
+    "category": "seeds",
+    "subCategory": "seeds",
+    "productType": "AAA Grade Roasted Green Pumpkin Seeds (Cucurbita pepo)",
+    "origin": "Himalayan Organic Farms",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 4.9,
+    "reviewsCount": 1140,
+    "badge": "Zinc Rich",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/pumpkin-seeds-green.jpg",
+    "images": [
+      "/images/pumpkin-seeds-green.jpg",
+      "/images/seeds-pumpkin-macro.jpg",
+      "/images/seeds-pumpkin-bowl.jpg",
+      "/images/seeds-pumpkin-packaged.jpg"
     ],
-    overview: {
-      terroir: "Sub-Alpine Terraces",
-      harvestMethod: "Shell-Free Mechanical De-Hulling & Hearth Roasting",
-      aromaFlavor: "Crisp nutty snap, earthy savory pumpkin seed flavor",
-      purityGrade: "100% Natural AAA Jumbo Grade, Zero Palm Oil",
-      packagingStandard: "Aroma-lock zipper foil pouch",
-      shelfLife: "12 Months"
+    "overview": {
+      "terroir": "Sub-Alpine Terraces",
+      "harvestMethod": "Shell-Free Mechanical De-Hulling & Hearth Roasting",
+      "aromaFlavor": "Crisp nutty snap, earthy savory pumpkin seed flavor",
+      "purityGrade": "100% Natural AAA Jumbo Grade, Zero Palm Oil",
+      "packagingStandard": "Aroma-lock zipper foil pouch",
+      "shelfLife": "12 Months"
     },
-    description: "Jumbo, plump, vivid green AAA pumpkin seeds (pepitas). Lightly roasted over low heat to lock in natural oils and crunch without burning. Powerhouse of natural zinc, magnesium, and tryptophan.",
-    benefits: [
+    "description": "Jumbo, plump, vivid green AAA pumpkin seeds (pepitas). Lightly roasted over low heat to lock in natural oils and crunch without burning. Powerhouse of natural zinc, magnesium, and tryptophan.",
+    "benefits": [
       "Natural zinc powerhouse for immunity, deep sleep, and hair strength",
       "Zero added oils, zero chemical preservatives",
       "Priced ₹50 lower than market price of ₹350 (Now ₹300 per 250g)"
     ],
-    nutrition: {
-      calories: "559 kcal per 100g",
-      protein: "30.2g",
-      healthyFats: "49.0g",
-      carbs: "10.7g",
-      fiber: "6.5g"
+    "nutrition": {
+      "calories": "559 kcal per 100g",
+      "protein": "30.2g",
+      "healthyFats": "49.0g",
+      "carbs": "10.7g",
+      "fiber": "6.5g"
     },
-    weights: [
-      { weight: "250g Pouch", price: 300, originalPrice: 350, discount: 14, isDefault: true },
-      { weight: "500g Pouch", price: 590, originalPrice: 640, discount: 8 }
+    "weights": [
+      {
+        "weight": "250g Pouch",
+        "price": 300,
+        "originalPrice": 350,
+        "discount": 14,
+        "isDefault": true
+      },
+      {
+        "weight": "500g Pouch",
+        "price": 590,
+        "originalPrice": 640,
+        "discount": 8
+      }
     ]
   },
   {
-    id: 'jnu-seeds-chia-01',
-    name: "JENU'S Raw Organic White & Black Chia Seeds",
-    subname: "Tiny Nutrient-Dense Super Seeds Packed with Omega-3 & Fiber",
-    category: 'seeds',
-    subCategory: 'seeds',
-    productType: "Certified Organic Raw Chia Seeds (Salvia hispanica)",
-    origin: 'Organic Valley Farms',
-    harvestYear: '2026 Fresh Harvest',
-    rating: 4.8,
-    reviewsCount: 890,
-    badge: 'Omega-3 Power',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/chia-seeds-macro-real.jpg',
-    images: [
-      '/images/chia-seeds-macro-real.jpg',
-      '/images/seeds-chia-macro.jpg',
-      '/images/seeds-chia-bowl.jpg',
-      '/images/seeds-chia-packaged.jpg'
+    "id": "jnu-seeds-chia-01",
+    "name": "JENU'S Raw Organic White & Black Chia Seeds",
+    "subname": "Tiny Nutrient-Dense Super Seeds Packed with Omega-3 & Fiber",
+    "category": "seeds",
+    "subCategory": "seeds",
+    "productType": "Certified Organic Raw Chia Seeds (Salvia hispanica)",
+    "origin": "Organic Valley Farms",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 4.8,
+    "reviewsCount": 890,
+    "badge": "Omega-3 Power",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/chia-seeds-macro-real.jpg",
+    "images": [
+      "/images/chia-seeds-macro-real.jpg",
+      "/images/seeds-chia-macro.jpg",
+      "/images/seeds-chia-bowl.jpg",
+      "/images/seeds-chia-packaged.jpg"
     ],
-    overview: {
-      terroir: "Certified Organic Farms",
-      harvestMethod: "Purity Sieved, Raw & Unprocessed",
-      aromaFlavor: "Clean mild nutty taste, expands into rich silky pudding gel",
-      purityGrade: "99.9% Purity Certified, Non-GMO",
-      packagingStandard: "Moisture-proof zipper pack",
-      shelfLife: "24 Months"
+    "overview": {
+      "terroir": "Certified Organic Farms",
+      "harvestMethod": "Purity Sieved, Raw & Unprocessed",
+      "aromaFlavor": "Clean mild nutty taste, expands into rich silky pudding gel",
+      "purityGrade": "99.9% Purity Certified, Non-GMO",
+      "packagingStandard": "Moisture-proof zipper pack",
+      "shelfLife": "24 Months"
     },
-    description: "Tiny seeds with colossal nutritional power. Packed with plant omega-3 fatty acids, soluble fiber, and essential minerals. Stir into water, smoothies, yogurts, or oatmeal for sustained all-day hydration and digestive wellness.",
-    benefits: [
+    "description": "Tiny seeds with colossal nutritional power. Packed with plant omega-3 fatty acids, soluble fiber, and essential minerals. Stir into water, smoothies, yogurts, or oatmeal for sustained all-day hydration and digestive wellness.",
+    "benefits": [
       "Soluble prebiotic fiber promotes long-lasting fullness and weight management",
       "Supreme plant omega-3 content supports cardiovascular and brain health",
       "Priced ₹50 lower than prevailing market rate of ₹290 (Now ₹240 per 250g)"
     ],
-    nutrition: {
-      calories: "486 kcal per 100g",
-      protein: "16.5g",
-      healthyFats: "30.7g",
-      carbs: "42.1g",
-      fiber: "34.4g"
+    "nutrition": {
+      "calories": "486 kcal per 100g",
+      "protein": "16.5g",
+      "healthyFats": "30.7g",
+      "carbs": "42.1g",
+      "fiber": "34.4g"
     },
-    weights: [
-      { weight: "250g Pouch", price: 240, originalPrice: 290, discount: 17, isDefault: true },
-      { weight: "500g Pouch", price: 470, originalPrice: 520, discount: 10 }
+    "weights": [
+      {
+        "weight": "250g Pouch",
+        "price": 240,
+        "originalPrice": 290,
+        "discount": 17,
+        "isDefault": true
+      },
+      {
+        "weight": "500g Pouch",
+        "price": 470,
+        "originalPrice": 520,
+        "discount": 10
+      }
     ]
   },
   {
-    id: 'jnu-seeds-flax-01',
-    name: "JENU'S Golden Roasted Omega-3 Flax Seeds (Alsi)",
-    subname: "Nutty Crisp Golden-Brown Flax Seeds for Heart & Gut Wellness",
-    category: 'seeds',
-    subCategory: 'seeds',
-    productType: "Organic Roasted Flax Seeds / Alsi (Linum usitatissimum)",
-    origin: 'Himalayan Organic Farms',
-    harvestYear: '2026 Fresh Harvest',
-    rating: 4.9,
-    reviewsCount: 960,
-    badge: 'Heart Care',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/flax-seeds-golden-real.jpg',
-    images: [
-      '/images/flax-seeds-golden-real.jpg',
-      '/images/seeds-flax-macro.jpg',
-      '/images/seeds-flax-bowl.jpg',
-      '/images/seeds-flax-packaged.jpg'
+    "id": "jnu-seeds-flax-01",
+    "name": "JENU'S Golden Roasted Omega-3 Flax Seeds (Alsi)",
+    "subname": "Nutty Crisp Golden-Brown Flax Seeds for Heart & Gut Wellness",
+    "category": "seeds",
+    "subCategory": "seeds",
+    "productType": "Organic Roasted Flax Seeds / Alsi (Linum usitatissimum)",
+    "origin": "Himalayan Organic Farms",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 4.9,
+    "reviewsCount": 960,
+    "badge": "Heart Care",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/flax-seeds-golden-real.jpg",
+    "images": [
+      "/images/flax-seeds-golden-real.jpg",
+      "/images/seeds-flax-macro.jpg",
+      "/images/seeds-flax-bowl.jpg",
+      "/images/seeds-flax-packaged.jpg"
     ],
-    overview: {
-      terroir: "Himalayan Foothills",
-      harvestMethod: "Sun-Cured, Gently Roasted",
-      aromaFlavor: "Pleasing warm toasted hazelnut aroma, crisp crunchy bite",
-      purityGrade: "100% Pure, Zero Chemicals",
-      packagingStandard: "Airtight zip pouch",
-      shelfLife: "12 Months"
+    "overview": {
+      "terroir": "Himalayan Foothills",
+      "harvestMethod": "Sun-Cured, Gently Roasted",
+      "aromaFlavor": "Pleasing warm toasted hazelnut aroma, crisp crunchy bite",
+      "purityGrade": "100% Pure, Zero Chemicals",
+      "packagingStandard": "Airtight zip pouch",
+      "shelfLife": "12 Months"
     },
-    description: "Carefully roasted to break down the natural outer seed husk, unlocking maximum bioavailable omega-3 alpha-linolenic acid (ALA) and antioxidant lignans. Delivers a delightful nutty crunch without bitterness.",
-    benefits: [
+    "description": "Carefully roasted to break down the natural outer seed husk, unlocking maximum bioavailable omega-3 alpha-linolenic acid (ALA) and antioxidant lignans. Delivers a delightful nutty crunch without bitterness.",
+    "benefits": [
       "World's richest plant source of heart-protective lignans and ALA",
       "Gentle roasting ensures optimal digestion and nutrient absorption",
       "Priced ₹50 lower than market rate of ₹190 (Now ₹140 per 250g)"
     ],
-    nutrition: {
-      calories: "534 kcal per 100g",
-      protein: "18.3g",
-      healthyFats: "42.2g",
-      carbs: "28.9g",
-      fiber: "27.3g"
+    "nutrition": {
+      "calories": "534 kcal per 100g",
+      "protein": "18.3g",
+      "healthyFats": "42.2g",
+      "carbs": "28.9g",
+      "fiber": "27.3g"
     },
-    weights: [
-      { weight: "250g Pouch", price: 140, originalPrice: 190, discount: 26, isDefault: true },
-      { weight: "500g Pouch", price: 290, originalPrice: 340, discount: 15 }
+    "weights": [
+      {
+        "weight": "250g Pouch",
+        "price": 140,
+        "originalPrice": 190,
+        "discount": 26,
+        "isDefault": true
+      },
+      {
+        "weight": "500g Pouch",
+        "price": 290,
+        "originalPrice": 340,
+        "discount": 15
+      }
     ]
   },
   {
-    id: 'jnu-seeds-sunflower-01',
-    name: "JENU'S Jumbo Hulled Sunflower Seeds",
-    subname: "Crisp Mild-Nutty Teardrop Kernels Packed with Natural Vitamin E",
-    category: 'seeds',
-    subCategory: 'seeds',
-    productType: "Jumbo Grade Hulled Sunflower Seed Kernels (Helianthus annuus)",
-    origin: 'Himalayan Sunny Plateaus',
-    harvestYear: '2026 Fresh Harvest',
-    rating: 4.8,
-    reviewsCount: 780,
-    badge: 'Vitamin E Rich',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/sunflower-seeds-hulled-real.jpg',
-    images: [
-      '/images/sunflower-seeds-hulled-real.jpg',
-      '/images/seeds-sunflower-macro.jpg',
-      '/images/seeds-sunflower-bowl.jpg',
-      '/images/seeds-sunflower-packaged.jpg'
+    "id": "jnu-seeds-sunflower-01",
+    "name": "JENU'S Jumbo Hulled Sunflower Seeds",
+    "subname": "Crisp Mild-Nutty Teardrop Kernels Packed with Natural Vitamin E",
+    "category": "seeds",
+    "subCategory": "seeds",
+    "productType": "Jumbo Grade Hulled Sunflower Seed Kernels (Helianthus annuus)",
+    "origin": "Himalayan Sunny Plateaus",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 4.8,
+    "reviewsCount": 780,
+    "badge": "Vitamin E Rich",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/sunflower-seeds-hulled-real.jpg",
+    "images": [
+      "/images/sunflower-seeds-hulled-real.jpg",
+      "/images/seeds-sunflower-macro.jpg",
+      "/images/seeds-sunflower-bowl.jpg",
+      "/images/seeds-sunflower-packaged.jpg"
     ],
-    overview: {
-      terroir: "High-Altitude Sunflower Terraces",
-      harvestMethod: "Precision Air De-Hulled, Nitrogen Purged",
-      aromaFlavor: "Delicate creamy nutty sweetness, tender snap",
-      purityGrade: "100% Whole Kernels, Zero Shells",
-      packagingStandard: "Vacuum-sealed stand-up pouch",
-      shelfLife: "12 Months"
+    "overview": {
+      "terroir": "High-Altitude Sunflower Terraces",
+      "harvestMethod": "Precision Air De-Hulled, Nitrogen Purged",
+      "aromaFlavor": "Delicate creamy nutty sweetness, tender snap",
+      "purityGrade": "100% Whole Kernels, Zero Shells",
+      "packagingStandard": "Vacuum-sealed stand-up pouch",
+      "shelfLife": "12 Months"
     },
-    description: "Jumbo, plump ivory sunflower kernels, completely shell-free and ready to enjoy. Rich in natural antioxidant Vitamin E, selenium, and beneficial monounsaturated fatty acids.",
-    benefits: [
+    "description": "Jumbo, plump ivory sunflower kernels, completely shell-free and ready to enjoy. Rich in natural antioxidant Vitamin E, selenium, and beneficial monounsaturated fatty acids.",
+    "benefits": [
       "Exceptionally high in natural Vitamin E for skin and cellular defense",
       "Shell-free and versatile for salads, yogurts, granola, and snacking",
       "Priced ₹50 lower than market rate of ₹250 (Now ₹200 per 250g)"
     ],
-    nutrition: {
-      calories: "584 kcal per 100g",
-      protein: "20.8g",
-      healthyFats: "51.5g",
-      carbs: "20.0g",
-      fiber: "8.6g"
+    "nutrition": {
+      "calories": "584 kcal per 100g",
+      "protein": "20.8g",
+      "healthyFats": "51.5g",
+      "carbs": "20.0g",
+      "fiber": "8.6g"
     },
-    weights: [
-      { weight: "250g Pouch", price: 200, originalPrice: 250, discount: 20, isDefault: true },
-      { weight: "500g Pouch", price: 390, originalPrice: 440, discount: 11 }
+    "weights": [
+      {
+        "weight": "250g Pouch",
+        "price": 200,
+        "originalPrice": 250,
+        "discount": 20,
+        "isDefault": true
+      },
+      {
+        "weight": "500g Pouch",
+        "price": 390,
+        "originalPrice": 440,
+        "discount": 11
+      }
     ]
   },
   {
-    id: 'jnu-seeds-charmagaz-01',
-    name: "JENU'S Traditional Kashmiri Char Magaz (Melon Confection Seeds)",
-    subname: "Four Melon Confectionery Seeds for Royal Thandai & Sweet Delicacies",
-    category: 'seeds',
-    subCategory: 'seeds',
-    productType: "Authentic Four Melon Seed Blend (Char Magaz)",
-    origin: 'Kashmir Valley & Anantnag, Kashmir',
-    harvestYear: '2026 Fresh Valley Harvest',
-    rating: 4.9,
-    reviewsCount: 650,
-    badge: 'Mithai Grade',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/seeds-charmagaz-macro.jpg',
-    images: [
-      '/images/seeds-charmagaz-macro.jpg',
-      '/images/seeds-charmagaz-bowl.jpg',
-      '/images/seeds-charmagaz-packaged.jpg',
-      '/images/seeds-charmagaz-detail.jpg'
+    "id": "jnu-seeds-charmagaz-01",
+    "name": "JENU'S Traditional Kashmiri Char Magaz (Melon Confection Seeds)",
+    "subname": "Four Melon Confectionery Seeds for Royal Thandai & Sweet Delicacies",
+    "category": "seeds",
+    "subCategory": "seeds",
+    "productType": "Authentic Four Melon Seed Blend (Char Magaz)",
+    "origin": "Kashmir Valley & Anantnag, Kashmir",
+    "harvestYear": "2026 Fresh Valley Harvest",
+    "rating": 4.9,
+    "reviewsCount": 650,
+    "badge": "Mithai Grade",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/seeds-charmagaz-macro.jpg",
+    "images": [
+      "/images/seeds-charmagaz-macro.jpg",
+      "/images/seeds-charmagaz-bowl.jpg",
+      "/images/seeds-charmagaz-packaged.jpg",
+      "/images/seeds-charmagaz-detail.jpg"
     ],
-    overview: {
-      terroir: "Anantnag Alluvial Farms",
-      harvestMethod: "Traditional Sun-Drying & Gentle Mechanical De-Hulling",
-      aromaFlavor: "Tender ivory kernels, sweet buttery milk flavor, delicate crunch",
-      purityGrade: "100% Natural Kernels, Zero Chemical Polishing",
-      packagingStandard: "Aroma-lock foil pack",
-      shelfLife: "12 Months"
+    "overview": {
+      "terroir": "Anantnag Alluvial Farms",
+      "harvestMethod": "Traditional Sun-Drying & Gentle Mechanical De-Hulling",
+      "aromaFlavor": "Tender ivory kernels, sweet buttery milk flavor, delicate crunch",
+      "purityGrade": "100% Natural Kernels, Zero Chemical Polishing",
+      "packagingStandard": "Aroma-lock foil pack",
+      "shelfLife": "12 Months"
     },
-    description: "Revered in Kashmiri tradition and Ayurveda as the ultimate brain tonic and royal confectionery seed blend. Contains pure hulled kernels of watermelon, muskmelon, cucumber, and pumpkin seeds. Essential for authentic thandai, Kashmiri halwas, rich korma gravies, and sweets.",
-    benefits: [
+    "description": "Revered in Kashmiri tradition and Ayurveda as the ultimate brain tonic and royal confectionery seed blend. Contains pure hulled kernels of watermelon, muskmelon, cucumber, and pumpkin seeds. Essential for authentic thandai, Kashmiri halwas, rich korma gravies, and sweets.",
+    "benefits": [
       "Traditional Ayurvedic 'Char Magaz' renowned for mental clarity and cooling energy",
       "Adds rich natural creaminess to gravies without dairy",
       "Priced ₹50 lower than market price of ₹360 (Now ₹310 per 250g)"
     ],
-    nutrition: {
-      calories: "557 kcal per 100g",
-      protein: "28.3g",
-      healthyFats: "47.4g",
-      carbs: "15.3g",
-      fiber: "5.5g"
+    "nutrition": {
+      "calories": "557 kcal per 100g",
+      "protein": "28.3g",
+      "healthyFats": "47.4g",
+      "carbs": "15.3g",
+      "fiber": "5.5g"
     },
-    weights: [
-      { weight: "250g Pouch", price: 310, originalPrice: 360, discount: 14, isDefault: true },
-      { weight: "500g Pouch", price: 600, originalPrice: 650, discount: 8 }
+    "weights": [
+      {
+        "weight": "250g Pouch",
+        "price": 310,
+        "originalPrice": 360,
+        "discount": 14,
+        "isDefault": true
+      },
+      {
+        "weight": "500g Pouch",
+        "price": 600,
+        "originalPrice": 650,
+        "discount": 8
+      }
     ]
   },
   {
-    id: 'jnu-berries-seeds-mix-01',
-    name: "JENU'S Himalayan Berry & Roasted Super Seeds Vitality Mix",
-    subname: "Sun-Dried Ruby Cranberries, Wild Blueberries, Roasted Pumpkin Pepitas & Sunflower Seeds",
-    category: 'seeds',
-    subCategory: 'seeds',
-    productType: "Antioxidant Superfood Berry & Roasted Seed Vitality Blend",
-    origin: 'Kashmir Valley & Himalayan Foothills',
-    harvestYear: '2026 Fresh Harvest',
-    rating: 4.9,
-    reviewsCount: 940,
-    badge: 'Antioxidant Superfood',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/berries-seeds-mix-close.jpg',
-    images: [
-      '/images/berries-seeds-mix-close.jpg',
-      '/images/berries-seeds-mix-bowl.jpg',
-      '/images/berries-seeds-mix-packaged.jpg',
-      '/images/berries-seeds-mix-handful.jpg'
+    "id": "jnu-berries-seeds-mix-01",
+    "name": "JENU'S Himalayan Berry & Roasted Super Seeds Vitality Mix",
+    "subname": "Sun-Dried Ruby Cranberries, Wild Blueberries, Roasted Pumpkin Pepitas & Sunflower Seeds",
+    "category": "seeds",
+    "subCategory": "seeds",
+    "productType": "Antioxidant Superfood Berry & Roasted Seed Vitality Blend",
+    "origin": "Kashmir Valley & Himalayan Foothills",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 4.9,
+    "reviewsCount": 940,
+    "badge": "Antioxidant Superfood",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/berries-seeds-mix-close.jpg",
+    "images": [
+      "/images/berries-seeds-mix-close.jpg",
+      "/images/berries-seeds-mix-bowl.jpg",
+      "/images/berries-seeds-mix-packaged.jpg",
+      "/images/berries-seeds-mix-handful.jpg"
     ],
-    overview: {
-      terroir: "Himalayan Foothills & High-Altitude Valleys",
-      harvestMethod: "Sun-Dried Berry Infusion & Slow Dry-Roasted Seeds",
-      aromaFlavor: "Crisp nutty crunch balanced by tart-sweet chewy cranberries and blueberries",
-      purityGrade: "100% Whole Ingredients, Zero Glucose Glaze, Zero Palm Oil",
-      packagingStandard: "Heavy-duty nitrogen-flushed stand-up kraft pouch",
-      shelfLife: "9 Months"
+    "overview": {
+      "terroir": "Himalayan Foothills & High-Altitude Valleys",
+      "harvestMethod": "Sun-Dried Berry Infusion & Slow Dry-Roasted Seeds",
+      "aromaFlavor": "Crisp nutty crunch balanced by tart-sweet chewy cranberries and blueberries",
+      "purityGrade": "100% Whole Ingredients, Zero Glucose Glaze, Zero Palm Oil",
+      "packagingStandard": "Heavy-duty nitrogen-flushed stand-up kraft pouch",
+      "shelfLife": "9 Months"
     },
-    description: "An antioxidant powerhouse and clean vitality booster. Combines plump sun-cured ruby cranberries, wild Himalayan blueberries, lightly toasted green pumpkin pepitas, and crunchy roasted sunflower seeds. Perfectly balanced sweet-tart and nutty flavors with zero refined sugar, zero trans fats, and zero artificial preservatives.",
-    benefits: [
+    "description": "An antioxidant powerhouse and clean vitality booster. Combines plump sun-cured ruby cranberries, wild Himalayan blueberries, lightly toasted green pumpkin pepitas, and crunchy roasted sunflower seeds. Perfectly balanced sweet-tart and nutty flavors with zero refined sugar, zero trans fats, and zero artificial preservatives.",
+    "benefits": [
       "Rich in proanthocyanidins, vitamin E, plant zinc, and dietary fiber",
       "Clean, slow-burning all-day stamina ideal for breakfast bowls, yogurt toppings, or trekking",
       "Priced ₹50 lower than market rate of ₹390 (Now ₹340 per 250g)"
     ],
-    nutrition: {
-      calories: "482 kcal per 100g",
-      protein: "14.6g",
-      healthyFats: "32.8g",
-      carbs: "38.2g",
-      fiber: "8.9g"
+    "nutrition": {
+      "calories": "482 kcal per 100g",
+      "protein": "14.6g",
+      "healthyFats": "32.8g",
+      "carbs": "38.2g",
+      "fiber": "8.9g"
     },
-    weights: [
-      { weight: "250g Pouch", price: 340, originalPrice: 390, discount: 13, isDefault: true },
-      { weight: "500g Pouch", price: 650, originalPrice: 700, discount: 7 },
-      { weight: "1kg Value Jar", price: 1240, originalPrice: 1290, discount: 4 }
+    "weights": [
+      {
+        "weight": "250g Pouch",
+        "price": 340,
+        "originalPrice": 390,
+        "discount": 13,
+        "isDefault": true
+      },
+      {
+        "weight": "500g Pouch",
+        "price": 650,
+        "originalPrice": 700,
+        "discount": 7
+      },
+      {
+        "weight": "1kg Value Jar",
+        "price": 1240,
+        "originalPrice": 1290,
+        "discount": 4
+      }
     ]
   },
-
-  // ===================================================
-  // 5. MUESLI & BREAKFAST MIXTURES
-  // ===================================================
   {
-    id: 'jnu-muesli-saffron-01',
-    name: "JENU'S Royal Kashmiri Saffron & Mamra Almond Muesli",
-    subname: "Toasted Whole Grain Oats with Saffron Strands & Shopian Mamra Flakes",
-    category: 'breakfast',
-    subCategory: 'breakfast',
-    productType: "Artisanal Saffron & Mamra Almond Breakfast Muesli",
-    origin: 'Srinagar Valley Hub, Kashmir',
-    harvestYear: '2026 Fresh Batch',
-    rating: 4.9,
-    reviewsCount: 820,
-    badge: 'Royal Breakfast',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/muesli-saffron-macro.jpg',
-    images: [
-      '/images/muesli-saffron-macro.jpg',
-      '/images/muesli-saffron-bowl.jpg',
-      '/images/muesli-saffron-packaged.jpg',
-      '/images/muesli-saffron-spoon.jpg'
+    "id": "jnu-muesli-saffron-01",
+    "name": "JENU'S Royal Kashmiri Saffron & Mamra Almond Muesli",
+    "subname": "Toasted Whole Grain Oats with Saffron Strands & Shopian Mamra Flakes",
+    "category": "breakfast",
+    "subCategory": "breakfast",
+    "productType": "Artisanal Saffron & Mamra Almond Breakfast Muesli",
+    "origin": "Srinagar Valley Hub, Kashmir",
+    "harvestYear": "2026 Fresh Batch",
+    "rating": 4.9,
+    "reviewsCount": 820,
+    "badge": "Royal Breakfast",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/muesli-saffron-macro.jpg",
+    "images": [
+      "/images/muesli-saffron-macro.jpg",
+      "/images/muesli-saffron-bowl.jpg",
+      "/images/muesli-saffron-packaged.jpg",
+      "/images/muesli-saffron-spoon.jpg"
     ],
-    overview: {
-      terroir: "Srinagar Valley Artisan Atelier",
-      harvestMethod: "Small-Batch Hand Tossed with Mongra Saffron Dust & Raw Honey",
-      aromaFlavor: "Crisp golden oats, buttery Mamra almond crunch, delicate floral saffron aroma",
-      purityGrade: "100% Whole Nuts & Oats, Zero Palm Oil, Zero Artificial Sugar",
-      packagingStandard: "Luxury airtight presentation jar",
-      shelfLife: "9 Months"
+    "overview": {
+      "terroir": "Srinagar Valley Artisan Atelier",
+      "harvestMethod": "Small-Batch Hand Tossed with Mongra Saffron Dust & Raw Honey",
+      "aromaFlavor": "Crisp golden oats, buttery Mamra almond crunch, delicate floral saffron aroma",
+      "purityGrade": "100% Whole Nuts & Oats, Zero Palm Oil, Zero Artificial Sugar",
+      "packagingStandard": "Luxury airtight presentation jar",
+      "shelfLife": "9 Months"
     },
-    description: "An extraordinary breakfast experience. Whole golden rolled oats tossed with generous chunks of oil-rich Kashmiri Mamra almonds, crisp paper-shell Kagzi snow walnuts, tart sun-dried cranberries, pumpkin seeds, and infused with real Pampore Mongra saffron. Zero refined sugar, zero trans fats.",
-    benefits: [
+    "description": "An extraordinary breakfast experience. Whole golden rolled oats tossed with generous chunks of oil-rich Kashmiri Mamra almonds, crisp paper-shell Kagzi snow walnuts, tart sun-dried cranberries, pumpkin seeds, and infused with real Pampore Mongra saffron. Zero refined sugar, zero trans fats.",
+    "benefits": [
       "Over 45% dry fruits, nuts, and seeds by weight—far richer than commercial brands",
       "Real Pampore saffron elevates morning energy and mood",
       "Priced ₹50 lower than market rate of ₹550 (Now ₹500 per 500g)"
     ],
-    nutrition: {
-      calories: "440 kcal per 100g",
-      protein: "14.5g",
-      healthyFats: "18.2g",
-      carbs: "54.0g",
-      fiber: "10.8g"
+    "nutrition": {
+      "calories": "440 kcal per 100g",
+      "protein": "14.5g",
+      "healthyFats": "18.2g",
+      "carbs": "54.0g",
+      "fiber": "10.8g"
     },
-    weights: [
-      { weight: "500g Jar", price: 500, originalPrice: 550, discount: 9, isDefault: true },
-      { weight: "1kg Family Tub", price: 940, originalPrice: 990, discount: 5 }
+    "weights": [
+      {
+        "weight": "500g Jar",
+        "price": 500,
+        "originalPrice": 550,
+        "discount": 9,
+        "isDefault": true
+      },
+      {
+        "weight": "1kg Family Tub",
+        "price": 940,
+        "originalPrice": 990,
+        "discount": 5
+      }
     ]
   },
   {
-    id: 'jnu-trailmix-01',
-    name: "JENU'S High-Protein Himalayan Nut, Seed & Berry Breakfast Trail Mix",
-    subname: "Almonds, Walnuts, Cranberries, Blueberries & Roasted Super Seeds",
-    category: 'breakfast',
-    subCategory: 'breakfast',
-    productType: "Gourmet Himalayan Nut, Seed & Berry Trail Mix",
-    origin: 'Kashmir Valley & High Himalayas',
-    harvestYear: '2026 Fresh Batch',
-    rating: 4.9,
-    reviewsCount: 1100,
-    badge: 'High Protein',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/trail-mix-macro.jpg',
-    images: [
-      '/images/trail-mix-macro.jpg',
-      '/images/trail-mix-bowl.jpg',
-      '/images/trail-mix-packaged.jpg',
-      '/images/trail-mix-detail.jpg'
+    "id": "jnu-trailmix-01",
+    "name": "JENU'S High-Protein Himalayan Nut, Seed & Berry Breakfast Trail Mix",
+    "subname": "Almonds, Walnuts, Cranberries, Blueberries & Roasted Super Seeds",
+    "category": "breakfast",
+    "subCategory": "breakfast",
+    "productType": "Gourmet Himalayan Nut, Seed & Berry Trail Mix",
+    "origin": "Kashmir Valley & High Himalayas",
+    "harvestYear": "2026 Fresh Batch",
+    "rating": 4.9,
+    "reviewsCount": 1100,
+    "badge": "High Protein",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/trail-mix-macro.jpg",
+    "images": [
+      "/images/trail-mix-macro.jpg",
+      "/images/trail-mix-bowl.jpg",
+      "/images/trail-mix-packaged.jpg",
+      "/images/trail-mix-detail.jpg"
     ],
-    overview: {
-      terroir: "High-Altitude Orchards",
-      harvestMethod: "Hand-Cleaned Nut Halves & Sun-Dried Berries",
-      aromaFlavor: "Rich creamy nuttiness balanced by tart-sweet chewy cranberries & blueberries",
-      purityGrade: "100% Whole Ingredients, Zero Glucose Glaze, Zero Palm Oil",
-      packagingStandard: "Resealable heavy-duty nitrogen pack",
-      shelfLife: "9 Months"
+    "overview": {
+      "terroir": "High-Altitude Orchards",
+      "harvestMethod": "Hand-Cleaned Nut Halves & Sun-Dried Berries",
+      "aromaFlavor": "Rich creamy nuttiness balanced by tart-sweet chewy cranberries & blueberries",
+      "purityGrade": "100% Whole Ingredients, Zero Glucose Glaze, Zero Palm Oil",
+      "packagingStandard": "Resealable heavy-duty nitrogen pack",
+      "shelfLife": "9 Months"
     },
-    description: "Packed with clean, long-lasting energy. Whole Kashmiri Mamra almonds, hand-cracked snow walnuts, jumbo king cashews, roasted pumpkin seeds, sunflower seeds, and succulent sun-cured cranberries and blueberries. Ideal for trekking, breakfast bowls, or afternoon vitality.",
-    benefits: [
+    "description": "Packed with clean, long-lasting energy. Whole Kashmiri Mamra almonds, hand-cracked snow walnuts, jumbo king cashews, roasted pumpkin seeds, sunflower seeds, and succulent sun-cured cranberries and blueberries. Ideal for trekking, breakfast bowls, or afternoon vitality.",
+    "benefits": [
       "Balanced ratio of clean plant protein, slow-burning carbs, and brain-healthy fats",
       "Zero added oils, zero candy glaze, zero artificial preservatives",
       "Priced ₹50 lower than market rate of ₹590 (Now ₹540 per 500g)"
     ],
-    nutrition: {
-      calories: "495 kcal per 100g",
-      protein: "16.8g",
-      healthyFats: "34.0g",
-      carbs: "32.5g",
-      fiber: "9.2g"
+    "nutrition": {
+      "calories": "495 kcal per 100g",
+      "protein": "16.8g",
+      "healthyFats": "34.0g",
+      "carbs": "32.5g",
+      "fiber": "9.2g"
     },
-    weights: [
-      { weight: "500g Pack", price: 540, originalPrice: 590, discount: 8, isDefault: true },
-      { weight: "1kg Value Pack", price: 1030, originalPrice: 1080, discount: 5 }
+    "weights": [
+      {
+        "weight": "500g Pack",
+        "price": 540,
+        "originalPrice": 590,
+        "discount": 8,
+        "isDefault": true
+      },
+      {
+        "weight": "1kg Value Pack",
+        "price": 1030,
+        "originalPrice": 1080,
+        "discount": 5
+      }
     ]
   },
   {
-    id: 'jnu-granola-01',
-    name: "JENU'S Crunchy Forest Honey & Walnut Granola Muesli",
-    subname: "Oat Clusters Glazed with Wild Acacia Honey & Roasted Snow Walnut Halves",
-    category: 'breakfast',
-    subCategory: 'breakfast',
-    productType: "Artisan Honey Glazed Walnut Granola Crunch",
-    origin: 'Shopian & Srinagar, Kashmir',
-    harvestYear: '2026 Fresh Batch',
-    rating: 4.8,
-    reviewsCount: 740,
-    badge: 'Wild Honey Glazed',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/granola-honey-macro.jpg',
-    images: [
-      '/images/granola-honey-macro.jpg',
-      '/images/granola-honey-bowl.jpg',
-      '/images/granola-honey-packaged.jpg',
-      '/images/granola-honey-clusters.jpg'
+    "id": "jnu-granola-01",
+    "name": "JENU'S Crunchy Forest Honey & Walnut Granola Muesli",
+    "subname": "Oat Clusters Glazed with Wild Acacia Honey & Roasted Snow Walnut Halves",
+    "category": "breakfast",
+    "subCategory": "breakfast",
+    "productType": "Artisan Honey Glazed Walnut Granola Crunch",
+    "origin": "Shopian & Srinagar, Kashmir",
+    "harvestYear": "2026 Fresh Batch",
+    "rating": 4.8,
+    "reviewsCount": 740,
+    "badge": "Wild Honey Glazed",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/granola-honey-macro.jpg",
+    "images": [
+      "/images/granola-honey-macro.jpg",
+      "/images/granola-honey-bowl.jpg",
+      "/images/granola-honey-packaged.jpg",
+      "/images/granola-honey-clusters.jpg"
     ],
-    overview: {
-      terroir: "Shopian Forest Honey Apiaries",
-      harvestMethod: "Slow Oven-Baked in Small Batches",
-      aromaFlavor: "Crunchy golden clusters, deep caramelized honey notes, toasted walnut crunch",
-      purityGrade: "Glazed Exclusively with Wild Forest Honey, Zero Refined Sugar",
-      packagingStandard: "Freshness-lock pouch",
-      shelfLife: "9 Months"
+    "overview": {
+      "terroir": "Shopian Forest Honey Apiaries",
+      "harvestMethod": "Slow Oven-Baked in Small Batches",
+      "aromaFlavor": "Crunchy golden clusters, deep caramelized honey notes, toasted walnut crunch",
+      "purityGrade": "Glazed Exclusively with Wild Forest Honey, Zero Refined Sugar",
+      "packagingStandard": "Freshness-lock pouch",
+      "shelfLife": "9 Months"
     },
-    description: "Whole rolled oats slow-baked in small batches with genuine raw wild Kashmir forest honey, generous halves of Kagzi snow walnuts, and chia seeds. Crunchy, satisfying, and free from high-fructose corn syrups.",
-    benefits: [
+    "description": "Whole rolled oats slow-baked in small batches with genuine raw wild Kashmir forest honey, generous halves of Kagzi snow walnuts, and chia seeds. Crunchy, satisfying, and free from high-fructose corn syrups.",
+    "benefits": [
       "Natural wild forest honey provides gentle sustained morning energy",
       "High natural omega-3 ALA from premium snow walnuts",
       "Priced ₹50 lower than prevailing market price of ₹490 (Now ₹440 per 500g)"
     ],
-    nutrition: {
-      calories: "435 kcal per 100g",
-      protein: "11.2g",
-      healthyFats: "16.0g",
-      carbs: "62.0g",
-      fiber: "8.5g"
+    "nutrition": {
+      "calories": "435 kcal per 100g",
+      "protein": "11.2g",
+      "healthyFats": "16.0g",
+      "carbs": "62.0g",
+      "fiber": "8.5g"
     },
-    weights: [
-      { weight: "500g Pouch", price: 440, originalPrice: 490, discount: 10, isDefault: true },
-      { weight: "1kg Tub", price: 840, originalPrice: 890, discount: 6 }
+    "weights": [
+      {
+        "weight": "500g Pouch",
+        "price": 440,
+        "originalPrice": 490,
+        "discount": 10,
+        "isDefault": true
+      },
+      {
+        "weight": "1kg Tub",
+        "price": 840,
+        "originalPrice": 890,
+        "discount": 6
+      }
     ]
   },
-
-  // ===================================================
-  // 6. SUN-DRIED FRUITS (KEPT IN SUNLIGHT FOR DAYS & PACKED)
-  // ===================================================
   {
-    id: 'jnu-sundried-khumani-01',
-    name: "JENU'S Sun-Dried Kashmiri Wild Khumani (Apricots)",
-    subname: "Kept in Himalayan Sunlight for 14 Days on Traditional Rooftops & Packed Sound",
-    category: 'dried-fruits',
-    subCategory: 'dried-fruits',
-    productType: "Naturally Sun-Cured Whole Kashmiri Wild Apricots (Prunus armeniaca)",
-    origin: 'Kargil & Ladakh Valleys, High Himalayas',
-    harvestYear: '2026 Fresh Valley Sun-Cure',
-    rating: 5.0,
-    reviewsCount: 1980,
-    badge: '14-Day Sun Cured',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/sundried-khumani-macro.jpg',
-    images: [
-      '/images/sundried-khumani-macro.jpg',
-      '/images/sundried-khumani-bowl.jpg',
-      '/images/sundried-khumani-packaged.jpg'
+    "id": "jnu-sundried-khumani-01",
+    "name": "JENU'S Sun-Dried Kashmiri Wild Khumani (Apricots)",
+    "subname": "Kept in Himalayan Sunlight for 14 Days on Traditional Rooftops & Packed Sound",
+    "category": "dried-fruits",
+    "subCategory": "dried-fruits",
+    "productType": "Naturally Sun-Cured Whole Kashmiri Wild Apricots (Prunus armeniaca)",
+    "origin": "Kargil & Ladakh Valleys, High Himalayas",
+    "harvestYear": "2026 Fresh Valley Sun-Cure",
+    "rating": 5,
+    "reviewsCount": 1980,
+    "badge": "14-Day Sun Cured",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/sundried-khumani-macro.jpg",
+    "images": [
+      "/images/sundried-khumani-macro.jpg",
+      "/images/sundried-khumani-bowl.jpg",
+      "/images/sundried-khumani-packaged.jpg",
+      "/images/sundried-khumani-split.jpg"
     ],
-    overview: {
-      terroir: "High-Altitude Arid Glacial Terraces (8,500 ft Altitude)",
-      harvestMethod: "Handpicked at Peak Ripeness, Sun-Cured on Rooftops for 14 Consecutive Days",
-      aromaFlavor: "Deep concentrated honey-apricot sweetness, tart chewy skin, fragrant edible kernel",
-      purityGrade: "100% Sun-Dried, Zero Sulfur Dioxide, Zero Added Sugar, Non-GMO",
-      packagingStandard: "Aroma-lock nitrogen purged pouch",
-      shelfLife: "12 Months in cool dry storage"
+    "overview": {
+      "terroir": "High-Altitude Arid Glacial Terraces (8,500 ft Altitude)",
+      "harvestMethod": "Handpicked at Peak Ripeness, Sun-Cured on Rooftops for 14 Consecutive Days",
+      "aromaFlavor": "Deep concentrated honey-apricot sweetness, tart chewy skin, fragrant edible kernel",
+      "purityGrade": "100% Sun-Dried, Zero Sulfur Dioxide, Zero Added Sugar, Non-GMO",
+      "packagingStandard": "Aroma-lock nitrogen purged pouch",
+      "shelfLife": "12 Months in cool dry storage"
     },
-    description: "These wild mountain apricots are harvested at first light and spread out on flat stone rooftops under direct high-altitude Himalayan sun for 14 consecutive days. The sub-zero nights and intense mountain sun caramelize natural fruit sugars while locking in dense iron, beta-carotene, and potassium. Contains sweet edible inner kernels.",
-    benefits: [
+    "description": "These wild mountain apricots are harvested at first light and spread out on flat stone rooftops under direct high-altitude Himalayan sun for 14 consecutive days. The sub-zero nights and intense mountain sun caramelize natural fruit sugars while locking in dense iron, beta-carotene, and potassium. Contains sweet edible inner kernels.",
+    "benefits": [
       "100% naturally solar-cured in intense UV-rich Himalayan sunlight for 14 days",
       "Completely sulfur-free (no chemical orange brightening, pure natural brown-gold color)",
       "High bioavailable iron and Vitamin A for hemoglobin and vision support",
       "Priced ₹50 lower than market rate of ₹580 (Now ₹530 per 500g)"
     ],
-    nutrition: {
-      calories: "241 kcal per 100g",
-      protein: "3.4g",
-      healthyFats: "0.5g",
-      carbs: "62.6g",
-      fiber: "7.3g"
+    "nutrition": {
+      "calories": "241 kcal per 100g",
+      "protein": "3.4g",
+      "healthyFats": "0.5g",
+      "carbs": "62.6g",
+      "fiber": "7.3g"
     },
-    weights: [
-      { weight: "500g Pack", price: 530, originalPrice: 580, discount: 9, isDefault: true },
-      { weight: "1kg Value Pack", price: 1030, originalPrice: 1080, discount: 5 }
+    "weights": [
+      {
+        "weight": "500g Pack",
+        "price": 530,
+        "originalPrice": 580,
+        "discount": 9,
+        "isDefault": true
+      },
+      {
+        "weight": "1kg Value Pack",
+        "price": 1030,
+        "originalPrice": 1080,
+        "discount": 5
+      }
     ]
   },
   {
-    id: 'jnu-sundried-figs-01',
-    name: "JENU'S Sun-Dried Royal Injeer Garland (Figs)",
-    subname: "Naturally Solar-Dried Threaded Mountain Figs (Dense Calcium Core)",
-    category: 'dried-fruits',
-    subCategory: 'dried-fruits',
-    productType: "Traditional Threaded Sun-Dried Royal Figs (Ficus carica)",
-    origin: 'Pristine Valley Orchards',
-    harvestYear: '2026 Fresh Sun Cure',
-    rating: 4.9,
-    reviewsCount: 1580,
-    badge: 'Solar Garland',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/sundried-figs-macro.jpg',
-    images: [
-      '/images/sundried-figs-macro.jpg',
-      '/images/sundried-figs-bowl.jpg',
-      '/images/sundried-figs-packaged.jpg'
+    "id": "jnu-sundried-figs-01",
+    "name": "JENU'S Sun-Dried Royal Injeer Garland (Figs)",
+    "subname": "Naturally Solar-Dried Threaded Mountain Figs (Dense Calcium Core)",
+    "category": "dried-fruits",
+    "subCategory": "dried-fruits",
+    "productType": "Traditional Threaded Sun-Dried Royal Figs (Ficus carica)",
+    "origin": "Pristine Valley Orchards",
+    "harvestYear": "2026 Fresh Sun Cure",
+    "rating": 4.9,
+    "reviewsCount": 1580,
+    "badge": "Solar Garland",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/sundried-figs-macro.jpg",
+    "images": [
+      "/images/sundried-figs-macro.jpg",
+      "/images/sundried-figs-bowl.jpg",
+      "/images/sundried-figs-packaged.jpg",
+      "/images/sundried-figs-string.jpg"
     ],
-    overview: {
-      terroir: "Valley Terraces (5,400 ft)",
-      harvestMethod: "Threaded on Natural Cotton Strings, Sun-Cured for 12 Days",
-      aromaFlavor: "Honeyed amber pulp, chewy exterior, satisfying crunchy seeds",
-      purityGrade: "100% Pure Figs, Unbleached & Sulfur-Free",
-      packagingStandard: "Airtight vacuum gift box",
-      shelfLife: "12 Months"
+    "overview": {
+      "terroir": "Valley Terraces (5,400 ft)",
+      "harvestMethod": "Threaded on Natural Cotton Strings, Sun-Cured for 12 Days",
+      "aromaFlavor": "Honeyed amber pulp, chewy exterior, satisfying crunchy seeds",
+      "purityGrade": "100% Pure Figs, Unbleached & Sulfur-Free",
+      "packagingStandard": "Airtight vacuum gift box",
+      "shelfLife": "12 Months"
     },
-    description: "Strung on natural cotton threads in traditional garlands and sun-dried in clean mountain breezes for 12 days. Each fig develops a sweet, chewy amber flesh and crunchy calcium-rich seeds that melt in warm milk.",
-    benefits: [
+    "description": "Strung on natural cotton threads in traditional garlands and sun-dried in clean mountain breezes for 12 days. Each fig develops a sweet, chewy amber flesh and crunchy calcium-rich seeds that melt in warm milk.",
+    "benefits": [
       "Traditional solar-dried garland preserving all natural fruit pectin and enzymes",
       "Outstanding natural source of bioavailable dietary calcium and fiber",
       "Priced ₹50 lower than market rate of ₹740 (Now ₹690 per 500g)"
     ],
-    nutrition: {
-      calories: "249 kcal per 100g",
-      protein: "3.3g",
-      healthyFats: "0.9g",
-      carbs: "63.9g",
-      fiber: "9.8g"
+    "nutrition": {
+      "calories": "249 kcal per 100g",
+      "protein": "3.3g",
+      "healthyFats": "0.9g",
+      "carbs": "63.9g",
+      "fiber": "9.8g"
     },
-    weights: [
-      { weight: "500g Garland", price: 690, originalPrice: 740, discount: 7, isDefault: true },
-      { weight: "1kg Garland Box", price: 1340, originalPrice: 1390, discount: 4 }
+    "weights": [
+      {
+        "weight": "500g Garland",
+        "price": 690,
+        "originalPrice": 740,
+        "discount": 7,
+        "isDefault": true
+      },
+      {
+        "weight": "1kg Garland Box",
+        "price": 1340,
+        "originalPrice": 1390,
+        "discount": 4
+      }
     ]
   },
   {
-    id: 'jnu-sundried-mulberries-01',
-    name: "JENU'S Sun-Dried Kashmir White Shahtoot (Mulberries)",
-    subname: "Solar-Dried Sweet White Himalayan Mulberries Hand-Harvested from Ancient Trees",
-    category: 'dried-fruits',
-    subCategory: 'dried-fruits',
-    productType: "100% Sun-Dried White Himalayan Mulberries (Morus alba)",
-    origin: 'Pampore & Shopian Ancient Groves, Kashmir',
-    harvestYear: '2026 Summer Sun Harvest',
-    rating: 4.8,
-    reviewsCount: 790,
-    badge: 'Ancient Trees',
-    badgeType: 'organic',
-    fssaiCertified: true,
-    image: '/images/sundried-mulberries-macro.jpg',
-    images: [
-      '/images/sundried-mulberries-macro.jpg',
-      '/images/sundried-mulberries-bowl.jpg',
-      '/images/sundried-mulberries-packaged.jpg'
+    "id": "jnu-sundried-mulberries-01",
+    "name": "JENU'S Sun-Dried Kashmir White Shahtoot (Mulberries)",
+    "subname": "Solar-Dried Sweet White Himalayan Mulberries Hand-Harvested from Ancient Trees",
+    "category": "dried-fruits",
+    "subCategory": "dried-fruits",
+    "productType": "100% Sun-Dried White Himalayan Mulberries (Morus alba)",
+    "origin": "Pampore & Shopian Ancient Groves, Kashmir",
+    "harvestYear": "2026 Summer Sun Harvest",
+    "rating": 4.8,
+    "reviewsCount": 790,
+    "badge": "Ancient Trees",
+    "badgeType": "organic",
+    "fssaiCertified": true,
+    "image": "/images/sundried-mulberries-macro.jpg",
+    "images": [
+      "/images/sundried-mulberries-macro.jpg",
+      "/images/sundried-mulberries-bowl.jpg",
+      "/images/sundried-mulberries-packaged.jpg",
+      "/images/sundried-mulberries-detail.jpg"
     ],
-    overview: {
-      terroir: "Centuries-Old Village Mulberry Groves",
-      harvestMethod: "Hand-Shaken onto Clean Canvases, Sun-Dried for 8 Days",
-      aromaFlavor: "Delicate caramel herbal sweetness, chewy crisp seed texture",
-      purityGrade: "100% Raw Wild Fruit, Zero Added Sugar",
-      packagingStandard: "Moisture-barrier pouch",
-      shelfLife: "12 Months"
+    "overview": {
+      "terroir": "Centuries-Old Village Mulberry Groves",
+      "harvestMethod": "Hand-Shaken onto Clean Canvases, Sun-Dried for 8 Days",
+      "aromaFlavor": "Delicate caramel herbal sweetness, chewy crisp seed texture",
+      "purityGrade": "100% Raw Wild Fruit, Zero Added Sugar",
+      "packagingStandard": "Moisture-barrier pouch",
+      "shelfLife": "12 Months"
     },
-    description: "Hand-harvested from towering 100-year-old mountain mulberry trees across Kashmir and sun-dried for over a week under Himalayan skies. Rich in resveratrol, Vitamin C, and natural iron, with a mild honeyed herbal sweetness.",
-    benefits: [
+    "description": "Hand-harvested from towering 100-year-old mountain mulberry trees across Kashmir and sun-dried for over a week under Himalayan skies. Rich in resveratrol, Vitamin C, and natural iron, with a mild honeyed herbal sweetness.",
+    "benefits": [
       "Natural low-glycemic sweet superfood containing resveratrol antioxidants",
       "100% sun-dried with zero added sugar or preservatives",
       "Priced ₹50 lower than market rate of ₹450 (Now ₹400 per 250g)"
     ],
-    nutrition: {
-      calories: "320 kcal per 100g",
-      protein: "10.0g",
-      healthyFats: "1.5g",
-      carbs: "65.0g",
-      fiber: "14.0g"
+    "nutrition": {
+      "calories": "320 kcal per 100g",
+      "protein": "10.0g",
+      "healthyFats": "1.5g",
+      "carbs": "65.0g",
+      "fiber": "14.0g"
     },
-    weights: [
-      { weight: "250g Pouch", price: 400, originalPrice: 450, discount: 11, isDefault: true },
-      { weight: "500g Pouch", price: 770, originalPrice: 820, discount: 6 }
+    "weights": [
+      {
+        "weight": "250g Pouch",
+        "price": 400,
+        "originalPrice": 450,
+        "discount": 11,
+        "isDefault": true
+      },
+      {
+        "weight": "500g Pouch",
+        "price": 770,
+        "originalPrice": 820,
+        "discount": 6
+      }
     ]
   },
   {
-    id: 'jnu-sundried-plums-01',
-    name: "JENU'S Sun-Dried Himalayan Aloo Bukhara (Plums)",
-    subname: "Naturally Sun-Cured Mountain Black Plums with Tangy-Sweet Succulence",
-    category: 'dried-fruits',
-    subCategory: 'dried-fruits',
-    productType: "Whole Sun-Dried Wild Himalayan Plums (Prunus domestica)",
-    origin: 'Kupwara & Baramulla Orchards, Kashmir',
-    harvestYear: '2026 Fresh Sun Cure',
-    rating: 4.8,
-    reviewsCount: 840,
-    badge: 'Wazwan Essential',
-    badgeType: 'bestseller',
-    fssaiCertified: true,
-    image: '/images/sundried-plums-macro.jpg',
-    images: [
-      '/images/sundried-plums-macro.jpg',
-      '/images/sundried-plums-bowl.jpg',
-      '/images/sundried-plums-packaged.jpg'
+    "id": "jnu-sundried-plums-01",
+    "name": "JENU'S Sun-Dried Himalayan Aloo Bukhara (Plums)",
+    "subname": "Naturally Sun-Cured Mountain Black Plums with Tangy-Sweet Succulence",
+    "category": "dried-fruits",
+    "subCategory": "dried-fruits",
+    "productType": "Whole Sun-Dried Wild Himalayan Plums (Prunus domestica)",
+    "origin": "Kupwara & Baramulla Orchards, Kashmir",
+    "harvestYear": "2026 Fresh Sun Cure",
+    "rating": 4.8,
+    "reviewsCount": 840,
+    "badge": "Wazwan Essential",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/sundried-plums-macro.jpg",
+    "images": [
+      "/images/sundried-plums-macro.jpg",
+      "/images/sundried-plums-bowl.jpg",
+      "/images/sundried-plums-packaged.jpg",
+      "/images/sundried-plums-split.jpg"
     ],
-    overview: {
-      terroir: "Kupwara Terraced Slopes (5,800 ft)",
-      harvestMethod: "Sun-Cured for 10 Days in Mountain Air",
-      aromaFlavor: "Tangy tartness, rich prune sweetness, tender chewy flesh",
-      purityGrade: "100% Pure Whole Plums, Chemical-Free",
-      packagingStandard: "Aroma-lock foil pack",
-      shelfLife: "12 Months"
+    "overview": {
+      "terroir": "Kupwara Terraced Slopes (5,800 ft)",
+      "harvestMethod": "Sun-Cured for 10 Days in Mountain Air",
+      "aromaFlavor": "Tangy tartness, rich prune sweetness, tender chewy flesh",
+      "purityGrade": "100% Pure Whole Plums, Chemical-Free",
+      "packagingStandard": "Aroma-lock foil pack",
+      "shelfLife": "12 Months"
     },
-    description: "Authentic wild Kashmiri Aloo Bukhara, naturally sun-dried for 10 days to concentrate their famous tangy acidity and sweet fruit pulp. The indispensable heart of Kashmiri Wazwan pulaos, sweet-sour chutneys, and digestion tonics.",
-    benefits: [
+    "description": "Authentic wild Kashmiri Aloo Bukhara, naturally sun-dried for 10 days to concentrate their famous tangy acidity and sweet fruit pulp. The indispensable heart of Kashmiri Wazwan pulaos, sweet-sour chutneys, and digestion tonics.",
+    "benefits": [
       "Natural digestive powerhouse rich in sorbitol and gentle dietary fiber",
       "Essential culinary ingredient for royal Kashmiri pulao and festive gravies",
       "Priced ₹50 lower than market price of ₹390 (Now ₹340 per 250g)"
     ],
-    nutrition: {
-      calories: "240 kcal per 100g",
-      protein: "2.2g",
-      healthyFats: "0.4g",
-      carbs: "64.0g",
-      fiber: "7.1g"
+    "nutrition": {
+      "calories": "240 kcal per 100g",
+      "protein": "2.2g",
+      "healthyFats": "0.4g",
+      "carbs": "64.0g",
+      "fiber": "7.1g"
     },
-    weights: [
-      { weight: "250g Pouch", price: 340, originalPrice: 390, discount: 13, isDefault: true },
-      { weight: "500g Pouch", price: 670, originalPrice: 720, discount: 7 }
+    "weights": [
+      {
+        "weight": "250g Pouch",
+        "price": 340,
+        "originalPrice": 390,
+        "discount": 13,
+        "isDefault": true
+      },
+      {
+        "weight": "500g Pouch",
+        "price": 670,
+        "originalPrice": 720,
+        "discount": 7
+      }
     ]
   },
-
-  // ===================================================
-  // 7. EXOTIC NUTS: MACADAMIA & BRAZIL NUTS
-  // ===================================================
-    {
-    id: 'jnu-methi-dana-01',
-    name: "JENU'S Royal Nagauri Fenugreek Seeds (Methi Dana)",
-    subname: "Golden-Yellow Whole Fenugreek Seeds for Ayurvedic Wellness & Royal Tadka",
-    category: 'raw-spices',
-    subCategory: 'raw-spices',
-    productType: "Grade A1 Whole Nagauri Fenugreek Seeds (Trigonella foenum-graecum)",
-    origin: "Nagaur & Jodhpur, Rajasthan (Khari Baoli Spice Clearing)",
-    harvestYear: "2026 Fresh Harvest",
-    rating: 4.9,
-    reviewsCount: 750,
-    badge: "Sugar Balance",
-    badgeType: "bestseller",
-    fssaiCertified: true,
-    image: "/images/methi-dana-macro.jpg",
-    images: [
-      '/images/methi-dana-macro.jpg',
-      '/images/methi-dana-bowl.jpg',
-      '/images/methi-dana-packaged.jpg'
+  {
+    "id": "jnu-methi-dana-01",
+    "name": "JENU'S Royal Nagauri Fenugreek Seeds (Methi Dana)",
+    "subname": "Golden-Yellow Whole Fenugreek Seeds for Ayurvedic Wellness & Royal Tadka",
+    "category": "raw-spices",
+    "subCategory": "raw-spices",
+    "productType": "Grade A1 Whole Nagauri Fenugreek Seeds (Trigonella foenum-graecum)",
+    "origin": "Nagaur & Jodhpur, Rajasthan (Khari Baoli Spice Clearing)",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 4.9,
+    "reviewsCount": 750,
+    "badge": "Sugar Balance",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/methi-dana-macro.jpg",
+    "images": [
+      "/images/methi-dana-macro.jpg",
+      "/images/methi-dana-bowl.jpg",
+      "/images/methi-dana-packaged.jpg",
+      "/images/methi-dana-detail.jpg"
     ],
-    overview: {
-      terroir: "Nagaur Arid Sandy Loam, Rajasthan",
-      harvestMethod: "Sun-dried mature pods threshed, golden tetrahedral seeds sorted",
-      aromaFlavor: "Intense maple-like warm aroma with deep bittersweet herbal savory punch",
-      purityGrade: "100% Machine-Cleaned, zero stones, high soluble dietary fiber (galactomannan)",
-      packagingStandard: "Airtight spice container",
-      shelfLife: "24 Months"
+    "overview": {
+      "terroir": "Nagaur Arid Sandy Loam, Rajasthan",
+      "harvestMethod": "Sun-dried mature pods threshed, golden tetrahedral seeds sorted",
+      "aromaFlavor": "Intense maple-like warm aroma with deep bittersweet herbal savory punch",
+      "purityGrade": "100% Machine-Cleaned, zero stones, high soluble dietary fiber (galactomannan)",
+      "packagingStandard": "Airtight spice container",
+      "shelfLife": "24 Months"
     },
-    description: "Famous Nagauri Methi Dana from the heart of Rajasthan's spice country. Essential for pickling, sambar, fish curry, and soaking overnight for blood sugar balance and joint mobility.",
-    benefits: [
+    "description": "Famous Nagauri Methi Dana from the heart of Rajasthan's spice country. Essential for pickling, sambar, fish curry, and soaking overnight for blood sugar balance and joint mobility.",
+    "benefits": [
       "FSSAI Certified: 100% pure whole fenugreek seeds",
       "Traditional blood sugar and digestive health tonic",
       "Intense authentic bittersweet seasoning for curries and pickles"
     ],
-    nutrition: {
-      calories: "323 kcal",
-      protein: "23.0g",
-      healthyFats: "6.4g",
-      carbs: "58.3g",
-      fiber: "24.6g"
+    "nutrition": {
+      "calories": "323 kcal",
+      "protein": "23.0g",
+      "healthyFats": "6.4g",
+      "carbs": "58.3g",
+      "fiber": "24.6g"
     },
-    weights: [
-      { weight: "250g Pouch", price: 110, originalPrice: 160, discount: 31, isDefault: true },
-      { weight: "500g Pack", price: 200, originalPrice: 250, discount: 20 },
-      { weight: "1kg Value Pack", price: 380, originalPrice: 430, discount: 11 }
+    "weights": [
+      {
+        "weight": "250g Pouch",
+        "price": 110,
+        "originalPrice": 160,
+        "discount": 31,
+        "isDefault": true
+      },
+      {
+        "weight": "500g Pack",
+        "price": 200,
+        "originalPrice": 250,
+        "discount": 20
+      },
+      {
+        "weight": "1kg Value Pack",
+        "price": 380,
+        "originalPrice": 430,
+        "discount": 11
+      }
     ]
   },
-    {
-    id: 'jnu-til-safed-01',
-    name: "JENU'S Royal Natural White Sesame Seeds (Safed Til)",
-    subname: "Triple-Cleaned Pearly White Sesame Seeds Rich in Calcium from Indian Organic Farms",
-    category: 'seeds',
-    subCategory: 'seeds',
-    productType: "Grade A Cleaned Natural White Sesame Seeds (Sesamum indicum)",
-    origin: "Saurashtra & Western Rajasthan (Khari Baoli Gali Batashan Trade)",
-    harvestYear: "2026 Fresh Harvest",
-    rating: 4.9,
-    reviewsCount: 880,
-    badge: "Calcium Rich",
-    badgeType: "bestseller",
-    fssaiCertified: true,
-    image: "/images/til-safed-macro.jpg",
-    images: [
-      '/images/til-safed-macro.jpg',
-      '/images/til-safed-bowl.jpg',
-      '/images/til-safed-packaged.jpg'
+  {
+    "id": "jnu-til-safed-01",
+    "name": "JENU'S Royal Natural White Sesame Seeds (Safed Til)",
+    "subname": "Triple-Cleaned Pearly White Sesame Seeds Rich in Calcium from Indian Organic Farms",
+    "category": "seeds",
+    "subCategory": "seeds",
+    "productType": "Grade A Cleaned Natural White Sesame Seeds (Sesamum indicum)",
+    "origin": "Saurashtra & Western Rajasthan (Khari Baoli Gali Batashan Trade)",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 4.9,
+    "reviewsCount": 880,
+    "badge": "Calcium Rich",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/til-safed-macro.jpg",
+    "images": [
+      "/images/til-safed-macro.jpg",
+      "/images/til-safed-bowl.jpg",
+      "/images/til-safed-packaged.jpg",
+      "/images/til-safed-detail.jpg"
     ],
-    overview: {
-      terroir: "Sunny Arid Plains of Saurashtra & Rajasthan",
-      harvestMethod: "Harvested at peak pod maturity, shade-dried and mechanically triple-cleaned",
-      aromaFlavor: "Rich nutty crunch, delicate sweet oiliness when lightly toasted",
-      purityGrade: "99.9% Machine-Cleaned Purity, unbleached, high natural sesame oil (52%+)",
-      packagingStandard: "Airtight vacuum-sealed pouch",
-      shelfLife: "12 Months in cool dry pantry"
+    "overview": {
+      "terroir": "Sunny Arid Plains of Saurashtra & Rajasthan",
+      "harvestMethod": "Harvested at peak pod maturity, shade-dried and mechanically triple-cleaned",
+      "aromaFlavor": "Rich nutty crunch, delicate sweet oiliness when lightly toasted",
+      "purityGrade": "99.9% Machine-Cleaned Purity, unbleached, high natural sesame oil (52%+)",
+      "packagingStandard": "Airtight vacuum-sealed pouch",
+      "shelfLife": "12 Months in cool dry pantry"
     },
-    description: "Triple-cleaned pearly white sesame seeds sourced from India's premium oilseed belt and traded in Khari Baoli's historic Gali Batashan. Revered in Indian homes for winter tilkut, gazak, laddoos, and spice tempering.",
-    benefits: [
+    "description": "Triple-cleaned pearly white sesame seeds sourced from India's premium oilseed belt and traded in Khari Baoli's historic Gali Batashan. Revered in Indian homes for winter tilkut, gazak, laddoos, and spice tempering.",
+    "benefits": [
       "FSSAI Certified: 100% natural, high calcium and zinc content",
       "Essential for traditional winter Ayurvedic treats and festive laddoos",
       "Triple cleaned with zero dust or foreign grains"
     ],
-    nutrition: {
-      calories: "573 kcal",
-      protein: "17.7g",
-      healthyFats: "49.7g",
-      carbs: "23.4g",
-      fiber: "11.8g"
+    "nutrition": {
+      "calories": "573 kcal",
+      "protein": "17.7g",
+      "healthyFats": "49.7g",
+      "carbs": "23.4g",
+      "fiber": "11.8g"
     },
-    weights: [
-      { weight: "250g Pouch", price: 140, originalPrice: 190, discount: 26, isDefault: true },
-      { weight: "500g Pack", price: 260, originalPrice: 310, discount: 16 },
-      { weight: "1kg Value Pack", price: 490, originalPrice: 540, discount: 9 }
+    "weights": [
+      {
+        "weight": "250g Pouch",
+        "price": 140,
+        "originalPrice": 190,
+        "discount": 26,
+        "isDefault": true
+      },
+      {
+        "weight": "500g Pack",
+        "price": 260,
+        "originalPrice": 310,
+        "discount": 16
+      },
+      {
+        "weight": "1kg Value Pack",
+        "price": 490,
+        "originalPrice": 540,
+        "discount": 9
+      }
+    ]
+  },
+  {
+    "id": "jnu-dates-medjool-39",
+    "name": "JENU'S Royal Soft Medjool Dates (Khajoor)",
+    "subname": "Plump Caramel-Rich Whole Dates with Soft Honey Pulp (Large Size)",
+    "category": "dates",
+    "subCategory": "dates",
+    "productType": "Grade A Premium Large Medjool Dates (Phoenix dactylifera)",
+    "origin": "Mountain Sun Groves Reserve",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 5,
+    "reviewsCount": 1450,
+    "badge": "Jumbo Medjool",
+    "badgeType": "gold",
+    "fssaiCertified": true,
+    "image": "/images/dates-medjool-macro.jpg",
+    "images": [
+      "/images/dates-medjool-macro.jpg",
+      "/images/dates-medjool-open-close.jpg",
+      "/images/dates-medjool-five.jpg",
+      "/images/dates-medjool-packaged.jpg"
+    ],
+    "overview": {
+      "terroir": "Mineral-Rich Oasis Groves Reserve",
+      "harvestMethod": "Handpicked tree-ripened clusters, gently sorted by hand to prevent skin bruising",
+      "aromaFlavor": "Velvety caramel, maple syrup sweetness, melting soft honey fruit texture",
+      "purityGrade": "Grade A Jumbo: Extra-Large Whole Dates, 100% Raw, Zero Added Glucose Syrup",
+      "packagingStandard": "Royal hinged presentation gift box with gold crest",
+      "shelfLife": "12 Months in refrigeration"
+    },
+    "description": "Known as the 'Jewel of Dates'. Unlike ordinary dry packaged dates, our Jumbo Medjool dates are exceptionally large, moist, and tender. Bite into one to experience an explosion of natural maple caramel pulp that melts on the tongue like a fine confection.",
+    "benefits": [
+      "FSSAI Certified: 100% natural fruit, zero added sugar syrup, zero chemical fumigants",
+      "Sublime caramel flavor and soft pillow texture—the undisputed king of dessert dates",
+      "Outstanding natural energy fuel: rich in potassium, magnesium, and dietary fiber",
+      "Ideal for Ramadan Iftar, morning stamina, and pre-workout clean energy"
+    ],
+    "nutrition": {
+      "calories": "277 kcal",
+      "protein": "1.8g",
+      "healthyFats": "0.2g",
+      "carbs": "75.0g",
+      "fiber": "6.7g"
+    },
+    "weights": [
+      {
+        "weight": "350g Gift Box",
+        "price": 490,
+        "originalPrice": 690,
+        "discount": 29,
+        "isDefault": true
+      },
+      {
+        "weight": "700g Royal Tin",
+        "price": 940,
+        "originalPrice": 1340,
+        "discount": 30
+      },
+      {
+        "weight": "1.4kg Master Pack",
+        "price": 1790,
+        "originalPrice": 2590,
+        "discount": 31
+      }
+    ]
+  },
+  {
+    "id": "jnu-dates-ajwa-01",
+    "name": "JENU'S Royal Saudi Ajwa Al-Madinah Dates",
+    "subname": "Authentic Soft Obsidian Black Dates with Fine Crevices & Sacred Heritage",
+    "category": "dates",
+    "subCategory": "dates",
+    "productType": "Authentic Al-Madinah Al-Munawwarah Aaliyah Ajwa Dates",
+    "origin": "Al-Madinah Oasis Groves, Saudi Arabia",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 5,
+    "reviewsCount": 1890,
+    "badge": "Sacred Reserve",
+    "badgeType": "gold",
+    "fssaiCertified": true,
+    "image": "/images/dates-ajwa-macro.jpg",
+    "images": [
+      "/images/dates-ajwa-macro.jpg",
+      "/images/dates-ajwa-bowl.jpg",
+      "/images/dates-ajwa-split.jpg",
+      "/images/dates-ajwa-packaged.jpg"
+    ],
+    "overview": {
+      "terroir": "Sacred Mineral-Rich Soils of Al-Madinah Al-Munawwarah Oasis",
+      "harvestMethod": "Hand-harvested mature fruit gently sorted for intact skin and plumpness",
+      "aromaFlavor": "Subtle prune-like sweetness with rich molasses undertones, smooth chew",
+      "purityGrade": "100% Authentic Madinah Aaliyah Grade, Zero Sugar Coated, Zero Chemical Preservatives",
+      "packagingStandard": "Airtight nitrogen-flushed golden tin protecting natural moisture",
+      "shelfLife": "12 Months in cool dry storage or refrigeration"
+    },
+    "description": "Revered worldwide as the King of Dates, authentic Ajwa dates are distinguished by their dark obsidian black color, fine white crevice lines, and luscious, melt-in-mouth chewy core. Sourced directly from authentic Madinah groves, packed with vital polyphenols, calcium, and natural potassium.",
+    "benefits": [
+      "100% Genuine Madinah Ajwa with certified geographical origin",
+      "Rich in unique cardiovascular protective polyphenols and natural antioxidants",
+      "Excellent natural source of dietary fiber, magnesium, iron, and potassium",
+      "Traditional holy fruit for morning energy, Ramadan iftar, and heart vitality"
+    ],
+    "nutrition": {
+      "calories": "277 kcal",
+      "protein": "2.1g",
+      "healthyFats": "0.3g",
+      "carbs": "74.5g",
+      "fiber": "7.1g"
+    },
+    "weights": [
+      {
+        "weight": "400g Royal Tin",
+        "price": 980,
+        "originalPrice": 1350,
+        "discount": 27,
+        "isDefault": true
+      },
+      {
+        "weight": "800g Master Pack",
+        "price": 1890,
+        "originalPrice": 2650,
+        "discount": 29
+      }
+    ]
+  },
+  {
+    "id": "jnu-dates-kalmi-01",
+    "name": "JENU'S Saudi Kalmi / Safawi Dark Dates",
+    "subname": "Dense Chewy Cylindrical Mahogany Dates with Natural Molasses Sweetness",
+    "category": "dates",
+    "subCategory": "dates",
+    "productType": "Grade A Selected Saudi Safawi (Kalmi) Dates",
+    "origin": "Al-Madinah Region, Saudi Arabia",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 4.9,
+    "reviewsCount": 920,
+    "badge": "Natural Energy",
+    "badgeType": "bestseller",
+    "fssaiCertified": true,
+    "image": "/images/dates-kalmi-macro.jpg",
+    "images": [
+      "/images/dates-kalmi-macro.jpg",
+      "/images/dates-kalmi-bowl.jpg",
+      "/images/dates-kalmi-detail.jpg",
+      "/images/dates-kalmi-packaged.jpg"
+    ],
+    "overview": {
+      "terroir": "Arid Desert Oasis of Medina Foothills",
+      "harvestMethod": "Handpicked tree-ripened elongated dates, sun-cured naturally on palms",
+      "aromaFlavor": "Deep dark toffee, roasted caramel notes with satisfying dense chewiness",
+      "purityGrade": "Export Grade 1, Unpolished, No Artificial Glazes or Preservatives",
+      "packagingStandard": "Aroma-lock sealed pouch guarding essential fruit moisture",
+      "shelfLife": "12 Months in cool dry conditions"
+    },
+    "description": "Kalmi (Safawi) dates are renowned for their slender cylindrical shape, deep black-brown hue, and dense, chewy toffee-like consistency. Packed with dietary fiber and natural minerals that provide sustained athletic energy without insulin spikes.",
+    "benefits": [
+      "High fiber density aids digestive health and steady carbohydrate absorption",
+      "High mineral profile: rich in potassium, iron, and bioavailable magnesium",
+      "Natural toffee-like texture makes them an ideal pre-workout energy snack",
+      "Zero added sweeteners, zero sulfur treatments, 100% natural whole dates"
+    ],
+    "nutrition": {
+      "calories": "282 kcal",
+      "protein": "2.5g",
+      "healthyFats": "0.4g",
+      "carbs": "75.0g",
+      "fiber": "8.0g"
+    },
+    "weights": [
+      {
+        "weight": "500g Pouch",
+        "price": 540,
+        "originalPrice": 750,
+        "discount": 28,
+        "isDefault": true
+      },
+      {
+        "weight": "1kg Family Pack",
+        "price": 990,
+        "originalPrice": 1420,
+        "discount": 30
+      }
+    ]
+  },
+  {
+    "id": "jnu-dates-kimia-01",
+    "name": "JENU'S Iranian Soft Kimia Mazafati Dates",
+    "subname": "Melt-in-Mouth Luscious Fresh Black Dates with Velvety Honey Pulp",
+    "category": "dates",
+    "subCategory": "dates",
+    "productType": "Grade A Fresh Soft Mazafati Dates (Kimia)",
+    "origin": "Bam Oasis Valley, Iran",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 5,
+    "reviewsCount": 1680,
+    "badge": "Melt In Mouth",
+    "badgeType": "luxury",
+    "fssaiCertified": true,
+    "image": "/images/dates-kimia-macro.jpg",
+    "images": [
+      "/images/dates-kimia-macro.jpg",
+      "/images/dates-kimia-bowl.jpg",
+      "/images/dates-kimia-split.jpg",
+      "/images/dates-kimia-packaged.jpg"
+    ],
+    "overview": {
+      "terroir": "Bam Valley Microclimate, Protected Mountain Oasis",
+      "harvestMethod": "Hand-harvested at peak soft moisture, immediately cold-chain stored",
+      "aromaFlavor": "Silky brown sugar fudge, velvety honey cream, cool melt-in-mouth pulp",
+      "purityGrade": "100% Soft Fresh Mazafati, 32-35% Natural Moisture, Zero Sugar Inversion",
+      "packagingStandard": "Protective inner tray and hermetic freshness pouch",
+      "shelfLife": "9 Months in refrigeration"
+    },
+    "description": "Kimia dates are world-famous for their tender, melt-in-the-mouth texture and rich glossy black skin. Retaining up to 35% natural moisture, they taste like pure chilled date mousse, providing an instant burst of natural vitality and rich antioxidants.",
+    "benefits": [
+      "Extraordinarily soft texture that effortlessly dissolves on the tongue",
+      "High natural moisture preserves delicate heat-sensitive vitamins and enzymes",
+      "Rich in potassium and iron to support hemoglobin and combat fatigue",
+      "The ultimate dessert date—pairs divinely with walnuts, clotted cream, or coffee"
+    ],
+    "nutrition": {
+      "calories": "268 kcal",
+      "protein": "1.9g",
+      "healthyFats": "0.2g",
+      "carbs": "72.0g",
+      "fiber": "6.5g"
+    },
+    "weights": [
+      {
+        "weight": "500g Box",
+        "price": 420,
+        "originalPrice": 580,
+        "discount": 28,
+        "isDefault": true
+      },
+      {
+        "weight": "1kg Twin Pack",
+        "price": 790,
+        "originalPrice": 1120,
+        "discount": 29
+      }
+    ]
+  },
+  {
+    "id": "jnu-dates-mabroom-01",
+    "name": "JENU'S Saudi Mabroom Royal Sweet Dates",
+    "subname": "Slender Amber Bronze Long Dates with Firm Chewy Caramel Notes",
+    "category": "dates",
+    "subCategory": "dates",
+    "productType": "Grade A Hand-Sorted Mabroom Dates",
+    "origin": "Al-Madinah Province, Saudi Arabia",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 4.9,
+    "reviewsCount": 780,
+    "badge": "Artisan Choice",
+    "badgeType": "gold",
+    "fssaiCertified": true,
+    "image": "/images/dates-mabroom-macro.jpg",
+    "images": [
+      "/images/dates-mabroom-macro.jpg",
+      "/images/dates-mabroom-bowl.jpg",
+      "/images/dates-mabroom-detail.jpg",
+      "/images/dates-mabroom-packaged.jpg"
+    ],
+    "overview": {
+      "terroir": "Central Highland Oasis Groves, Madinah Al-Munawwarah",
+      "harvestMethod": "Hand-picked elongated fruit, naturally cured under direct desert sun",
+      "aromaFlavor": "Subtle nutty caramel, gentle sweetness, dense elastic chewy fiber",
+      "purityGrade": "Export Select Grade, Uncoated, Unsulfured Whole Dates",
+      "packagingStandard": "Heavyweight zipper pouch keeping natural essential aroma intact",
+      "shelfLife": "12 Months in cool dry pantry"
+    },
+    "description": "Mabroom dates are celebrated for their slender elongated silhouette, translucent bronze-amber color, and delightfully firm, fibrous texture that softens into gentle toffee sweetness as you chew. Loved by connoisseurs who prefer moderate sweetness over sugary softness.",
+    "benefits": [
+      "Pleasantly firm chew promotes satiety and slow glycemic release",
+      "Abundant in essential minerals including calcium, iron, and zinc",
+      "Lower natural sugar concentration makes it a balanced everyday snack",
+      "Long shelf life and resilient texture without becoming soggy or sticky"
+    ],
+    "nutrition": {
+      "calories": "275 kcal",
+      "protein": "2.2g",
+      "healthyFats": "0.3g",
+      "carbs": "73.0g",
+      "fiber": "7.5g"
+    },
+    "weights": [
+      {
+        "weight": "500g Pouch",
+        "price": 680,
+        "originalPrice": 920,
+        "discount": 26,
+        "isDefault": true
+      },
+      {
+        "weight": "1kg Pack",
+        "price": 1290,
+        "originalPrice": 1780,
+        "discount": 28
+      }
+    ]
+  },
+  {
+    "id": "jnu-dates-sukari-01",
+    "name": "JENU'S Golden Royal Sukari Soft Dates",
+    "subname": "Crisp Golden Cones with Creamy Brown-Sugar Caramel Center",
+    "category": "dates",
+    "subCategory": "dates",
+    "productType": "Grade A Al-Qassim Royal Sukari Soft Dates",
+    "origin": "Al-Qassim Oasis, Saudi Arabia",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 5,
+    "reviewsCount": 1140,
+    "badge": "Royal Golden",
+    "badgeType": "luxury",
+    "fssaiCertified": true,
+    "image": "/images/dates-sukari-macro.jpg",
+    "images": [
+      "/images/dates-sukari-macro.jpg",
+      "/images/dates-sukari-bowl.jpg",
+      "/images/dates-sukari-split.jpg",
+      "/images/dates-sukari-packaged.jpg"
+    ],
+    "overview": {
+      "terroir": "Al-Qassim Province Palm Plains, Historic Date Heartland",
+      "harvestMethod": "Harvested at Rutab-Tamr transitional stage for crunchy base and creamy core",
+      "aromaFlavor": "Brown sugar candy, butterscotch sweetness, crystallized outer ring",
+      "purityGrade": "Royal Grade A Soft Sukari, 100% Raw and Unadulterated",
+      "packagingStandard": "Sealed luxury moisture-lock tub with golden lid",
+      "shelfLife": "12 Months in cool dry storage or refrigerator"
+    },
+    "description": "Named after 'Sukkar' (sugar) in Arabic, Sukari dates feature a radiant golden-yellow hue, crisp caramelized skin, and an astonishingly creamy, brown-sugar center that dissolves on your tongue. Known in the Arabian Peninsula as the 'Queen of Dates'.",
+    "benefits": [
+      "Unique texture profile: crispy golden outer crust with luscious molten center",
+      "Natural caramel and butterscotch flavor without any artificial additives",
+      "High in potassium and fast-acting carbohydrates for clean mental focus",
+      "Traditional companion to cardamom-scented Arabic Gahwa and Kashmiri Noon Chai"
+    ],
+    "nutrition": {
+      "calories": "294 kcal",
+      "protein": "1.7g",
+      "healthyFats": "0.2g",
+      "carbs": "78.5g",
+      "fiber": "6.0g"
+    },
+    "weights": [
+      {
+        "weight": "500g Tub",
+        "price": 590,
+        "originalPrice": 820,
+        "discount": 28,
+        "isDefault": true
+      },
+      {
+        "weight": "1kg Box",
+        "price": 1090,
+        "originalPrice": 1550,
+        "discount": 30
+      }
+    ]
+  },
+  {
+    "id": "jnu-nut-brazil-01",
+    "name": "JENU'S Wild Giant Amazonian Brazil Nuts",
+    "subname": "Jumbo Raw Bertholletia Kernels — Nature's Premier Selenium Superfood",
+    "category": "berries-seeds",
+    "subCategory": "nuts",
+    "productType": "Grade A Raw Whole Shelled Brazil Nuts (Bertholletia excelsa)",
+    "origin": "Wild Amazonian Rainforest Canopy Reserve",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 4.9,
+    "reviewsCount": 620,
+    "badge": "Selenium King",
+    "badgeType": "luxury",
+    "fssaiCertified": true,
+    "image": "/images/brazil-nuts-macro.jpg",
+    "images": [
+      "/images/brazil-nuts-macro.jpg",
+      "/images/brazil-nuts-bowl.jpg",
+      "/images/brazil-nuts-cluster.jpg",
+      "/images/brazil-nuts-packaged.jpg"
+    ],
+    "overview": {
+      "terroir": "Wild Virgin Amazon Rainforest Canopy Basin",
+      "harvestMethod": "Hand-gathered from wild old-growth rainforest trees, gently cracked",
+      "aromaFlavor": "Creamy macadamia-like butteriness with smooth earthiness and crisp bite",
+      "purityGrade": "Grade 1 Extra-Large Whole Kernels, Raw, Unsalted, Zero Oil Roasted",
+      "packagingStandard": "Vacuum-sealed nitrogen barrier canister preserving fragile fats",
+      "shelfLife": "12 Months in cool dark pantry"
+    },
+    "description": "Giant, dense, wild-foraged Brazil nuts. Just two nuts provide over 100% of your daily required selenium—essential for thyroid regulation, cellular repair, and cognitive vitality. Sourced exclusively from wild ancient trees that cannot be farmed industrially.",
+    "benefits": [
+      "Highest dietary source of natural selenium: boosts thyroid metabolism and immunity",
+      "Loaded with heart-healthy monounsaturated and polyunsaturated fatty acids",
+      "Rich in magnesium, zinc, and vitamin E for skin radiance and hormone balance",
+      "100% raw wild-foraged whole kernels—zero additives, preservatives, or salt"
+    ],
+    "nutrition": {
+      "calories": "656 kcal",
+      "protein": "14.3g",
+      "healthyFats": "66.4g",
+      "carbs": "12.3g",
+      "fiber": "7.5g"
+    },
+    "weights": [
+      {
+        "weight": "250g Jar",
+        "price": 620,
+        "originalPrice": 850,
+        "discount": 27,
+        "isDefault": true
+      },
+      {
+        "weight": "500g Master Pack",
+        "price": 1180,
+        "originalPrice": 1650,
+        "discount": 28
+      }
+    ]
+  },
+  {
+    "id": "jnu-nut-macadamia-01",
+    "name": "JENU'S Jumbo Royal Macadamia Nuts",
+    "subname": "Crisp Ivory Whole Spheres with Ultra-Rich Melting Buttery Palate",
+    "category": "berries-seeds",
+    "subCategory": "nuts",
+    "productType": "Grade 1 Raw Whole Shelled Macadamia Kernels",
+    "origin": "Subtropical Volcanic Foothills Reserve",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 5,
+    "reviewsCount": 890,
+    "badge": "Ultra Buttery",
+    "badgeType": "luxury",
+    "fssaiCertified": true,
+    "image": "/images/macadamia-macro.jpg",
+    "images": [
+      "/images/macadamia-macro.jpg",
+      "/images/macadamia-bowl.jpg",
+      "/images/macadamia-cluster.jpg",
+      "/images/macadamia-packaged.jpg"
+    ],
+    "overview": {
+      "terroir": "Mineral-Rich Volcanic Red Soils, High Rainfall Foothills",
+      "harvestMethod": "Precision-cracked ultra-hard shells to yield immaculate whole ivory spheres",
+      "aromaFlavor": "Melting sweet dairy cream, toasted butter nuances, delicate tender crunch",
+      "purityGrade": "Style 1: 95%+ Whole Spherical Kernels, Raw, Non-GMO, Unsalted",
+      "packagingStandard": "Aroma-lock foil pouch protecting fragile omega-7 oils",
+      "shelfLife": "12 Months in airtight chilled storage"
+    },
+    "description": "Regarded as the world's most luxurious nut. Giant whole ivory spheres with a melt-in-mouth buttery richness and delicate crunch. Highest monounsaturated healthy fat content of any tree nut, including rare palmitoleic acid (Omega-7) for glowing skin.",
+    "benefits": [
+      "Richest source of rare Omega-7 (palmitoleic acid) for cellular hydration & skin",
+      "Over 75% healthy monounsaturated fats support cardiovascular longevity",
+      "Exceptionally low in inflammatory omega-6 and net carbohydrates (keto-perfect)",
+      "Melt-in-the-mouth texture makes it the premier connoisseur nut on earth"
+    ],
+    "nutrition": {
+      "calories": "718 kcal",
+      "protein": "7.9g",
+      "healthyFats": "75.8g",
+      "carbs": "13.8g",
+      "fiber": "8.6g"
+    },
+    "weights": [
+      {
+        "weight": "200g Jar",
+        "price": 680,
+        "originalPrice": 940,
+        "discount": 28,
+        "isDefault": true
+      },
+      {
+        "weight": "400g Tin",
+        "price": 1290,
+        "originalPrice": 1820,
+        "discount": 29
+      }
+    ]
+  },
+  {
+    "id": "jnu-pecans-42",
+    "name": "JENU'S Alpine Raw Pecan Halves",
+    "subname": "Crisp Golden-Brown Jumbo Tree Nut Halves with Maple-Vanilla Warmth",
+    "category": "berries-seeds",
+    "subCategory": "nuts",
+    "productType": "Grade 1 Jumbo Mammoth Pecan Halves (Carya illinoinensis)",
+    "origin": "Himalayan Orchard Foothills (5,000 ft Altitude)",
+    "harvestYear": "2026 Fresh Harvest",
+    "rating": 4.9,
+    "reviewsCount": 540,
+    "badge": "Antioxidant King",
+    "badgeType": "luxury",
+    "fssaiCertified": true,
+    "image": "/images/pecans-macro.jpg",
+    "images": [
+      "/images/pecans-macro.jpg",
+      "/images/pecans-bowl.jpg",
+      "/images/pecans-shell-cracking.jpg",
+      "/images/pecans-packaged.jpg"
+    ],
+    "overview": {
+      "terroir": "Himalayan Orchard Foothills, Crisp Alpine Climate",
+      "harvestMethod": "Carefully cracked by hand to preserve unbroken mammoth halves",
+      "aromaFlavor": "Warm maple vanilla, delicate buttery sweetness, flaky crisp crunch",
+      "purityGrade": "Mammoth Halves: 100% Raw, Zero Added Salt or Oils, Unbleached",
+      "packagingStandard": "Nitrogen-flushed canister protecting fragile kernels from breakage",
+      "shelfLife": "12 Months in cool dry storage"
+    },
+    "description": "Exquisite, mammoth raw pecan halves harvested from high mountain orchards. Golden-brown ridges loaded with warm maple-vanilla notes and a tender, buttery crunch. Ranked #1 among all tree nuts for total antioxidant capacity.",
+    "benefits": [
+      "FSSAI Certified: 100% pure raw mammoth halves, lab-tested premium grade",
+      "Highest antioxidant score (ORAC value) of any nut, rich in gamma-tocopherol",
+      "Rich in monounsaturated oleic fats to support healthy cholesterol levels",
+      "Sublime for gourmet baking, keto snacking, morning oatmeal, and cheese boards"
+    ],
+    "nutrition": {
+      "calories": "691 kcal",
+      "protein": "9.2g",
+      "healthyFats": "72.0g",
+      "carbs": "13.9g",
+      "fiber": "9.6g"
+    },
+    "weights": [
+      {
+        "weight": "200g Jar",
+        "price": 540,
+        "originalPrice": 760,
+        "discount": 29,
+        "isDefault": true
+      },
+      {
+        "weight": "400g Tin",
+        "price": 1040,
+        "originalPrice": 1490,
+        "discount": 30
+      },
+      {
+        "weight": "800g Box",
+        "price": 1980,
+        "originalPrice": 2890,
+        "discount": 31
+      }
     ]
   }
-
 ];
 
 export const REVIEWS = [
   {
-    id: 1,
-    name: "Rajesh Malhotra",
-    city: "New Delhi",
-    date: "2 days ago",
-    rating: 5,
-    verified: true,
-    product: "JENU'S Royal Kashmiri Mamra Almonds (500g)",
-    comment: "The natural oil content and distinct curve of these Mamra almonds are exceptional. Clean packaging, genuine unbleached quality, and the FSSAI certification report gives complete peace of mind. Arrived via air cargo in 24 hours.",
-    avatar: "RM"
+    "id": 1,
+    "name": "Rajesh Malhotra",
+    "city": "New Delhi",
+    "date": "2 days ago",
+    "rating": 5,
+    "verified": true,
+    "product": "JENU'S Royal Kashmiri Mamra Almonds (500g)",
+    "comment": "The natural oil content and distinct curve of these Mamra almonds are exceptional. Clean packaging, genuine unbleached quality, and the FSSAI certification report gives complete peace of mind. Arrived via air cargo in 24 hours.",
+    "avatar": "RM"
   },
   {
-    id: 2,
-    name: "Dr. Ananya Sen",
-    city: "Bengaluru",
-    date: "4 days ago",
-    rating: 5,
-    verified: true,
-    product: "Pure Pampore Mongra Saffron (2g)",
-    comment: "The color diffusion and natural aroma of this Mongra saffron are exemplary. Just 3 strands imparted a brilliant golden-crimson hue. Verified the FSSAI lab parameters on the jar label. Truly professional service.",
-    avatar: "AS"
+    "id": 2,
+    "name": "Dr. Ananya Sen",
+    "city": "Bengaluru",
+    "date": "4 days ago",
+    "rating": 5,
+    "verified": true,
+    "product": "Pure Pampore Mongra Saffron (2g)",
+    "comment": "The color diffusion and natural aroma of this Mongra saffron are exemplary. Just 3 strands imparted a brilliant golden-crimson hue. Verified the FSSAI lab parameters on the jar label. Truly professional service.",
+    "avatar": "AS"
   },
   {
-    id: 3,
-    name: "Vikramaditya Rao",
-    city: "Mumbai",
-    date: "1 week ago",
-    rating: 5,
-    verified: true,
-    product: "Royal Khatamband Carved Wooden Hamper",
-    comment: "Ordered 12 hampers for corporate gifts. The solid walnut wood craftsmanship, velvet linings, and FSSAI certified dry fruits were deeply appreciated by all recipients. Refined, decent, and very premium.",
-    avatar: "VR"
+    "id": 3,
+    "name": "Vikramaditya Rao",
+    "city": "Mumbai",
+    "date": "1 week ago",
+    "rating": 5,
+    "verified": true,
+    "product": "Royal Khatamband Carved Wooden Hamper",
+    "comment": "Ordered 12 hampers for corporate gifts. The solid walnut wood craftsmanship, velvet linings, and FSSAI certified dry fruits were deeply appreciated by all recipients. Refined, decent, and very premium.",
+    "avatar": "VR"
   },
   {
-    id: 4,
-    name: "Zoya Mir",
-    city: "Srinagar",
-    date: "1 week ago",
-    rating: 5,
-    verified: true,
-    product: "Kashmiri Kagzi Snow Walnuts (1kg)",
-    comment: "Being from Kashmir, I appreciate honest, unbleached Kagzi walnuts that retain their natural light hue and healthy oils without chemical washes. JENU'S standards are exemplary.",
-    avatar: "ZM"
+    "id": 4,
+    "name": "Zoya Mir",
+    "city": "Srinagar",
+    "date": "1 week ago",
+    "rating": 5,
+    "verified": true,
+    "product": "Kashmiri Kagzi Snow Walnuts (1kg)",
+    "comment": "Being from Kashmir, I appreciate honest, unbleached Kagzi walnuts that retain their natural light hue and healthy oils without chemical washes. JENU'S standards are exemplary.",
+    "avatar": "ZM"
   },
   {
-    id: 5,
-    name: "Chef Abhimanyu Kapoor",
-    city: "New Delhi",
-    date: "3 days ago",
-    rating: 5,
-    verified: true,
-    product: "JENU'S Authentic Sun-Dried Kashmiri Mirch (250g)",
-    comment: "As an executive chef, I have searched for real unadulterated Kashmiri Mirch that has that natural crimson sheen without synthetic dyes. JENU'S stone-ground mirch and wild shahi jeera are unmatched in purity and aroma.",
-    avatar: "AK"
+    "id": 5,
+    "name": "Chef Abhimanyu Kapoor",
+    "city": "New Delhi",
+    "date": "3 days ago",
+    "rating": 5,
+    "verified": true,
+    "product": "JENU'S Authentic Sun-Dried Kashmiri Mirch (250g)",
+    "comment": "As an executive chef, I have searched for real unadulterated Kashmiri Mirch that has that natural crimson sheen without synthetic dyes. JENU'S stone-ground mirch and wild shahi jeera are unmatched in purity and aroma.",
+    "avatar": "AK"
   },
   {
-    id: 6,
-    name: "Sunita Deshmukh",
-    city: "Pune",
-    date: "5 days ago",
-    rating: 5,
-    verified: true,
-    product: "Valley Vitality Duo (Mamra Almonds + Snow Walnuts)",
-    comment: "The 1kg combo pack offers remarkable value. You can see the pure quality immediately when cracking open the pouch. Both my kids love soaked almonds and walnuts every morning.",
-    avatar: "SD"
+    "id": 6,
+    "name": "Sunita Deshmukh",
+    "city": "Pune",
+    "date": "5 days ago",
+    "rating": 5,
+    "verified": true,
+    "product": "Valley Vitality Duo (Mamra Almonds + Snow Walnuts)",
+    "comment": "The 1kg combo pack offers remarkable value. You can see the pure quality immediately when cracking open the pouch. Both my kids love soaked almonds and walnuts every morning.",
+    "avatar": "SD"
   }
 ];
 
 export const COUPONS = {
-  'KASHMIR10': { type: 'percent', value: 10, minOrder: 0, description: '10% instant discount' },
-  'VALLEYFRESH': { type: 'percent', value: 15, minOrder: 1500, description: '15% off orders above ₹1,500' },
-  'FIRSTJENU': { type: 'flat', value: 100, minOrder: 699, description: '₹100 flat discount on first order' }
+  "KASHMIR10": {
+    "type": "percent",
+    "value": 10,
+    "minOrder": 0,
+    "description": "10% instant discount"
+  },
+  "VALLEYFRESH": {
+    "type": "percent",
+    "value": 15,
+    "minOrder": 1500,
+    "description": "15% off orders above ₹1,500"
+  },
+  "FIRSTJENU": {
+    "type": "flat",
+    "value": 100,
+    "minOrder": 699,
+    "description": "₹100 flat discount on first order"
+  }
 };
 
 export const HAMPER_BOX_STYLES = [
-  { id: 'walnut-wood', name: 'Carved Walnut Khatamband Box', price: 950, image: '/images/royal-hamper.jpg', desc: 'Solid Kashmir Walnut wood hand-finished with traditional motifs' },
-  { id: 'papier-mache', name: 'Artisan Heritage Lacquer Box', price: 750, image: '/images/royal-hamper.jpg', desc: 'Hand-painted Kashmiri lacquer with subtle gold detailing' },
-  { id: 'crimson-velvet', name: 'Imperial Velvet Presentation Case', price: 550, image: '/images/royal-hamper.jpg', desc: 'Plush burgundy velvet with brass clasp and satin partition' }
+  {
+    "id": "walnut-wood",
+    "name": "Carved Walnut Khatamband Box",
+    "price": 950,
+    "image": "/images/royal-hamper.jpg",
+    "desc": "Solid Kashmir Walnut wood hand-finished with traditional motifs"
+  },
+  {
+    "id": "papier-mache",
+    "name": "Artisan Heritage Lacquer Box",
+    "price": 750,
+    "image": "/images/royal-hamper.jpg",
+    "desc": "Hand-painted Kashmiri lacquer with subtle gold detailing"
+  },
+  {
+    "id": "crimson-velvet",
+    "name": "Imperial Velvet Presentation Case",
+    "price": 550,
+    "image": "/images/royal-hamper.jpg",
+    "desc": "Plush burgundy velvet with brass clasp and satin partition"
+  }
 ];
 
 export const HAMPER_FILL_ITEMS = [
-  { id: 'mamra-250', name: 'Mamra Almonds (250g)', price: 890, img: '/images/real-mamra-macro.jpg' },
-  { id: 'walnut-250', name: 'Snow Walnuts (250g)', price: 480, img: '/images/real-walnuts-macro.jpg' },
-  { id: 'saffron-1g', name: 'Pampore Mongra Saffron (1g)', price: 420, img: '/images/real-saffron-macro.jpg' },
-  { id: 'mirch-250', name: 'Kashmiri Mirch (250g)', price: 380, img: '/images/real-mirch-macro.jpg' },
-  { id: 'jeera-100', name: 'Wild Shahi Jeera (100g)', price: 360, img: '/images/real-jeera-macro.jpg' },
-  { id: 'wazwan-150', name: 'Wazwan Masala Ver (150g)', price: 320, img: '/images/wazwan-ver-slice.jpg' },
-  { id: 'spices-chest-500', name: '5-Spice Chest (500g)', price: 890, img: '/images/spices-assortment-dishes.jpg' },
-  { id: 'figs-250', name: 'Sun-Dried Figs (250g)', price: 390, img: '/images/real-figs-macro.jpg' },
-  { id: 'apricot-250', name: 'Shopian Dried Apricots (250g)', price: 340, img: '/images/real-apricots-macro.jpg' },
-  { id: 'kahwa-250', name: 'Shahi Saffron Kahwa (250g)', price: 460, img: '/images/kahwa-tea-blend.jpg' },
-  { id: 'chilgoza-200', name: 'Himalayan Chilgoza (200g)', price: 990, img: '/images/real-chilgoza-macro.jpg' }
+  {
+    "id": "mamra-250",
+    "name": "Mamra Almonds (250g)",
+    "price": 890,
+    "img": "/images/real-mamra-macro.jpg"
+  },
+  {
+    "id": "walnut-250",
+    "name": "Snow Walnuts (250g)",
+    "price": 480,
+    "img": "/images/real-walnuts-macro.jpg"
+  },
+  {
+    "id": "saffron-1g",
+    "name": "Pampore Mongra Saffron (1g)",
+    "price": 420,
+    "img": "/images/real-saffron-macro.jpg"
+  },
+  {
+    "id": "mirch-250",
+    "name": "Kashmiri Mirch (250g)",
+    "price": 380,
+    "img": "/images/real-mirch-macro.jpg"
+  },
+  {
+    "id": "jeera-100",
+    "name": "Wild Shahi Jeera (100g)",
+    "price": 360,
+    "img": "/images/real-jeera-macro.jpg"
+  },
+  {
+    "id": "wazwan-150",
+    "name": "Wazwan Masala Ver (150g)",
+    "price": 320,
+    "img": "/images/wazwan-ver-slice.jpg"
+  },
+  {
+    "id": "spices-chest-500",
+    "name": "5-Spice Chest (500g)",
+    "price": 890,
+    "img": "/images/spices-assortment-dishes.jpg"
+  },
+  {
+    "id": "figs-250",
+    "name": "Sun-Dried Figs (250g)",
+    "price": 390,
+    "img": "/images/real-figs-macro.jpg"
+  },
+  {
+    "id": "apricot-250",
+    "name": "Shopian Dried Apricots (250g)",
+    "price": 340,
+    "img": "/images/real-apricots-macro.jpg"
+  },
+  {
+    "id": "kahwa-250",
+    "name": "Shahi Saffron Kahwa (250g)",
+    "price": 460,
+    "img": "/images/kahwa-tea-blend.jpg"
+  },
+  {
+    "id": "chilgoza-200",
+    "name": "Himalayan Chilgoza (200g)",
+    "price": 990,
+    "img": "/images/real-chilgoza-macro.jpg"
+  }
 ];
