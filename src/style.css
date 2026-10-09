@@ -29,20 +29,21 @@
   --wood-walnut-border: rgba(212, 175, 55, 0.22);
   --wood-walnut-border-light: rgba(212, 175, 55, 0.4);
 
-  /* Global Surface Variables (NO STARK WHITE) */
-  --bg-page: #1A110B;
-  --bg-surface: #271911;
-  --bg-subtle: #20140D;
-  --bg-card: #2B1C13;
+  /* Clean Apple-Grade Global Surface Variables */
+  --bg-page: #0B0E14;
+  --bg-surface: #141A23;
+  --bg-subtle: #0E121A;
+  --bg-card: #141A23;
+  --bg-card-hover: #18202C;
   
-  /* Warm Cashmere & Almond Typography */
-  --text-primary: #FFFDF9;
-  --text-secondary: #E8D7C7;
-  --text-muted: #B39E8C;
-  --text-light: #8E7A68;
+  /* Luminous, High-Contrast Typography */
+  --text-primary: #FFFFFF;
+  --text-secondary: #E2E8F0;
+  --text-muted: #94A3B8;
+  --text-light: #64748B;
   
-  --border-color: rgba(212, 175, 55, 0.22);
-  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.05);
   
   --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.4);
@@ -67,19 +68,15 @@
 }
 
 body {
-  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: #1a0e08;
-  background-image: 
-    radial-gradient(circle at 50% 15%, rgba(55, 30, 18, 0.06) 0%, rgba(18, 10, 6, 0.20) 85%),
-    url('/images/kashmir_walnut_carved.jpg');
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Outfit", "Segoe UI", Roboto, sans-serif;
+  background-color: #0B0E14;
+  background-image: radial-gradient(1200px 700px at 50% 0px, rgba(30, 41, 59, 0.3) 0%, rgba(11, 14, 20, 0) 75%);
+  background-attachment: scroll;
   color: var(--text-primary);
   line-height: 1.5;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body.modal-open,
@@ -88,10 +85,10 @@ body.drawer-open {
 }
 
 h1, h2, h3, h4, .brand-font {
-  font-family: 'Cinzel', Georgia, serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", "Segoe UI", Roboto, sans-serif;
   font-weight: 700;
   color: var(--text-primary);
-  letter-spacing: 0.2px;
+  letter-spacing: -0.015em;
 }
 
 a {
@@ -126,13 +123,12 @@ img {
    1. ANNOUNCEMENT BAR (CLEAN & FAST ORDERING)
    =================================================== */
 .announcement-bar {
-  background: #140C07;
-  color: #E8D7C7;
+  background: #080B10;
+  color: #94A3B8;
   font-size: 12px;
   font-weight: 500;
   padding: 8px 24px;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.22);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .announcement-content {
@@ -149,8 +145,8 @@ img {
   align-items: center;
   gap: 6px;
   font-size: 11.5px;
-  font-weight: 600;
-  color: #D4AF37;
+  font-weight: 500;
+  color: #CBD5E1;
   white-space: nowrap;
 }
 
@@ -162,7 +158,7 @@ img {
   flex: 1;
   justify-content: center;
   font-size: 12px;
-  color: #FFFDF9;
+  color: #E2E8F0;
 }
 
 #ticker-text {
@@ -170,7 +166,7 @@ img {
 }
 
 #ticker-text strong {
-  color: #FBBF24;
+  color: #FFFFFF;
 }
 
 .announcement-actions {
@@ -181,37 +177,37 @@ img {
 }
 
 .pincode-trigger-btn {
-  color: #FFFDF9;
+  color: #CBD5E1;
   font-size: 11.5px;
-  font-weight: 600;
+  font-weight: 500;
   display: flex;
   align-items: center;
   gap: 5px;
   padding: 4px 10px;
-  border-radius: var(--radius-xs);
-  background: rgba(212, 175, 55, 0.12);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: var(--transition);
 }
 
 .pincode-trigger-btn:hover {
-  background: rgba(212, 175, 55, 0.22);
-  border-color: #D4AF37;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
 }
 
 /* ===================================================
-   2. MAIN STICKY HEADER & LIVE SEARCH (KASHMIRI WALNUT WOOD)
+   2. MAIN STICKY HEADER & LIVE SEARCH (APPLE-GRADE FROSTED GLASS)
    =================================================== */
 .main-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(26, 16, 10, 0.96);
-  background-image: linear-gradient(180deg, rgba(42, 26, 17, 0.95) 0%, rgba(26, 16, 10, 0.98) 100%);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.28);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  background: rgba(11, 14, 20, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .header-container {
@@ -262,22 +258,21 @@ img {
 }
 
 .brand-name {
-  font-family: 'Cinzel', serif;
-  font-size: 22px;
-  font-weight: 800;
-  color: #FBBF24;
-  letter-spacing: 1.5px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.015em;
   line-height: 1;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .brand-tagline {
-  font-size: 9.5px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: #D4AF37;
-  margin-top: 2px;
+  letter-spacing: 0.1em;
+  color: #94A3B8;
+  margin-top: 3px;
 }
 
 /* Search Input */
@@ -290,24 +285,23 @@ img {
 .search-input-box {
   display: flex;
   align-items: center;
-  background: #180E08;
-  border: 1.5px solid rgba(212, 175, 55, 0.25);
-  border-radius: var(--radius-sm);
-  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  padding: 8px 16px;
   transition: var(--transition);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .search-input-box:focus-within {
-  background: #20130B;
-  border-color: #F59E0B;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 12px rgba(245, 158, 11, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.06);
 }
 
 .search-icon {
   font-size: 14px;
   margin-right: 10px;
-  color: #D4AF37;
+  color: #94A3B8;
 }
 
 .search-input-box input {
@@ -316,22 +310,22 @@ img {
   background: transparent;
   outline: none;
   font-size: 13.5px;
-  color: #FFFDF9;
+  color: #FFFFFF;
 }
 
 .search-input-box input::placeholder {
-  color: #A89582;
+  color: #64748B;
 }
 
 .search-dropdown-menu {
   position: absolute;
-  top: calc(100% + 6px);
+  top: calc(100% + 8px);
   left: 0;
   right: 0;
-  background: #24160E;
-  border-radius: var(--radius-sm);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: #141A23;
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
   z-index: 105;
 }
@@ -342,20 +336,20 @@ img {
   padding: 10px 14px;
   gap: 12px;
   cursor: pointer;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   transition: var(--transition);
 }
 
 .search-drop-item:hover {
-  background: #342015;
+  background: #1E293B;
 }
 
 .search-drop-thumb {
   width: 36px;
   height: 36px;
-  border-radius: 4px;
+  border-radius: 6px;
   object-fit: cover;
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .search-drop-info {
@@ -365,26 +359,27 @@ img {
 .search-drop-info strong {
   display: block;
   font-size: 13px;
-  color: #FFFDF9;
+  color: #FFFFFF;
+  font-weight: 600;
 }
 
 .search-drop-info small {
-  color: #B39E8C;
+  color: #94A3B8;
   font-size: 11px;
 }
 
 .search-drop-price {
   font-weight: 700;
-  color: #FBBF24;
+  color: #FFFFFF;
   font-size: 13px;
 }
 
 .search-drop-add {
   padding: 4px 10px;
-  background: var(--primary-pine);
-  color: #FFFDF9;
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  border-radius: var(--radius-xs);
+  background: #059669;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 9999px;
   font-size: 11.5px;
   font-weight: 600;
 }
@@ -393,7 +388,7 @@ img {
   padding: 14px;
   text-align: center;
   font-size: 12.5px;
-  color: #B39E8C;
+  color: #64748B;
 }
 
 /* Header Utilities */
@@ -407,18 +402,18 @@ img {
   display: flex;
   align-items: center;
   gap: 6px;
-  background: rgba(16, 185, 129, 0.15);
-  border: 1px solid rgba(16, 185, 129, 0.35);
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.25);
   padding: 5px 12px;
-  border-radius: var(--radius-xs);
+  border-radius: 9999px;
   font-size: 12px;
   font-weight: 600;
-  color: #6EE7B7;
+  color: #34D399;
   transition: var(--transition);
 }
 
 .btn-fssai-cert-badge:hover {
-  background: rgba(16, 185, 129, 0.25);
+  background: rgba(16, 185, 129, 0.2);
   border-color: #10B981;
 }
 
@@ -431,28 +426,28 @@ img {
   position: relative;
   width: 38px;
   height: 38px;
-  border-radius: var(--radius-sm);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 16px;
-  background: #281810;
-  border: 1px solid rgba(212, 175, 55, 0.22);
-  color: #E8D7C7;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94A3B8;
   transition: var(--transition);
 }
 
 .action-icon-btn:hover {
-  background: #382317;
-  border-color: #F59E0B;
-  color: #FFFDF9;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
 }
 
 .badge-counter {
   position: absolute;
-  top: -4px;
-  right: -4px;
-  background: #DC2626;
+  top: -3px;
+  right: -3px;
+  background: #EF4444;
   color: white;
   font-size: 10px;
   font-weight: 700;
@@ -462,27 +457,28 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #281810;
+  border: 2px solid #0B0E14;
 }
 
 .btn-header-cart {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, #184436, #0F2E24);
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  color: #FFFDF9;
+  background: #059669;
+  background-image: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  border: none;
+  color: #FFFFFF;
   padding: 8px 16px;
-  border-radius: var(--radius-sm);
+  border-radius: 9999px;
   font-weight: 600;
   font-size: 13.5px;
   transition: var(--transition);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 10px rgba(16, 185, 129, 0.3);
 }
 
 .btn-header-cart:hover {
-  background: linear-gradient(135deg, #1E5544, #143D30);
-  border-color: #F59E0B;
+  background-image: linear-gradient(135deg, #34D399 0%, #059669 100%);
+  transform: translateY(-1px);
 }
 
 .cart-icon-wrapper {
@@ -492,16 +488,16 @@ img {
 
 .header-cart-total {
   font-weight: 700;
-  color: #FBBF24;
+  color: #FFFFFF;
   border-left: 1px solid rgba(255, 255, 255, 0.2);
   padding-left: 8px;
 }
 
-/* Secondary Navigation Bar (Kashmiri Carved Timber Strip) */
+/* Secondary Navigation Bar */
 .sub-nav-bar {
-  background: #1C1109;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.22);
+  background: rgba(11, 14, 20, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   overflow-x: auto;
   white-space: nowrap;
 }
@@ -518,8 +514,8 @@ img {
 
 .nav-links-list li a {
   font-size: 13px;
-  font-weight: 600;
-  color: #E8D7C7;
+  font-weight: 500;
+  color: #94A3B8;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -775,20 +771,15 @@ img {
   width: 68px;
   height: 68px;
   border-radius: 50%;
-  background-color: #180F0A;
-  background-image: 
-    radial-gradient(circle at 50% 30%, rgba(68, 38, 22, 0.25) 0%, rgba(18, 10, 6, 0.8) 100%),
-    url('/images/kashmir_walnut_carved.jpg');
-  background-size: cover;
-  background-position: center;
-  border: 2.5px solid #5C3A21;
+  background-color: #141A23;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
   padding: 3px;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.65), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -796,35 +787,30 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 50%;
   display: block;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
   filter: brightness(0.96) contrast(1.04);
 }
 
 .circle-ring-bevel {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  pointer-events: none;
-  background: radial-gradient(circle, transparent 60%, rgba(12, 7, 4, 0.5) 100%);
-  box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.25);
-  transition: all 0.3s ease;
+  display: none;
 }
 
 .category-circle-item:hover .circle-ring {
-  border-color: #F59E0B;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 16px rgba(245, 158, 11, 0.35);
+  border-color: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 14px rgba(255, 255, 255, 0.15);
 }
 
 .category-circle-item:hover .category-roundel-img {
-  transform: scale(1.1);
+  transform: scale(1.08);
   filter: brightness(1.05) contrast(1.08);
 }
 
 .category-circle-item.active .circle-ring {
-  border-color: #FBBF24;
-  border-width: 2.5px;
-  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25), 0 8px 24px rgba(0, 0, 0, 0.75), 0 0 20px rgba(251, 191, 36, 0.45);
+  border-color: #FFFFFF;
+  border-width: 2px;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2), 0 8px 24px rgba(0, 0, 0, 0.75);
 }
 
 .category-circle-item.active .category-roundel-img {
@@ -832,18 +818,14 @@ img {
   filter: brightness(1.08) contrast(1.1);
 }
 
-.category-circle-item.active .circle-ring-bevel {
-  box-shadow: inset 0 0 0 1.5px rgba(251, 191, 36, 0.5);
-}
-
 .circle-label {
-  font-family: 'Outfit', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", sans-serif;
   font-size: 11.5px;
-  font-weight: 600;
-  color: #D4C4B5;
+  font-weight: 500;
+  color: #94A3B8;
   text-align: center;
   line-height: 1.25;
-  letter-spacing: 0.2px;
+  letter-spacing: -0.01em;
   transition: color 0.2s ease;
   white-space: normal;
   display: -webkit-box;
@@ -853,21 +835,21 @@ img {
 }
 
 .category-circle-item:hover .circle-label {
-  color: #FFFDF9;
+  color: #FFFFFF;
 }
 
 .category-circle-item.active .circle-label {
-  color: #FBBF24;
-  font-weight: 700;
-  text-shadow: 0 0 10px rgba(251, 191, 36, 0.35);
+  color: #FFFFFF;
+  font-weight: 600;
+  text-shadow: none;
 }
 
 .circle-active-dot {
   width: 0;
   height: 3px;
   border-radius: 2px;
-  background: #FBBF24;
-  box-shadow: 0 0 8px #FBBF24;
+  background: #FFFFFF;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
   transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   margin-top: -3px;
 }
@@ -885,23 +867,23 @@ img {
 }
 
 .deal-banner-wrapper {
-  background: linear-gradient(180deg, #2A1A12 0%, #1E120A 100%);
-  border-radius: var(--radius-md);
-  border: 1.5px solid rgba(212, 175, 55, 0.35);
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  background: #141A23;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.4);
   overflow: hidden;
 }
 
 .deal-header-strip {
-  background: linear-gradient(90deg, #184436 0%, #0F2E24 50%, #2A170E 100%);
-  color: #FFFDF9;
+  background: rgba(255, 255, 255, 0.03);
+  color: #FFFFFF;
   padding: 14px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 14px;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .deal-title-box {
@@ -917,8 +899,9 @@ img {
 
 .deal-title-box h3 {
   font-size: 18px;
-  color: #FDE68A;
-  font-family: 'Cinzel', serif;
+  color: #FFFFFF;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", sans-serif;
+  font-weight: 700;
 }
 
 .deal-title-box p {
@@ -1036,12 +1019,13 @@ img {
 }
 
 .deal-title {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
-  color: #FFFDF9;
-  font-family: 'Cinzel', serif;
-  line-height: 1.3;
-  margin-bottom: 4px;
+  color: #FFFFFF;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", sans-serif;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  margin-bottom: 6px;
 }
 
 .deal-sub {
@@ -1177,14 +1161,21 @@ img {
 }
 
 .custom-sort-select {
-  padding: 8px 14px;
-  border-radius: var(--radius-sm);
-  background: #24160E;
-  border: 1.5px solid rgba(212, 175, 55, 0.28);
+  padding: 8px 16px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   font-size: 13px;
   font-weight: 500;
-  color: #FFFDF9;
+  color: #FFFFFF;
   outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.custom-sort-select:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Filter Tabs */
@@ -1193,35 +1184,38 @@ img {
   gap: 8px;
   overflow-x: auto;
   padding-bottom: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   scrollbar-width: none;
 }
 
 .filter-tab-btn {
-  padding: 7px 16px;
-  border-radius: var(--radius-sm);
+  padding: 8px 18px;
+  border-radius: 9999px;
   font-size: 13px;
   font-weight: 500;
-  background: #24160E;
-  color: #E8D7C7;
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  background: rgba(255, 255, 255, 0.04);
+  color: #94A3B8;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   white-space: nowrap;
-  transition: var(--transition);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
 }
 
 .filter-tab-btn:hover {
-  border-color: #F59E0B;
-  color: #FBBF24;
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .filter-tab-btn.active {
-  background: linear-gradient(135deg, #B45309, #78350F);
-  color: #FFFDF9;
-  border-color: #F59E0B;
-  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.3);
+  background: #FFFFFF;
+  color: #0B0E14;
+  border-color: #FFFFFF;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.15);
 }
 
-/* Products Grid - 3 Frames in a Row with Kashmiri Carved Walnut Woodwork */
+/* Products Grid - Clean 3-Column Luxury Presentation */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1244,73 +1238,63 @@ img {
   }
 }
 
-/* Single Product Card (Kashmiri Carved Walnut Wood Heirloom Plaque) */
+/* Single Product Card (Apple-Grade Elevated Obsidian Slate Surface) */
 .product-card {
-  background-color: #1A0E08;
-  background-image: 
-    radial-gradient(circle at 50% 15%, rgba(55, 32, 18, 0.42) 0%, rgba(18, 10, 6, 0.85) 100%),
-    url('/images/kashmir_walnut_carved.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  border-radius: 14px;
-  border: 3px solid #5C3A21;
+  background-color: #141A23;
+  background-image: none;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   overflow: hidden;
-  box-shadow: 
-    0 12px 32px rgba(0, 0, 0, 0.7),
-    inset 0 0 0 1px rgba(212, 175, 55, 0.42),
-    inset 0 0 16px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease;
   position: relative;
   cursor: pointer;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 
-    0 22px 48px rgba(0, 0, 0, 0.85),
-    0 0 25px rgba(212, 175, 55, 0.35),
-    inset 0 0 0 1px rgba(245, 158, 11, 0.7);
-  border-color: #D4AF37;
+  transform: translateY(-4px);
+  background-color: #18202C;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 .product-card-top-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 12px;
-  background: rgba(18, 10, 6, 0.75);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-  font-size: 11px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 11.5px;
 }
 
 .product-origin-chip {
-  color: #C5A059;
-  font-weight: 600;
+  color: #94A3B8;
+  font-weight: 500;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  letter-spacing: 0.2px;
+  gap: 5px;
+  letter-spacing: -0.01em;
 }
 
 .product-clean-badge {
   font-size: 10px;
-  font-weight: 700;
-  padding: 2px 7px;
-  border-radius: 4px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 9999px;
   text-transform: uppercase;
-  letter-spacing: 0.3px;
-  background: rgba(212, 175, 55, 0.16);
-  color: #FCD34D;
-  border: 1px solid rgba(212, 175, 55, 0.35);
+  letter-spacing: 0.03em;
+  background: rgba(255, 255, 255, 0.06);
+  color: #CBD5E1;
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .product-clean-badge.bestseller {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(180, 83, 9, 0.25));
-  color: #FDE68A;
-  border-color: rgba(245, 158, 11, 0.5);
+  background: rgba(245, 158, 11, 0.15);
+  color: #FBBF24;
+  border-color: rgba(245, 158, 11, 0.3);
 }
 
 .product-card-top-actions {
@@ -1320,8 +1304,8 @@ img {
 }
 
 .wishlist-btn {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   width: 28px;
   height: 28px;
@@ -1329,7 +1313,7 @@ img {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #D1D5DB;
+  color: #94A3B8;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   padding: 0;
   line-height: 0;
@@ -1337,14 +1321,14 @@ img {
 }
 
 .wishlist-btn:hover {
-  background: rgba(220, 38, 38, 0.18);
+  background: rgba(239, 68, 68, 0.15);
   border-color: #EF4444;
   color: #EF4444;
-  transform: scale(1.12);
+  transform: scale(1.1);
 }
 
 .wishlist-btn.active {
-  background: rgba(220, 38, 38, 0.22);
+  background: rgba(239, 68, 68, 0.2);
   border-color: #EF4444;
   color: #EF4444;
 }
@@ -1363,14 +1347,13 @@ img {
 .product-image-box {
   position: relative;
   width: 100%;
-  height: 255px;
-  background: #0E0704;
+  height: 250px;
+  background: #0B0E14;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.18);
-  box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .product-img {
@@ -1383,43 +1366,45 @@ img {
 }
 
 .product-card:hover .product-img {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
 .card-real-tag {
   position: absolute;
-  top: 8px;
-  right: 8px;
-  background: rgba(16, 185, 129, 0.9);
-  color: #FFFFFF;
+  top: 10px;
+  right: 10px;
+  background: rgba(16, 185, 129, 0.2);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
   font-size: 10.5px;
-  font-weight: 700;
-  padding: 3px 8px;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  letter-spacing: 0.2px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  letter-spacing: -0.01em;
   pointer-events: none;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   z-index: 3;
 }
 
 /* Product Info */
 .product-info {
-  padding: 14px 14px 14px 14px;
+  padding: 18px 16px 16px 16px;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
 .product-title {
-  font-size: 15.5px;
-  font-weight: 700;
-  color: #FFFDF9;
-  font-family: 'Cinzel', serif;
+  font-size: 17.5px;
+  font-weight: 600;
+  color: #FFFFFF;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Outfit", "Segoe UI", Roboto, sans-serif;
   line-height: 1.35;
-  margin-bottom: 4px;
-  transition: color 0.2s ease;
-  min-height: 42px;
+  letter-spacing: -0.015em;
+  margin-bottom: 5px;
+  transition: color 0.15s ease;
+  min-height: 48px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -1427,74 +1412,75 @@ img {
 }
 
 .product-title:hover {
-  color: #FBBF24;
+  color: #38BDF8;
 }
 
 .product-subname {
-  font-size: 12px;
-  color: #C5A059;
-  margin-bottom: 8px;
+  font-size: 12.5px;
+  color: #94A3B8;
+  margin-bottom: 12px;
   line-height: 1.4;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  min-height: 17px;
+  min-height: 18px;
+  font-weight: 400;
 }
 
 /* ====================================================================
    PRODUCT CARD OVERVIEW & SPECIFICATIONS PANEL
    ==================================================================== */
 .product-card-overview {
-  background: linear-gradient(180deg, rgba(28, 16, 10, 0.95) 0%, rgba(16, 9, 5, 0.98) 100%);
-  border: 1px solid rgba(212, 175, 55, 0.22);
-  border-radius: 8px;
-  padding: 8px 10px;
-  margin: 4px 0 10px 0;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6);
-  transition: border-color 0.2s ease, background 0.2s ease;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin: 0 0 14px 0;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .product-card:hover .product-card-overview {
-  border-color: rgba(212, 175, 55, 0.45);
-  background: linear-gradient(180deg, rgba(34, 19, 12, 0.96) 0%, rgba(18, 10, 6, 0.99) 100%);
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .card-description-box {
-  margin: 5px 0 7px 0;
-  padding-bottom: 6px;
-  border-bottom: 1px dashed rgba(212, 175, 55, 0.2);
+  margin: 6px 0 8px 0;
+  padding-bottom: 7px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .card-description-text {
-  font-size: 11px;
-  color: #E2D9D2;
+  font-size: 11.5px;
+  color: #CBD5E1;
   line-height: 1.45;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-style: italic;
+  font-style: normal;
 }
 
 .card-overview-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 4px;
-  margin-bottom: 3px;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.16);
+  padding-bottom: 5px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .overview-header-tag {
-  font-family: 'Cinzel', Georgia, serif;
-  font-size: 10px;
-  font-weight: 700;
-  color: #FCD34D;
-  letter-spacing: 0.5px;
+  font-family: inherit;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #94A3B8;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
 }
 
 .overview-dot {
@@ -1507,20 +1493,21 @@ img {
 }
 
 .overview-quick-link {
-  font-size: 9.5px;
-  font-weight: 600;
-  color: #C5A059;
+  font-size: 10px;
+  font-weight: 500;
+  color: #38BDF8;
   cursor: pointer;
   transition: all 0.2s ease;
-  padding: 1px 5px;
-  border-radius: 3px;
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  padding: 2px 8px;
+  border-radius: 9999px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
 }
 
 .overview-quick-link:hover {
-  color: #FDE68A;
-  background: rgba(212, 175, 55, 0.2);
-  border-color: #F59E0B;
+  color: #FFFFFF;
+  background: rgba(56, 189, 248, 0.2);
+  border-color: #38BDF8;
 }
 
 .card-overview-specs {
@@ -1533,32 +1520,31 @@ img {
   display: flex;
   align-items: baseline;
   font-size: 11px;
-  line-height: 1.35;
+  line-height: 1.4;
   gap: 6px;
   overflow: hidden;
 }
 
 .card-overview-row .spec-k {
-  color: #A38A75;
-  font-weight: 600;
+  color: #64748B;
+  font-weight: 500;
   flex-shrink: 0;
-  font-size: 10.5px;
+  font-size: 11px;
 }
 
 .card-overview-row .spec-v {
-  color: #E8D7C7;
+  color: #F1F5F9;
   font-weight: 500;
+  font-size: 11.5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .card-overview-row.aroma-row .spec-v {
-  color: #FDE68A;
-  font-style: italic;
+  color: #FBBF24;
+  font-style: normal;
 }
-
-
 
 /* Weights Selector */
 .product-weights-selector {
@@ -1568,12 +1554,12 @@ img {
 
 .weight-label {
   font-size: 11px;
-  font-weight: 600;
-  color: #A38A75;
+  font-weight: 500;
+  color: #64748B;
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 7px;
   text-transform: uppercase;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.04em;
 }
 
 .weight-chips-group {
@@ -1583,29 +1569,29 @@ img {
 }
 
 .weight-chip {
-  padding: 4px 10px;
-  border-radius: 6px;
-  background: #180D08;
-  border: 1px solid rgba(212, 175, 55, 0.25);
-  font-size: 11.5px;
-  font-weight: 600;
-  color: #E8D7C7;
+  padding: 5px 11px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 12px;
+  font-weight: 500;
+  color: #94A3B8;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .weight-chip:hover {
-  border-color: #F59E0B;
-  color: #FFFDF9;
-  background: #281810;
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .weight-chip.active {
-  background: linear-gradient(135deg, #B45309 0%, #78350F 100%);
-  border-color: #F59E0B;
-  color: #FFFDF9;
-  font-weight: 700;
-  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.35);
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+  color: #0B0E14;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
 }
 
 /* Direct Order & Price Bar */
@@ -1615,8 +1601,8 @@ img {
   justify-content: space-between;
   gap: 10px;
   margin-top: auto;
-  padding-top: 10px;
-  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .product-price-stack {
@@ -1626,27 +1612,28 @@ img {
 }
 
 .current-price {
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 700;
-  color: #FBBF24;
+  color: #FFFFFF;
   line-height: 1;
+  letter-spacing: -0.015em;
 }
 
 .original-price {
   font-size: 11.5px;
-  color: #8C7867;
+  color: #64748B;
   text-decoration: line-through;
   line-height: 1;
 }
 
 .save-tag {
   font-size: 10px;
-  font-weight: 700;
-  color: #6EE7B7;
-  background: rgba(16, 185, 129, 0.18);
-  border: 1px solid rgba(16, 185, 129, 0.35);
-  padding: 1px 5px;
-  border-radius: 3px;
+  font-weight: 600;
+  color: #34D399;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 2px 6px;
+  border-radius: 9999px;
   align-self: flex-start;
   margin-top: 2px;
 }
@@ -1656,26 +1643,27 @@ img {
 }
 
 .btn-order-now {
-  background: linear-gradient(135deg, #184436 0%, #0F2E24 100%);
-  border: 1.5px solid rgba(212, 175, 55, 0.45);
-  color: #FFFDF9;
-  padding: 9px 16px;
-  border-radius: 8px;
+  background: #059669;
+  background-image: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  border: none;
+  color: #FFFFFF;
+  padding: 9px 18px;
+  border-radius: 9999px;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
+  letter-spacing: -0.01em;
 }
 
 .btn-order-now:hover {
-  background: linear-gradient(135deg, #1E5544 0%, #143D30 100%);
-  border-color: #F59E0B;
-  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.3);
+  background-image: linear-gradient(135deg, #34D399 0%, #059669 100%);
+  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.35);
   transform: translateY(-1px);
 }
 
@@ -1693,29 +1681,29 @@ img {
 .btn-order-now.disabled {
   opacity: 0.5;
   cursor: not-allowed;
-  background: #281810;
-  border-color: rgba(255, 255, 255, 0.15);
+  background: #1E293B;
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .qty-stepper-clean {
   display: flex;
   align-items: center;
   gap: 6px;
-  background: #140A06;
-  border: 1.5px solid rgba(212, 175, 55, 0.4);
-  border-radius: 8px;
-  padding: 4px 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  padding: 4px 8px;
 }
 
 .qty-stepper-clean .qty-btn {
-  width: 26px;
-  height: 26px;
-  border-radius: 5px;
-  background: #281810;
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  color: #FFFDF9;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #FFFFFF;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 13px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1724,15 +1712,14 @@ img {
 }
 
 .qty-stepper-clean .qty-btn:hover {
-  background: #B45309;
-  border-color: #F59E0B;
-  color: white;
+  background: #FFFFFF;
+  color: #0B0E14;
 }
 
 .qty-stepper-clean .qty-count {
-  font-size: 11.5px;
-  font-weight: 700;
-  color: #FBBF24;
+  font-size: 12px;
+  font-weight: 600;
+  color: #FFFFFF;
   padding: 0 4px;
   white-space: nowrap;
 }
@@ -1742,8 +1729,7 @@ img {
    =================================================== */
 .hamper-builder-section {
   padding: 56px 0;
-  background: linear-gradient(135deg, rgba(15, 46, 36, 0.94) 0%, rgba(10, 32, 25, 0.96) 100%),
-              url('/images/kashmir-signature-symbols.jpg') center/cover no-repeat fixed;
+  background: linear-gradient(135deg, #0e1e19 0%, #081410 100%);
   color: white;
   position: relative;
 }
@@ -1953,7 +1939,7 @@ img {
 }
 
 .plaque-brand {
-  font-family: 'Cinzel', serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", sans-serif;
   font-weight: 700;
   display: block;
   font-size: 14px;
@@ -2037,18 +2023,18 @@ img {
 
 .why-feature-card {
   text-align: left;
-  padding: 20px;
-  border-radius: var(--radius-sm);
-  background: linear-gradient(135deg, #26170E 0%, #1B1008 100%);
-  border: 1.5px solid rgba(212, 175, 55, 0.22);
+  padding: 24px;
+  border-radius: 16px;
+  background: #141A23;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   transition: var(--transition);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
 .why-feature-card:hover {
-  border-color: #F59E0B;
-  background: #331F14;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 14px rgba(245, 158, 11, 0.2);
+  border-color: rgba(255, 255, 255, 0.18);
+  background: #18202C;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   transform: translateY(-2px);
 }
 
@@ -2058,21 +2044,21 @@ img {
 }
 
 .why-feature-card h4 {
-  font-size: 14.5px;
-  font-weight: 700;
-  color: #FBBF24;
-  font-family: 'Cinzel', serif;
-  margin-bottom: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #FFFFFF;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", sans-serif;
+  margin-bottom: 6px;
 }
 
 .why-feature-card p {
-  font-size: 12.5px;
-  color: #D4C3B2;
+  font-size: 13px;
+  color: #94A3B8;
   line-height: 1.5;
 }
 
 /* ===================================================
-   9. CUSTOMER REVIEWS WALL (KASHMIRI WALNUT PLAQUES)
+   9. CUSTOMER REVIEWS WALL
    =================================================== */
 .reviews-section {
   padding: 44px 0;
@@ -2086,11 +2072,11 @@ img {
 }
 
 .review-card {
-  background: linear-gradient(180deg, #2A1A12 0%, #1E120A 100%);
-  border-radius: var(--radius-sm);
-  padding: 18px;
-  border: 1.5px solid rgba(212, 175, 55, 0.25);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  background: #141A23;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
 }
@@ -2106,9 +2092,9 @@ img {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #184436, #0F2E24);
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  color: #FBBF24;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2118,14 +2104,15 @@ img {
 
 .review-author strong {
   display: block;
-  font-size: 13px;
-  color: #FFFDF9;
-  font-family: 'Cinzel', serif;
+  font-size: 13.5px;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", sans-serif;
 }
 
 .review-city {
   font-size: 11px;
-  color: #D4AF37;
+  color: #94A3B8;
 }
 
 .review-rating {
@@ -2137,12 +2124,12 @@ img {
 .review-product-tag {
   font-size: 11px;
   font-weight: 500;
-  color: #FBBF24;
+  color: #CBD5E1;
   margin-bottom: 8px;
-  padding: 2px 8px;
-  background: #180F0A;
-  border: 1px solid rgba(212, 175, 55, 0.22);
-  border-radius: var(--radius-xs);
+  padding: 3px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
   display: inline-block;
 }
 
@@ -2201,20 +2188,16 @@ img {
   width: 100%;
   max-width: 420px;
   height: 100vh;
-  background-color: #1A0E08;
-  background-image: 
-    radial-gradient(circle at 50% 20%, rgba(48, 28, 17, 0.35) 0%, rgba(18, 10, 6, 0.88) 100%),
-    url('/images/kashmir_walnut_carved.jpg');
-  background-size: cover;
-  background-position: center center;
-  border-left: 3px solid #5C3A21;
+  background-color: #111620;
+  background-image: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
   z-index: 205;
-  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.85), inset 1px 0 0 rgba(212, 175, 55, 0.4);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.85);
   transform: translateX(100%);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
-  color: #FFFDF9;
+  color: #FFFFFF;
 }
 
 .cart-drawer.open {
@@ -2223,8 +2206,8 @@ img {
 
 .cart-drawer-header {
   padding: 16px 20px;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
-  background: #160D07;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0E131C;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2232,36 +2215,38 @@ img {
 
 .cart-drawer-header h3 {
   font-size: 16px;
-  font-weight: 700;
-  color: #FBBF24;
-  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  color: #FFFFFF;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", sans-serif;
 }
 
 .btn-close-cart {
   font-size: 22px;
-  color: #B39E8C;
+  color: #94A3B8;
+  cursor: pointer;
+  transition: color 0.15s ease;
 }
 
 .btn-close-cart:hover {
-  color: #FBBF24;
+  color: #FFFFFF;
 }
 
 .cart-shipping-meter {
   padding: 10px 20px;
-  background: rgba(16, 185, 129, 0.15);
-  border-bottom: 1px solid rgba(16, 185, 129, 0.3);
+  background: rgba(16, 185, 129, 0.1);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.2);
 }
 
 .free-shipping-msg {
   font-size: 11.5px;
-  color: #6EE7B7;
+  color: #34D399;
   margin-bottom: 5px;
 }
 
 .shipping-bar-bg {
   width: 100%;
   height: 4px;
-  background: rgba(16, 185, 129, 0.25);
+  background: rgba(16, 185, 129, 0.2);
   border-radius: var(--radius-full);
   overflow: hidden;
 }
@@ -2286,22 +2271,22 @@ img {
 .empty-cart-icon {
   font-size: 40px;
   margin-bottom: 10px;
-  color: #D4AF37;
+  color: #94A3B8;
 }
 
 .cart-item-row {
   display: flex;
   gap: 12px;
   padding: 12px 0;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .cart-item-img {
   width: 54px;
   height: 54px;
-  border-radius: var(--radius-xs);
+  border-radius: 8px;
   object-fit: cover;
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .cart-item-details {
@@ -2315,14 +2300,17 @@ img {
 }
 
 .cart-item-title {
-  font-size: 12.5px;
-  color: #FFFDF9;
-  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #FFFFFF;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", sans-serif;
 }
 
 .cart-item-remove-btn {
   font-size: 16px;
-  color: #8C7867;
+  color: #64748B;
+  cursor: pointer;
+  transition: color 0.15s ease;
 }
 
 .cart-item-remove-btn:hover {
@@ -2331,7 +2319,7 @@ img {
 
 .cart-item-weight-badge {
   font-size: 10.5px;
-  color: #D4AF37;
+  color: #94A3B8;
   margin-bottom: 6px;
 }
 
@@ -3644,17 +3632,13 @@ img {
   width: 95vw;
   max-width: 1260px;
   max-height: 94vh;
-  background-color: #1A0E08;
-  background-image: 
-    radial-gradient(circle at 50% 20%, rgba(48, 28, 17, 0.35) 0%, rgba(16, 9, 5, 0.88) 100%),
-    url('/images/kashmir_walnut_carved.jpg');
-  background-size: cover;
-  background-position: center center;
-  border-radius: var(--radius-md);
+  background-color: #111620;
+  background-image: none;
+  border-radius: 20px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9), 0 0 35px rgba(212, 175, 55, 0.3);
-  border: 3.5px solid #5C3A21;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
 }
@@ -3670,35 +3654,35 @@ img {
   top: 10px;
   right: 14px;
   z-index: 10;
-  background: rgba(0, 0, 0, 0.6);
-  color: #FFFDF9;
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
   width: 34px;
   height: 34px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1.5px solid rgba(212, 175, 55, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   cursor: pointer;
-  font-size: 20px;
+  font-size: 18px;
   transition: all 0.2s ease;
 }
 
 .qv-widescreen-modal .modal-close-x:hover {
   background: #DC2626;
   color: #FFFFFF;
-  transform: scale(1.1);
+  transform: scale(1.08);
   border-color: #DC2626;
 }
 
 /* Widescreen Header Banner */
 .qv-widescreen-header {
-  background: linear-gradient(135deg, #184436, #0F2E24);
-  padding: 12px 50px 12px 24px;
+  background: #0E131C;
+  padding: 14px 50px 14px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid rgba(212, 175, 55, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   flex-shrink: 0;
   gap: 16px;
   flex-wrap: wrap;
@@ -3771,9 +3755,10 @@ img {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  border-right: 1.5px solid rgba(212, 175, 55, 0.22);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
   overflow-y: auto;
   max-height: calc(94vh - 65px);
+  background: #0B0E14;
 }
 
 .qv-widescreen-img-wrapper {
@@ -3782,27 +3767,20 @@ img {
   height: 390px;
   border-radius: 14px;
   overflow: hidden;
-  background-color: #1A0E08;
-  background-image: 
-    radial-gradient(circle at 50% 30%, rgba(68, 38, 22, 0.25) 0%, rgba(18, 10, 6, 0.8) 100%),
-    url('/images/kashmir_walnut_carved.jpg');
-  background-size: cover;
-  background-position: center;
-  padding: 10px;
-  border: 3px solid #5C3A21;
-  box-shadow: 
-    inset 2px 2px 5px rgba(255, 220, 150, 0.35),
-    inset -2px -2px 6px rgba(0, 0, 0, 0.9),
-    0 12px 32px rgba(0, 0, 0, 0.7);
+  background-color: #0E131C;
+  background-image: none;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
 }
 
 .qv-main-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
-  border: 2px solid rgba(212, 175, 55, 0.55);
-  box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.7);
+  border-radius: 14px;
+  border: none;
+  box-shadow: none;
   transition: opacity 0.25s ease, transform 0.25s ease;
   display: block;
 }
@@ -3941,7 +3919,7 @@ img {
   font-weight: 700;
   color: #FBBF24;
   margin-bottom: 8px;
-  font-family: 'Cinzel', serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", sans-serif;
 }
 
 .qv-combo-list {
@@ -4110,9 +4088,9 @@ img {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  background: #1C1109;
-  background-image: linear-gradient(180deg, #22140C 0%, #180E08 100%);
-  color: #FFFDF9;
+  background: #111620;
+  background-image: none;
+  color: #FFFFFF;
 }
 
 .qv-origin-strip {
@@ -4120,37 +4098,38 @@ img {
   align-items: center;
   gap: 8px;
   font-size: 12px;
-  color: #B39E8C;
+  color: #94A3B8;
 }
 
 .qv-origin-strip strong {
-  color: #FBBF24;
+  color: #FFFFFF;
 }
 
 .qv-origin-sep {
-  color: #6B5645;
+  color: #64748B;
 }
 
 .qv-title {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
-  color: #FFFDF9;
-  font-family: 'Cinzel', serif;
+  color: #FFFFFF;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Outfit", "Segoe UI", Roboto, sans-serif;
   line-height: 1.25;
+  letter-spacing: -0.015em;
   margin: 0;
 }
 
 .qv-sub {
-  font-size: 13px;
-  color: #D4AF37;
+  font-size: 13.5px;
+  color: #94A3B8;
   margin: 0;
 }
 
 .qv-type-feature-box {
-  background: #25160E;
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  border-left: 4px solid #F59E0B;
-  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 3px solid #10B981;
+  border-radius: 8px;
   padding: 8px 12px;
   display: flex;
   align-items: center;
@@ -4159,16 +4138,16 @@ img {
 
 .qv-type-label {
   font-size: 11px;
-  color: #FCD34D;
-  font-weight: 700;
+  color: #64748B;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.04em;
 }
 
 .qv-type-value {
   font-size: 12.5px;
-  color: #FFFDF9;
-  font-weight: 600;
+  color: #F1F5F9;
+  font-weight: 500;
 }
 
 .qv-rating-bar {
@@ -4294,7 +4273,7 @@ img {
   font-size: 13.5px;
   font-weight: 700;
   color: #FBBF24;
-  font-family: 'Cinzel', serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", sans-serif;
   margin: 0;
 }
 
@@ -4819,15 +4798,11 @@ img {
    16. MAIN FOOTER (PROFESSIONAL & CLEAN)
    =================================================== */
 .main-footer {
-  background-color: #160D07;
-  background-image: 
-    radial-gradient(circle at 50% 10%, rgba(45, 25, 14, 0.3) 0%, rgba(14, 8, 4, 0.88) 100%),
-    url('/images/kashmir_walnut_carved.jpg');
-  background-size: cover;
-  background-position: center;
-  color: #D1D5DB;
+  background-color: #080B10;
+  background-image: none;
+  color: #94A3B8;
   padding-top: 50px;
-  border-top: 3.5px solid #5C3A21;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer-top-grid {
@@ -5298,7 +5273,7 @@ button:active {
 }
 
 .purity-lab-title {
-  font-family: 'Cinzel', serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", sans-serif;
   font-size: 32px;
   color: #FFFDF9;
   margin-bottom: 12px;
@@ -5384,7 +5359,7 @@ button:active {
 }
 
 .test-active-title {
-  font-family: 'Cinzel', serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", sans-serif;
   font-size: 24px;
   color: #FFFDF9;
   margin-bottom: 6px;
@@ -5612,7 +5587,7 @@ button:active {
 }
 
 .lab-table-title {
-  font-family: 'Cinzel', serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", sans-serif;
   font-size: 20px;
   color: #FFFDF9;
   margin-bottom: 4px;
@@ -7869,8 +7844,7 @@ button:active {
    =================================================== */
 .about-heritage-section {
   padding: 80px 0;
-  background: linear-gradient(180deg, rgba(26, 17, 11, 0.95) 0%, rgba(32, 20, 13, 0.95) 50%, rgba(22, 14, 9, 0.96) 100%),
-              url('/images/kashmir-monuments-heritage.jpg') center top / cover no-repeat fixed;
+  background: #0B0E14;
   position: relative;
   overflow: hidden;
 }
@@ -7879,16 +7853,12 @@ button:active {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
   gap: 36px;
-  background-color: #1A0E08;
-  background-image: 
-    radial-gradient(circle at 50% 30%, rgba(55, 32, 18, 0.35) 0%, rgba(18, 10, 6, 0.88) 100%),
-    url('/images/kashmir_walnut_carved.jpg');
-  background-size: cover;
-  background-position: center;
+  background-color: #141A23;
+  background-image: none;
   border-radius: 20px;
   padding: 40px;
-  border: 3px solid #5C3A21;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7), inset 0 0 0 1px rgba(212, 175, 55, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
   margin-bottom: 50px;
   position: relative;
 }
@@ -7898,26 +7868,26 @@ button:active {
   position: absolute;
   top: 0;
   left: 0;
-  width: 6px;
+  width: 4px;
   height: 100%;
-  background: linear-gradient(180deg, #0F2E24 0%, #F59E0B 100%);
+  background: #10B981;
   border-radius: 20px 0 0 20px;
 }
 
 .story-pretitle {
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: #D97706;
+  letter-spacing: 0.08em;
+  color: #10B981;
   margin-bottom: 8px;
   display: block;
 }
 
 .about-story-content h3 {
-  font-family: 'Cinzel', serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", sans-serif;
   font-size: 26px;
-  color: #FFFDF9;
+  color: #FFFFFF;
   margin-bottom: 16px;
   line-height: 1.3;
 }
@@ -7972,7 +7942,7 @@ button:active {
 }
 
 .stat-number {
-  font-family: 'Cinzel', serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", sans-serif;
   font-size: 28px;
   font-weight: 800;
   color: #FBBF24;
@@ -7992,7 +7962,7 @@ button:active {
 }
 
 .branches-header-title h3 {
-  font-family: 'Cinzel', serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", sans-serif;
   font-size: 26px;
   color: #FFFDF9;
   margin-bottom: 6px;
@@ -8131,7 +8101,7 @@ button:active {
 }
 
 .branch-title {
-  font-family: 'Cinzel', serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", sans-serif;
   font-size: 22px;
   color: #FFFDF9;
   margin-bottom: 2px;
@@ -8283,15 +8253,11 @@ button:active {
 /* About Section Official Contact & Direct Executive Desk (Bottom of About Section) */
 .about-contact-desk-card {
   margin-top: 42px;
-  background-color: #1A0E08;
-  background-image: 
-    radial-gradient(circle at 50% 30%, rgba(55, 32, 18, 0.35) 0%, rgba(18, 10, 6, 0.88) 100%),
-    url('/images/kashmir_walnut_carved.jpg');
-  background-size: cover;
-  background-position: center;
-  border: 3px solid #5C3A21;
+  background-color: #141A23;
+  background-image: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7), inset 0 0 0 1px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
   padding: 32px;
   position: relative;
   overflow: hidden;
@@ -8304,7 +8270,7 @@ button:active {
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, #10B981, #F59E0B, #D4AF37, #10B981);
+  background: linear-gradient(90deg, #10B981, #38BDF8, #10B981);
 }
 
 .about-contact-desk-inner {
@@ -8316,22 +8282,23 @@ button:active {
 
 .about-contact-tag {
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.08em;
   color: #34D399;
   background: rgba(16, 185, 129, 0.15);
-  border: 1px solid rgba(16, 185, 129, 0.35);
+  border: 1px solid rgba(16, 185, 129, 0.3);
   padding: 3px 10px;
-  border-radius: 4px;
+  border-radius: 9999px;
   display: inline-block;
   margin-bottom: 8px;
 }
 
 .about-contact-title {
   font-size: 22px;
-  font-family: 'Cinzel', serif;
-  color: #FFFDF9;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", sans-serif;
+  font-weight: 700;
+  color: #FFFFFF;
   margin-bottom: 8px;
   line-height: 1.3;
 }
@@ -9905,7 +9872,7 @@ button:active {
 }
 
 .resonance-header-meta h4 {
-  font-family: 'Cinzel', serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", sans-serif;
   font-size: 22px;
   font-weight: 700;
   color: #FFFDF9;
@@ -10128,7 +10095,7 @@ button:active {
 }
 
 .wishlist-header-title h3 {
-  font-family: 'Cinzel', serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", sans-serif;
   font-size: 19px;
   font-weight: 700;
   color: #FCD34D;
@@ -10164,7 +10131,7 @@ button:active {
 }
 
 .wishlist-empty-state h4 {
-  font-family: 'Cinzel', serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", sans-serif;
   font-size: 18px;
   color: #FFFDF9;
   margin-bottom: 8px;
@@ -10446,7 +10413,7 @@ button:active {
   font-weight: 700;
   color: #FFFFFF;
   margin-bottom: 8px;
-  font-family: 'Cinzel', serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Outfit", sans-serif;
   letter-spacing: 0.5px;
 }
 

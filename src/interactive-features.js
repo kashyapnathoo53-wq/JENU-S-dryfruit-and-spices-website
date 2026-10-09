@@ -5,8 +5,7 @@ export class KashmirInteractiveExperience {
   constructor() {
     this.initScrollProgress();
     this.removeBackToTop();
-    this.initCard3DTilt();
-    this.initLiveViewersFluctuation();
+    // 3D Tilt and live viewer fluctuations disabled for clean, sophisticated, Apple-grade stability
     this.initWeatherHubModal();
     this.initSaffronPurityLab();
   }
