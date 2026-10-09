@@ -4154,6 +4154,70 @@
       ]
     },
     {
+      "id": "jnu-berries-seeds-mix-01",
+      "name": "JENU'S Himalayan Berry & Roasted Super Seeds Vitality Mix",
+      "subname": "Sun-Dried Ruby Cranberries, Wild Blueberries, Roasted Pumpkin Pepitas & Sunflower Seeds",
+      "category": "seeds",
+      "subCategory": "seeds",
+      "productType": "Antioxidant Superfood Berry & Roasted Seed Vitality Blend",
+      "origin": "Kashmir Valley & Himalayan Foothills",
+      "harvestYear": "2026 Fresh Harvest",
+      "rating": 4.9,
+      "reviewsCount": 940,
+      "badge": "Antioxidant Superfood",
+      "badgeType": "bestseller",
+      "fssaiCertified": true,
+      "image": "/images/berries-seeds-mix-close.jpg",
+      "images": [
+        "/images/berries-seeds-mix-close.jpg",
+        "/images/berries-seeds-mix-bowl.jpg",
+        "/images/berries-seeds-mix-packaged.jpg",
+        "/images/berries-seeds-mix-handful.jpg"
+      ],
+      "overview": {
+        "terroir": "Himalayan Foothills & High-Altitude Valleys",
+        "harvestMethod": "Sun-Dried Berry Infusion & Slow Dry-Roasted Seeds",
+        "aromaFlavor": "Crisp nutty crunch balanced by tart-sweet chewy cranberries and blueberries",
+        "purityGrade": "100% Whole Ingredients, Zero Glucose Glaze, Zero Palm Oil",
+        "packagingStandard": "Heavy-duty nitrogen-flushed stand-up kraft pouch",
+        "shelfLife": "9 Months"
+      },
+      "description": "An antioxidant powerhouse and clean vitality booster. Combines plump sun-cured ruby cranberries, wild Himalayan blueberries, lightly toasted green pumpkin pepitas, and crunchy roasted sunflower seeds. Perfectly balanced sweet-tart and nutty flavors with zero refined sugar, zero trans fats, and zero artificial preservatives.",
+      "benefits": [
+        "Rich in proanthocyanidins, vitamin E, plant zinc, and dietary fiber",
+        "Clean, slow-burning all-day stamina ideal for breakfast bowls, yogurt toppings, or trekking",
+        "Priced ₹50 lower than market rate of ₹390 (Now ₹340 per 250g)"
+      ],
+      "nutrition": {
+        "calories": "482 kcal per 100g",
+        "protein": "14.6g",
+        "healthyFats": "32.8g",
+        "carbs": "38.2g",
+        "fiber": "8.9g"
+      },
+      "weights": [
+        {
+          "weight": "250g Pouch",
+          "price": 340,
+          "originalPrice": 390,
+          "discount": 13,
+          "isDefault": true
+        },
+        {
+          "weight": "500g Pouch",
+          "price": 650,
+          "originalPrice": 700,
+          "discount": 7
+        },
+        {
+          "weight": "1kg Value Jar",
+          "price": 1240,
+          "originalPrice": 1290,
+          "discount": 4
+        }
+      ]
+    },
+    {
       "id": "jnu-muesli-saffron-01",
       "name": "JENU'S Royal Kashmiri Saffron & Mamra Almond Muesli",
       "subname": "Toasted Whole Grain Oats with Saffron Strands & Shopian Mamra Flakes",

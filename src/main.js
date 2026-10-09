@@ -1409,6 +1409,42 @@ class JenusApp {
       if (curImg.includes('trail-mix-detail')) {
         return `🔍 Photo ${idx + 1} of ${images.length}: Extreme Close-up Detail — Roasted Green Pumpkin Pepitas, Hulled Sunflower Kernels & Whole Almonds`;
       }
+      if (curImg.includes('seeds-charmagaz-macro')) {
+        return `🍈 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Pure Kashmiri Char Magaz (Dehulled Ivory-White Four Melon Confection Seeds)`;
+      }
+      if (curImg.includes('seeds-charmagaz-bowl')) {
+        return `🥣 Photo ${idx + 1} of ${images.length}: Traditional Serving Presentation — Carved Kashmiri Walnut Bowl Overflowing with Char Magaz Melon Kernels`;
+      }
+      if (curImg.includes('seeds-charmagaz-detail')) {
+        return `🔍 Photo ${idx + 1} of ${images.length}: In-Hand Kernel Detail — Clean Dehulled Watermelon, Muskmelon & Cucumber Seed Kernels for Mithai & Thandai`;
+      }
+      if (curImg.includes('seeds-charmagaz-packaged')) {
+        return `🏷️ Photo ${idx + 1} of ${images.length}: JENU'S Sealed Pouch — Authentic Royal Mithai Grade Char Magaz (250g Resealable Pack)`;
+      }
+      if (curImg.includes('seeds-7in1-macro')) {
+        return `✨ Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Roasted Himalayan 7-in-1 Super Seeds Mix (Pumpkin, Sunflower, Flax, Chia & Sesame)`;
+      }
+      if (curImg.includes('seeds-7in1-bowl')) {
+        return `🥣 Photo ${idx + 1} of ${images.length}: Wholesome Serving — Artisanal Bowl of Crispy Roasted 7-in-1 Superfood Seeds Dusted with Himalayan Salt`;
+      }
+      if (curImg.includes('seeds-7in1-handful')) {
+        return `🔍 Photo ${idx + 1} of ${images.length}: Generous Handful — Crunchy Nutrient-Dense Super Seeds for Daily Energy & Vitality`;
+      }
+      if (curImg.includes('seeds-7in1-packaged')) {
+        return `🏷️ Photo ${idx + 1} of ${images.length}: JENU'S Nitrogen-Flushed Resealable Pouch — 7-in-1 Roasted & Salted Super Seeds (250g)`;
+      }
+      if (curImg.includes('berries-seeds-mix-close')) {
+        return `🫐 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Himalayan Berry & Roasted Super Seeds Vitality Mix (Cranberries, Blueberries, Pumpkin & Sunflower Seeds)`;
+      }
+      if (curImg.includes('berries-seeds-mix-bowl')) {
+        return `🥣 Photo ${idx + 1} of ${images.length}: Breakfast & Snack Serving — Wholesome Ceramic Bowl of Sun-Dried Berries & Roasted Crunchy Seeds`;
+      }
+      if (curImg.includes('berries-seeds-mix-handful')) {
+        return `🔍 Photo ${idx + 1} of ${images.length}: Vibrant Energy Snack — Plump Ruby Cranberries, Wild Blueberries & Roasted Super Pepitas in Hand`;
+      }
+      if (curImg.includes('berries-seeds-mix-packaged')) {
+        return `🏷️ Photo ${idx + 1} of ${images.length}: JENU'S Resealable Stand-up Kraft Pouch — Berry & Seeds Vitality Mix (250g)`;
+      }
       if (curImg.includes('sundried-mulberries-macro')) {
         return `🌿 Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Sun-Dried Kashmiri White Shahtoot Mulberries (Golden-Cream Nectar Pearls)`;
       }
@@ -1535,6 +1571,15 @@ class JenusApp {
       if (curImg.includes('trail-mix-macro')) return 'Trail Mix';
       if (curImg.includes('trail-mix-bowl')) return 'Serving';
       if (curImg.includes('trail-mix-detail')) return 'Seeds & Nuts';
+      if (curImg.includes('seeds-charmagaz-macro')) return 'Char Magaz';
+      if (curImg.includes('seeds-charmagaz-bowl')) return 'Melon Bowl';
+      if (curImg.includes('seeds-charmagaz-detail')) return 'In Hand';
+      if (curImg.includes('seeds-7in1-macro')) return '7-in-1 Seeds';
+      if (curImg.includes('seeds-7in1-bowl')) return 'Seeds Bowl';
+      if (curImg.includes('seeds-7in1-handful')) return 'Handful';
+      if (curImg.includes('berries-seeds-mix-close')) return 'Berry & Seeds';
+      if (curImg.includes('berries-seeds-mix-bowl')) return 'Vitality Bowl';
+      if (curImg.includes('berries-seeds-mix-handful')) return 'In Hand';
       if (curImg.includes('sundried-mulberries-macro')) return 'Shahtoot';
       if (curImg.includes('sundried-mulberries-bowl')) return 'Mulberries';
       if (curImg.includes('sundried-plums-macro')) return 'Aloo Bukhara';
