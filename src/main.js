@@ -1329,9 +1329,11 @@ class JenusApp {
       if (curImg.includes('dates-medjool-five') || curImg.includes('dates-palm-harvest')) return `👑 Photo ${idx + 1} of ${images.length}: Jumbo 35g+ Grade Selection & Tree-Ripened Palm Harvest Inspection`;
       if (curImg.includes('dates-medjool-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Luxury Rigid Presentation Box with Inner Fluted Tray`;
 
-      if (curImg.includes('dates-chhuara-macro') || curImg.includes('dates-chhuara-handful')) return `☀️ Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Kashmiri Sun-Dried Chhuara (Dense Golden Brown Dry Dates, Pure Sun-Cured)`;
-      if (curImg.includes('dates-chhuara-split') || curImg.includes('dates-chhuara-brass-bowl')) return `☀️ Photo ${idx + 1} of ${images.length}: Split Chhuara Macro (Nutrient-Dense Calcium Core) & Valley Brass Display`;
-      if (curImg.includes('dates-chhuara-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: Heavy Duty Food-Grade Air-Tight Pouch`;
+      if (curImg.includes('dates-chhuara-macro')) return `☀️ Photo ${idx + 1} of ${images.length}: Authentic Real Macro Photography — Kashmiri Sun-Dried Pahadi Chhuara (Dense Golden-Brown Mountain Dry Dates)`;
+      if (curImg.includes('dates-chhuara-handful')) return `🤲 Photo ${idx + 1} of ${images.length}: Hand-Sorted Generous Handful — Rock-Hard Wrinkled Pahadi Chhuara with Concentrated Natural Sugars`;
+      if (curImg.includes('dates-chhuara-split')) return `🔍 Photo ${idx + 1} of ${images.length}: Extreme Macro Split Cross-Section — Dense Crystallized Calcium-Rich Core & Natural Seed Pit`;
+      if (curImg.includes('dates-chhuara-brass-bowl')) return `🏺 Photo ${idx + 1} of ${images.length}: Antique Hammered Kashmiri Brass Tasting Bowl Overflowing with Sun-Cured Chhuara Dates`;
+      if (curImg.includes('dates-chhuara-packaged')) return `🏷️ Photo ${idx + 1} of ${images.length}: JENU'S Heritage Sealed Jar — Kashmiri Pahadi Chhuara (Nitrogen-Flushed Airtight Freshness Lock)`;
 
       if (curImg.includes('hazelnuts-macro') || curImg.includes('hazelnuts-inshell-cracked')) return `🌰 Photo ${idx + 1} of ${images.length}: Extreme Real Macro Photography — Wild Himalayan Hazelnut Kernels (Round Golden-Brown Kernels with Rich Hazelnut Oil)`;
       if (curImg.includes('hazelnuts-roasted-skins') || curImg.includes('hazelnuts-forest-harvest')) return `🌰 Photo ${idx + 1} of ${images.length}: Gentle Roasted Kernels with Flaked Skins & High-Altitude Himalayan Forest Forage`;
@@ -1559,6 +1561,10 @@ class JenusApp {
         if (curImg.includes('real-saffron')) return 'Saffron';
         if (curImg.includes('real-apricots')) return 'Apricots';
       }
+      if (curImg.includes('dates-chhuara-macro')) return 'Chhuara';
+      if (curImg.includes('dates-chhuara-handful')) return 'In Hand';
+      if (curImg.includes('dates-chhuara-split')) return 'Split Core';
+      if (curImg.includes('dates-chhuara-brass-bowl')) return 'Brass Bowl';
       if (curImg.includes('packaged')) return 'Packaging';
       if (curImg.includes('apricots') || curImg.includes('kargil')) return 'Apricots';
       if (curImg.includes('real-figs') || curImg.includes('figs-close')) return 'Anjeer';
